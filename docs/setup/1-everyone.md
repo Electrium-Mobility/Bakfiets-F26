@@ -51,12 +51,12 @@ The bike is in the **Electrium Mobility room in The Bay**, the team work bays in
 
 | Role | Person | What they do |
 | --- | --- | --- |
-| Project lead | Rong Gu | Priorities, decisions that affect more than one subteam (like the motor), purchases, room access |
+| Project lead | Justin Gu | Priorities, decisions that affect more than one subteam (like the motor), purchases, room access |
 | Mechanical lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Runs the Bakfiets Mechanical thread, keeps mechanical issues up to date, approves CAD pull requests |
 | Electrical lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Same for electrical, and supervises all battery work |
 | Firmware lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Same for firmware, and approves code pull requests |
 
-Until the subteam leads are chosen, Rong Gu covers all three roles.
+Until the subteam leads are chosen, Justin Gu covers all three roles.
 
 Habits for everyone:
 
