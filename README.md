@@ -8,12 +8,12 @@ Electrium Mobility's electric cargo bike ("Bak Choy"), Fall 2026. This repo hold
 
 **Start with [ONBOARDING.md](ONBOARDING.md).** It walks you from zero to your first contribution. The short version:
 
-1. **Make a GitHub account and join the Discord** ([invite](https://discord.gg/jggFVza4XR)). In the **Bakfiets F26** category, post your GitHub username in the **Github usernames** thread so you can be added to the org.
+1. **Make a GitHub account and join the Discord** ([invite](https://discord.gg/jggFVza4XR)). In the **Bakfiets F26** category, post your GitHub username in the **Github usernames** channel so you can be added to the org.
 2. **Set up your computer** with the step-by-step guide for everyone: [docs/setup/1-everyone.md](docs/setup/1-everyone.md).
 3. **Set up for your subteam:** [Mechanical](docs/setup/2-mechanical.md) · [Electrical](docs/setup/3-electrical.md) · [Firmware](docs/setup/4-firmware.md).
 4. **Pick a task** from your subteam's Stage 2 table in [ONBOARDING.md](ONBOARDING.md). Comment "I'll take this" on the issue and it's yours.
 5. **After onboarding,** move on to the term projects in [docs/term-projects.md](docs/term-projects.md) (issues labelled `term project`).
-6. **Questions** go in your subteam's thread in #bakfiets-general. Who leads what is in [the everyone guide](docs/setup/1-everyone.md#5-how-the-team-is-run).
+6. **Questions** go in your subteam's channel. Who leads what is in [the everyone guide](docs/setup/1-everyone.md#5-how-the-team-is-run).
 
 **Safety first:** don't weld, cut, grind or use the laser cutter, and don't touch a battery pack, until you've done the training listed in [the everyone guide](docs/setup/1-everyone.md#3-safety-training).
 
