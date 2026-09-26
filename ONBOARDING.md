@@ -97,13 +97,13 @@ The 2024 files disagree on a few basics. Below is the answer we're working from 
 
 - **Our answer:** a 500 W hub motor driven by an FSESC 6.7, a VESC-based motor controller made by Flipsky.
 - **Why:** the club website names that exact controller. The README and the 2024 CAD point to a Bafang BBS02 mid-drive instead, but they date from February 2024, before the build. The website added its description in June 2024 and repeated it in April 2025.
-- **How to check:** look at the bike ([issue #1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1)). A hub motor is a thick drum around a wheel's axle, with a cable coming out of the axle. A BBS02 is a box at the pedals that replaces the crank and chainring. Photograph any separate controller box and its label.
+- **How to check:** look at the bike ([issue #1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1)). A hub motor is a thick drum around a wheel's axle, with a cable coming out of the axle. A BBS02 is a box at the pedals that replaces the crank and chainring. Photograph any separate controller box and its label. Ling, Electrium's team lead, is also tracking down the motor that was meant for the bike.
 - **If we're wrong:** a BBS02 has its own built-in controller. The electrical plan would drop the separate ESC, and firmware would read the BBS02's display protocol instead of the VESC's.
 
 #### 2. Which microcontroller runs the screen?
 
 - **Our answer:** an ESP32-S3.
-- **Why:** the June 2024 website says ESP32-S3, and the display code uses GPIO 9 and 10, which a plain ESP32 can't use because they connect to its flash chip. The November 2024 CAN test used a plain ESP32, but only as a test board.
+- **Why:** the June 2024 website says ESP32-S3, and the display code uses GPIO 9 and 10, which a plain ESP32 can't use because they connect to its flash chip. The November 2024 CAN test code targets a plain ESP32 dev board.
 - **How to check:** if the 2024 board is in the room, its chip or silkscreen label will say ESP32-S3.
 - **If we're wrong:** the screen and LED pins in the desk demo would need to move to other GPIOs.
 
@@ -153,7 +153,7 @@ Open the newest model of the bike, `bakfiets_main_asm.SLDASM`, with every part l
 1. With SolidWorks 2026 installed (see Software), tell SolidWorks where the custom tube shapes are. Choose **Tools > Options > System Options > File Locations**, set **Show folders for** to **Weldment Profiles**, click **Add**, and choose your clone's `mechanical\cad-2025-coop` folder. Click **OK**. This needs no admin rights.
 2. Choose **File > Open** and open `mechanical\cad-2025-coop\bakfiets_main_asm.SLDASM` from your clone.
 
-**💡 Hint:** if SolidWorks asks where a part is, point it at the same `cad-2025-coop` folder. The parts are built around one master sketch, `bakfiets_master_sketch.SLDPRT`, so the whole bike follows it. To change the geometry, copy the co-op files into `mechanical/cad-2026/` first and work on the copy. If the frame still shows rebuild errors, copy the bakfiets\_weldment\_profiles folder into the default Weldment Profiles folder listed in that same File Locations dialog (this one needs admin rights).
+**💡 Hint:** if SolidWorks asks where a part is, point it at the same `cad-2025-coop` folder. The parts are built around one master sketch, `bakfiets_master_sketch.SLDPRT`, so the whole bike follows it. To change the geometry, copy the co-op files into `mechanical/cad-2026/` first and work on the copy. If the frame still shows rebuild errors, copy the `bakfiets_weldment_profiles` folder into the default Weldment Profiles folder listed in that same File Locations dialog (this one needs admin rights).
 
 First time in SolidWorks? Watch [Your First Part](https://www.youtube.com/watch?v=qjtYqxNpj50) (8 min), then [Introduction to Weldments](https://www.youtube.com/watch?v=nbMxA178ADM) (15 min), which shows how tube frames are built.
 
@@ -229,7 +229,7 @@ You will learn to read a real Electrium board, then help design the bike's elect
 6. **Power board (PDB)** steps 48 V down to 5 V for the small electronics and lights.
 7. **ESP32-S3** runs the display and LED strip, and reads the buttons.
 
-**⚠️ Warning:** every part that touches the battery must be rated well above 50.4 V. Use MOSFETs and capacitors rated 80 to 100 V. Surge (TVS) diodes work the other way: pick one whose standoff voltage sits just above 50.4 V, about 54 to 58 V, so it clamps spikes before they reach the MOSFETs.
+**⚠️ Warning:** parts that carry the battery voltage need margin above 50.4 V: use MOSFETs and capacitors rated 80 to 100 V. Surge (TVS) diodes are the exception: pick one whose standoff voltage sits just above 50.4 V, about 54 to 58 V, so it clamps spikes before they reach the MOSFETs.
 
 ### Stage 1: Read a Real Board
 
@@ -394,7 +394,7 @@ A pull request with your sketch, a photo or short video of it working, and `Clos
 4. In the pull request, say what you did, add screenshots, and write `Closes #<issue number>`.
 5. Post the link in your subteam thread. Your subteam lead approves it.
 
-**💡 Hint:** if GitHub Desktop says you don't have permission to push and offers to **create a fork**, click **Fork this repository**, then choose **To contribute to the parent project**. A fork is your own copy of the repo on GitHub. Your pull request still goes to Bakfiets-F26 as normal. This happens until you've been given write access to the repo.
+**💡 Hint:** if GitHub Desktop says you don't have permission to push and offers to **create a fork**, click **Fork this repository**, then choose **To contribute to the parent project**. A fork is your own copy of the repo on GitHub. Your pull request still goes to Bakfiets-F26 as normal. This only happens until you've been added to the Electrium-Mobility org, which gives write access automatically.
 
 GitHub's [Hello World guide](https://docs.github.com/en/get-started/start-your-journey/hello-world) walks through branches and pull requests.
 
@@ -486,11 +486,11 @@ Ling is tracking down the motor that was meant to go on the bike. Updates go in 
 | 12S3P | 12 groups in series, 3 cells per group. About 44 V nominal, 50.4 V full, 36 V empty | [Battery University](https://batteryuniversity.com/article/bu-302-series-and-parallel-battery-configurations) |
 | BMS | Battery management system. It balances cells and cuts power on overcharge, over-drain, overheating or a short | [Wikipedia](https://en.wikipedia.org/wiki/Battery_management_system) |
 | Antispark / precharge | A circuit that stops the spark when a battery first connects to a motor controller | [Pre-charge](https://en.wikipedia.org/wiki/Pre-charge) |
-| ESC / VESC / FSESC 6.7 | The motor controller. VESC is an open-source design; the FSESC 6.7 is the VESC-based model the 2024 team used | [VESC project](https://vesc-project.com/) |
+| ESC / VESC / FSESC 6.7 | The motor controller. VESC is an open-source design; the FSESC 6.7 is the VESC-based model the club website says the 2024 team used | [VESC project](https://vesc-project.com/) |
 | PDB | Power distribution board: splits battery power and steps 48 V down to 5 V |  |
 | Buck converter | A circuit that steps voltage down efficiently | [Wikipedia](https://en.wikipedia.org/wiki/Buck_converter) |
 | MOSFET | An electronic switch that a small signal can turn on | [MOSFET switch](https://projecthub.arduino.cc/ejshea/connecting-an-n-channel-mosfet-6a7325) |
-| TVS diode | A surge protector. Its standoff voltage (where it starts to conduct) must sit just above 50.4 V; its clamp voltage (the most it lets through) must stay below what the other parts survive |  |
+| TVS diode | A surge protector. Its standoff voltage (the highest voltage it ignores) must sit just above 50.4 V; its clamp voltage (the most it lets through) must stay below what the other parts survive |  |
 | Bench power supply | A lab box that gives an adjustable voltage with a current limit, used for safe testing instead of a battery |  |
 | XT60 / JST | A common battery plug / a family of small signal connectors | [XT60](https://components101.com/connectors/xt60-connector) |
 | LiPo bag | A fire-resistant bag for charging and storing batteries |  |
