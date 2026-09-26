@@ -4,8 +4,8 @@ sidebar_position: 1
 
 # Bakfiets
 
-![Electric Bike](./img/bakfiets.png)
-![Electric Bike Team](./img/bakfiets_team.png)
+![Electric Bike](../images/render-2024.png)
+![Electric Bike Team](../images/team-w2024.png)
 
 ### Project Info
 
