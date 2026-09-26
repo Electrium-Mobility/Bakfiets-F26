@@ -27,9 +27,9 @@ Setup steps and the desk demo are in [docs/setup/4-firmware.md](../docs/setup/4-
 
 ## CAN code notes
 
-- Pins: TX GPIO 14, RX GPIO 27. On an ESP32-S3, GPIO 27 is used by the flash and memory chips, so choose new CAN pins before porting.
+- Pins: TX GPIO 14, RX GPIO 27. On an ESP32-S3, GPIO 27 is used by the flash and memory chips, so choose new CAN pins before moving this code to the S3.
 - Build with ESP-IDF: see the README inside each folder.
 
 ## Missing: real motor data
 
-The 2024 README says the team reverse-engineered the Bafang BBS02 motor protocol, but that code isn't in any Electrium repo. The current plan is a hub motor with a VESC controller ([issue #1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1) confirms it), and other Electrium repos already read a VESC: see [docs/reference-projects.md](../docs/reference-projects.md#firmware).
+The 2024 README says the team reverse-engineered the Bafang BBS02 motor protocol, but that code isn't in any Electrium repo. The current plan is a hub motor with a VESC controller (to be confirmed in [issue #1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1)), and other Electrium repos already read a VESC: see [docs/reference-projects.md](../docs/reference-projects.md#firmware).

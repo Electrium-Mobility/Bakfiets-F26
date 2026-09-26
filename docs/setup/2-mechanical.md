@@ -26,7 +26,7 @@ The frame is built from custom tube shapes ("weldment profiles") stored in your 
 2. Go to your clone's `mechanical\cad-2025-coop` folder and open `bakfiets_main_asm.SLDASM`.
 3. If SolidWorks asks where a part is, point it at the same `cad-2025-coop` folder.
 
-Every part follows one master sketch, `bakfiets_master_sketch.SLDPRT`. Change the sketch and the whole bike updates.
+The parts are built around one master sketch, `bakfiets_master_sketch.SLDPRT`. To change the geometry, copy the co-op files into `mechanical/cad-2026/` first and work on the copy.
 
 ## 4. Learn the frame tools
 
@@ -49,4 +49,4 @@ Every file is explained in [`mechanical/README.md`](../../mechanical/README.md).
 
 ## 6. Pick a first task
 
-See the [mechanical issues](https://github.com/Electrium-Mobility/Bakfiets-F26/issues?q=is%3Aissue+is%3Aopen+label%3Amechanical). Good first ones: #2 (photograph the frame) and #3 (list the parts).
+First do Mechanical Stage 1 in [ONBOARDING.md](../../ONBOARDING.md#mechanical-onboarding) (open the bike and post a screenshot), then pick a Stage 2 task there, such as #2 or #3.

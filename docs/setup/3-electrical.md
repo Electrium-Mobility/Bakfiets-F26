@@ -36,4 +36,4 @@ If you open the PCB, KiCad also warns that the `XT60PW-F` footprint library is m
 
 ## 5. Pick a first task
 
-See the [electrical issues](https://github.com/Electrium-Mobility/Bakfiets-F26/issues?q=is%3Aissue+is%3Aopen+label%3Aelectrical). Start with #8 (read the anti-spark schematic).
+Reading the anti-spark schematic (section 2) is your Stage 1. Post your notes on #8, then pick a Stage 2 task in [ONBOARDING.md](../../ONBOARDING.md#electrical-onboarding).

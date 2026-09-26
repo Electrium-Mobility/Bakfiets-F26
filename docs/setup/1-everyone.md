@@ -1,6 +1,6 @@
 # Setup for everyone
 
-Do these steps once, in order. Each takes 5 to 15 minutes. Then go to your subteam's guide: [Mechanical](2-mechanical.md) · [Electrical](3-electrical.md) · [Firmware](4-firmware.md).
+Do these steps once, in order. Most take 5 to 15 minutes; the safety courses take longer. Then go to your subteam's guide: [Mechanical](2-mechanical.md) · [Electrical](3-electrical.md) · [Firmware](4-firmware.md).
 
 ## 1. Make your accounts and join Discord
 
@@ -33,7 +33,7 @@ You can do all setup, CAD and code work right away. You need this training befor
 | WHMIS 2015 (course code SO2017), about 1 hour, renew every 5 years | Everything in the shop or our room | [LEARN](https://learn.uwaterloo.ca/) > Self Registration. [Safety Office page](https://uwaterloo.ca/safety-office/training/student-safety-orientation-whmis) |
 | Engineering Student Machine Shop Orientation | The Engineering Student Shops; you get an access card afterwards | LEARN; score 100% on each module quiz. [Student Shops page](https://uwaterloo.ca/engineering-student-shops/getting-started) |
 | Student Design Centre courses: Worker Health and Safety Awareness, and Student Design Centre Safety Requirements | Working in the Sedra Student Design Centre (SDC), where our room is | LEARN. This list comes from the SDC's page for current teams, which needs a UW login |
-| Machine training (laser cutter, welding) | Only those machines | Hands-on training from the shop that runs the machine. No first-week task needs it |
+| Machine training (laser cutter, welding) | Only those machines | Hands-on training from the shop that runs the machine. No onboarding task needs it |
 
 **Battery rules** (from the UW Safety Office [Lithium Cell and Battery Standard](https://uwaterloo.ca/safety-office/laboratory-safety/batteries), plus common practice):
 
@@ -67,11 +67,11 @@ Habits for everyone:
 
 ## 6. Pick a task and share your work
 
-1. Open the [Issues tab](https://github.com/Electrium-Mobility/Bakfiets-F26/issues). Filter by your subteam label (`mechanical`, `electrical` or `firmware`) and `good first issue`.
+1. Pick a Stage 2 task from your subteam's table in [ONBOARDING.md](../../ONBOARDING.md). After onboarding, pick from the issues labelled `term project`.
 2. Comment "I'll take this". It's yours.
 3. In GitHub Desktop, click **Current branch > New branch** and name it after the task, for example `battery-mount-sketch`.
 4. Do the work. Save new files in a new folder such as `mechanical/cad-2026/` (create it if it doesn't exist), not inside the 2024 or 2025 folders.
-5. Click **Commit to your-branch**, then **Publish branch**, then **Create Pull Request**. Say what you did and add `Closes #<issue number>`.
+5. Type a one-line summary in the **Summary** box at the bottom left, click **Commit to your-branch**, then **Publish branch**, then **Create Pull Request**. Say what you did and add `Closes #<issue number>`.
 6. Post the pull request link in your subteam thread.
 
 If GitHub Desktop says you don't have permission to push and offers to **create a fork**, click **Fork this repository**, then choose **To contribute to the parent project**. A fork is your own copy of the repo on GitHub; your pull request still goes to Bakfiets-F26 as normal. This happens until you've been given write access to the repo.

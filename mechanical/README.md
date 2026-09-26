@@ -25,7 +25,7 @@ All SolidWorks files for the bakfiets. Setup steps are in [docs/setup/2-mechanic
 | `bakfiets_steering_handlebars.SLDPRT`, `bakfiets_steering_rod.SLDPRT`, `bakfiets_ball_joint.SLDPRT` | Steering linkage |
 | `bakfiets_kickstand.SLDPRT` | Kickstand |
 | `bakfiets_cargo_box_low_detail.SLDPRT` | Simple cargo box |
-| `bakfiets_weldment_profiles/` | Tube profiles. Copy into SolidWorks before opening (see the setup guide) |
+| `bakfiets_weldment_profiles/` | Tube profiles. Add the `cad-2025-coop` folder under SolidWorks File Locations > Weldment Profiles (see the setup guide) |
 
 ## cad-2024: the full 2024 design
 

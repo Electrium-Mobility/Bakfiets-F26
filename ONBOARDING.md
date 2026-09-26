@@ -67,7 +67,7 @@ You can start setup, CAD and code right away. Finish this before you use tools o
 | WHMIS 2015 (course code SO2017), about 1 hour | Everything in the shop or our room. Renew every 5 years | [LEARN](https://learn.uwaterloo.ca/) > Self Registration ([Safety Office page](https://uwaterloo.ca/safety-office/training/student-safety-orientation-whmis)) |
 | Engineering Student Machine Shop Orientation | The Engineering Student Shops. You get an access card afterwards | LEARN. Score 100% on each module quiz ([Student Shops page](https://uwaterloo.ca/engineering-student-shops/getting-started)) |
 | Worker Health and Safety Awareness, and Student Design Centre Safety Requirements | Working in the Sedra Student Design Centre (SDC), where our room is | LEARN. This list is from the SDC's page for current teams |
-| Laser cutter or welding training | Only those machines | Hands-on, from the shop that runs the machine. No first stage needs it |
+| Laser cutter or welding training | Only those machines | Hands-on, from the shop that runs the machine. No onboarding task needs it |
 
 **Battery rules** (from the UW [Lithium Cell and Battery Standard](https://uwaterloo.ca/safety-office/laboratory-safety/batteries), plus common practice):
 
@@ -153,7 +153,7 @@ Open the newest model of the bike, `bakfiets_main_asm.SLDASM`, with every part l
 1. With SolidWorks 2026 installed (see Software), tell SolidWorks where the custom tube shapes are. Choose **Tools > Options > System Options > File Locations**, set **Show folders for** to **Weldment Profiles**, click **Add**, and choose your clone's `mechanical\cad-2025-coop` folder. Click **OK**. This needs no admin rights.
 2. Choose **File > Open** and open `mechanical\cad-2025-coop\bakfiets_main_asm.SLDASM` from your clone.
 
-**💡 Hint:** if SolidWorks asks where a part is, point it at the same `cad-2025-coop` folder. The parts are built around one master sketch, `bakfiets_master_sketch.SLDPRT`, so changing that sketch should move the whole bike. If the frame still shows rebuild errors, copy the bakfiets\_weldment\_profiles folder into the default Weldment Profiles folder listed in that same File Locations dialog (this one needs admin rights).
+**💡 Hint:** if SolidWorks asks where a part is, point it at the same `cad-2025-coop` folder. The parts are built around one master sketch, `bakfiets_master_sketch.SLDPRT`, so the whole bike follows it. To change the geometry, copy the co-op files into `mechanical/cad-2026/` first and work on the copy. If the frame still shows rebuild errors, copy the bakfiets\_weldment\_profiles folder into the default Weldment Profiles folder listed in that same File Locations dialog (this one needs admin rights).
 
 First time in SolidWorks? Watch [Your First Part](https://www.youtube.com/watch?v=qjtYqxNpj50) (8 min), then [Introduction to Weldments](https://www.youtube.com/watch?v=nbMxA178ADM) (15 min), which shows how tube frames are built.
 
@@ -272,7 +272,7 @@ Pick one of these issues and claim it.
 | Requirement | Value |
 | --- | --- |
 | Software | KiCad 9, or [draw.io](https://app.diagrams.net/) for diagrams |
-| Voltage rating | MOSFETs and capacitors on the battery side rated 80 V or more; TVS diode standoff about 54 to 58 V |
+| Voltage rating | MOSFETs and capacitors on the battery side rated 80 to 100 V; TVS diode standoff about 54 to 58 V |
 | Where new files go | `electrical/` in the Bakfiets-F26 repo |
 | Battery work | Only with the electrical lead present, after all safety training |
 
@@ -317,6 +317,7 @@ Run [`firmware/desk-demo/desk-demo.ino`](firmware/desk-demo/desk-demo.ino) on an
 | ESP32-S3 dev board, such as the ESP32-S3-DevKitC-1 | It must be an S3. A plain ESP32 wires GPIO 9 and 10 to its flash chip |
 | SSD1306 128x64 I2C OLED (the common 0.96-inch screen) | Board and screen together cost roughly CAD $25 online |
 | 4 female-to-female jumper wires, and a USB-C data cable | No LED strip is needed |
+| For Stage 2: a push button, a breadboard and a few resistors | Needed for #14 and #15. #15 also uses a bench power supply |
 
 #### Steps
 
@@ -325,9 +326,9 @@ Run [`firmware/desk-demo/desk-demo.ino`](firmware/desk-demo/desk-demo.ino) on an
 3. Choose **File > Open** and pick `firmware\desk-demo\desk-demo.ino` in your clone.
 4. Choose **Tools > Board > esp32 > ESP32S3 Dev Module**, and set **Tools > USB CDC On Boot** to **Enabled**.
 5. Plug in using the board's USB-C port labelled **USB** (not UART). Pick its COM port under **Tools > Port**.
-6. Click **Upload**. After about 10 seconds the screen shows 50%, 36 km/h and PA 5.
+6. Click **Upload**. After about 10 seconds the screen shows 50%, 36 km/h and PA 5. It stays blank at first because the code plays the LED animation before it draws.
 
-**💡 Hint:** upload says "Failed to connect"? Hold **BOOT**, tap **RST**, release BOOT, and upload again. No COM port? Try another cable, since some only charge. Blank screen? Check SDA and SCL, then set `SCREEN_ADDRESS` to `0x3D`.
+**💡 Hint:** upload says "Failed to connect"? Hold **BOOT**, tap **RST**, release BOOT, and upload again. No COM port? Try another cable, since some only charge; if you're on the port labelled UART instead, install the CP210x or CH340 USB driver. Blank screen? Check SDA and SCL, then set `SCREEN_ADDRESS` to `0x3D`.
 
 Video: [ESP32 OLED tutorial for beginners](https://www.youtube.com/watch?v=u8g34BS8Ouw) (17 min).
 
@@ -383,13 +384,13 @@ A pull request with your sketch, a photo or short video of it working, and `Clos
 - [ ] Your subteam's software installed
 - [ ] WHMIS 2015 (SO2017) and the SDC safety courses done on LEARN, before any work in the room
 - [ ] Stage 1 deliverable posted
-- [ ] One Stage 2 issue claimed
+- [ ] One Stage 2 issue finished (its pull request merged, or its photos and notes posted)
 
 ## How to Submit
 
 1. In GitHub Desktop, click **Current branch > New branch** and name it after your task, for example `battery-mount-sketch`.
 2. Add your files in the right folder (see your Stage 2 constraints).
-3. Click **Commit**, then **Publish branch**, then **Create Pull Request**.
+3. Type a one-line summary in the **Summary** box at the bottom left (GitHub Desktop won't commit without one), click **Commit to your-branch**, then **Publish branch**, then **Create Pull Request**.
 4. In the pull request, say what you did, add screenshots, and write `Closes #<issue number>`.
 5. Post the link in your subteam thread. Your subteam lead approves it.
 
@@ -425,7 +426,7 @@ Each project is a GitHub issue labelled `term project`. The issue says what to f
 | Order | Project | Start after |
 | --- | --- | --- |
 | 1 | [#25 Design a new steering mechanism (rod, cable or hydraulic)](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/25) | Onboarding |
-| 2 | [#26 Mount everything on the frame](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/26) | #3 |
+| 2 | [#26 Mount everything on the frame](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/26) | #3 and #25; part sizes come from #19 and #21 |
 | 3 | [#27 Inspect and fix the cargo box](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/27) | Onboarding |
 | 4 | [#28 Find and buy missing bike parts](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/28) | #2 and #3 |
 | 5 | [#29 Repaint the frame](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/29) | Last: after all welding is done and #6 is approved |
@@ -444,7 +445,9 @@ Ling is tracking down the motor that was meant to go on the bike. Updates go in 
 | Commit | One saved set of changes |  |
 | Branch / pull request | A separate copy of the files you work on, and a request to merge it back after review | [GitHub Hello World](https://docs.github.com/en/get-started/start-your-journey/hello-world) |
 | Main | The official branch of a repo |  |
-| Issue | A task card on GitHub. `good first issue` marks starter tasks |  |
+| Issue | A task card on GitHub. `good first issue` marks the easiest starter tasks; `term project` marks the main work after onboarding |  |
+| Fork | A copy of a repo under your own GitHub account; GitHub Desktop offers one if you can't push yet. (A bike fork is the part that holds the front wheel.) |  |
+| Fetch / pull | Fetch checks GitHub for new changes; pull downloads them into your clone |  |
 | Discord thread | A side conversation inside a channel, one per subteam here |  |
 | LEARN | UW's online course site, where the safety courses are |  |
 | WHMIS | Workplace Hazardous Materials Information System, the chemical safety course |  |
@@ -452,6 +455,7 @@ Ling is tracking down the motor that was meant to go on the bike. Updates go in 
 | CAD | Computer-aided design: 3D models and drawings of parts |  |
 | BOM | Bill of materials: every part, with quantity and where to buy it |  |
 | Datasheet | The maker's document with a part's ratings and limits |  |
+| Design review | A short meeting where the subteam looks at a design and suggests changes before anything is built or bought |  |
 | Term codes | F26 = Fall 2026, W2024 = Winter 2024 |  |
 
 ### Mechanical
@@ -486,7 +490,8 @@ Ling is tracking down the motor that was meant to go on the bike. Updates go in 
 | PDB | Power distribution board: splits battery power and steps 48 V down to 5 V |  |
 | Buck converter | A circuit that steps voltage down efficiently | [Wikipedia](https://en.wikipedia.org/wiki/Buck_converter) |
 | MOSFET | An electronic switch that a small signal can turn on | [MOSFET switch](https://projecthub.arduino.cc/ejshea/connecting-an-n-channel-mosfet-6a7325) |
-| TVS diode | A surge protector. Its standoff voltage must sit above 50.4 V |  |
+| TVS diode | A surge protector. Its standoff voltage (where it starts to conduct) must sit just above 50.4 V; its clamp voltage (the most it lets through) must stay below what the other parts survive |  |
+| Bench power supply | A lab box that gives an adjustable voltage with a current limit, used for safe testing instead of a battery |  |
 | XT60 / JST | A common battery plug / a family of small signal connectors | [XT60](https://components101.com/connectors/xt60-connector) |
 | LiPo bag | A fire-resistant bag for charging and storing batteries |  |
 | Schematic / PCB | A drawing of a circuit / the printed circuit board it's built on | [KiCad getting started](https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html) |
@@ -503,12 +508,15 @@ Ling is tracking down the motor that was meant to go on the bike. Updates go in 
 | VCC / GND / SDA / SCL | Power / ground / I2C data / I2C clock pins |  |
 | I2C | The two-wire link to the screen | [SparkFun I2C](https://learn.sparkfun.com/tutorials/i2c/all) |
 | UART | A simple serial link many motor controllers use | [SparkFun serial](https://learn.sparkfun.com/tutorials/serial-communication/all) |
-| CAN / TWAI | A robust two-wire link between boards. Espressif calls its CAN driver TWAI | [CAN bus](https://en.wikipedia.org/wiki/CAN_bus) |
+| CAN / TWAI | A reliable two-wire link between boards. Espressif calls its CAN driver TWAI | [CAN bus](https://en.wikipedia.org/wiki/CAN_bus) |
 | COM port / USB CDC | How Windows sees the board over USB / the setting that makes Serial Monitor work on the S3's USB port |  |
 | SSD1306 | The 128x64 OLED screen | [Random Nerd Tutorials](https://randomnerdtutorials.com/esp32-ssd1306-oled-display-arduino-ide/) |
 | WS2813 / FastLED | An LED strip where each LED is set on its own / the library that drives it | [Random Nerd Tutorials](https://randomnerdtutorials.com/guide-for-ws2812b-addressable-rgb-led-strip-with-arduino/) |
 | millis() / non-blocking | Arduino's clock / code that keeps running instead of pausing | [Blink Without Delay](https://docs.arduino.cc/built-in-examples/digital/BlinkWithoutDelay/) |
 | ADC pin | A pin that measures a voltage |  |
+| Breadboard | A plastic board with holes for building test circuits without soldering |  |
+| Debounce | Ignoring the brief flicker when a button is pressed, so one press counts once |  |
+| Silkscreen | The printed labels on a circuit board, such as pin names |  |
 
 ## Sources
 

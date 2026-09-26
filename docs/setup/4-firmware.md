@@ -28,7 +28,7 @@ If you don't own these, the board and screen together cost roughly CAD $25 onlin
 7. Wait about 10 seconds. The screen should show 50%, 36 km/h and PA 5. It's blank at first because the code plays the LED animation before it draws.
 
 **Upload says "Failed to connect"?** Hold the **BOOT** button, tap **RST**, release BOOT, then click Upload again.
-**No COM port?** Try another USB-C cable (some only charge), or install the CP210x or CH340 USB driver.
+**No COM port?** Try another USB-C cable (some only charge), or, if you're on the port labelled UART, install the CP210x or CH340 USB driver.
 **Blank screen?** Check the SDA and SCL wires, then change `SCREEN_ADDRESS` in the code to `0x3D`. The message "SSD1306 allocation failed" in Serial Monitor (at 9600 baud) means the ESP32 couldn't reserve memory for the screen; it's not a wiring fault.
 
 More help: [ESP32 OLED tutorial for beginners](https://www.youtube.com/watch?v=u8g34BS8Ouw) (17 min) and the written [ESP32 + SSD1306 guide](https://randomnerdtutorials.com/esp32-ssd1306-oled-display-arduino-ide/).
@@ -49,4 +49,4 @@ More help: [ESP32 OLED tutorial for beginners](https://www.youtube.com/watch?v=u
 
 ## 6. Pick a first task
 
-Start with [#12 Run the desk demo](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/12), then see the [firmware issues](https://github.com/Electrium-Mobility/Bakfiets-F26/issues?q=is%3Aissue+is%3Aopen+label%3Afirmware).
+The desk demo (section 3) is your Stage 1; post a photo on [#12](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/12). Then pick a Stage 2 task in [ONBOARDING.md](../../ONBOARDING.md#firmware-onboarding).
