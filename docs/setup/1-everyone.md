@@ -45,9 +45,9 @@ You can do all setup, CAD and code work right away. You need this training befor
 
 ## 4. Where the bike is
 
-The bike is in the **Electrium Mobility room in The Bay**, the team work bays in the Sedra Student Design Centre. The SDC gives room access to the members listed on each team's term information form, which the project lead submits. To get on it, post a screenshot of your WHMIS certificate in the **Github usernames** thread, and the project lead adds you.
+The bike is in **workbay 1002** in the Sedra Student Design Centre (SDC), the Electrium Mobility bay. To get access, post a screenshot of your WHMIS certificate in the **Github usernames** thread, and the project lead arranges it.
 
-The whole team meets **Wednesdays, 6:30 to 7:30 pm, in the Electrium Mobility room**. Design reviews and team decisions happen there.
+The whole team meets **Wednesdays, 6:30 to 7:30 pm, in workbay 1002**. Design reviews and team decisions happen there.
 
 ## 5. How the team is run
 

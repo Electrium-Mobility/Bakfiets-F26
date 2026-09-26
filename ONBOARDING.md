@@ -78,7 +78,7 @@ You can start setup, CAD and code right away. Finish this before you use tools o
 - The 2024 pack may be over-discharged after sitting since 2024. Don't charge it until the electrical lead has measured it.
 - Never use a swollen or damaged pack. If a pack gets hot, smells or smokes, get everyone away and pull the fire alarm if there's fire. Then tell the electrical lead and the project lead.
 
-**Where the bike is:** the Electrium Mobility room in The Bay, the team work bays in the Sedra Student Design Centre. The SDC gives room access to members on each team's term information form, which the project lead submits. To get on it, post a screenshot of your WHMIS certificate in the **Github usernames** thread, and the project lead adds you.
+**Where the bike is:** **workbay 1002** in the Sedra Student Design Centre (SDC), the Electrium Mobility bay. To get access, post a screenshot of your WHMIS certificate in the **Github usernames** thread, and the project lead arranges it.
 
 ## The Project
 
@@ -126,12 +126,12 @@ The 2024 files disagree on a few basics. Below is the answer we're working from 
 
 | Role | Person | What they do |
 | --- | --- | --- |
-| Project lead | Justin Gu | Priorities, decisions that affect more than one subteam, purchases and room access |
+| Project lead | Justin Gu | Priorities, decisions that affect more than one subteam, purchases (through the SDC purchase request process) and room access |
 | Mechanical lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Runs the Bakfiets Mechanical thread, keeps mechanical issues current, approves CAD pull requests |
 | Electrical lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Same for electrical, and supervises all battery work |
 | Firmware lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Same for firmware, and approves code pull requests |
 
-Until the subteam leads are chosen, Justin Gu covers all three roles. The whole team meets **Wednesdays, 6:30 to 7:30 pm, in the Electrium Mobility room**. Design reviews and team decisions happen there. Subteam leads also meet the project lead briefly each week to raise blockers. The first team meeting was on 2026-09-23.
+Until the subteam leads are chosen, Justin Gu covers all three roles. The whole team meets **Wednesdays, 6:30 to 7:30 pm, in workbay 1002**. Design reviews and team decisions happen there. Subteam leads also meet the project lead briefly each week to raise blockers. The first team meeting was on 2026-09-23.
 
 **How work flows:** you claim a task by commenting "I'll take this" on its GitHub issue; nobody needs to assign you. You post a short update on your issue each week: what you did, what's next, and anything blocking you. Anyone can review a pull request, and your subteam lead gives the final approval.
 
@@ -311,7 +311,7 @@ You will get the 2024 display code running on your desk, then start connecting i
 
 ### Stage 1: Run the Desk Demo
 
-**This stage is split in two.** Steps 1, 3 and 4 need no hardware: do them on your own laptop **before Wednesday's meeting**, then click **Verify** (the checkmark button, top left) to check the code builds without a board plugged in. Do steps 2, 5 and 6 **at the Wednesday meeting**, where you'll borrow a board and screen.
+**This stage is split in two.** Steps 1, 3 and 4 need no hardware: do them on your own laptop **before Wednesday's meeting**, then click **Verify** (the checkmark button, top left) to check the code builds without a board plugged in. Do steps 2, 5 and 6 once you have a board and screen. How to get a board and screen will be posted in the **Bakfiets Firmware** thread.
 
 #### Task
 
@@ -322,7 +322,7 @@ Run [`firmware/desk-demo/desk-demo.ino`](firmware/desk-demo/desk-demo.ino) on an
 | Part | Notes |
 | --- | --- |
 | ESP32-S3 dev board, such as the ESP32-S3-DevKitC-1 | It must be an S3. A plain ESP32 wires GPIO 9 and 10 to its flash chip |
-| SSD1306 128x64 I2C OLED (the common 0.96-inch screen) | Borrow both from the Electrium Mobility room |
+| SSD1306 128x64 I2C OLED (the common 0.96-inch screen) | How to get a board and screen will be posted in the **Bakfiets Firmware** thread. |
 | 4 female-to-female jumper wires, and a USB-C data cable | No LED strip is needed |
 | For Stage 2: a push button, a breadboard and a few resistors | Needed for #14 and #15. #15 also uses a bench power supply |
 
@@ -530,7 +530,7 @@ Ling is tracking down the motor that was meant to go on the bike. Updates go in 
 - [Bakfiets-F26](https://github.com/Electrium-Mobility/Bakfiets-F26): this term's repo. [`docs/history/SOURCES.md`](docs/history/SOURCES.md) records where every file came from and the 2024 team roster
 - [bakfiets](https://github.com/Electrium-Mobility/bakfiets): the original 2024 repo, kept unchanged as the archive
 - Club website pages for [W2024](https://github.com/Electrium-Mobility/electrium-w24website/blob/main/docs/W2024-projects/project1_2023.md) and [W2025](https://github.com/Electrium-Mobility/electrium-w24website/blob/main/docs/W2025-projects/bakfiets_2024.md)
-- UW: [WHMIS](https://uwaterloo.ca/safety-office/training/student-safety-orientation-whmis), [student shops](https://uwaterloo.ca/engineering-student-shops/getting-started), [lithium battery standard](https://uwaterloo.ca/safety-office/laboratory-safety/batteries), [lab software](https://uwaterloo.ca/engineering-computing/computer-labs/lab-software)
+- UW: [SDC Forms and Team Information](https://uwaterloo.ca/sedra-student-design-centre/forms-and-team-information) (SDC forms for purchases, expenses and room booking; UW login needed), [WHMIS](https://uwaterloo.ca/safety-office/training/student-safety-orientation-whmis), [student shops](https://uwaterloo.ca/engineering-student-shops/getting-started), [lithium battery standard](https://uwaterloo.ca/safety-office/laboratory-safety/batteries), [lab software](https://uwaterloo.ca/engineering-computing/computer-labs/lab-software)
 
 This guide draws on all 82 repos in the Electrium-Mobility org, searched on 2026-09-25. Every video link was checked against YouTube.
 
