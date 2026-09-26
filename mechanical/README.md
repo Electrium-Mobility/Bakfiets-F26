@@ -1,6 +1,6 @@
-# Hardware
+# Mechanical
 
-All SolidWorks files for the bakfiets. Setup steps are in [docs/setup/2-hardware.md](../docs/setup/2-hardware.md).
+All SolidWorks files for the bakfiets. Setup steps are in [docs/setup/2-mechanical.md](../docs/setup/2-mechanical.md).
 
 **Don't move or rename files inside `cad-2024/` or `cad-2025-coop/`.** The assemblies find their parts by folder path. Put new work in a new folder such as `cad-2026/`.
 

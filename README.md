@@ -8,9 +8,10 @@ Electrium Mobility's electric cargo bike ("Bak Choy"), Fall 2026. This repo hold
 
 1. **Make a GitHub account and join the Discord** ([invite](https://discord.gg/jggFVza4XR)). In the **Bakfiets F26** category, post your GitHub username in the **Github usernames** thread so you can be added to the org.
 2. **Set up your computer** with the step-by-step guide for everyone: [docs/setup/1-everyone.md](docs/setup/1-everyone.md).
-3. **Set up for your subteam:** [Mechanical](docs/setup/2-hardware.md) · [Electrical](docs/setup/3-electrical.md) · [Firmware](docs/setup/4-firmware.md).
+3. **Set up for your subteam:** [Mechanical](docs/setup/2-mechanical.md) · [Electrical](docs/setup/3-electrical.md) · [Firmware](docs/setup/4-firmware.md).
 4. **Pick a task** from the [Issues tab](https://github.com/Electrium-Mobility/Bakfiets-F26/issues). Anything labelled `good first issue` is meant for you. Comment "I'll take this" and it's yours.
-5. **Questions** go in your subteam's thread in #bakfiets-general. Who leads what is in [the everyone guide](docs/setup/1-everyone.md#5-how-the-team-is-run).
+5. **After onboarding,** move on to the term projects in [docs/term-projects.md](docs/term-projects.md) (issues labelled `term project`).
+6. **Questions** go in your subteam's thread in #bakfiets-general. Who leads what is in [the everyone guide](docs/setup/1-everyone.md#5-how-the-team-is-run).
 
 **Safety first:** don't weld, cut, grind or use the laser cutter, and don't touch a battery pack, until you've done the training listed in [the everyone guide](docs/setup/1-everyone.md#3-safety-training).
 
@@ -18,12 +19,13 @@ Electrium Mobility's electric cargo bike ("Bak Choy"), Fall 2026. This repo hold
 
 | Folder | What's inside | Start with |
 | --- | --- | --- |
-| [`hardware/`](hardware/) | All SolidWorks CAD | [`hardware/README.md`](hardware/README.md) |
-| [`hardware/cad-2025-coop/`](hardware/cad-2025-coop/) | Newest model (May 2025), matches the partly built bike | `bakfiets_main_asm.SLDASM` |
-| [`hardware/cad-2024/`](hardware/cad-2024/) | The 2024 design: frame, steering, kickstand, cargo box, welding jig, notching guides, FEA study | `Assem1.SLDASM` |
+| [`mechanical/`](mechanical/) | All SolidWorks CAD | [`mechanical/README.md`](mechanical/README.md) |
+| [`mechanical/cad-2025-coop/`](mechanical/cad-2025-coop/) | Newest model (May 2025), matches the partly built bike | `bakfiets_main_asm.SLDASM` |
+| [`mechanical/cad-2024/`](mechanical/cad-2024/) | The 2024 design: frame, steering, kickstand, cargo box, welding jig, notching guides, FEA study | `Assem1.SLDASM` |
 | [`electrical/`](electrical/) | The 2024 block diagram and notes on reusable boards | [`electrical/README.md`](electrical/README.md) |
 | [`firmware/`](firmware/) | Display code, a ready-to-run desk demo, the CAN bus example | [`firmware/desk-demo/desk-demo.ino`](firmware/desk-demo/desk-demo.ino) |
 | [`docs/setup/`](docs/setup/) | Step-by-step setup guides with videos | [`1-everyone.md`](docs/setup/1-everyone.md) |
+| [`docs/term-projects.md`](docs/term-projects.md) | The main goals for the term, for after onboarding | |
 | [`docs/reference-projects.md`](docs/reference-projects.md) | Other Electrium repos worth copying from | |
 | [`docs/images/`](docs/images/) | Renders, CAD previews, diagrams, photos | |
 | [`docs/history/`](docs/history/) | Old README, website pages, and where every file came from | [`SOURCES.md`](docs/history/SOURCES.md) |
@@ -32,7 +34,7 @@ Electrium Mobility's electric cargo bike ("Bak Choy"), Fall 2026. This repo hold
 
 | Area | What exists | Next milestone |
 | --- | --- | --- |
-| Hardware | SolidWorks model, welding jig, notching guides, one FEA study, a partly built frame | Record what is welded; rerun FEA with written load cases |
+| Mechanical | SolidWorks model, welding jig, notching guides, one FEA study, a partly built frame | Record what is welded; rerun FEA with written load cases |
 | Electrical | A power flow diagram; nothing else survived on GitHub | Confirm the hub motor and VESC; draft the power board schematic |
 | Firmware | A screen and LED demo with fixed numbers | Show a real battery voltage and one working button |
 
@@ -55,4 +57,4 @@ The step-by-step onboarding, with first assignments per subteam and a glossary, 
 
 - Work on a branch and open a pull request. Don't push straight to `main`.
 - Don't move or rename SolidWorks files inside `cad-2024/` or `cad-2025-coop/`. Assemblies find their parts by folder path, and moving files breaks them.
-- Put new work in a new folder, for example `hardware/cad-2026/` or `firmware/display-2026/`.
+- Put new work in a new folder, for example `mechanical/cad-2026/` or `firmware/display-2026/`.

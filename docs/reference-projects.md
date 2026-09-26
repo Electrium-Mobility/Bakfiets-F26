@@ -2,7 +2,7 @@
 
 Other Electrium teams have solved many of our problems already. This list comes from checking all 82 repos in the org in September 2026. Private repos need org access; post your GitHub username in the Discord thread.
 
-## Hardware
+## Mechanical
 
 | Resource | What you'll learn | Access |
 | --- | --- | --- |

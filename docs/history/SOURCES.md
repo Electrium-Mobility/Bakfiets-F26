@@ -4,9 +4,9 @@ Copied on 2026-09-26 from [Electrium-Mobility/bakfiets](https://github.com/Elect
 
 | Folder here | Source | Commit |
 | --- | --- | --- |
-| `hardware/cad-2024/` | `mechanical/` on `main` | 4b86a22 (2024-07-04) |
-| `hardware/cad-2025-coop/` | `mechanical/bakfiets_coop_version/` on `summer2025coop` | 6fc9958 (2025-05-28) |
-| `hardware/cad-2025-coop/edited-2024-parts/` | five top-level `mechanical/` files as edited on `summer2025coop` | 6fc9958 |
+| `mechanical/cad-2024/` | `mechanical/` on `main` | 4b86a22 (2024-07-04) |
+| `mechanical/cad-2025-coop/` | `mechanical/bakfiets_coop_version/` on `summer2025coop` | 6fc9958 (2025-05-28) |
+| `mechanical/cad-2025-coop/edited-2024-parts/` | five top-level `mechanical/` files as edited on `summer2025coop` | 6fc9958 |
 | `firmware/display-2024/` | `firmware/main.cpp`, `firmware/display-prototype.jpeg` on `main` | 4b86a22 |
 | `firmware/desk-demo/` | copy of `firmware/main.cpp` with `LED_PIN` changed from 9 to 5 | new |
 | `firmware/simulator-2024/` | `firmware/simulator/` on `main`, without the 314 MB `target/` build folder | 4b86a22 |

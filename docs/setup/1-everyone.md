@@ -1,6 +1,6 @@
 # Setup for everyone
 
-Do these steps once, in order. Each takes 5 to 15 minutes. Then go to your subteam's guide: [Mechanical](2-hardware.md) · [Electrical](3-electrical.md) · [Firmware](4-firmware.md).
+Do these steps once, in order. Each takes 5 to 15 minutes. Then go to your subteam's guide: [Mechanical](2-mechanical.md) · [Electrical](3-electrical.md) · [Firmware](4-firmware.md).
 
 ## 1. Make your accounts and join Discord
 
@@ -67,10 +67,10 @@ Habits for everyone:
 
 ## 6. Pick a task and share your work
 
-1. Open the [Issues tab](https://github.com/Electrium-Mobility/Bakfiets-F26/issues). Filter by your subteam label (`hardware`, `electrical` or `firmware`) and `good first issue`.
+1. Open the [Issues tab](https://github.com/Electrium-Mobility/Bakfiets-F26/issues). Filter by your subteam label (`mechanical`, `electrical` or `firmware`) and `good first issue`.
 2. Comment "I'll take this". It's yours.
 3. In GitHub Desktop, click **Current branch > New branch** and name it after the task, for example `battery-mount-sketch`.
-4. Do the work. Save new files in a new folder such as `hardware/cad-2026/` (create it if it doesn't exist), not inside the 2024 or 2025 folders.
+4. Do the work. Save new files in a new folder such as `mechanical/cad-2026/` (create it if it doesn't exist), not inside the 2024 or 2025 folders.
 5. Click **Commit to your-branch**, then **Publish branch**, then **Create Pull Request**. Say what you did and add `Closes #<issue number>`.
 6. Post the pull request link in your subteam thread.
 

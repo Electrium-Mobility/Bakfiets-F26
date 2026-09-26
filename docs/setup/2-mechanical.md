@@ -1,6 +1,6 @@
 # Setup for mechanical
 
-Finish [Setup for everyone](1-everyone.md) first. Your files are in the `hardware/` folder of your clone.
+Finish [Setup for everyone](1-everyone.md) first. Your files are in the `mechanical/` folder of your clone.
 
 ## 1. Get SolidWorks 2026
 
@@ -17,13 +17,13 @@ The frame is built from custom tube shapes ("weldment profiles") stored in your 
 
 1. Open SolidWorks and choose **Tools > Options > System Options > File Locations**.
 2. In **Show folders for**, pick **Weldment Profiles**.
-3. Click **Add** and choose your clone's `hardware\cad-2025-coop` folder (the one that contains `bakfiets_weldment_profiles`).
+3. Click **Add** and choose your clone's `mechanical\cad-2025-coop` folder (the one that contains `bakfiets_weldment_profiles`).
 4. Click **OK**, then **Yes** if asked to confirm.
 
 ## 3. Open the bike
 
 1. In SolidWorks, choose **File > Open**.
-2. Go to your clone's `hardware\cad-2025-coop` folder and open `bakfiets_main_asm.SLDASM`.
+2. Go to your clone's `mechanical\cad-2025-coop` folder and open `bakfiets_main_asm.SLDASM`.
 3. If SolidWorks asks where a part is, point it at the same `cad-2025-coop` folder.
 
 Every part follows one master sketch, `bakfiets_master_sketch.SLDPRT`. Change the sketch and the whole bike updates.
@@ -39,14 +39,14 @@ Every part follows one master sketch, `bakfiets_master_sketch.SLDPRT`. Change th
 
 | Need | File in your clone |
 | --- | --- |
-| Whole 2024 bike | `hardware/cad-2024/Assem1.SLDASM` |
-| Frame and its drawing | `hardware/cad-2024/Frame 2.0.SLDPRT`, `hardware/cad-2024/Frame 2.0-Sweep8.SLDDRW` |
-| Welding jig | `hardware/cad-2024/jig/Jig/JigV2.SLDASM` |
-| Notching guides | `hardware/cad-2024/notches/` |
-| Steering | `hardware/cad-2024/steering system/steeringAssembly.SLDASM` |
+| Whole 2024 bike | `mechanical/cad-2024/Assem1.SLDASM` |
+| Frame and its drawing | `mechanical/cad-2024/Frame 2.0.SLDPRT`, `mechanical/cad-2024/Frame 2.0-Sweep8.SLDDRW` |
+| Welding jig | `mechanical/cad-2024/jig/Jig/JigV2.SLDASM` |
+| Notching guides | `mechanical/cad-2024/notches/` |
+| Steering | `mechanical/cad-2024/steering system/steeringAssembly.SLDASM` |
 
-Every file is explained in [`hardware/README.md`](../../hardware/README.md). Don't move or rename anything in `cad-2024` or `cad-2025-coop`; save your work in `hardware/cad-2026/` (create the folder if it's missing).
+Every file is explained in [`mechanical/README.md`](../../mechanical/README.md). Don't move or rename anything in `cad-2024` or `cad-2025-coop`; save your work in `mechanical/cad-2026/` (create the folder if it's missing).
 
 ## 6. Pick a first task
 
-See the [mechanical issues](https://github.com/Electrium-Mobility/Bakfiets-F26/issues?q=is%3Aissue+is%3Aopen+label%3Ahardware). Good first ones: #2 (photograph the frame) and #3 (list the parts).
+See the [mechanical issues](https://github.com/Electrium-Mobility/Bakfiets-F26/issues?q=is%3Aissue+is%3Aopen+label%3Amechanical). Good first ones: #2 (photograph the frame) and #3 (list the parts).
