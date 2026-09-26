@@ -1,0 +1,11 @@
+# SolidWorks lock and temp files
+~$*
+*.SLDBAK
+# SolidWorks Simulation results (large, regenerate by rerunning the study)
+*.CWR
+# OS junk
+.DS_Store
+Thumbs.db
+# Build output
+firmware/simulator-2024/target/
+**/build/
