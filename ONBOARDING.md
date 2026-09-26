@@ -77,7 +77,7 @@ You can start setup, CAD and code right away. Finish this before you use tools o
 - The 2024 pack may be over-discharged after sitting since 2024. Don't charge it until the electrical lead has measured it.
 - Never use a swollen or damaged pack. If a pack gets hot, smells or smokes, get everyone away and pull the fire alarm if there's fire. Then tell the electrical lead and the project lead.
 
-**Where the bike is:** the Electrium Mobility room in The Bay, the team work bays in the Sedra Student Design Centre. The SDC gives room access to members on each team's term information form, which the project lead submits.
+**Where the bike is:** the Electrium Mobility room in The Bay, the team work bays in the Sedra Student Design Centre. The SDC gives room access to members on each team's term information form, which the project lead submits. To get on it, post a screenshot of your WHMIS certificate in the **Github usernames** thread, and the project lead adds you.
 
 ## The Project
 
@@ -130,7 +130,7 @@ The 2024 files disagree on a few basics. Below is the answer we're working from 
 | Electrical lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Same for electrical, and supervises all battery work |
 | Firmware lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Same for firmware, and approves code pull requests |
 
-Until the subteam leads are chosen, Justin Gu covers all three roles. Subteam leads meet the project lead briefly each week to raise blockers. The first team meeting was on 2026-09-23.
+Until the subteam leads are chosen, Justin Gu covers all three roles. The whole team meets **Wednesdays, 6 to 7 pm, in the Electrium Mobility room**. Design reviews and team decisions happen there. Subteam leads also meet the project lead briefly each week to raise blockers. The first team meeting was on 2026-09-23.
 
 **How work flows:** you claim a task by commenting "I'll take this" on its GitHub issue; nobody needs to assign you. You post a short update on your issue each week: what you did, what's next, and anything blocking you. Anyone can review a pull request, and your subteam lead gives the final approval.
 
@@ -315,7 +315,7 @@ Run [`firmware/desk-demo/desk-demo.ino`](firmware/desk-demo/desk-demo.ino) on an
 | Part | Notes |
 | --- | --- |
 | ESP32-S3 dev board, such as the ESP32-S3-DevKitC-1 | It must be an S3. A plain ESP32 wires GPIO 9 and 10 to its flash chip |
-| SSD1306 128x64 I2C OLED (the common 0.96-inch screen) | Board and screen together cost roughly CAD $25 online |
+| SSD1306 128x64 I2C OLED (the common 0.96-inch screen) | Borrow both from the Electrium Mobility room |
 | 4 female-to-female jumper wires, and a USB-C data cable | No LED strip is needed |
 | For Stage 2: a push button, a breadboard and a few resistors | Needed for #14 and #15. #15 also uses a bench power supply |
 

@@ -9,7 +9,7 @@ Finish [Setup for everyone](1-everyone.md) first.
 - Four female-to-female jumper wires and a USB-C cable.
 - No LED strip is needed for the desk demo.
 
-If you don't own these, the board and screen together cost roughly CAD $25 online.
+Borrow the board and screen from the Electrium Mobility room.
 
 ## 2. Install Arduino IDE and ESP32 support
 
