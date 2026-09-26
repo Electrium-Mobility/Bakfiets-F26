@@ -1,6 +1,6 @@
 # Term projects (after onboarding)
 
-These are the main goals for the term, from the Electrium team lead (Ling). Start them **after onboarding**: once you've finished your subteam's Stage 1 and one Stage 2 starter task from the [onboarding guide](https://claude.ai/code/artifact/b6004990-ae9d-4ec5-97b0-95172e4c6a2b).
+These are the main goals for the term, from the Electrium team lead (Ling). Start them **after onboarding**: once you've finished your subteam's Stage 1 and one Stage 2 starter task from the [onboarding guide](../ONBOARDING.md).
 
 Every project is a GitHub issue with the `term project` label. Each one lists what to finish first, step-by-step instructions, safety notes, links to videos and example code, and a clear "done when". Claim one by commenting "I'll take this".
 

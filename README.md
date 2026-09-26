@@ -6,6 +6,8 @@ Electrium Mobility's electric cargo bike ("Bak Choy"), Fall 2026. This repo hold
 
 ## New here? Do these in order
 
+**Start with [ONBOARDING.md](ONBOARDING.md).** It walks you from zero to your first contribution. The short version:
+
 1. **Make a GitHub account and join the Discord** ([invite](https://discord.gg/jggFVza4XR)). In the **Bakfiets F26** category, post your GitHub username in the **Github usernames** thread so you can be added to the org.
 2. **Set up your computer** with the step-by-step guide for everyone: [docs/setup/1-everyone.md](docs/setup/1-everyone.md).
 3. **Set up for your subteam:** [Mechanical](docs/setup/2-mechanical.md) · [Electrical](docs/setup/3-electrical.md) · [Firmware](docs/setup/4-firmware.md).
@@ -49,9 +51,9 @@ The 2024 files disagree on a few basics. These are the answers we're working fro
 | What happened to the 2024 electrical design? | Only the block diagram was saved, so the power board and wiring are designed fresh | Photograph anything still on the bike. [Issue #7](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/7) |
 | How much of the frame is built? | Partly: the May 2025 CAD calls it "partially built" | List the welded joints and measure against the CAD. [Issues #2](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/2) and [#4](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/4) |
 
-The onboarding doc explains what changes in each plan if an answer turns out wrong.
+[ONBOARDING.md](ONBOARDING.md#open-questions) explains what changes in each plan if an answer turns out wrong.
 
-The step-by-step onboarding, with first assignments per subteam and a glossary, is the [Bakfiets F26 Onboarding doc](https://claude.ai/code/artifact/b6004990-ae9d-4ec5-97b0-95172e4c6a2b) (also pinned in #bakfiets-general).
+The step-by-step onboarding, with first assignments per subteam and a glossary, is [ONBOARDING.md](ONBOARDING.md).
 
 ## Rules for this repo
 
