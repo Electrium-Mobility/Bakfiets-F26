@@ -74,4 +74,6 @@ Habits for everyone:
 5. Click **Commit to your-branch**, then **Publish branch**, then **Create Pull Request**. Say what you did and add `Closes #<issue number>`.
 6. Post the pull request link in your subteam thread.
 
+If GitHub Desktop says you don't have permission to push and offers to **create a fork**, click **Fork this repository**, then choose **To contribute to the parent project**. A fork is your own copy of the repo on GitHub; your pull request still goes to Bakfiets-F26 as normal. This happens until you've been given write access to the repo.
+
 GitHub's [Hello World guide](https://docs.github.com/en/get-started/start-your-journey/hello-world) walks through branches and pull requests.
