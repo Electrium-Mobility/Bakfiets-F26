@@ -7,8 +7,9 @@ Do these steps once, in order. Most take 5 to 15 minutes; the safety courses tak
 1. Make a free GitHub account at [github.com/signup](https://github.com/signup). Any email works.
 2. Join the Electrium Discord: [discord.gg/jggFVza4XR](https://discord.gg/jggFVza4XR).
 3. Open the **Bakfiets F26** category:
-   - **#bakfiets-general** is the main channel for the whole team. Inside it, the **Github usernames** thread is where you post your GitHub username, so you'll be added to the Electrium-Mobility GitHub org and can upload your work.
-   - **Bakfiets Mechanical**, **Bakfiets Electrical** and **Bakfiets Firmware** are the subteam channels. Post subteam questions there.
+   - **#bakfiets-general** is the main channel for the whole team. It has four threads:
+   - **Bakfiets Mechanical**, **Bakfiets Electrical** and **Bakfiets Firmware**: one per subteam. Post subteam questions there.
+   - **Github usernames**: post your GitHub username here, so you'll be added to the Electrium-Mobility GitHub org and can upload your work.
 
 The repo is public, so you can download everything before you're added.
 
@@ -53,7 +54,7 @@ The whole team meets **Wednesdays, 6:30 to 7:30 pm, in the Electrium Mobility ro
 | Role | Person | What they do |
 | --- | --- | --- |
 | Project lead | Justin Gu | Priorities, decisions that affect more than one subteam (like the motor), purchases, room access |
-| Mechanical lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Runs the Bakfiets Mechanical channel, keeps mechanical issues up to date, approves CAD pull requests |
+| Mechanical lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Runs the Bakfiets Mechanical thread, keeps mechanical issues up to date, approves CAD pull requests |
 | Electrical lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Same for electrical, and supervises all battery work |
 | Firmware lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Same for firmware, and approves code pull requests |
 
@@ -61,7 +62,7 @@ Until the subteam leads are chosen, Justin Gu covers all three roles.
 
 Habits for everyone:
 
-- Post questions in your subteam's channel, where the answer helps the next person too.
+- Post questions in your subteam's thread, where the answer helps the next person too.
 - Claim tasks yourself by commenting "I'll take this" on an issue. Nobody needs to assign you.
 - Update your issue weekly: what you did, what's next, and anything that's blocking you.
 - Anyone can review a pull request; your subteam lead gives the final approval.
@@ -73,7 +74,7 @@ Habits for everyone:
 3. In GitHub Desktop, click **Current branch > New branch** and name it after the task, for example `battery-mount-sketch`.
 4. Do the work. Save new files in a new folder such as `mechanical/cad-2026/` (create it if it doesn't exist), not inside the 2024 or 2025 folders.
 5. Type a one-line summary in the **Summary** box at the bottom left, click **Commit to your-branch**, then **Publish branch**, then **Create Pull Request**. Say what you did and add `Closes #<issue number>`.
-6. Post the pull request link in your subteam channel.
+6. Post the pull request link in your subteam thread.
 
 If GitHub Desktop says you don't have permission to push and offers to **create a fork**, click **Fork this repository**, then choose **To contribute to the parent project**. A fork is your own copy of the repo on GitHub; your pull request still goes to Bakfiets-F26 as normal. This only happens until you've been added to the Electrium-Mobility org, which gives write access automatically.
 

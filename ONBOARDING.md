@@ -16,7 +16,7 @@ This page takes you from zero to your first contribution. Work through it from t
 - Never work on a battery pack alone.
 - Work on a branch and open a pull request. Never push straight to `main`.
 - Never move or rename files in `mechanical/cad-2024/` or `mechanical/cad-2025-coop/`. Assemblies find their parts by folder path, and moving a file breaks them.
-- Post questions in your subteam's Discord channel, not in DMs. That way one answer helps everyone.
+- Post questions in your subteam's Discord thread, not in DMs. That way one answer helps everyone.
 
 ## Getting Started
 
@@ -36,7 +36,7 @@ We are not going to teach you everything here. The linked videos cover what your
 
 1. Make a free GitHub account at [github.com/signup](https://github.com/signup).
 2. Join the Electrium Discord with the [club invite](https://discord.gg/jggFVza4XR).
-3. Open the **Bakfiets F26** category. **#bakfiets-general** is the main channel for the whole team. Each subteam also has its own channel: **Bakfiets Mechanical**, **Bakfiets Electrical** and **Bakfiets Firmware**. Post subteam questions there.
+3. Open the **Bakfiets F26** category. **#bakfiets-general** is the main channel for the whole team. Inside it are four threads: one per subteam (**Bakfiets Mechanical**, **Bakfiets Electrical** and **Bakfiets Firmware**), where subteam questions go, and **Github usernames**.
 4. Post your GitHub username in the **Github usernames** thread inside #bakfiets-general. You'll be added to the Electrium-Mobility org, which lets you upload your work.
 
 ### Download the Files
@@ -127,7 +127,7 @@ The 2024 files disagree on a few basics. Below is the answer we're working from 
 | Role | Person | What they do |
 | --- | --- | --- |
 | Project lead | Justin Gu | Priorities, decisions that affect more than one subteam, purchases and room access |
-| Mechanical lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Runs the Bakfiets Mechanical channel, keeps mechanical issues current, approves CAD pull requests |
+| Mechanical lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Runs the Bakfiets Mechanical thread, keeps mechanical issues current, approves CAD pull requests |
 | Electrical lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Same for electrical, and supervises all battery work |
 | Firmware lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Same for firmware, and approves code pull requests |
 
@@ -162,7 +162,7 @@ First time in SolidWorks? Watch [Your First Part](https://www.youtube.com/watch?
 
 #### Deliverable
 
-A screenshot of the full assembly open in SolidWorks, posted in the **Bakfiets Mechanical** channel.
+A screenshot of the full assembly open in SolidWorks, posted in the **Bakfiets Mechanical** thread.
 
 ### Stage 2: First Contribution
 
@@ -399,7 +399,7 @@ A pull request with your sketch, a photo or short video of it working, and `Clos
 2. Add your files in the right folder (see your Stage 2 constraints).
 3. Type a one-line summary in the **Summary** box at the bottom left (GitHub Desktop won't commit without one), click **Commit to your-branch**, then **Publish branch**, then **Create Pull Request**.
 4. In the pull request, say what you did, add screenshots, and write `Closes #<issue number>`.
-5. Post the link in your subteam channel. Your subteam lead approves it.
+5. Post the link in your subteam thread. Your subteam lead approves it.
 
 **💡 Hint:** if GitHub Desktop says you don't have permission to push and offers to **create a fork**, click **Fork this repository**, then choose **To contribute to the parent project**. A fork is your own copy of the repo on GitHub. Your pull request still goes to Bakfiets-F26 as normal. This only happens until you've been added to the Electrium-Mobility org, which gives write access automatically.
 
@@ -455,7 +455,7 @@ Ling is tracking down the motor that was meant to go on the bike. Updates go in 
 | Issue | A task card on GitHub. `good first issue` marks the easiest starter tasks; `term project` marks the main work after onboarding |  |
 | Fork | A copy of a repo under your own GitHub account; GitHub Desktop offers one if you can't push yet. (A bike fork is the part that holds the front wheel.) |  |
 | Fetch / pull | Fetch checks GitHub for new changes; pull downloads them into your clone |  |
-| Discord channel / thread | A channel is a chat room (one per subteam here); a thread is a side conversation inside a channel, like Github usernames |  |
+| Discord channel / thread | A channel is a chat room, like #bakfiets-general; a thread is a side conversation inside a channel (one per subteam here, plus Github usernames) |  |
 | LEARN | UW's online course site, where the safety courses are |  |
 | WHMIS | Workplace Hazardous Materials Information System, the chemical safety course |  |
 | SDC | The Sedra Student Design Centre, the building with the team work bays |  |
