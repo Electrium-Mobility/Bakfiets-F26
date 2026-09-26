@@ -32,20 +32,24 @@ You can do all setup, CAD and code work right away. You need this training befor
 | Training | Needed for | How to get it |
 | --- | --- | --- |
 | WHMIS 2015 (course code SO2017), about 1 hour, renew every 5 years | Everything in the shop or our room | [LEARN](https://learn.uwaterloo.ca/) > Self Registration. [Safety Office page](https://uwaterloo.ca/safety-office/training/student-safety-orientation-whmis) |
-| Engineering Student Machine Shop Orientation | The Engineering Student Shops; you get an access card afterwards | LEARN; score 100% on each module quiz. [Student Shops page](https://uwaterloo.ca/engineering-student-shops/getting-started) |
-| Machine training (laser cutter, welding) | Only those machines | Hands-on training from the shop that runs the machine. No onboarding task needs it |
+| Engineering Student Machine Shop Orientation | The Engineering Student Shops; you get an access card afterwards | LEARN; score 100% on each module quiz. [Student Shops page](https://uwaterloo.ca/engineering-student-shops/getting-started). Shop hours this term: 8:30 am to 4:30 pm, Monday to Friday, plus every second Saturday |
+| Welding | The SDC welding room | Welding training is now run by the MME department's new welding lab. Everyone, including previously approved welders, must pass the weld test before using the room; the SDC's Graeme is sending details. No onboarding task needs it |
+| Laser cutter | Only that machine | Hands-on, from the shop that runs it. No onboarding task needs it |
 
 **Battery rules** (from the UW Safety Office [Lithium Cell and Battery Standard](https://uwaterloo.ca/safety-office/laboratory-safety/batteries), plus common practice):
 
 - Never work on a pack alone. Wear safety glasses, take off rings and watches, use insulated tools, and tape over bare terminals.
 - Charge and store packs in a fire-resistant LiPo bag, away from anything that burns. Never leave one charging unattended, and don't leave it sitting on the charger.
+- Every pack goes on the SDC's shared battery and chemical inventory sheet, which the SDC is setting up this term.
 - Our pack reaches 50.4 V when full, which is over the 50 V line where UW's standard calls for electrical-safety procedures. Use only the matching 12S charger.
 - The 2024 pack may have been sitting since 2024 and be over-discharged. Don't charge it until your electrical lead has measured it.
 - Never use a swollen or damaged pack. If a pack gets hot, smells or smokes, move everyone away, pull the fire alarm if there's fire, and then tell your electrical lead and the project lead.
 
 ## 4. Where the bike is
 
-The bike is in **workbay 1002** in the Sedra Student Design Centre (SDC), the Electrium Mobility bay. To get access, post a screenshot of your WHMIS certificate in the **Github usernames** thread, and the project lead arranges it.
+The bike is in **workbay 1002** in the Sedra Student Design Centre (SDC), the Electrium Mobility bay. Entry is by WatCard. To get on the access list, post a screenshot of your WHMIS certificate in the **Github usernames** thread, and the project lead sends your name to the SDC.
+
+**In the SDC:** the four shared rooms use sign-up sheets, so book before you use one and leave it tidy. Put work tables away when it isn't busy. Electrium's safety captain inspects our bay in the first week of each month, so keep it clean.
 
 The whole team meets **Wednesdays, 6:30 to 7:30 pm, in workbay 1002**. Design reviews and team decisions happen there.
 
