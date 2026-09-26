@@ -16,7 +16,7 @@ This page takes you from zero to your first contribution. Work through it from t
 - Never work on a battery pack alone.
 - Work on a branch and open a pull request. Never push straight to `main`.
 - Never move or rename files in `mechanical/cad-2024/` or `mechanical/cad-2025-coop/`. Assemblies find their parts by folder path, and moving a file breaks them.
-- Post questions in your subteam's Discord thread, not in DMs. That way one answer helps everyone.
+- Post questions in your subteam's Discord channel, not in DMs. That way one answer helps everyone.
 
 ## Getting Started
 
@@ -36,17 +36,19 @@ We are not going to teach you everything here. The linked videos cover what your
 
 1. Make a free GitHub account at [github.com/signup](https://github.com/signup).
 2. Join the Electrium Discord with the [club invite](https://discord.gg/jggFVza4XR).
-3. Open the **Bakfiets F26** category. Its channel **#bakfiets-general** has four threads: **Bakfiets Mechanical**, **Bakfiets Electrical**, **Bakfiets Firmware** and **Github usernames**.
-4. Post your GitHub username in the **Github usernames** thread. You'll be added to the Electrium-Mobility org, which lets you upload your work.
+3. Open the **Bakfiets F26** category. **#bakfiets-general** is the main channel for the whole team. Each subteam also has its own channel: **Bakfiets Mechanical**, **Bakfiets Electrical** and **Bakfiets Firmware**. Post subteam questions there.
+4. Post your GitHub username in the **Github usernames** thread inside #bakfiets-general. You'll be added to the Electrium-Mobility org, which lets you upload your work.
 
 ### Download the Files
+
+**New to Git?** Watch [Git, GitHub and GitHub Desktop for beginners](https://www.youtube.com/watch?v=8Dd7KRpKeaE) (22 min) before you start. The rest of this guide assumes you know what cloning, branches and commits are.
 
 1. Install [GitHub Desktop](https://desktop.github.com/) and sign in.
 2. Choose **File > Clone repository > URL**, paste `Electrium-Mobility/Bakfiets-F26`, and leave the local path as it is (`Documents\GitHub\Bakfiets-F26`).
 3. Click **Clone** (about 60 MB).
 4. Choose **Repository > Show in Explorer**. This folder is **your clone**. Every later step opens files from here, not from the GitHub website.
 
-To get updates later, click **Fetch origin**, then **Pull origin**. New to Git? Watch [Git, GitHub and GitHub Desktop for beginners](https://www.youtube.com/watch?v=8Dd7KRpKeaE) (22 min).
+To get updates later, click **Fetch origin**, then **Pull origin**.
 
 ### Software
 
@@ -66,7 +68,6 @@ You can start setup, CAD and code right away. Finish this before you use tools o
 | --- | --- | --- |
 | WHMIS 2015 (course code SO2017), about 1 hour | Everything in the shop or our room. Renew every 5 years | [LEARN](https://learn.uwaterloo.ca/) > Self Registration ([Safety Office page](https://uwaterloo.ca/safety-office/training/student-safety-orientation-whmis)) |
 | Engineering Student Machine Shop Orientation | The Engineering Student Shops. You get an access card afterwards | LEARN. Score 100% on each module quiz ([Student Shops page](https://uwaterloo.ca/engineering-student-shops/getting-started)) |
-| Worker Health and Safety Awareness, and Student Design Centre Safety Requirements | Working in the Sedra Student Design Centre (SDC), where our room is | LEARN. This list is from the SDC's page for current teams |
 | Laser cutter or welding training | Only those machines | Hands-on, from the shop that runs the machine. No onboarding task needs it |
 
 **Battery rules** (from the UW [Lithium Cell and Battery Standard](https://uwaterloo.ca/safety-office/laboratory-safety/batteries), plus common practice):
@@ -126,11 +127,11 @@ The 2024 files disagree on a few basics. Below is the answer we're working from 
 | Role | Person | What they do |
 | --- | --- | --- |
 | Project lead | Justin Gu | Priorities, decisions that affect more than one subteam, purchases and room access |
-| Mechanical lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Runs the Bakfiets Mechanical thread, keeps mechanical issues current, approves CAD pull requests |
+| Mechanical lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Runs the Bakfiets Mechanical channel, keeps mechanical issues current, approves CAD pull requests |
 | Electrical lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Same for electrical, and supervises all battery work |
 | Firmware lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Same for firmware, and approves code pull requests |
 
-Until the subteam leads are chosen, Justin Gu covers all three roles. The whole team meets **Wednesdays, 6 to 7 pm, in the Electrium Mobility room**. Design reviews and team decisions happen there. Subteam leads also meet the project lead briefly each week to raise blockers. The first team meeting was on 2026-09-23.
+Until the subteam leads are chosen, Justin Gu covers all three roles. The whole team meets **Wednesdays, 6:30 to 7:30 pm, in the Electrium Mobility room**. Design reviews and team decisions happen there. Subteam leads also meet the project lead briefly each week to raise blockers. The first team meeting was on 2026-09-23.
 
 **How work flows:** you claim a task by commenting "I'll take this" on its GitHub issue; nobody needs to assign you. You post a short update on your issue each week: what you did, what's next, and anything blocking you. Anyone can review a pull request, and your subteam lead gives the final approval.
 
@@ -143,6 +144,8 @@ You will open the bike in SolidWorks, then make your first contribution to it. M
 *(1) The 2024 model of the whole bike. (2) The May 2025 model, which matches the partly built frame. (3, 4) The frame: a normal rear half plus a long, low section that carries the box.*
 
 ### Stage 1: Open the Bike
+
+No hardware needed: do all of Stage 1 on your own laptop or a lab PC.
 
 #### Task
 
@@ -159,7 +162,7 @@ First time in SolidWorks? Watch [Your First Part](https://www.youtube.com/watch?
 
 #### Deliverable
 
-A screenshot of the full assembly open in SolidWorks, posted in the **Bakfiets Mechanical** thread.
+A screenshot of the full assembly open in SolidWorks, posted in the **Bakfiets Mechanical** channel.
 
 ### Stage 2: First Contribution
 
@@ -233,6 +236,8 @@ You will learn to read a real Electrium board, then help design the bike's elect
 
 ### Stage 1: Read a Real Board
 
+No hardware needed: do all of Stage 1 on your own laptop.
+
 #### Task
 
 Read the 2023 [anti-spark](https://github.com/Electrium-Mobility/anti-spark) schematic and explain how it works. It's a small, real Electrium board: 18 parts, with three 100 V MOSFETs. You need KiCad 9 installed first (see Software).
@@ -305,6 +310,8 @@ You will get the 2024 display code running on your desk, then start connecting i
 *The screen layout the 2024 team drew: battery top left, speed bottom left, pedal-assist (PA) level on the right.*
 
 ### Stage 1: Run the Desk Demo
+
+**This stage is split in two.** Steps 1, 3 and 4 need no hardware: do them on your own laptop **before Wednesday's meeting**, then click **Verify** (the checkmark button, top left) to check the code builds without a board plugged in. Do steps 2, 5 and 6 **at the Wednesday meeting**, where you'll borrow a board and screen.
 
 #### Task
 
@@ -382,7 +389,7 @@ A pull request with your sketch, a photo or short video of it working, and `Clos
 - [ ] GitHub account made, and username posted in the **Github usernames** thread
 - [ ] Bakfiets-F26 cloned with GitHub Desktop
 - [ ] Your subteam's software installed
-- [ ] WHMIS 2015 (SO2017) and the SDC safety courses done on LEARN, before any work in the room
+- [ ] WHMIS 2015 (SO2017) done on LEARN, before any work in the room
 - [ ] Stage 1 deliverable posted
 - [ ] One Stage 2 issue finished (its pull request merged, or its photos and notes posted)
 
@@ -392,7 +399,7 @@ A pull request with your sketch, a photo or short video of it working, and `Clos
 2. Add your files in the right folder (see your Stage 2 constraints).
 3. Type a one-line summary in the **Summary** box at the bottom left (GitHub Desktop won't commit without one), click **Commit to your-branch**, then **Publish branch**, then **Create Pull Request**.
 4. In the pull request, say what you did, add screenshots, and write `Closes #<issue number>`.
-5. Post the link in your subteam thread. Your subteam lead approves it.
+5. Post the link in your subteam channel. Your subteam lead approves it.
 
 **💡 Hint:** if GitHub Desktop says you don't have permission to push and offers to **create a fork**, click **Fork this repository**, then choose **To contribute to the parent project**. A fork is your own copy of the repo on GitHub. Your pull request still goes to Bakfiets-F26 as normal. This only happens until you've been added to the Electrium-Mobility org, which gives write access automatically.
 
@@ -448,7 +455,7 @@ Ling is tracking down the motor that was meant to go on the bike. Updates go in 
 | Issue | A task card on GitHub. `good first issue` marks the easiest starter tasks; `term project` marks the main work after onboarding |  |
 | Fork | A copy of a repo under your own GitHub account; GitHub Desktop offers one if you can't push yet. (A bike fork is the part that holds the front wheel.) |  |
 | Fetch / pull | Fetch checks GitHub for new changes; pull downloads them into your clone |  |
-| Discord thread | A side conversation inside a channel, one per subteam here |  |
+| Discord channel / thread | A channel is a chat room (one per subteam here); a thread is a side conversation inside a channel, like Github usernames |  |
 | LEARN | UW's online course site, where the safety courses are |  |
 | WHMIS | Workplace Hazardous Materials Information System, the chemical safety course |  |
 | SDC | The Sedra Student Design Centre, the building with the team work bays |  |

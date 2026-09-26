@@ -6,9 +6,9 @@ Do these steps once, in order. Most take 5 to 15 minutes; the safety courses tak
 
 1. Make a free GitHub account at [github.com/signup](https://github.com/signup). Any email works.
 2. Join the Electrium Discord: [discord.gg/jggFVza4XR](https://discord.gg/jggFVza4XR).
-3. Open the **Bakfiets F26** category. The main channel is **#bakfiets-general**, with four threads:
-   - **Bakfiets Mechanical**, **Bakfiets Electrical**, **Bakfiets Firmware**: one per subteam
-   - **Github usernames**: post your GitHub username here, and you'll be added to the Electrium-Mobility GitHub org so you can upload your work
+3. Open the **Bakfiets F26** category:
+   - **#bakfiets-general** is the main channel for the whole team. Inside it, the **Github usernames** thread is where you post your GitHub username, so you'll be added to the Electrium-Mobility GitHub org and can upload your work.
+   - **Bakfiets Mechanical**, **Bakfiets Electrical** and **Bakfiets Firmware** are the subteam channels. Post subteam questions there.
 
 The repo is public, so you can download everything before you're added.
 
@@ -32,7 +32,6 @@ You can do all setup, CAD and code work right away. You need this training befor
 | --- | --- | --- |
 | WHMIS 2015 (course code SO2017), about 1 hour, renew every 5 years | Everything in the shop or our room | [LEARN](https://learn.uwaterloo.ca/) > Self Registration. [Safety Office page](https://uwaterloo.ca/safety-office/training/student-safety-orientation-whmis) |
 | Engineering Student Machine Shop Orientation | The Engineering Student Shops; you get an access card afterwards | LEARN; score 100% on each module quiz. [Student Shops page](https://uwaterloo.ca/engineering-student-shops/getting-started) |
-| Student Design Centre courses: Worker Health and Safety Awareness, and Student Design Centre Safety Requirements | Working in the Sedra Student Design Centre (SDC), where our room is | LEARN. This list comes from the SDC's page for current teams, which needs a UW login |
 | Machine training (laser cutter, welding) | Only those machines | Hands-on training from the shop that runs the machine. No onboarding task needs it |
 
 **Battery rules** (from the UW Safety Office [Lithium Cell and Battery Standard](https://uwaterloo.ca/safety-office/laboratory-safety/batteries), plus common practice):
@@ -47,14 +46,14 @@ You can do all setup, CAD and code work right away. You need this training befor
 
 The bike is in the **Electrium Mobility room in The Bay**, the team work bays in the Sedra Student Design Centre. The SDC gives room access to the members listed on each team's term information form, which the project lead submits. To get on it, post a screenshot of your WHMIS certificate in the **Github usernames** thread, and the project lead adds you.
 
-The whole team meets **Wednesdays, 6 to 7 pm, in the Electrium Mobility room**. Design reviews and team decisions happen there.
+The whole team meets **Wednesdays, 6:30 to 7:30 pm, in the Electrium Mobility room**. Design reviews and team decisions happen there.
 
 ## 5. How the team is run
 
 | Role | Person | What they do |
 | --- | --- | --- |
 | Project lead | Justin Gu | Priorities, decisions that affect more than one subteam (like the motor), purchases, room access |
-| Mechanical lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Runs the Bakfiets Mechanical thread, keeps mechanical issues up to date, approves CAD pull requests |
+| Mechanical lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Runs the Bakfiets Mechanical channel, keeps mechanical issues up to date, approves CAD pull requests |
 | Electrical lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Same for electrical, and supervises all battery work |
 | Firmware lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Same for firmware, and approves code pull requests |
 
@@ -62,7 +61,7 @@ Until the subteam leads are chosen, Justin Gu covers all three roles.
 
 Habits for everyone:
 
-- Post questions in your subteam's thread, where the answer helps the next person too.
+- Post questions in your subteam's channel, where the answer helps the next person too.
 - Claim tasks yourself by commenting "I'll take this" on an issue. Nobody needs to assign you.
 - Update your issue weekly: what you did, what's next, and anything that's blocking you.
 - Anyone can review a pull request; your subteam lead gives the final approval.
@@ -74,7 +73,7 @@ Habits for everyone:
 3. In GitHub Desktop, click **Current branch > New branch** and name it after the task, for example `battery-mount-sketch`.
 4. Do the work. Save new files in a new folder such as `mechanical/cad-2026/` (create it if it doesn't exist), not inside the 2024 or 2025 folders.
 5. Type a one-line summary in the **Summary** box at the bottom left, click **Commit to your-branch**, then **Publish branch**, then **Create Pull Request**. Say what you did and add `Closes #<issue number>`.
-6. Post the pull request link in your subteam thread.
+6. Post the pull request link in your subteam channel.
 
 If GitHub Desktop says you don't have permission to push and offers to **create a fork**, click **Fork this repository**, then choose **To contribute to the parent project**. A fork is your own copy of the repo on GitHub; your pull request still goes to Bakfiets-F26 as normal. This only happens until you've been added to the Electrium-Mobility org, which gives write access automatically.
 

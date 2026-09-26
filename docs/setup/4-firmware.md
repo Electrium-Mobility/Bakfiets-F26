@@ -9,7 +9,7 @@ Finish [Setup for everyone](1-everyone.md) first.
 - Four female-to-female jumper wires and a USB-C cable.
 - No LED strip is needed for the desk demo.
 
-Borrow the board and screen from the Electrium Mobility room.
+Borrow the board and screen at the Wednesday meeting in the Electrium Mobility room. Do section 2 on your own laptop before then, and click **Verify** (the checkmark button) on the desk demo to check it builds without a board.
 
 ## 2. Install Arduino IDE and ESP32 support
 
