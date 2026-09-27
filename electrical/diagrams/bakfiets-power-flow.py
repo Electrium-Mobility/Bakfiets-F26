@@ -1,58 +1,78 @@
-import matplotlib; matplotlib.use('Agg')
-import matplotlib.pyplot as plt
-from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
-HV='#d64545'; LV='#e8912d'; SIG='#3a6fd8'; INK='#1f2328'; SUB='#57606a'
-fig,ax=plt.subplots(figsize=(14,8.6),dpi=150); ax.set_xlim(0,140); ax.set_ylim(0,86); ax.axis('off')
-fig.patch.set_facecolor('white')
-def lane(y,h,title,col):
-    ax.add_patch(FancyBboxPatch((1,y),138,h,boxstyle='round,pad=0,rounding_size=2',fc=col,ec='none',alpha=0.08))
-    ax.text(3,y+h-2.2,title,fontsize=11,weight='bold',color=col,va='top')
-def box(x,y,w,h,title,sub,col,num=None):
-    ax.add_patch(FancyBboxPatch((x,y),w,h,boxstyle='round,pad=0,rounding_size=1.6',fc='white',ec=col,lw=2))
-    ax.text(x+w/2,y+h/2+(1.6 if sub else 0),title,ha='center',va='center',fontsize=11,weight='bold',color=INK)
-    if sub: ax.text(x+w/2,y+h/2-2.2,sub,ha='center',va='center',fontsize=8.3,color=SUB)
-    if num:
-        ax.add_patch(plt.Circle((x+1.8,y+h-1.8),1.7,color=col)); ax.text(x+1.8,y+h-1.8,str(num),ha='center',va='center',color='white',fontsize=9,weight='bold')
-    return (x,y,w,h)
-def arrow(p,q,col,lw=3,ls='-',label=None,lx=0,ly=0,rad=0):
-    ax.add_patch(FancyArrowPatch(p,q,arrowstyle='-|>',mutation_scale=14,color=col,lw=lw,linestyle=ls,connectionstyle=f'arc3,rad={rad}'))
-    if label: ax.text((p[0]+q[0])/2+lx,(p[1]+q[1])/2+ly,label,fontsize=8.3,color=col,ha='center',va='center',backgroundcolor='white')
-ax.text(70,84,'How power flows through the bakfiets',ha='center',fontsize=16,weight='bold',color=INK)
-ax.text(70,80.6,'Follow the numbers. Thick red = battery voltage (about 36-50 V). Orange = 5 V for small electronics. Dashed blue = signals only.',ha='center',fontsize=9.5,color=SUB)
-def vlane(y,h,title,col):
-    ax.add_patch(FancyBboxPatch((1,y),138,h,boxstyle='round,pad=0,rounding_size=2',fc=col,ec='none',alpha=0.08))
-    ax.text(4,y+h/2,title,fontsize=10,weight='bold',color=col,rotation=90,ha='center',va='center')
-vlane(55,22,'BATTERY SIDE\n36-50 V',HV)
-vlane(31,21,'MOTOR +\nPOWER BOARD',HV)
-vlane(2,26,'ELECTRONICS\n5 V + signals',SIG)
-c=box(10,61,19,11,'Charger','12S, 50.4 V',HV,1)
-b=box(37,61,21,11,'BMS','protects the cells',HV,2)
-p=box(66,61,25,11,'Battery pack','12S3P, 18650 cells',HV,3)
-a=box(102,61,27,11,'Antispark','soft power-on switch',HV,4)
-pb=box(105.5,73,20,3.8,'Power button','',SUB)
-arrow((29,66.5),(37,66.5),HV); arrow((58,66.5),(66,66.5),HV); arrow((91,66.5),(102,66.5),HV)
-arrow((115.5,73),(115.5,72),SIG,lw=1.6,ls='--')
-e=box(96,35,34,12,'Motor controller (ESC)','FSESC 6.7 (VESC)',HV,5)
-m=box(58,35,28,12,'Hub motor','500 W, in a wheel',HV)
-d=box(12,35,34,12,'Power board (PDB)','steps 48 V down to 5 V',LV,6)
-arrow((122,61),(122,47),HV,label='battery power',lx=7.5)
-arrow((96,41),(86,41),HV,label='3 motor wires',ly=2.6)
-ax.plot([108,29],[61,57.5][0:1]*2,color=HV,lw=0)
-ax.plot([108,108],[61,58],color=HV,lw=3); ax.plot([108,29],[58,58],color=HV,lw=3); arrow((29,58),(29,47),HV)
-ax.text(68,56.6,'battery power',fontsize=8.3,color=HV,ha='center',backgroundcolor='white')
-dsp=box(12,13,22,10,'Display','128x64 OLED',SIG)
-esp=box(44,13,26,10,'ESP32-S3',"the bike's small computer",SIG,7)
-led=box(80,13,24,10,'Lights','LED strip, running, brake',LV)
-thr=box(113,13,19,10,'Throttle','',SIG)
-btn=box(44,3.5,26,6.5,'Buttons','',SIG)
-brk=box(80,3.5,24,6.5,'Brake lever','',SIG)
-arrow((24,35),(52,23),LV,label='5 V',lx=-3,ly=1)
-arrow((42,35),(88,23),LV,label='5 V',lx=4,ly=1,rad=-0.12)
-arrow((44,18),(34,18),SIG,lw=1.8,ls='--',label='I2C',ly=2)
-arrow((70,18),(80,18),SIG,lw=1.8,ls='--',label='LED data',ly=2.2)
-arrow((57,10),(57,13),SIG,lw=1.8,ls='--')
-arrow((92,10),(92,13),SIG,lw=1.8,ls='--')
-ax.text(106,6.8,'brake lever turns on\nthe brake lights',fontsize=8,color=SIG,ha='left',va='center')
-arrow((122.5,23),(122.5,35),SIG,lw=1.8,ls='--',label='speed request',lx=8.5)
-ax.text(138,0.2,'Redrawn from the 2024 block diagram. Part names from the June 2024 club website.',fontsize=7.5,color=SUB,ha='right')
-plt.savefig('bakfiets-power-flow.png',bbox_inches='tight',facecolor='white'); print('ok')
+import sys, os
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(HERE, '..', '..', 'docs', 'diagrams'))
+from notebook import *
+from matplotlib.patches import Rectangle, Circle, FancyArrowPatch
+
+fig, ax = page(150, 96, (15, 9.6))
+note(ax, 8, 92, 'How power flows through the bakfiets', size=24, weight='bold')
+note(ax, 8, 87.2, 'Follow the numbers; they match the list under this drawing. Top row: full battery voltage. Bottom rows: 5V and signals.',
+     size=11.5, color=PENCIL)
+
+def block(x, y, w, h, title, sub, col, n=None, fc='#f3efe4'):
+    ax.add_patch(Rectangle((x, y), w, h, fc=fc, ec=col, lw=2, zorder=2))
+    note(ax, x + w / 2, y + h - 3, title, size=12, weight='bold', ha='center', zorder=3)
+    if sub: note(ax, x + w / 2, y + h / 2 - 2, sub, size=9.2, color=PENCIL, ha='center', linespacing=1.15, zorder=3)
+    if n:
+        ax.add_patch(Circle((x + 0.2, y + h - 0.2), 1.9, fc=col, ec=col, zorder=4))
+        note(ax, x + 0.2, y + h - 0.3, str(n), size=10.5, color='white', weight='bold', ha='center', zorder=5)
+def thick(xs, ys, c=RED, lw=5): ax.plot(xs, ys, color=c, lw=lw, solid_capstyle='round', zorder=1)
+def arrow(p, q, c, ls='-', lw=2, rad=0):
+    ax.add_patch(FancyArrowPatch(p, q, arrowstyle='-|>', mutation_scale=14, color=c, lw=lw, ls=ls,
+                                 connectionstyle=f'arc3,rad={rad}', zorder=1))
+
+# band labels
+
+# row 1: battery side
+Y = 66
+block(9, 60, 15, 12, 'charger', '12S, 50.4V', RED, 1)
+block(30, 60, 15, 12, 'BMS', 'guards\nthe cells', RED, 2)
+block(51, 58, 18, 16, 'battery pack', '12S3P\n18650 cells', RED, 3)
+block(75, 62, 7, 8, 'fuse', '', RED)
+block(88, 60, 15, 12, 'antispark', 'soft power-on', RED, 4)
+block(110, 57, 20, 18, 'motor\ncontroller', '', RED, 5)
+note(ax, 120, 60, 'FSESC 6.7 (VESC)', size=9.2, color=PENCIL, ha='center', zorder=3)
+block(135, 59, 13, 14, 'hub\nmotor', '', INK)
+note(ax, 141.5, 61.5, '500W', size=9.2, color=PENCIL, ha='center', zorder=3)
+thick([24, 30], [Y, Y]); thick([45, 51], [Y, Y]); thick([69, 75], [Y, Y]); thick([82, 88], [Y, Y]); thick([103, 110], [Y, Y])
+for dy in (-2, 0, 2): thick([130, 135], [Y + dy, Y + dy], INK, lw=2.6)
+note(ax, 132.5, 76.5, '3 phase\nwires', size=8.5, color=INK, ha='center', linespacing=1)
+note(ax, 71.5, 76, 'fuse on the + side,\nDC-rated 60V or more', size=9.5, color=RED, ha='center', linespacing=1.1)
+point(ax, (12, 80), (27, 66.8), 'the charger plugs into a charging port\non the frame, wired to the BMS (#19)', color=RED, rad=-0.2)
+
+# row 2: power board
+block(88, 34, 22, 14, 'power board', 'steps battery power\ndown to 5V', GOLD, 6)
+thick([107, 107], [Y, 48], RED, lw=4)
+note(ax, 108.5, 51, 'battery'+chr(10)+'power', size=9, color=RED, linespacing=1)
+block(128, 36, 18, 12, 'throttle', 'thumb lever', BLUE)
+arrow((137, 48), (125, 57), BLUE, ls=(0, (4, 3)))
+note(ax, 138, 51.5, 'speed request\n(ADC, 3.3V)', size=8.8, color=BLUE, linespacing=1.05)
+
+# row 3: electronics
+block(34, 10, 24, 14, 'ESP32-S3', "the bike's small\ncomputer", BLUE, 7)
+block(9, 12, 17, 10, 'screen', '128x64 OLED', BLUE)
+block(84, 12, 22, 10, 'lights', 'LED strip, brake', GOLD)
+block(34, 1, 24, 6, 'buttons', '', BLUE)
+block(84, 1, 22, 6, 'brake lever', '', BLUE)
+arrow((92, 34), (52, 24.2), GOLD, lw=2.4, rad=-0.1)
+arrow((97, 34), (97, 22.2), GOLD, lw=2.4)
+note(ax, 70, 29, '5V', size=10.5, color=GOLD, weight='bold')
+note(ax, 98.5, 28, '5V', size=10.5, color=GOLD, weight='bold')
+arrow((34, 17), (26.2, 17), BLUE, ls=(0, (4, 3)))
+note(ax, 28.5, 19.4, 'I2C', size=9.5, color=BLUE)
+arrow((58, 17), (83.8, 17), BLUE, ls=(0, (4, 3)))
+note(ax, 64, 19.4, 'LED data', size=9.5, color=BLUE)
+arrow((46, 7), (46, 9.8), BLUE, ls=(0, (4, 3)))
+arrow((95, 7), (95, 11.8), BLUE, ls=(0, (4, 3)))
+note(ax, 107, 4, 'brake lever turns on\nthe brake lights', size=9, color=PENCIL, linespacing=1.1)
+ax.plot([40, 40, 114, 114], [24, 54, 54, 56.8], color=BLUE, lw=1.8, ls=(0, (2, 3)), zorder=1)
+note(ax, 42, 56.5, 'UART (#22): the controller sends speed and battery data to the ESP32', size=9.5, color=BLUE)
+
+# legend
+lx, ly = 116, 23
+note(ax, lx, ly, 'key', size=12, weight='bold')
+ax.plot([lx, lx + 5], [ly - 3.5, ly - 3.5], color=RED, lw=5); note(ax, lx + 6.5, ly - 3.5, 'battery voltage, 36 to 50.4V', size=9.5)
+ax.plot([lx, lx + 5], [ly - 7, ly - 7], color=GOLD, lw=2.4); note(ax, lx + 6.5, ly - 7, '5V for small electronics', size=9.5)
+ax.plot([lx, lx + 5], [ly - 10.5, ly - 10.5], color=BLUE, lw=2, ls=(0, (4, 3))); note(ax, lx + 6.5, ly - 10.5, 'signals only', size=9.5)
+mono(ax, 149, -1.8, 'redrawn from the 2024 block diagram (high-level-circuit-diagram-2024.png); fuse and UART added from issues #20 and #22', size=6.8, color='#6f6a60', ha='right')
+save(fig, os.path.join(HERE, 'bakfiets-power-flow.png'))
