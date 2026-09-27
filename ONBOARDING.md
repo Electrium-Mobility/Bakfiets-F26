@@ -69,7 +69,7 @@ You can start setup, CAD and code right away. Finish this before you use tools o
 
 | Training | Needed for | Where |
 | --- | --- | --- |
-| WHMIS 2015 (course code SO2017), about 1 hour | Everything in the shop or our room. Renew every 5 years | [LEARN](https://learn.uwaterloo.ca/) > Self Registration ([Safety Office page](https://uwaterloo.ca/safety-office/training/student-safety-orientation-whmis)) |
+| WHMIS 2015 (course code SO2017), about 1 hour | Any hands-on work in the shop or our bay: tools, batteries, the bike. You can attend meetings without it. Renew every 5 years | [LEARN](https://learn.uwaterloo.ca/) > Self Registration ([Safety Office page](https://uwaterloo.ca/safety-office/training/student-safety-orientation-whmis)) |
 | Engineering Student Machine Shop Orientation | The Engineering Student Shops. You get an access card afterwards | LEARN. Score 100% on each module quiz ([Student Shops page](https://uwaterloo.ca/engineering-student-shops/getting-started)). Shop hours this term: 8:30 am to 4:30 pm, Monday to Friday, plus every second Saturday |
 | Welding | The SDC welding room | Welding training is now run by the MME department's new welding lab. Everyone, including previously approved welders, must pass the weld test before using the room. No onboarding task needs it |
 | Laser cutter | Only that machine | Hands-on, from the shop that runs it. No onboarding task needs it |
