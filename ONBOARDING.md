@@ -108,7 +108,7 @@ The 2024 files disagree on a few basics. Below is the answer we're working from 
 
 - **Our answer:** a 500 W hub motor driven by an FSESC 6.7, a VESC-based motor controller made by Flipsky.
 - **Why:** the club website names that exact controller. The 2024 README and the crank-motor CAD model (`mechanical/cad-2024/MotorCrank/`) point to a Bafang BBS02 mid-drive instead, but they are from early 2024. The website's later W2024 and W2025 pages both name the hub motor and FSESC.
-- **How to check:** look at the bike ([issue #1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1)). A hub motor is a thick drum around a wheel's axle, with a cable coming out of the axle. A BBS02 is a box at the pedals that replaces the crank and chainring. Photograph any separate controller box and its label. Ling, Electrium's team lead, is also tracking down the motor that was meant for the bike.
+- **How to check:** look at the bike ([issue #1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1)). A hub motor is a thick drum around a wheel's axle, with a cable coming out of the axle. A BBS02 is a box at the pedals that replaces the crank and chainring. Photograph any separate controller box and its label. Ling, one of Electrium's two team leads, is also tracking down the motor that was meant for the bike.
 - **If we're wrong:** a BBS02 has its own built-in controller. The electrical plan would drop the separate ESC, and firmware would read the BBS02's display protocol instead of the VESC's.
 
 #### 2. Which microcontroller runs the screen?
@@ -427,7 +427,7 @@ GitHub's [Hello World guide](https://docs.github.com/en/get-started/start-your-j
 
 ## After Onboarding: Term Projects
 
-Once you've finished your subteam's Stage 1 and one Stage 2 starter task, you're done onboarding. Move on to the main goals for the term, set by Electrium's team lead, Ling.
+Once you've finished your subteam's Stage 1 and one Stage 2 starter task, you're done onboarding. Move on to the main goals for the term, set by Ling, one of Electrium's two team leads (the other is Samantha Chong).
 
 ![Term projects by subteam, with what each one needs finished first](docs/diagrams/term-project-map.png)
 
@@ -459,7 +459,8 @@ Each project is a GitHub issue labelled `term project`. Each issue lists what to
 | 3 | [#26 Mount everything on the frame](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/26) | #3; part sizes come from #19 and #21. Only mounts near the steering wait for #25 |
 | 4 | [#27 Inspect and fix the cargo box](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/27) | Onboarding |
 | 5 | [#28 Find and buy missing bike parts](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/28) | #2 and #3 |
-| 6 | [#29 Repaint the frame](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/29) | Last: after all welding is done and #6 is approved |
+| 6 | [#30 Plan and finish the frame welds (work in progress)](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/30) | #2, #4 and #6; needs a welder who passed the SDC weld test |
+| 7 | [#29 Repaint the frame](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/29) | Last: after #30, once all welding is done and #6 is approved |
 
 Ling is tracking down the motor that was meant to go on the bike. Updates go in [issue #1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1). The same list is in the repo at [docs/term-projects.md](docs/term-projects.md).
 

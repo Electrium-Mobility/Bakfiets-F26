@@ -47,7 +47,7 @@ point(ax, (38.5, 33.5), (45, BR_Y + 6), '', rad=-0.25)
 
 step(56, 35, 3, 'work, then commit', '[Summary box, then\n Commit to <branch>]', 'each dot is one commit.\ncommit whenever something works.\nstill only on your laptop')
 
-step(86, 35, 4, 'push', '[Publish branch]\nlater: [Push origin]', 'now your branch is on GitHub')
+step(86, 35, 4, 'push', '[Publish branch]\nlater: [Push origin]', "now it's on GitHub")
 
 step(112, 35, 5, 'pull request', '[Create Pull Request]', 'say what you did.\nadd "Closes #5" so the\nissue closes with it.')
 point(ax, (110, 26), (108.5, BR_Y + 3.5), '', rad=0.3)

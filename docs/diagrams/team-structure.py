@@ -18,7 +18,7 @@ def link(x0, y0, x1, y1, col=INK):
     ax.plot([x0, x0, x1, x1], [y0, ym, ym, y1], color=col, lw=2, zorder=1)
 
 # club level
-role(52, 82, 40, 14, 'Electrium leadership', 'sets our term goals', PENCIL)
+role(52, 82, 40, 14, 'Electrium team leads', 'two of them. they set our\nterm goals', PENCIL)
 role(108, 82, 36, 14, 'Electrium safety captain', 'inspects our bay in the first\nweek of each month', RED, dashed=True)
 
 # project lead

@@ -20,15 +20,15 @@ def P(px, py): return (X0 + (X1 - X0) * px / W, Y1 - (Y1 - Y0) * py / H)
 labels = [
     ((8, 84), P(215, 70), 'seat', 0.2),
     ((40, 84), P(560, 125), 'handlebars. a rod under the frame\nlinks them to the front fork', -0.25),
-    ((4.5, 24), P(90, 330), 'rear wheel', -0.3),
+    ((4.5, 24), P(90, 330), 'rear wheel', -0.15),
     ((20, 2.2), P(330, 285), 'frame: a normal back half plus a\nlong, low section that carries the box', 0.3),
-    ((52, 2.2), P(640, 610), 'kickstand', 0.3),
+    ((61, 2.2), P(640, 610), 'kickstand', 0.3),
     ((74, 3.5), P(870, 700), 'front wheel (drawn smaller in the CAD;\nthe website says 26"). check in #4', 0.3),
     ((96, 44), P(800, 400), 'front fork', 0.2),
     ((70, 80), P(560, 330), 'wooden cargo box', -0.3),
 ]
 for txt, tgt, s, rad in labels:
-    point(ax, txt, tgt, s, size=10.5, color=INK, rad=rad)
+    point(ax, txt, tgt, s, size=10.5, color=INK, rad=rad, relpos=(1, 1) if s == 'rear wheel' else (0.5, 0.5))
 
 # right column: what's still to come
 cx = 108

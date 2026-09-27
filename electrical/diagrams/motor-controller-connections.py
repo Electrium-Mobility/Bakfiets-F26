@@ -18,7 +18,7 @@ def thin(xs, ys, c, ls='-'): ax.plot(xs, ys, color=c, lw=2, ls=ls, solid_capstyl
 
 Y = 64
 block(8, 56, 20, 16, 'battery', '12S3P\n36 to 50.4V', RED)
-block(8, 39, 20, 11, 'BMS', 'pack B- in,\nP- out to the controller', RED)
+block(8, 39, 20, 11, 'BMS', 'pack B- in,\nP- out', RED)
 thick([18, 18], [56, 50], INK, lw=4)
 thick([28, 42, 42, 92], [44.5, 44.5, 54, 54], INK, lw=4)
 note(ax, 44, 55.8, 'negative (P-) to the controller', size=9, color=INK)

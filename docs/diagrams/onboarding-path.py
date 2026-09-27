@@ -11,21 +11,21 @@ note(ax, 8, 75.2, 'Everyone does steps 1 to 4. Then you follow your subteam\'s l
      size=11.5, color=PENCIL)
 
 MID = 42
-def stop(x, y, label, head, body, col=INK, r=2.4):
+def stop(x, y, label, head, body, col=INK, r=2.4, bsize=9.2):
     ax.add_patch(Circle((x, y), r, fc=PAPER, ec=col, lw=2.2, zorder=3))
     note(ax, x, y, label, size=11 if len(label) < 2 else 9, color=col, ha='center', weight='bold', zorder=4)
     note(ax, x, y - 4, head, size=11, weight='bold', ha='center', va='top', color=col)
-    if body: note(ax, x, y - 7.4, body, size=9.2, ha='center', va='top', color=PENCIL, linespacing=1.15)
+    if body: note(ax, x, y - 7.4, body, size=bsize, ha='center', va='top', color=PENCIL, linespacing=1.15)
 def s_curve(x0, y0, x1, y1, col, lw=3):
     t = np.linspace(0, 1, 50); s = (1 - np.cos(np.pi * t)) / 2
     ax.plot(x0 + (x1 - x0) * t, y0 + (y1 - y0) * s, color=col, lw=lw, zorder=1)
 
 # shared start
 ax.plot([12, 66], [MID, MID], color=INK, lw=3, zorder=1)
-stop(12, MID, '1', 'accounts', 'GitHub account,\njoin Discord, post\nyour username.\n~10 min')
-stop(28, MID, '2', 'get the files', 'clone with GitHub\nDesktop. new to Git?\nwatch the video first.\n~30 min')
-stop(44, MID, '3', 'install', 'SolidWorks, KiCad\nor Arduino IDE.\n~20 min, SolidWorks\na few hours')
-stop(60, MID, '4', 'WHMIS', 'about an hour on\nLEARN. needed for\nbay work, not Stage 1.\n~1 hour', RED)
+stop(12, MID, '1', 'accounts', 'GitHub account,\njoin Discord,\npost username.\n~10 min', bsize=8)
+stop(28, MID, '2', 'get the files', 'clone with\nGitHub Desktop.\nGit video first.\n~30 min', bsize=8)
+stop(44, MID, '3', 'install', 'SolidWorks,\nKiCad or\nArduino IDE.\n~20 min, or a few\nhours for SolidWorks', bsize=8)
+stop(60, MID, '4', 'WHMIS', 'an hour on LEARN.\nneeded for bay\nwork, not Stage 1', RED, bsize=8)
 
 lanes = [(GREEN, 64, 'mechanical', 'open the bike in\nSolidWorks, post\na screenshot', 'e.g. #2, #3, #5, #6'),
          (GOLD, MID, 'electrical', 'read the anti-spark\nschematic, notes\non #8', 'e.g. #7, #9, #10, #11'),

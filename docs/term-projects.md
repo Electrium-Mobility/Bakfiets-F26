@@ -1,6 +1,6 @@
 # Term projects (after onboarding)
 
-These are the main goals for the term, from the Electrium team lead (Ling). Start them **after onboarding**: once you've finished your subteam's Stage 1 and one Stage 2 starter task from the [onboarding guide](../ONBOARDING.md).
+These are the main goals for the term, from Ling, one of Electrium's two team leads (the other is Samantha Chong). Start them **after onboarding**: once you've finished your subteam's Stage 1 and one Stage 2 starter task from the [onboarding guide](../ONBOARDING.md).
 
 Every project is a GitHub issue with the `term project` label. Each one lists what to finish first, step-by-step instructions, safety notes, links to videos and example code, and a clear "done when". Claim one by commenting "I'll take this".
 
@@ -32,6 +32,7 @@ Every project is a GitHub issue with the `term project` label. Each one lists wh
 | 3 | [#26 Mount everything on the frame](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/26) | #3; part sizes come from #19 and #21. Only mounts near the steering wait for #25 |
 | 4 | [#27 Inspect and fix the cargo box](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/27) | Onboarding |
 | 5 | [#28 Find and buy missing bike parts](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/28) | #2, #3 |
-| 6 | [#29 Repaint the frame](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/29) | All welding done and #6 approved; do this last |
+| 6 | [#30 Plan and finish the frame welds (work in progress)](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/30) | #2, #4 and #6; needs a welder who passed the SDC weld test |
+| 7 | [#29 Repaint the frame](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/29) | Last: after #30, once all welding is done and #6 is approved |
 
 Ling is tracking down the motor that was meant to go on the bike; updates go in [#1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1).
