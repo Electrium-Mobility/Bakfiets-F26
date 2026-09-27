@@ -8,8 +8,8 @@ Do these steps once, in order. Most take 5 to 15 minutes; the safety courses tak
 2. Join the Electrium Discord: [discord.gg/jggFVza4XR](https://discord.gg/jggFVza4XR).
 3. Open the **Bakfiets F26** category:
    - **#bakfiets-general** is the main channel for the whole team.
-   - **Bakfiets Mechanical**, **Bakfiets Electrical** and **Bakfiets Firmware**: one channel per subteam. Post subteam questions there.
-   - **Github usernames**: post your GitHub username here, so you'll be added to the Electrium-Mobility GitHub org and can upload your work. A day or two later, GitHub emails you an invitation to Electrium-Mobility. Click **Join** to get write access. Until then, see the fork hint in How to Submit.
+   - **#bakfiets-mech**, **#bakfiets-elec** and **#bakfiets-firm**: one channel per subteam. Post subteam questions there.
+   - **Github usernames**, a thread inside #bakfiets-general: post your GitHub username here, so you'll be added to the Electrium-Mobility GitHub org and can upload your work. A day or two later, GitHub emails you an invitation to Electrium-Mobility. Click **Join** to get write access. Until then, see the fork hint in How to Submit.
 
 The repo is public, so you can download everything before you're added.
 
@@ -47,7 +47,7 @@ You can do all setup, CAD and code work right away. You need this training befor
 
 ## 4. Where the bike is
 
-The bike is in **workbay 1002** in the Sedra Student Design Centre (SDC), the Electrium Mobility bay. Entry is by WatCard. To get on the access list, post a screenshot of your WHMIS certificate in the **Github usernames** channel (crop out your student number), and the project lead passes your name on to be added.
+The bike is in **workbay 1002** in the Sedra Student Design Centre (SDC), the Electrium Mobility bay. Entry is by WatCard. To get on the access list, post a screenshot of your WHMIS certificate in the **Github usernames** thread (crop out your student number), and the project lead passes your name on to be added.
 
 **In the SDC:** the four shared rooms use sign-up sheets, so book before you use one and leave it tidy. Put work tables away when it isn't busy. Electrium's safety captain, Ayaan Salim, inspects our bay in the first week of each month, so keep it clean.
 
@@ -60,7 +60,7 @@ The whole team meets **Wednesdays, 6:30 to 7:30 pm, in workbay 1002**. Design re
 | Role | Person | What they do |
 | --- | --- | --- |
 | Project lead | Justin Gu | Priorities, decisions that affect more than one subteam (like the motor), purchases, room access |
-| Mechanical lead | Chosen at the 2026-09-30 team meeting ([issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17)) | Runs the Bakfiets Mechanical channel, keeps mechanical issues up to date, approves CAD pull requests |
+| Mechanical lead | Chosen at the 2026-09-30 team meeting ([issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17)) | Runs #bakfiets-mech, keeps mechanical issues up to date, approves CAD pull requests |
 | Electrical lead | Chosen at the 2026-09-30 team meeting ([issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17)) | Same for electrical, and supervises all battery work |
 | Firmware lead | Chosen at the 2026-09-30 team meeting ([issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17)) | Same for firmware, and approves code pull requests |
 

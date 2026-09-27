@@ -8,7 +8,7 @@ Electrium Mobility's electric cargo bike ("Bak Choy"), Fall 2026. This repo hold
 
 **Start with [ONBOARDING.md](ONBOARDING.md).** It walks you from zero to your first contribution. Setup takes about 2 to 3 hours; try to finish it before the next Wednesday meeting (6:30 pm, workbay 1002). The short version:
 
-1. **Make a GitHub account and join the Discord** ([invite](https://discord.gg/jggFVza4XR)). In the **Bakfiets F26** category, post your GitHub username in the **Github usernames** channel so you can be added to the org.
+1. **Make a GitHub account and join the Discord** ([invite](https://discord.gg/jggFVza4XR)). In the **Bakfiets F26** category, post your GitHub username in the **Github usernames** thread in #bakfiets-general so you can be added to the org.
 2. **Set up your computer** with the step-by-step guide for everyone: [docs/setup/1-everyone.md](docs/setup/1-everyone.md).
 3. **Set up for your subteam:** [Mechanical](docs/setup/2-mechanical.md) · [Electrical](docs/setup/3-electrical.md) · [Firmware](docs/setup/4-firmware.md).
 4. **Do your subteam's Stage 1** in [ONBOARDING.md](ONBOARDING.md) (open the bike, read a board, or run the desk demo), then **pick a Stage 2 task** from the table under it. Comment "I'll take this" on the issue and it's yours.

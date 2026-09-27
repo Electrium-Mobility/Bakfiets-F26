@@ -51,4 +51,4 @@ Every file is explained in [`mechanical/README.md`](../../mechanical/README.md).
 
 ## 6. Pick a first task
 
-First do Mechanical Stage 1 in [ONBOARDING.md](../../ONBOARDING.md#mechanical-onboarding) (open the bike and post a screenshot in the **Bakfiets Mechanical** channel), then pick a Stage 2 task there, such as #2 or #3.
+First do Mechanical Stage 1 in [ONBOARDING.md](../../ONBOARDING.md#mechanical-onboarding) (open the bike and post a screenshot in the **#bakfiets-mech** channel), then pick a Stage 2 task there, such as #2 or #3.

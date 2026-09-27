@@ -39,8 +39,8 @@ Each stage links the videos it needs, and nothing else is assumed.
 
 1. Make a free GitHub account at [github.com/signup](https://github.com/signup).
 2. Join the Electrium Discord with the [club invite](https://discord.gg/jggFVza4XR).
-3. Open the **Bakfiets F26** category. It has **#bakfiets-general** for the whole team, one channel per subteam (**Bakfiets Mechanical**, **Bakfiets Electrical** and **Bakfiets Firmware**), where subteam questions go, and **Github usernames**.
-4. Post your GitHub username in the **Github usernames** channel. You'll be added to the Electrium-Mobility org, which lets you upload your work.
+3. Open the **Bakfiets F26** category. It has **#bakfiets-general** for the whole team (with a **Github usernames** thread inside it), one channel per subteam where subteam questions go (**#bakfiets-mech**, **#bakfiets-elec** and **#bakfiets-firm**), and a voice channel, **bakfiets**.
+4. Post your GitHub username in the **Github usernames** thread in #bakfiets-general. You'll be added to the Electrium-Mobility org, which lets you upload your work.
 5. A day or two later, GitHub emails you an invitation to Electrium-Mobility. Click **Join** to get write access. Until then, see the fork hint in How to Submit.
 
 ### Download the Files
@@ -84,7 +84,7 @@ You can start setup, CAD and code right away. Finish this before you use tools o
 - The 2024 pack may be over-discharged after sitting since 2024. Don't charge it until the electrical lead has measured it.
 - Never use a swollen or damaged pack. If a pack gets hot, smells or smokes, get everyone away and pull the fire alarm if there's fire. Then tell the electrical lead and the project lead.
 
-**Where the bike is:** **workbay 1002** in the Sedra Student Design Centre (SDC), the Electrium Mobility bay. Entry is by WatCard. To get on the access list, post a screenshot of your WHMIS certificate in the **Github usernames** channel (crop out your student number), and the project lead passes your name on to be added.
+**Where the bike is:** **workbay 1002** in the Sedra Student Design Centre (SDC), the Electrium Mobility bay. Entry is by WatCard. To get on the access list, post a screenshot of your WHMIS certificate in the **Github usernames** thread (crop out your student number), and the project lead passes your name on to be added.
 
 **In the SDC:** the four shared rooms use sign-up sheets, so book before you use one and leave it tidy. Put work tables away when it isn't busy. Electrium's safety captain, Ayaan Salim, inspects our bay in the first week of each month, so keep it clean.
 
@@ -139,7 +139,7 @@ The 2024 files disagree on a few basics. Below is the answer we're working from 
 | Role | Person | What they do |
 | --- | --- | --- |
 | Project lead | Justin Gu | Priorities, decisions that affect more than one subteam, purchases (through the SDC purchase request process) and room access |
-| Mechanical lead | Chosen at the 2026-09-30 team meeting ([issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17)) | Runs the Bakfiets Mechanical channel, keeps mechanical issues current, approves CAD pull requests |
+| Mechanical lead | Chosen at the 2026-09-30 team meeting ([issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17)) | Runs #bakfiets-mech, keeps mechanical issues current, approves CAD pull requests |
 | Electrical lead | Chosen at the 2026-09-30 team meeting ([issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17)) | Same for electrical, and supervises all battery work |
 | Firmware lead | Chosen at the 2026-09-30 team meeting ([issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17)) | Same for firmware, and approves code pull requests |
 
@@ -174,7 +174,7 @@ First time in SolidWorks? Watch [Your First Part](https://www.youtube.com/watch?
 
 #### Deliverable
 
-A screenshot of the full assembly open in SolidWorks, posted in the **Bakfiets Mechanical** channel.
+A screenshot of the full assembly open in SolidWorks, posted in the **#bakfiets-mech** channel.
 
 ### Stage 2: First Contribution
 
@@ -403,11 +403,11 @@ A pull request with your sketch, a photo or short video of it working, and `Clos
 
 ## Final Checklist
 
-- [ ] GitHub account made, Discord joined, and username posted in the **Github usernames** channel
+- [ ] GitHub account made, Discord joined, and username posted in the **Github usernames** thread
 - [ ] GitHub invitation to Electrium-Mobility accepted (the email arrives a day or two later)
 - [ ] Bakfiets-F26 cloned with GitHub Desktop
 - [ ] Your subteam's software installed
-- [ ] WHMIS 2015 (SO2017) done on LEARN, and a screenshot of the certificate (student number cropped) posted in **Github usernames** for WatCard access to the bay
+- [ ] WHMIS 2015 (SO2017) done on LEARN, and a screenshot of the certificate (student number cropped) posted in the **Github usernames** thread for WatCard access to the bay
 - [ ] Stage 1 deliverable posted
 - [ ] One Stage 2 issue finished (its pull request merged, or its photos and notes posted)
 
@@ -478,7 +478,7 @@ Ling is tracking down the motor that was meant to go on the bike. Updates go in 
 | Issue | A task card on GitHub. `good first issue` marks the easiest starter tasks; `term project` marks the main work after onboarding |  |
 | Fork | A copy of a repo under your own GitHub account; GitHub Desktop offers one if you can't push yet. (A bike fork is the part that holds the front wheel.) |  |
 | Fetch / pull | Fetch checks GitHub for new changes; pull downloads them into your clone |  |
-| Discord channel | A chat room in the Discord server. We have #bakfiets-general for everyone, one per subteam, and one for GitHub usernames |  |
+| Discord channel / thread | A channel is a chat room in the Discord server: #bakfiets-general for everyone, and #bakfiets-mech, #bakfiets-elec and #bakfiets-firm for the subteams. A thread is a side conversation inside a channel, like Github usernames inside #bakfiets-general |  |
 | LEARN | UW's online course site, where the safety courses are |  |
 | WHMIS | Workplace Hazardous Materials Information System, the chemical safety course |  |
 | SDC | The Sedra Student Design Centre, the building with the team work bays |  |
