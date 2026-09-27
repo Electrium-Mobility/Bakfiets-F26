@@ -55,12 +55,14 @@ The whole team meets **Wednesdays, 6:30 to 7:30 pm, in workbay 1002**. Design re
 
 ## 5. How the team is run
 
+![Team structure](../diagrams/team-structure.png)
+
 | Role | Person | What they do |
 | --- | --- | --- |
 | Project lead | Justin Gu | Priorities, decisions that affect more than one subteam (like the motor), purchases, room access |
-| Mechanical lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Runs the Bakfiets Mechanical channel, keeps mechanical issues up to date, approves CAD pull requests |
-| Electrical lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Same for electrical, and supervises all battery work |
-| Firmware lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Same for firmware, and approves code pull requests |
+| Mechanical lead | Chosen at the 2026-09-30 team meeting ([issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17)) | Runs the Bakfiets Mechanical channel, keeps mechanical issues up to date, approves CAD pull requests |
+| Electrical lead | Chosen at the 2026-09-30 team meeting ([issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17)) | Same for electrical, and supervises all battery work |
+| Firmware lead | Chosen at the 2026-09-30 team meeting ([issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17)) | Same for firmware, and approves code pull requests |
 
 Until the subteam leads are chosen, Justin Gu covers all three roles.
 
@@ -72,6 +74,8 @@ Habits for everyone:
 - Anyone can review a pull request; your subteam lead gives the final approval.
 
 ## 6. Pick a task and share your work
+
+![Submitting work with GitHub Desktop](../diagrams/submit-workflow.png)
 
 1. Pick a Stage 2 task from your subteam's table in [ONBOARDING.md](../../ONBOARDING.md). After onboarding, pick from the issues labelled `term project`.
 2. Comment "I'll take this". It's yours.

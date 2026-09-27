@@ -6,6 +6,8 @@ You will help finish an electric cargo bike. A bakfiets is a Dutch bike with a b
 
 This page takes you from zero to your first contribution. Work through it from top to bottom. Every file lives in this repo; the [README](README.md) maps the folders.
 
+![Onboarding path: accounts, files, software and WHMIS, then each subteam's Stage 1 and Stage 2, ending at the term projects](docs/diagrams/onboarding-path.png)
+
 ![SolidWorks render of the bakfiets with its wooden cargo box](docs/images/render-2024.png)
 
 *The 2024 design, from the club website. The rider sits at the back and the cargo box rides between the rider and the front wheel.*
@@ -88,6 +90,8 @@ You can start setup, CAD and code right away. Finish this before you use tools o
 
 ### Where It Stands
 
+![The 2024 CAD render with each part labelled, and a list of what is not in the model yet](docs/diagrams/bike-overview.png)
+
 | Area | What exists | Next milestone |
 | --- | --- | --- |
 | Mechanical | A SolidWorks model, a welding jig, notching guides, one FEA study and a partly built frame | Record what is welded; rerun FEA with written load cases |
@@ -128,14 +132,16 @@ The 2024 files disagree on a few basics. Below is the answer we're working from 
 
 ### Who Leads What
 
+![Team structure: Electrium leadership and safety captain, the project lead, three subteam leads, and members](docs/diagrams/team-structure.png)
+
 | Role | Person | What they do |
 | --- | --- | --- |
 | Project lead | Justin Gu | Priorities, decisions that affect more than one subteam, purchases (through the SDC purchase request process) and room access |
-| Mechanical lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Runs the Bakfiets Mechanical channel, keeps mechanical issues current, approves CAD pull requests |
-| Electrical lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Same for electrical, and supervises all battery work |
-| Firmware lead | Being chosen in [issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17) | Same for firmware, and approves code pull requests |
+| Mechanical lead | Chosen at the 2026-09-30 team meeting ([issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17)) | Runs the Bakfiets Mechanical channel, keeps mechanical issues current, approves CAD pull requests |
+| Electrical lead | Chosen at the 2026-09-30 team meeting ([issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17)) | Same for electrical, and supervises all battery work |
+| Firmware lead | Chosen at the 2026-09-30 team meeting ([issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17)) | Same for firmware, and approves code pull requests |
 
-Until the subteam leads are chosen, Justin Gu covers all three roles. The whole team meets **Wednesdays, 6:30 to 7:30 pm, in workbay 1002**. Design reviews and team decisions happen there. Subteam leads also meet the project lead briefly each week to raise blockers. The first team meeting was on 2026-09-23.
+Until the subteam leads are chosen, Justin Gu covers all three roles. The whole team meets **Wednesdays, 6:30 to 7:30 pm, in workbay 1002**. Design reviews and team decisions happen there. Subteam leads also meet the project lead briefly each week to raise blockers. The first team meeting was on 2026-09-23. Agendas and notes are in [docs/meetings/](docs/meetings/).
 
 **How work flows:** you claim a task by commenting "I'll take this" on its GitHub issue; nobody needs to assign you. You post a short update on your issue each week: what you did, what's next, and anything blocking you. Anyone can review a pull request, and your subteam lead gives the final approval.
 
@@ -230,11 +236,13 @@ You will learn to read a real Electrium board, then help design the bike's elect
 
 1. **Charger** fills the pack to 50.4 V.
 2. **BMS** (battery management system) protects the cells from overcharging, over-draining, overheating and shorts.
-3. **Battery pack**: 12S3P. That's 12 groups wired in series, with 3 cells in parallel in each group: 36 cells, about 44 V in normal use. "48 V" is the class name.
+3. **Battery pack**: 12S3P. That's 12 groups wired in series, with 3 cells in parallel in each group: 36 cells, about 44 V in normal use. "48 V" is the class name. The drawing under this list shows how the cells connect.
 4. **Antispark**: the power button switches it on, so the controller's capacitors charge gently instead of sparking.
 5. **Motor controller (ESC)** turns battery power into the three motor wires. The throttle sends it a speed request.
 6. **Power board (PDB)** steps 48 V down to 5 V for the small electronics and lights.
 7. **ESP32-S3** runs the display and LED strip, and reads the buttons.
+
+![A 12S3P pack seen from above: 12 groups of 3 cells, voltages adding up to about 44 V, and 13 balance wires to the BMS](electrical/diagrams/pack-12s3p.png)
 
 **⚠️ Warning:** parts that carry the battery voltage need margin above 50.4 V: use MOSFETs and capacitors rated 80 to 100 V. Surge (TVS) diodes are the exception: pick one whose standoff voltage sits just above 50.4 V, about 54 to 58 V, so it clamps spikes before they reach the MOSFETs.
 
@@ -293,6 +301,7 @@ A pull request with your files, or photos and notes posted in the issue. Say `Cl
 
 | Resource | What you'll learn |
 | --- | --- |
+| [Motor controller connections](electrical/diagrams/motor-controller-connections.png) | What plugs into the FSESC 6.7: battery chain, motor, throttle and ESP32 |
 | [`electrical/README.md`](electrical/README.md) | Everything known about the bike's electrical system |
 | [anti-spark](https://github.com/Electrium-Mobility/anti-spark) | Your Stage 1 board |
 | [power-distribution-antispark](https://github.com/Electrium-Mobility/power-distribution-antispark) | A 2026 Electrium 48 V power board with an antispark. Its 60 V MOSFETs and SMCJ48CA surge diode are rated too low for a 50.4 V pack, so treat it as a design reference |
@@ -333,7 +342,10 @@ Run [`firmware/desk-demo/desk-demo.ino`](firmware/desk-demo/desk-demo.ino) on an
 #### Steps
 
 1. With Arduino IDE and ESP32 support installed (see Software), choose **Tools > Manage Libraries** and install **Adafruit SSD1306** and **FastLED**. Click **Install all** when asked; that adds Adafruit GFX and BusIO too.
-2. Wire the screen: VCC to 3.3 V, GND to GND, SDA to GPIO 10, SCL to GPIO 9.
+2. Wire the screen: VCC to 3.3 V, GND to GND, SDA to GPIO 10, SCL to GPIO 9, as in the drawing below.
+
+   ![Desk demo wiring: four wires from the OLED screen to the ESP32-S3-DevKitC-1](firmware/diagrams/desk-demo-wiring.png)
+
 3. Choose **File > Open** and pick `firmware\desk-demo\desk-demo.ino` in your clone.
 4. Choose **Tools > Board > esp32 > ESP32S3 Dev Module**, and set **Tools > USB CDC On Boot** to **Enabled**.
 5. Plug in using the board's USB-C port labelled **USB** (not UART). Pick its COM port under **Tools > Port**.
@@ -399,6 +411,8 @@ A pull request with your sketch, a photo or short video of it working, and `Clos
 
 ## How to Submit
 
+![Submitting work: get the latest main, branch, commit, push, open a pull request, review, merge](docs/diagrams/submit-workflow.png)
+
 1. In GitHub Desktop, click **Current branch > New branch** and name it after your task, for example `battery-mount-sketch`.
 2. Add your files in the right folder (see your Stage 2 constraints).
 3. Type a one-line summary in the **Summary** box at the bottom left (GitHub Desktop won't commit without one), click **Commit to your-branch**, then **Publish branch**, then **Create Pull Request**.
@@ -412,6 +426,8 @@ GitHub's [Hello World guide](https://docs.github.com/en/get-started/start-your-j
 ## After Onboarding: Term Projects
 
 Once you've finished your subteam's Stage 1 and one Stage 2 starter task, you're done onboarding. Move on to the main goals for the term, set by Electrium's team lead, Ling.
+
+![Term projects by subteam, with what each one needs finished first](docs/diagrams/term-project-map.png)
 
 Each project is a GitHub issue labelled `term project`. The issue says what to finish first, gives step-by-step instructions, safety notes, videos and example code, and ends with a clear "done when". Claim one the same way: comment "I'll take this". Work through them roughly in the order below.
 

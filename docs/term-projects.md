@@ -4,6 +4,8 @@ These are the main goals for the term, from the Electrium team lead (Ling). Star
 
 Every project is a GitHub issue with the `term project` label. Each one lists what to finish first, step-by-step instructions, safety notes, links to videos and example code, and a clear "done when". Claim one by commenting "I'll take this".
 
+![Term project map](diagrams/term-project-map.png)
+
 ## Electrical
 
 | Order | Project | Start after |

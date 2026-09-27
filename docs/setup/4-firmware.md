@@ -20,6 +20,9 @@ How to get a board and screen will be posted in the **Bakfiets Firmware** channe
 ## 3. Run the desk demo
 
 1. Wire the screen: VCC to 3.3 V, GND to GND, SDA to GPIO 10, SCL to GPIO 9.
+
+   ![Desk demo wiring](../../firmware/diagrams/desk-demo-wiring.png)
+
 2. In Arduino IDE, choose **File > Open** and pick `firmware\desk-demo\desk-demo.ino` in your clone (by default `Documents\GitHub\Bakfiets-F26\firmware\desk-demo\desk-demo.ino`).
 3. Choose **Tools > Board > esp32 > ESP32S3 Dev Module**.
 4. Set **Tools > USB CDC On Boot > Enabled**.

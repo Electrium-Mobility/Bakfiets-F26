@@ -8,6 +8,8 @@ Only one electrical file survived from 2024: a block diagram, redrawn below. The
 
 The website says the 2024 pack was 12S3P of 18650 cells: 12 groups in series, each group being 3 cells in parallel, 36 cells in total. That's about 44 V nominal, 50.4 V full and about 36 V empty. "48 V" is the class name. **Every part that touches the battery must be rated well above 50.4 V.**
 
+![Inside a 12S3P pack](diagrams/pack-12s3p.png)
+
 ## How power flows through the bike
 
 ![How power flows through the bakfiets](diagrams/bakfiets-power-flow.png)
@@ -23,6 +25,12 @@ Follow the numbers:
 5. **Motor controller.** The ESC turns battery power into the three motor wires. The throttle sends it a speed request.
 6. **Power board.** The PDB steps 48 V down to 5 V for the electronics and lights.
 7. **ESP32-S3.** It drives the display over I2C and the LED strip, and reads the buttons. The brake lever switches the brake lights.
+
+## What plugs into the motor controller
+
+![Motor controller connections](diagrams/motor-controller-connections.png)
+
+The throttle, UART and fuse details come from term projects #18, #20 and #22. The COMM port pin order in the drawing is only for layout; check the Flipsky manual.
 
 ## Boards you can learn from or reuse
 

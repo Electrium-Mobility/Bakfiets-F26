@@ -9,3 +9,4 @@ Thumbs.db
 # Build output
 firmware/simulator-2024/target/
 **/build/
+__pycache__/

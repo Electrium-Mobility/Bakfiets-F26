@@ -29,7 +29,9 @@ Electrium Mobility's electric cargo bike ("Bak Choy"), Fall 2026. This repo hold
 | [`docs/setup/`](docs/setup/) | Step-by-step setup guides with videos | [`1-everyone.md`](docs/setup/1-everyone.md) |
 | [`docs/term-projects.md`](docs/term-projects.md) | The main goals for the term, for after onboarding | |
 | [`docs/reference-projects.md`](docs/reference-projects.md) | Other Electrium repos worth copying from | |
-| [`docs/images/`](docs/images/) | Renders, CAD previews, diagrams, photos | |
+| [`docs/meetings/`](docs/meetings/) | Agenda and notes for each team meeting | [`2026-09-30.md`](docs/meetings/2026-09-30.md) |
+| [`docs/diagrams/`](docs/diagrams/) | Onboarding path, bike overview, team structure, how to submit, term project map (with the scripts that draw them) | |
+| [`docs/images/`](docs/images/) | Renders, CAD previews, photos | |
 | [`docs/history/`](docs/history/) | Old README, website pages, and where every file came from | [`SOURCES.md`](docs/history/SOURCES.md) |
 
 ## Where the project stands
