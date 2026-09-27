@@ -1,6 +1,6 @@
 # Bakfiets F26 Onboarding
 
-Last updated 2026-09-26 · Justin Gu, project lead
+Last updated 2026-09-27 · Justin Gu, project lead
 
 You will help finish an electric cargo bike. A bakfiets is a Dutch bike with a big box in front of the rider; ours adds a motor, a 48 V battery, lights and a small screen. Electrium started it in Winter 2024 and partly built it. The last recorded work, a CAD update, was in May 2025.
 
