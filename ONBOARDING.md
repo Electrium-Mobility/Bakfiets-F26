@@ -230,7 +230,7 @@ You will learn to read a real Electrium board, then help design the bike's elect
 
 1. **Charger** fills the pack to 50.4 V.
 2. **BMS** (battery management system) protects the cells from overcharging, over-draining, overheating and shorts.
-3. **Battery pack**: 12S3P. That's 12 groups of 3 cells wired in series: 36 cells, about 44 V in normal use. "48 V" is the class name.
+3. **Battery pack**: 12S3P. That's 12 groups wired in series, with 3 cells in parallel in each group: 36 cells, about 44 V in normal use. "48 V" is the class name.
 4. **Antispark**: the power button switches it on, so the controller's capacitors charge gently instead of sparking.
 5. **Motor controller (ESC)** turns battery power into the three motor wires. The throttle sends it a speed request.
 6. **Power board (PDB)** steps 48 V down to 5 V for the small electronics and lights.
@@ -494,7 +494,7 @@ Ling is tracking down the motor that was meant to go on the bike. Updates go in 
 | Term | Meaning | Learn more |
 | --- | --- | --- |
 | 18650 cell | The standard cylindrical lithium-ion cell in our pack | [18650 battery](https://en.wikipedia.org/wiki/18650_battery) |
-| 12S3P | 12 groups in series, 3 cells per group. About 44 V nominal, 50.4 V full, 36 V empty | [Battery University](https://batteryuniversity.com/article/bu-302-series-and-parallel-battery-configurations) |
+| 12S3P | 12 groups in series, each group being 3 cells in parallel. About 44 V nominal, 50.4 V full, 36 V empty | [Battery University](https://batteryuniversity.com/article/bu-302-series-and-parallel-battery-configurations) |
 | BMS | Battery management system. It balances cells and cuts power on overcharge, over-drain, overheating or a short | [Wikipedia](https://en.wikipedia.org/wiki/Battery_management_system) |
 | Antispark / precharge | A circuit that stops the spark when a battery first connects to a motor controller | [Pre-charge](https://en.wikipedia.org/wiki/Pre-charge) |
 | ESC / VESC / FSESC 6.7 | The motor controller. VESC is an open-source design; the FSESC 6.7 is the VESC-based model the club website says the 2024 team used | [VESC project](https://vesc-project.com/) |

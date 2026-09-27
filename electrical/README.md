@@ -6,7 +6,7 @@ Only one electrical file survived from 2024: a block diagram, redrawn below. The
 
 ## The pack is "48 V"
 
-The website says the 2024 pack was 12S3P of 18650 cells: 12 groups in series, 3 cells per group, 36 cells. That's about 44 V nominal, 50.4 V full and about 36 V empty. "48 V" is the class name. **Every part that touches the battery must be rated well above 50.4 V.**
+The website says the 2024 pack was 12S3P of 18650 cells: 12 groups in series, each group being 3 cells in parallel, 36 cells in total. That's about 44 V nominal, 50.4 V full and about 36 V empty. "48 V" is the class name. **Every part that touches the battery must be rated well above 50.4 V.**
 
 ## How power flows through the bike
 
