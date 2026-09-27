@@ -9,7 +9,7 @@ Finish [Setup for everyone](1-everyone.md) first.
 - Four female-to-female jumper wires and a USB-C cable.
 - No LED strip is needed for the desk demo.
 
-How to get a board and screen will be posted in the **Bakfiets Firmware** channel. Do section 2 on your own laptop in the meantime, and click **Verify** (the checkmark button) on the desk demo to check it builds without a board.
+Don't buy one. We're checking which boards and screens are in the bay at the 30 September meeting, and if there aren't enough, the project lead orders more through the SDC. Do section 2 and steps 1 to 3 of section 3 on your own laptop in the meantime, then click **Verify** (the checkmark button) to check it builds without a board.
 
 ## 2. Install Arduino IDE and ESP32 support
 
@@ -19,13 +19,15 @@ How to get a board and screen will be posted in the **Bakfiets Firmware** channe
 
 ## 3. Run the desk demo
 
-1. Wire the screen: VCC to 3.3 V, GND to GND, SDA to GPIO 10, SCL to GPIO 9.
+Steps 1 to 3 need no board. Click **Verify** (the checkmark, top left) after step 3 to check the code builds.
+
+1. In Arduino IDE, choose **File > Open** and pick `firmware\desk-demo\desk-demo.ino` in your clone (by default `Documents\GitHub\Bakfiets-F26\firmware\desk-demo\desk-demo.ino`).
+2. Choose **Tools > Board > esp32 > ESP32S3 Dev Module**.
+3. Set **Tools > USB CDC On Boot > Enabled** (set it to **Disabled** if you plug into the port labelled UART, or Serial Monitor stays blank).
+4. Wire the screen: VCC to 3.3 V, GND to GND, SDA to GPIO 10, SCL to GPIO 9.
 
    ![Desk demo wiring](../../firmware/diagrams/desk-demo-wiring.png)
 
-2. In Arduino IDE, choose **File > Open** and pick `firmware\desk-demo\desk-demo.ino` in your clone (by default `Documents\GitHub\Bakfiets-F26\firmware\desk-demo\desk-demo.ino`).
-3. Choose **Tools > Board > esp32 > ESP32S3 Dev Module**.
-4. Set **Tools > USB CDC On Boot > Enabled**.
 5. Plug the board in using the USB-C port labelled **USB** (not the one labelled UART). Choose its COM port under **Tools > Port**.
 6. Click **Upload**.
 7. Wait about 10 seconds. The screen should show 50%, 36 km/h and PA 5. It's blank at first because the code plays the LED animation before it draws.

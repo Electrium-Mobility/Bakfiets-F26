@@ -6,7 +6,7 @@ from matplotlib.patches import FancyBboxPatch
 
 fig, ax = page(150, 96, (15, 9.6))
 note(ax, 8, 92, 'How the Bakfiets team is run', size=24, weight='bold')
-note(ax, 8, 87.2, 'Roles, not names. Who holds each role is in ONBOARDING.md.', size=11.5, color=PENCIL)
+note(ax, 8, 87.2, 'Roles, not names. Who holds each role is in ONBOARDING.md and docs/setup/1-everyone.md.', size=11.5, color=PENCIL)
 
 def role(x, y, w, h, title, body, col, dashed=False):
     ax.add_patch(FancyBboxPatch((x - w / 2, y - h), w, h, boxstyle='round,pad=0,rounding_size=1.2', fc='#f3efe4',
@@ -26,7 +26,7 @@ role(52, 61, 44, 17, 'Bakfiets project lead', 'turns term goals into issues, run
 link(52, 68, 52, 61)
 
 # subteam leads
-subs = [(25, 'mechanical lead', 'approves CAD pull requests.\nno cutting or welding until\nthe FEA check passes', GREEN),
+subs = [(25, 'mechanical lead', 'approves CAD pull requests', GREEN),
         (75, 'electrical lead', 'must be there for any\nbattery work', GOLD),
         (125, 'firmware lead', 'approves code pull requests', BLUE)]
 for x, t, b, c in subs:
@@ -36,7 +36,7 @@ for x, t, b, c in subs:
     ax.add_patch(FancyBboxPatch((x - 18, 5), 36, 12, boxstyle='round,pad=0,rounding_size=1.2', fc=PAPER, ec=c, lw=1.4, zorder=3))
     note(ax, x, 14.4, 'members', size=12, weight='bold', ha='center', color=c, zorder=4)
     note(ax, x, 11.4, 'claim issues ("I\'ll take this"),\npost a weekly update on it,\nask in the channel', size=9.2, ha='center', va='top', color=PENCIL, linespacing=1.15, zorder=4)
-point(ax, (112, 47), (95.5, 38.3), 'all three chosen at the\n30 Sept team meeting', color=RED, rad=0.3, ha='left')
+note(ax, 100, 46.5, 'leads are chosen at the 30 Sept meeting.\nan open seat stays on issue #17', size=10, color=RED, linespacing=1.15)
 
 # rhythm
 note(ax, 100, 63, 'every week', size=12, weight='bold')

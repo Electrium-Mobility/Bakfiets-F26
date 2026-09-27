@@ -7,7 +7,7 @@ Finish [Setup for everyone](1-everyone.md) first. Your files are in the `mechani
 The team uses **SolidWorks 2026**, the version on the campus lab PCs. Files saved in 2026 can't be opened in older versions.
 
 - **On campus:** the Engineering Computing labs Fulcrum, Helix, Lever and WEEF have SolidWorks 2026 ([lab software list](https://uwaterloo.ca/engineering-computing/computer-labs/lab-software)). The Sedra Student Design Centre also has a 14-seat CAD studio for teams.
-- **On your own laptop:** SolidWorks Design Standard for Students is free ([solidworks.com/product/students](https://www.solidworks.com/product/students)). It runs on Windows only; on a Mac, use a lab PC.
+- **On your own laptop:** SolidWorks sells a student licence ([solidworks.com/product/students](https://www.solidworks.com/product/students)). It runs on Windows only; on a Mac, use a lab PC.
 
 First time? Watch [Beginners Guide to SOLIDWORKS: Your First Part](https://www.youtube.com/watch?v=qjtYqxNpj50) (SOLIDWORKS, 8 min).
 
@@ -26,7 +26,9 @@ The frame is built from custom tube shapes ("weldment profiles") stored in your 
 2. Go to your clone's `mechanical\cad-2025-coop` folder and open `bakfiets_main_asm.SLDASM`.
 3. If SolidWorks asks where a part is, point it at the same `cad-2025-coop` folder.
 
-The parts are built around one master sketch, `bakfiets_master_sketch.SLDPRT`. To change the geometry, copy the co-op files into `mechanical/cad-2026/` first and work on the copy.
+The parts are built around one master sketch, `bakfiets_master_sketch.SLDPRT`. To change the geometry, make a copy in `mechanical/cad-2026/` with **File > Pack and Go** (add a prefix so names don't clash) and work on the copy. Don't save files while they're open from `cad-2025-coop`: SolidWorks 2026 converts them on save.
+
+If the frame still shows rebuild errors, copy the `bakfiets_weldment_profiles` folder into the default Weldment Profiles folder listed in the same File Locations dialog (this one needs admin rights).
 
 ## 4. Learn the frame tools
 
@@ -49,4 +51,4 @@ Every file is explained in [`mechanical/README.md`](../../mechanical/README.md).
 
 ## 6. Pick a first task
 
-First do Mechanical Stage 1 in [ONBOARDING.md](../../ONBOARDING.md#mechanical-onboarding) (open the bike and post a screenshot), then pick a Stage 2 task there, such as #2 or #3.
+First do Mechanical Stage 1 in [ONBOARDING.md](../../ONBOARDING.md#mechanical-onboarding) (open the bike and post a screenshot in the **Bakfiets Mechanical** channel), then pick a Stage 2 task there, such as #2 or #3.

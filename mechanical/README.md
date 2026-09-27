@@ -33,7 +33,7 @@ All SolidWorks files for the bakfiets. Setup steps are in [docs/setup/2-mechanic
 | --- | --- | --- |
 | Whole bike | `Assem1.SLDASM` | The 2024 top-level assembly |
 | Frame | `Frame 2.0.SLDPRT`, drawing `Frame 2.0-Sweep8.SLDDRW` | Latest 2024 frame. Nobody recorded whether the drawing was used to build it |
-| Tube sizes | `Weldment Cross-section/` | In the file names, as outside diameter x wall. Main tube 1.5" x 0.065", steering tube 36 x 1.1 mm, cargo tube 1" x 0.065", bottom bracket 38.1 x 3.3 mm, seat tube 28.6 x 0.6 mm, top tube 31.7 x 0.5 mm, head tube 1" x 0.065" or 46 x 1.5 mm |
+| Tube sizes | `Weldment Cross-section/` | In the file names, as outside diameter x wall. Main tube 1.5" x 0.065", steering tube 36 x 1.1 mm, cargo tube 1" x 0.065", bottom bracket 38.1 x 3.3 mm, seat tube 28.6 x 0.6 mm, top tube 31.7 x 0.5 mm, head tube 1" x 0.065" or 46 x 1.5 mm. Unverified: a 1" head tube can't hold a standard headset, and 0.5 to 0.6 mm walls are donor-bike tubing, not something students can TIG weld. Confirm on the real frame in #4 |
 | FEA | `Frame 2.0-Static 2.*` | One static study on Frame 2.0 (June 2024). The 95 MB results file was left out; rerun the study to regenerate it. No record of the loads used |
 | Welding jig | `jig/Jig/JigV2.SLDASM`, cut files `jig/Jig/*.dwg`, `*.DXF` | Laser-cut MDF jig for the main frame |
 | Notching guides | `notches/*.STL` | 3D-print, slide over the tube, and cut to the line |

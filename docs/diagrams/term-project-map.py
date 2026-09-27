@@ -33,9 +33,10 @@ node('#18', 30, 63, 'bench test', 'after #1 and #7', GOLD)
 node('#19', 64, 75, 'BMS + charge port', 'after #7', GOLD)
 node('#20', 100, 69, 'wiring harness', 'plan after #10', GOLD)
 
-node('#23', 30, 42, 'screen or not?', 'after onboarding', BLUE)
+node('#23', 30, 42, 'screen or not?', 'after #12', BLUE)
 node('#22', 100, 44, 'ESP32 to VESC', 'after #12', BLUE)
 node('#24', 64, 42, '2026 display', 'after #12', BLUE)
+
 
 node('#25', 30, 19, 'new steering', 'after onboarding', GREEN)
 node('#27', 30, 7, 'fix cargo box', 'after onboarding', GREEN)
@@ -45,13 +46,14 @@ node('#29', 128, 13, 'repaint', 'after #6, all welding done', GREEN, w=30)
 
 edge('#18', '#20', GOLD, rad=0.08); edge('#19', '#20', GOLD, rad=-0.05)
 edge('#23', '#24', BLUE)
+edge('#22', '#24', BLUE, dashed=True, side=('l', 'r'))
 edge('#25', '#26', GREEN)
 edge('#18', '#22', GOLD, dashed=True, rad=-0.12)
 
 point(ax, (114, 84), (104, 74.2), 'building waits for\n#18 and #19', color=PENCIL, rad=0.3, ha='left')
 point(ax, (114, 56), (106, 49.2), 'testing needs the\n#18 bench setup', color=PENCIL, rad=0.3, ha='left')
 point(ax, (86, 29), (79, 24.2), 'part sizes come from\n#19 (BMS) and #21 (battery)', color=PENCIL, rad=0.25, ha='left')
-note(ax, 114, 32, '#23, #25 and #27 only need\nonboarding: easiest place to start', size=10.5, color=INK, linespacing=1.2)
+note(ax, 114, 32, '#23, #25 and #27 can start as soon\nas you finish onboarding', size=10.5, color=INK, linespacing=1.2)
 note(ax, 108, 23.5, 'repaint goes last, once\nnothing else needs welding', size=10, color=PENCIL, linespacing=1.2)
 mono(ax, 149, -2.5, 'from the "Start after" column in ONBOARDING.md and docs/term-projects.md', size=7, color='#6f6a60', ha='right')
 save(fig, os.path.join(HERE, 'term-project-map.png'))

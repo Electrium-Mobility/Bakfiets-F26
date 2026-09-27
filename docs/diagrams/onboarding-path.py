@@ -25,7 +25,7 @@ ax.plot([12, 66], [MID, MID], color=INK, lw=3, zorder=1)
 stop(12, MID, '1', 'accounts', 'GitHub account,\njoin Discord, post\nyour username')
 stop(28, MID, '2', 'get the files', 'clone with GitHub\nDesktop. new to Git?\nwatch the video first')
 stop(44, MID, '3', 'install', 'SolidWorks, KiCad\nor Arduino IDE')
-stop(60, MID, '4', 'WHMIS', 'about an hour on\nLEARN. needed\nfor the bay', RED)
+stop(60, MID, '4', 'WHMIS', 'about an hour on\nLEARN. needed for\nbay work, not Stage 1', RED)
 
 lanes = [(GREEN, 64, 'mechanical', 'open the bike in\nSolidWorks, post\na screenshot', 'e.g. #2, #3, #5, #6'),
          (GOLD, MID, 'electrical', 'read the anti-spark\nschematic, notes\non #8', 'e.g. #7, #9, #10, #11'),

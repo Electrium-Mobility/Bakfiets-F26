@@ -11,7 +11,9 @@ Copied on 2026-09-26 from [Electrium-Mobility/bakfiets](https://github.com/Elect
 | `firmware/desk-demo/` | copy of `firmware/main.cpp` with `LED_PIN` changed from 9 to 5 | new |
 | `firmware/simulator-2024/` | `firmware/simulator/` on `main`, without the 314 MB `target/` build folder | 4b86a22 |
 | `firmware/can-twai-2024/` | `twai_can_sender/`, `twai_can_receiver/` on `twai_can` (open pull request #2 there) | 34b9d66 (2024-11-11) |
-| `electrical/diagrams/` | `firmware/high-level-circuit-diagram.png` on `main` | 4b86a22 |
+| `electrical/diagrams/high-level-circuit-diagram-2024.png` | `firmware/high-level-circuit-diagram.png` on `main` | 4b86a22 |
+| `electrical/diagrams/*.png` (other), `firmware/diagrams/`, `docs/diagrams/` | drawn this term by the `.py` script next to each image | new |
+| `docs/images/doc_hw_*.png` | composited from `docs/images/cad-previews/` | new |
 | `docs/history/website-*.md`, `docs/images/render-2024.png`, `team-w2024.png` | [electrium-w24website](https://github.com/Electrium-Mobility/electrium-w24website) bakfiets pages | |
 | `docs/images/cad-previews/` | preview images extracted from inside the SolidWorks files | new |
 | `docs/images/doc_elec_examples.png`, `doc_hw_longtail.png` | F25 Skateboard and W2025 longtail pages on the website, and esc-w26 | |

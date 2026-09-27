@@ -2,11 +2,11 @@
 
 Setup steps are in [docs/setup/3-electrical.md](../docs/setup/3-electrical.md).
 
-Only one electrical file survived from 2024: a block diagram, redrawn below. The 2024 schematics and pack notes were never pushed to GitHub. This term starts the electrical design fresh.
+Only one electrical file survived from 2024: a block diagram, redrawn below. The 2024 schematics and pack notes aren't in any Electrium repo. This term starts the electrical design fresh.
 
 ## The pack is "48 V"
 
-The website says the 2024 pack was 12S3P of 18650 cells: 12 groups in series, each group being 3 cells in parallel, 36 cells in total. That's about 44 V nominal, 50.4 V full and about 36 V empty. "48 V" is the class name. **Every part that touches the battery must be rated well above 50.4 V.**
+The website says the 2024 pack was 12S3P of 18650 cells: 12 groups in series, each group being 3 cells in parallel, 36 cells in total. That's about 44 V nominal, 50.4 V full and about 36 V empty. "48 V" is the class name. **Every part that touches the battery must be rated well above 50.4 V: 100 V MOSFETs and capacitors, and fuses DC-rated for at least 60 V. The one exception is a surge (TVS) diode, whose standoff should sit just above 50.4 V (about 54 to 58 V).**
 
 ![Inside a 12S3P pack](diagrams/pack-12s3p.png)
 

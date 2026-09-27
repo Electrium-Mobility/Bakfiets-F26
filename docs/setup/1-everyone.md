@@ -33,13 +33,13 @@ You can do all setup, CAD and code work right away. You need this training befor
 | --- | --- | --- |
 | WHMIS 2015 (course code SO2017), about 1 hour, renew every 5 years | Everything in the shop or our room | [LEARN](https://learn.uwaterloo.ca/) > Self Registration. [Safety Office page](https://uwaterloo.ca/safety-office/training/student-safety-orientation-whmis) |
 | Engineering Student Machine Shop Orientation | The Engineering Student Shops; you get an access card afterwards | LEARN; score 100% on each module quiz. [Student Shops page](https://uwaterloo.ca/engineering-student-shops/getting-started). Shop hours this term: 8:30 am to 4:30 pm, Monday to Friday, plus every second Saturday |
-| Welding | The SDC welding room | Welding training is now run by the MME department's new welding lab. Everyone, including previously approved welders, must pass the weld test before using the room; the SDC's Graeme is sending details. No onboarding task needs it |
+| Welding | The SDC welding room | Welding training is now run by the MME department's new welding lab. Everyone, including previously approved welders, must pass the weld test before using the room. No onboarding task needs it |
 | Laser cutter | Only that machine | Hands-on, from the shop that runs it. No onboarding task needs it |
 
 **Battery rules** (from the UW Safety Office [Lithium Cell and Battery Standard](https://uwaterloo.ca/safety-office/laboratory-safety/batteries), plus common practice):
 
 - Never work on a pack alone. Wear safety glasses, take off rings and watches, use insulated tools, and tape over bare terminals.
-- Charge and store packs in a fire-resistant LiPo bag, away from anything that burns. Never leave one charging unattended, and don't leave it sitting on the charger.
+- Store packs in a metal box or battery cabinet, and charge them on a non-combustible surface (concrete or a metal tray) away from anything that burns. A LiPo bag is too small for a 36-cell e-bike pack. Never leave a pack charging unattended or sitting on the charger.
 - Every pack goes on the SDC's shared battery and chemical inventory sheet, which the SDC is setting up this term.
 - Our pack reaches 50.4 V when full, which is over the 50 V line where UW's standard calls for electrical-safety procedures. Use only the matching 12S charger.
 - The 2024 pack may have been sitting since 2024 and be over-discharged. Don't charge it until your electrical lead has measured it.
@@ -47,7 +47,7 @@ You can do all setup, CAD and code work right away. You need this training befor
 
 ## 4. Where the bike is
 
-The bike is in **workbay 1002** in the Sedra Student Design Centre (SDC), the Electrium Mobility bay. Entry is by WatCard. To get on the access list, post a screenshot of your WHMIS certificate in the **Github usernames** channel, and the project lead passes your name on to be added.
+The bike is in **workbay 1002** in the Sedra Student Design Centre (SDC), the Electrium Mobility bay. Entry is by WatCard. To get on the access list, post a screenshot of your WHMIS certificate in the **Github usernames** channel (crop out your student number), and the project lead passes your name on to be added.
 
 **In the SDC:** the four shared rooms use sign-up sheets, so book before you use one and leave it tidy. Put work tables away when it isn't busy. Electrium's safety captain, Ayaan Salim, inspects our bay in the first week of each month, so keep it clean.
 
@@ -64,7 +64,7 @@ The whole team meets **Wednesdays, 6:30 to 7:30 pm, in workbay 1002**. Design re
 | Electrical lead | Chosen at the 2026-09-30 team meeting ([issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17)) | Same for electrical, and supervises all battery work |
 | Firmware lead | Chosen at the 2026-09-30 team meeting ([issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17)) | Same for firmware, and approves code pull requests |
 
-Until the subteam leads are chosen, Justin Gu covers all three roles.
+Until the subteam leads are chosen, Justin Gu covers all three roles. Subteam leads meet the project lead briefly each week to raise blockers.
 
 Habits for everyone:
 

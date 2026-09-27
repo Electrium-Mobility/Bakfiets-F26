@@ -7,7 +7,7 @@ from matplotlib.patches import Rectangle
 
 fig, ax = page(150, 100, (15, 10))
 note(ax, 8, 96, 'The bike, labelled', size=24, weight='bold')
-note(ax, 8, 91.2, 'The 2024 CAD render. The motor, battery and electronics aren\'t in the model yet, so they\'re listed on the right.',
+note(ax, 8, 91.2, 'The 2024 CAD render. The hub motor, battery pack and wiring aren\'t modelled yet, so they\'re listed on the right.',
      size=11.5, color=PENCIL)
 
 img = mpimg.imread(os.path.join(HERE, '..', 'images', 'render-2024.png'))
@@ -20,10 +20,10 @@ def P(px, py): return (X0 + (X1 - X0) * px / W, Y1 - (Y1 - Y0) * py / H)
 labels = [
     ((8, 84), P(215, 70), 'seat', 0.2),
     ((40, 84), P(560, 125), 'handlebars. a rod under the frame\nlinks them to the front fork', -0.25),
-    ((8, 20), P(90, 330), 'rear wheel', -0.3),
+    ((4.5, 24), P(90, 330), 'rear wheel', -0.3),
     ((20, 2.2), P(330, 285), 'frame: a normal back half plus a\nlong, low section that carries the box', 0.3),
     ((62, 2.2), P(640, 610), 'kickstand', 0.3),
-    ((96, 20), P(850, 640), 'small front wheel', 0.25),
+    ((96, 20), P(850, 640), 'front wheel (drawn smaller in the CAD;\nthe website says 26"). check in #4', 0.25),
     ((96, 44), P(800, 400), 'front fork', 0.2),
     ((70, 80), P(560, 330), 'wooden cargo box', -0.3),
 ]

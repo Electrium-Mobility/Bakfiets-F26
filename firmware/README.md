@@ -14,7 +14,7 @@ Setup steps and the desk demo are in [docs/setup/4-firmware.md](../docs/setup/4-
 ## What the 2024 display does
 
 - SSD1306 128x64 OLED over I2C (SDA GPIO 10, SCL GPIO 9) shows battery %, speed in km/h and pedal-assist level
-- A 125-LED WS2813 strip plays left and right sweep animations with FastLED
+- A 125-LED WS2813 strip plays a right-turn sweep with FastLED (a left-turn function exists but is never called)
 - Every value is fixed in code: battery 50%, 36 km/h, PA 5. Nothing reads the motor, battery or buttons yet
 
 ## Known bugs in `display-2024/main.cpp`

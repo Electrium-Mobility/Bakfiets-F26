@@ -18,19 +18,23 @@ def thin(xs, ys, c, ls='-'): ax.plot(xs, ys, color=c, lw=2, ls=ls, solid_capstyl
 
 Y = 64
 block(8, 56, 20, 16, 'battery', '12S3P\n36 to 50.4V', RED)
-block(34, 58, 14, 12, 'BMS', 'guards\nthe cells', RED)
-block(54, 60, 9, 8, 'fuse', '', RED)
-block(69, 58, 15, 12, 'antispark', 'soft on\nswitch', RED)
+block(8, 39, 20, 11, 'BMS', 'on the negative\nside (B- to P-)', RED)
+thick([18, 18], [56, 50], INK, lw=4)
+thick([28, 42, 42, 92], [44.5, 44.5, 54, 54], INK, lw=4)
+note(ax, 44, 55.8, 'negative (P-) to the controller', size=9, color=INK)
+block(40, 60, 9, 8, 'fuse', '', RED)
+block(60, 58, 15, 12, 'antispark', 'soft on\nswitch', RED)
 block(92, 44, 28, 30, 'FSESC 6.7', 'motor controller\n(VESC)', INK)
 block(130, 56, 16, 16, 'hub motor', '500W', INK)
-thick([28, 34], [Y, Y]); thick([48, 54], [Y, Y]); thick([63, 69], [Y, Y]); thick([84, 92], [Y, Y])
+thick([28, 40], [Y, Y]); thick([49, 60], [Y, Y]); thick([75, 92], [Y, Y])
+note(ax, 30, Y + 1.8, 'B+', size=10, color=RED, weight='bold')
 for dy in (-2.2, 0, 2.2):
     thick([120, 130], [Y + dy, Y + dy], INK, lw=3)
 note(ax, 125, Y - 5.4, '3 phase\nwires', size=8.5, color=INK, ha='center', linespacing=1)
 thin([138, 138, 120], [56, 52, 52], PENCIL, ls=(0, (3, 2)))
 note(ax, 139, 53, 'hall cable, if the\nmotor has one', size=8.5, color=PENCIL, linespacing=1.05)
-point(ax, (50, 78), (58.5, 68.5), 'DC-rated for 60V or more.\ncar blade fuses (32V) are not safe here', color=RED, rad=-0.25)
-point(ax, (52, 50.5), (76, 57.6), 'connect battery last, through the antispark', color=PENCIL, rad=0.2)
+point(ax, (34, 78), (44.5, 68.5), 'fuse on the positive side, DC-rated for 60V\nor more. car blade fuses (32V) are not safe', color=RED, rad=-0.25)
+point(ax, (58, 47), (67, 57.6), 'connect battery last,\nthrough the antispark', color=PENCIL, rad=0.2)
 
 # laptop
 ax.add_patch(Rectangle((98, 76.4), 18, 6, fc='#e4ebf5', ec=BLUE, lw=1.5, zorder=2))
@@ -53,7 +57,7 @@ for n, y in [('3.3V', 20.5), ('ADC1', 17.5), ('GND', 14.5)]:
     x = px[names.index(n)]
     thin([46, x, x], [y, y, 45.3], GOLD if n != 'GND' else INK)
     mono(ax, 45, y, n, size=7.6, color=GOLD if n != 'GND' else INK, ha='right', zorder=3)
-point(ax, (6, 33), (26, 24.6), 'power it from 3.3V, not 5V.\nthe ADC input only takes 3.3V', color=RED, rad=-0.2)
+point(ax, (6, 33.5), (26, 24.6), 'power it from 3.3V, not 5V.\nthe ADC input only takes 3.3V', color=RED, rad=-0.2)
 
 # ESP32, to the right; RX->TX and TX->RX, GND shared
 block(124, 4, 22, 24, 'ESP32-S3', '', BLUE)
