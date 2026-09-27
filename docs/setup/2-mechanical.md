@@ -26,7 +26,7 @@ The frame is built from custom tube shapes ("weldment profiles") stored in your 
 2. Go to your clone's `mechanical\cad-2025-coop` folder and open `bakfiets_main_asm.SLDASM`.
 3. If SolidWorks asks where a part is, point it at the same `cad-2025-coop` folder.
 
-The parts are built around one master sketch, `bakfiets_master_sketch.SLDPRT`. To change the geometry, make a copy in `mechanical/cad-2026/` with **File > Pack and Go** (add a prefix so names don't clash) and work on the copy. Don't save files while they're open from `cad-2025-coop`: SolidWorks 2026 converts them on save.
+The parts are built around one master sketch, `bakfiets_master_sketch.SLDPRT`. To change the geometry, make a copy in `mechanical/cad-2026/` with **File > Pack and Go** (add a prefix so names don't clash) and work on the copy. Don't save files while they're open from `cad-2025-coop`: SolidWorks 2026 converts them on save. One person edits a CAD file at a time: say on your issue which files you're changing, because Git can't merge two edits to the same SolidWorks file.
 
 If the frame still shows rebuild errors, copy the `bakfiets_weldment_profiles` folder into the default Weldment Profiles folder listed in the same File Locations dialog (this one needs admin rights).
 

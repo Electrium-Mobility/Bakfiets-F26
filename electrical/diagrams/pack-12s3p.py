@@ -35,8 +35,9 @@ for g in range(1, 11, 2):
 note(ax, xs[-1] + 4.2, ys[2] - 3.5, 'dashed boxes:\nstrips on the\nunderside', size=9, color=PENCIL, ha='left', linespacing=1.1)
 # ends
 note(ax, xs[0] - 4.2, ys[1], 'B-', size=15, color=INK, ha='right', weight='bold')
+note(ax, xs[0] - 4.2, ys[1] - 4, 'underside of\ngroup 1', size=8.5, color=PENCIL, ha='right', linespacing=1)
 note(ax, xs[-1] + 4.2, ys[1], 'B+', size=15, color=RED, ha='left', weight='bold')
-note(ax, xs[-1] + 4.2, ys[1] - 4, '50.4V\nwhen full', size=9.5, color=RED, ha='left', linespacing=1.1)
+note(ax, xs[-1] + 4.2, ys[1] - 4, 'underside of\ngroup 12.\n50.4V when full', size=9.5, color=RED, ha='left', linespacing=1.1)
 
 # bracket around group 1
 ax.add_patch(FancyBboxPatch((xs[0] - 3.8, ys[2] - 3.6), 7.6, ys[0] - ys[2] + 7.2, boxstyle='round,pad=0,rounding_size=1.6', fc='none', ec=GOLD, lw=2))
@@ -56,7 +57,7 @@ for k, x in enumerate(taps):
     tx = xs[3] - 1 + k * (xs[10] - xs[3] + 2) / 12
     ax.plot([x, x, tx], [ys[0] + r + 0.4 if 0 < k < 12 else ys[1], 71, cy - 1.4], color=BLUE, lw=0.9)
     if k in (0, 3, 4, 12):
-        mono(ax, x + (0.6 if k else -0.6), 70.4 if 0 < k < 12 else ys[1] + 4.5, f'B{k}', size=7.6, color=BLUE, ha='left' if k else 'right', va='top')
+        mono(ax, x + (0.6 if k else -2.2), 70.4 if 0 < k < 12 else ys[1] + 6.5, f'B{k}', size=7.6, color=BLUE, ha='left' if k else 'right', va='top')
 point(ax, (122, 82), (xs[10] + 2.2, cy), '13 thin wires, one per join.\nthe BMS watches every group\nthrough these', color=BLUE, rad=-0.25, ha='left')
 
 # notes at the bottom

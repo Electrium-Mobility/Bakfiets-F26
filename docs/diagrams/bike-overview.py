@@ -7,7 +7,7 @@ from matplotlib.patches import Rectangle
 
 fig, ax = page(150, 100, (15, 10))
 note(ax, 8, 96, 'The bike, labelled', size=24, weight='bold')
-note(ax, 8, 91.2, 'The 2024 CAD render. The hub motor, battery pack and wiring aren\'t modelled yet, so they\'re listed on the right.',
+note(ax, 8, 91.2, 'The 2024 CAD render. The hub motor (the model has a crank motor instead), battery pack and wiring aren\'t modelled, so they\'re listed on the right.',
      size=11.5, color=PENCIL)
 
 img = mpimg.imread(os.path.join(HERE, '..', 'images', 'render-2024.png'))
@@ -22,8 +22,8 @@ labels = [
     ((40, 84), P(560, 125), 'handlebars. a rod under the frame\nlinks them to the front fork', -0.25),
     ((4.5, 24), P(90, 330), 'rear wheel', -0.3),
     ((20, 2.2), P(330, 285), 'frame: a normal back half plus a\nlong, low section that carries the box', 0.3),
-    ((62, 2.2), P(640, 610), 'kickstand', 0.3),
-    ((96, 20), P(850, 640), 'front wheel (drawn smaller in the CAD;\nthe website says 26"). check in #4', 0.25),
+    ((52, 2.2), P(640, 610), 'kickstand', 0.3),
+    ((74, 3.5), P(870, 700), 'front wheel (drawn smaller in the CAD;\nthe website says 26"). check in #4', 0.3),
     ((96, 44), P(800, 400), 'front fork', 0.2),
     ((70, 80), P(560, 330), 'wooden cargo box', -0.3),
 ]
@@ -38,7 +38,7 @@ items = [
     ('battery', '12S3P pack. where it mounts\nis #5, then #26'),
     ('motor controller', 'FSESC 6.7 (VESC). #18'),
     ('BMS + charge port', 'picked in #19'),
-    ('screen + ESP32-S3', 'near the handlebars. #22, #24'),
+    ('screen + ESP32-S3', 'where it mounts is #26. code: #22, #24'),
     ('wiring', 'every wire and fuse. #20'),
 ]
 y = 78
@@ -46,6 +46,6 @@ for head, body in items:
     note(ax, cx, y, head, size=12, weight='bold')
     note(ax, cx, y - 3.2, body, size=10, color=PENCIL, va='top', linespacing=1.2)
     y -= 5.5 + 3.2 * (body.count('\n') + 1)
-note(ax, cx, 10, 'the real frame is only partly\nwelded. #2 records what exists.', size=10, color=PENCIL, linespacing=1.2)
-mono(ax, 149, -1.5, 'render: 2024 SolidWorks model (mechanical/cad-2024/Assem1.SLDASM)', size=7, color='#6f6a60', ha='right')
+note(ax, cx, 10, 'the 2025 CAD note calls the frame\npartly built. #2 records what exists.', size=10, color=PENCIL, linespacing=1.2)
+mono(ax, 149, -1.5, 'render: club website (2024 SolidWorks model)', size=7, color='#6f6a60', ha='right')
 save(fig, os.path.join(HERE, 'bike-overview.png'))

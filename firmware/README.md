@@ -4,9 +4,9 @@ Setup steps and the desk demo are in [docs/setup/4-firmware.md](../docs/setup/4-
 
 | Folder | What it is | Status |
 | --- | --- | --- |
-| [`desk-demo/`](desk-demo/) | **Start here.** The 2024 display code as a ready-to-open Arduino sketch, with the LED pin moved off GPIO 9 | Runs on an ESP32-S3 with an SSD1306 OLED |
+| [`desk-demo/`](desk-demo/) | **Start here.** The 2024 display code as a ready-to-open Arduino sketch, with the LED pin moved off GPIO 9 | Should run on an ESP32-S3 with an SSD1306 OLED; the first hardware test is #12 |
 | [`display-2024/`](display-2024/) | The original 2024 code (`main.cpp`) and the hand-drawn screen layout | Fixed numbers only; kept unchanged for reference |
-| [`can-twai-2024/`](can-twai-2024/) | Two ESP-IDF projects: a CAN sender and a receiver that draws on the OLED with LVGL (Nov 2024) | Test data only; targets a plain ESP32 |
+| [`can-twai-2024/`](can-twai-2024/) | Two ESP-IDF projects based on Espressif's TWAI (CAN) example, one with an OLED drawn with LVGL (Nov 2024). The folder names are reversed: the "receiver" is the board that transmits | Fixed values on screen (60% and 18); targets a plain ESP32 |
 | [`simulator-2024/`](simulator-2024/) | A Rust desktop mock-up of the 128x64 screen | Optional; setup notes are for macOS |
 
 ![Screen layout](display-2024/display-prototype.jpeg)

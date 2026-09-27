@@ -9,7 +9,7 @@ Do these steps once, in order. Most take 5 to 15 minutes; the safety courses tak
 3. Open the **Bakfiets F26** category:
    - **#bakfiets-general** is the main channel for the whole team.
    - **Bakfiets Mechanical**, **Bakfiets Electrical** and **Bakfiets Firmware**: one channel per subteam. Post subteam questions there.
-   - **Github usernames**: post your GitHub username here, so you'll be added to the Electrium-Mobility GitHub org and can upload your work.
+   - **Github usernames**: post your GitHub username here, so you'll be added to the Electrium-Mobility GitHub org and can upload your work. A day or two later, GitHub emails you an invitation to Electrium-Mobility. Click **Join** to get write access. Until then, see the fork hint in How to Submit.
 
 The repo is public, so you can download everything before you're added.
 
@@ -64,7 +64,7 @@ The whole team meets **Wednesdays, 6:30 to 7:30 pm, in workbay 1002**. Design re
 | Electrical lead | Chosen at the 2026-09-30 team meeting ([issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17)) | Same for electrical, and supervises all battery work |
 | Firmware lead | Chosen at the 2026-09-30 team meeting ([issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17)) | Same for firmware, and approves code pull requests |
 
-Until the subteam leads are chosen, Justin Gu covers all three roles. Subteam leads meet the project lead briefly each week to raise blockers.
+Until the subteam leads are chosen, Justin Gu covers all three roles. If nobody takes a lead role, Justin Gu keeps covering it and it stays open on issue #17. Subteam leads meet the project lead briefly each week to raise blockers.
 
 Habits for everyone:
 

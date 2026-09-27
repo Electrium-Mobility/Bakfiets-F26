@@ -2,7 +2,7 @@
 
 All SolidWorks files for the bakfiets. Setup steps are in [docs/setup/2-mechanical.md](../docs/setup/2-mechanical.md).
 
-**Don't move or rename files inside `cad-2024/` or `cad-2025-coop/`.** The assemblies find their parts by folder path. Put new work in a new folder such as `cad-2026/`.
+**Don't move or rename files inside `cad-2024/` or `cad-2025-coop/`.** The assemblies find their parts by folder path. Put new work in `cad-2026/`, copying what you need with **File > Pack and Go** (add a prefix so names don't clash). One person edits a CAD file at a time: say on your issue which files you're changing, because Git can't merge two edits to the same SolidWorks file.
 
 ![CAD overview](../docs/images/doc_hw_overview.png)
 
