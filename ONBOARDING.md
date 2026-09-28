@@ -31,7 +31,7 @@ Setup takes about 2 to 3 hours in total, spread over a few days.
 
 These apply from day one.
 
-1. Finish the safety training before you use any tool or touch a battery. No exceptions.
+1. Finish the safety training before you use any tool or touch a battery.
 2. Never work on a battery pack alone.
 3. Work on a branch and open a pull request. Never push straight to `main`.
 4. One person edits a CAD file at a time: say which files you're changing on your issue. Git can't merge two edits to the same SolidWorks file.
