@@ -74,14 +74,14 @@ To get the team's latest changes later: click **Fetch origin**, then **Pull orig
 | Subteam | Install | Notes |
 | --- | --- | --- |
 | Mechanical | SolidWorks 2026 | You don't need to buy it: the campus labs Fulcrum, Helix, Lever and WEEF run 2026, and the SDC has a CAD studio for teams. If you'd rather have it on your own Windows laptop, SolidWorks sells a [student licence](https://www.solidworks.com/product/students) |
-| Electrical | [KiCad 10](https://www.kicad.org/download/) | Free. Install with the default libraries |
+| Electrical | KiCad 9 ([Windows](https://downloads.kicad.org/kicad/windows/explore/stable), [Mac](https://downloads.kicad.org/kicad/macos/explore/stable)) | Free. Pick the newest 9.0 file (`kicad-9.0.9-x86_64.exe` on Windows, `kicad-unified-universal-9.0.9.dmg` on a Mac), not KiCad 10, because all the tutorial videos use 9. Install with the default libraries |
 | Firmware | [Arduino IDE 2](https://www.arduino.cc/en/software) with ESP32 support | Free. Follow [this written guide](https://randomnerdtutorials.com/installing-esp32-arduino-ide-2-0/) to add ESP32 boards |
 
 **On a Mac:** GitHub Desktop, KiCad and Arduino IDE all have Mac versions, so electrical and firmware setup work the same way. Under **Tools > Port**, the board shows up as `/dev/cu.usbmodem…` instead of a COM port. SolidWorks doesn't run on a Mac, so mechanical members use a lab PC or pair up with someone at the meeting.
 
 **On a lab PC:** you don't need GitHub Desktop to open the model. On the [repo page](https://github.com/Electrium-Mobility/Bakfiets-F26), click the green **Code** button, then **Download ZIP**. Unzip it to your N: drive so it isn't wiped when you log out, and use that folder as your clone for Stage 1. To submit work later, copy your new files to your own laptop and use GitHub Desktop there.
 
-**⚠️ Warning:** the team uses SolidWorks **2026** and KiCad **10**. Files saved in either can't be opened in an older version, so don't install an older one.
+**⚠️ Warning:** the team uses SolidWorks **2026** and KiCad **9**. A SolidWorks 2026 file can't be opened in an older version, so don't install an older one. A file saved in KiCad 10 can't be opened in KiCad 9, so don't upgrade to 10.
 
 ### Prerequisites
 
@@ -307,9 +307,9 @@ No hardware needed: do all of Stage 1 on your own laptop.
 
 #### Task
 
-Read the 2023 [anti-spark](https://github.com/Electrium-Mobility/anti-spark) schematic and explain how it works. It's a small, real Electrium board: 18 parts, with three 100 V MOSFETs. You need KiCad 10 installed first (see Software).
+Read the 2023 [anti-spark](https://github.com/Electrium-Mobility/anti-spark) schematic and explain how it works. It's a small, real Electrium board: 18 parts, with three 100 V MOSFETs. You need KiCad 9 installed first (see Software).
 
-Watch first: [MOSFET as a switch](https://www.youtube.com/watch?v=o4_NeqlJgOs) (6 min) and part 1 of [KiCad Getting Started](https://www.youtube.com/watch?v=0WCi1rhueH4) (4 min, made for KiCad 9, but the basics are the same in 10). [What a BMS does](https://www.youtube.com/watch?v=rT-1gvkFj60) (13 min) helps too.
+Watch first: [MOSFET as a switch](https://www.youtube.com/watch?v=o4_NeqlJgOs) (6 min) and part 1 of [KiCad 9 Getting Started](https://www.youtube.com/watch?v=0WCi1rhueH4) (4 min). [What a BMS does](https://www.youtube.com/watch?v=rT-1gvkFj60) (13 min) helps too.
 
 #### Steps
 
@@ -343,7 +343,7 @@ Pick one of these issues and claim it.
 
 | Requirement | Value |
 | --- | --- |
-| Software | KiCad 10, or [draw.io](https://app.diagrams.net/) for diagrams |
+| Software | KiCad 9, or [draw.io](https://app.diagrams.net/) for diagrams |
 | Voltage rating | MOSFETs and capacitors on the battery side rated 100 V. TVS diode standoff about 54 to 58 V, with its clamp voltage below 100 V. Fuses DC-rated for at least 60 V |
 | Where new files go | `electrical/` in the Bakfiets-F26 repo (the BOM goes in `docs/BOM.md`) |
 | Battery work | Only with the electrical lead present, after WHMIS (SO2017) |
@@ -579,7 +579,7 @@ Ling is tracking down the motor that was meant to go on the bike. Updates go in 
 | Bench power supply | A lab box that gives an adjustable voltage with a current limit, used for safe testing instead of a battery |  |
 | XT60 / JST | A common battery plug / a family of small signal connectors | [XT60](https://components101.com/connectors/xt60-connector) |
 | LiPo bag | A fire-resistant bag for charging small batteries. Too small for our 36-cell pack, which goes in a metal box |  |
-| Schematic / PCB | A drawing of a circuit / the printed circuit board it's built on | [KiCad getting started](https://docs.kicad.org/10.0/en/getting_started_in_kicad/getting_started_in_kicad.html) |
+| Schematic / PCB | A drawing of a circuit / the printed circuit board it's built on | [KiCad getting started](https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html) |
 | Gerbers | The files a factory uses to make a PCB |  |
 | Voltage divider | Two resistors that scale 50 V down to a level the ESP32 can measure | [SparkFun](https://learn.sparkfun.com/tutorials/voltage-dividers/all) |
 

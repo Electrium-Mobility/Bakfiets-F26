@@ -4,11 +4,11 @@ Do [Getting Started](../../ONBOARDING.md#getting-started) in the onboarding guid
 
 The steps you have to do are in [Electrical Stage 1](../../ONBOARDING.md#stage-1-read-a-real-board). This page repeats them with extra help, so you don't need to do anything twice.
 
-## 1. Install KiCad 10
+## 1. Install KiCad 9
 
-1. Download KiCad 10 from [kicad.org/download](https://www.kicad.org/download/). It's free. The whole team uses 10, because files saved in 10 can't be opened in 9.
+1. Download KiCad 9 for [Windows](https://downloads.kicad.org/kicad/windows/explore/stable) or [Mac](https://downloads.kicad.org/kicad/macos/explore/stable). It's free. Pick the newest 9.0 file (9.0.9), not KiCad 10: all the tutorial videos use 9, and a file saved in 10 can't be opened in 9.
 2. Install with the default options, including the libraries.
-3. Watch [KiCad 9.0 Getting Started, part 1](https://www.youtube.com/watch?v=0WCi1rhueH4) (DigiKey, 4 min) and continue through that series. For one video from schematic to finished board, try [Build your first PCB in KiCad 9](https://www.youtube.com/watch?v=moP6JxN7FWk) (16 min). Both were made for KiCad 9, but the basics are the same in 10.
+3. Watch [KiCad 9.0 Getting Started, part 1](https://www.youtube.com/watch?v=0WCi1rhueH4) (DigiKey, 4 min) and continue through that series. For one video from schematic to finished board, try [Build your first PCB in KiCad 9](https://www.youtube.com/watch?v=moP6JxN7FWk) (16 min).
 
 ## 2. Your first hour: read a real board
 
