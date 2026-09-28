@@ -7,7 +7,7 @@ Do [Getting Started](../../ONBOARDING.md#getting-started) in the onboarding guid
 The team uses **SolidWorks 2026**, the version on the campus lab PCs. Files saved in 2026 can't be opened in older versions.
 
 - **On campus:** the Engineering Computing labs Fulcrum, Helix, Lever and WEEF have SolidWorks 2026 ([lab software list](https://uwaterloo.ca/engineering-computing/computer-labs/lab-software)). The Sedra Student Design Centre also has a 14-seat CAD studio for teams.
-- **On your own laptop:** SolidWorks sells a student licence ([solidworks.com/product/students](https://www.solidworks.com/product/students)). It runs on Windows only; on a Mac, use a lab PC.
+- **On your own laptop:** SolidWorks sells a student licence ([solidworks.com/product/students](https://www.solidworks.com/product/students)). It runs on Windows only, so on a Mac, use a lab PC.
 
 First time? Watch [Beginners Guide to SOLIDWORKS: Your First Part](https://www.youtube.com/watch?v=qjtYqxNpj50) (SOLIDWORKS, 8 min).
 
@@ -47,7 +47,7 @@ If the frame still shows rebuild errors, copy the `bakfiets_weldment_profiles` f
 | Notching guides | `mechanical/cad-2024/notches/` |
 | Steering | `mechanical/cad-2024/steering system/steeringAssembly.SLDASM` |
 
-Every file is explained in [`mechanical/README.md`](../../mechanical/README.md). Don't move or rename anything in `cad-2024` or `cad-2025-coop`; save your work in `mechanical/cad-2026/` (create the folder if it's missing).
+Every file is explained in [`mechanical/README.md`](../../mechanical/README.md). Don't move or rename anything in `cad-2024` or `cad-2025-coop`. Save your work in `mechanical/cad-2026/` (create the folder if it's missing).
 
 ## 6. Pick a first task
 

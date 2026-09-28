@@ -4,10 +4,10 @@ Setup steps and the desk demo are in [docs/setup/4-firmware.md](../docs/setup/4-
 
 | Folder | What it is | Status |
 | --- | --- | --- |
-| [`desk-demo/`](desk-demo/) | **Start here.** The 2024 display code as a ready-to-open Arduino sketch, with the LED pin moved off GPIO 9 | Should run on an ESP32-S3 with an SSD1306 OLED; the first hardware test is #12 |
-| [`display-2024/`](display-2024/) | The original 2024 code (`main.cpp`) and the hand-drawn screen layout | Fixed numbers only; kept unchanged for reference |
-| [`can-twai-2024/`](can-twai-2024/) | Two ESP-IDF projects based on Espressif's TWAI (CAN) example, one with an OLED drawn with LVGL (Nov 2024). The folder names are reversed: the "receiver" is the board that transmits | Fixed values on screen (60% and 18); targets a plain ESP32 |
-| [`simulator-2024/`](simulator-2024/) | A Rust desktop mock-up of the 128x64 screen | Optional; setup notes are for macOS |
+| [`desk-demo/`](desk-demo/) | **Start here.** The 2024 display code as a ready-to-open Arduino sketch, with the LED pin moved off GPIO 9 | Should run on an ESP32-S3 with an SSD1306 OLED. The first hardware test is #12 |
+| [`display-2024/`](display-2024/) | The original 2024 code (`main.cpp`) and the hand-drawn screen layout | Fixed numbers only, kept unchanged for reference |
+| [`can-twai-2024/`](can-twai-2024/) | Two ESP-IDF projects based on Espressif's TWAI (CAN) example, one with an OLED drawn with LVGL (Nov 2024). The folder names are reversed: the "receiver" is the board that transmits | Fixed values on screen (60% and 18), and targets a plain ESP32 |
+| [`simulator-2024/`](simulator-2024/) | A Rust desktop mock-up of the 128x64 screen | Optional. Setup notes are for macOS |
 
 ![Screen layout](display-2024/display-prototype.jpeg)
 
@@ -23,7 +23,7 @@ Setup steps and the desk demo are in [docs/setup/4-firmware.md](../docs/setup/4-
 2. The LED animations pause on `delay(10)` for every LED. Five sweeps run before each screen refresh, so the screen updates only every 8 to 9 seconds. Fix: use `millis()` and move one LED per loop.
 3. `setup()` calls `loop()` directly.
 4. A comment says it tests the left signal, but the code calls `rightTurn()`.
-5. Small: the FastLED settings are defined after the library is included, so they do nothing; LED 62 belongs to both sweeps; `NUMFLAKES` and `logo_bmp` are unused.
+5. Small: the FastLED settings are defined after the library is included, so they do nothing. LED 62 belongs to both sweeps, and `NUMFLAKES` and `logo_bmp` are unused.
 
 ## CAN code notes
 

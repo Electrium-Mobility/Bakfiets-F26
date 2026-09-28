@@ -15,7 +15,7 @@ Don't buy one. Electrium has ESP32 boards and screens in the bay that you can bo
 
 1. Download [Arduino IDE 2](https://www.arduino.cc/en/software) and install it.
 2. Add ESP32 boards with the written guide [Installing ESP32 in Arduino IDE 2](https://randomnerdtutorials.com/installing-esp32-arduino-ide-2-0/), or watch [Set up ESP32 with Arduino IDE in 3 minutes](https://www.youtube.com/watch?v=ikBlhX-erSw).
-3. Choose **Tools > Manage Libraries**, and install **Adafruit SSD1306** and **FastLED**. When asked, click **Install all**; that also installs Adafruit GFX and Adafruit BusIO.
+3. Choose **Tools > Manage Libraries**, and install **Adafruit SSD1306** and **FastLED**. When asked, click **Install all**, which also installs Adafruit GFX and Adafruit BusIO.
 
 ## 3. Run the desk demo
 
@@ -34,7 +34,7 @@ Steps 1 to 3 need no board. Click **Verify** (the checkmark, top left) after ste
 
 **Upload says "Failed to connect"?** Hold the **BOOT** button, tap **RST**, release BOOT, then click Upload again.
 **No COM port?** Try another USB-C cable (some only charge), or, if you're on the port labelled UART, install the CP210x or CH340 USB driver.
-**Blank screen?** Check the SDA and SCL wires, then change `SCREEN_ADDRESS` in the code to `0x3D`. The message "SSD1306 allocation failed" in Serial Monitor (at 9600 baud) means the ESP32 couldn't reserve memory for the screen; it's not a wiring fault.
+**Blank screen?** Check the SDA and SCL wires, then change `SCREEN_ADDRESS` in the code to `0x3D`. The message "SSD1306 allocation failed" in Serial Monitor (at 9600 baud) means the ESP32 couldn't reserve memory for the screen. It's not a wiring fault.
 
 More help: [ESP32 OLED tutorial for beginners](https://www.youtube.com/watch?v=u8g34BS8Ouw) (17 min) and the written [ESP32 + SSD1306 guide](https://randomnerdtutorials.com/esp32-ssd1306-oled-display-arduino-ide/).
 
@@ -54,4 +54,4 @@ More help: [ESP32 OLED tutorial for beginners](https://www.youtube.com/watch?v=u
 
 ## 6. Pick a first task
 
-The desk demo (section 3) is your Stage 1; post a photo on [#12](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/12). Then pick a Stage 2 task in [ONBOARDING.md](../../ONBOARDING.md#firmware-onboarding).
+The desk demo (section 3) is your Stage 1. Post a photo on [#12](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/12). Then pick a Stage 2 task in [ONBOARDING.md](../../ONBOARDING.md#firmware-onboarding).

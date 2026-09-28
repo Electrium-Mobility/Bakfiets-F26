@@ -23,7 +23,7 @@ labels = [
     ((4.5, 24), P(90, 330), 'rear wheel', -0.15),
     ((20, 2.2), P(330, 285), 'frame: a normal back half plus a\nlong, low section that carries the box', 0.3),
     ((61, 2.2), P(640, 610), 'kickstand', 0.3),
-    ((74, 3.5), P(870, 700), 'front wheel (drawn smaller in the CAD;\nthe website says 26"). check in #4', 0.3),
+    ((74, 3.5), P(870, 700), 'front wheel (drawn smaller in the CAD,\nthe website says 26"). check in #4', 0.3),
     ((96, 44), P(800, 400), 'front fork', 0.2),
     ((70, 80), P(560, 330), 'wooden cargo box', -0.3),
 ]

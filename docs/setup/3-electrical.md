@@ -16,7 +16,7 @@ Do [Getting Started](../../ONBOARDING.md#getting-started) in the onboarding guid
 4. In the left panel, double-click `Anti-Spark Switch.kicad_sch` to open the schematic.
 5. Find the three MOSFETs (rated 100 V) and trace where the battery connects.
 
-If you open the PCB, KiCad also warns that the `XT60PW-F` footprint library is missing. The 2023 designer kept it on their own computer; it doesn't matter for reading the schematic.
+If you open the PCB, KiCad also warns that the `XT60PW-F` footprint library is missing. The 2023 designer kept it on their own computer, but it doesn't matter for reading the schematic.
 
 ## 3. Learn the basics
 

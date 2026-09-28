@@ -6,7 +6,7 @@ from matplotlib.patches import Rectangle, Circle, FancyArrowPatch
 
 fig, ax = page(150, 98, (15, 9.8))
 note(ax, 8, 94, 'How power flows through the bakfiets', size=24, weight='bold')
-note(ax, 8, 89.2, 'Follow the numbers; they match the list under this drawing. Red is the positive side, black the negative side, both at battery voltage.',
+note(ax, 8, 89.2, 'Follow the numbers, which match the list under this drawing. Red is the positive side, black the negative side, both at battery voltage.',
      size=11.5, color=PENCIL)
 
 def block(x, y, w, h, title, sub, col, n=None):
@@ -85,5 +85,5 @@ line([lx, lx + 4], [ly - 3.2, ly - 3.2], RED, 5); note(ax, lx + 5.5, ly - 3.2, '
 line([lx, lx + 4], [ly - 6.4, ly - 6.4], INK, 4); note(ax, lx + 5.5, ly - 6.4, 'battery -', size=9.5)
 ax.plot([lx + 18, lx + 22], [ly - 3.2, ly - 3.2], color=GOLD, lw=2.4); note(ax, lx + 23.5, ly - 3.2, '5V', size=9.5)
 ax.plot([lx + 18, lx + 22], [ly - 6.4, ly - 6.4], color=BLUE, lw=2, ls=(0, (4, 3))); note(ax, lx + 23.5, ly - 6.4, 'signals', size=9.5)
-mono(ax, 149, -2, 'redrawn from the 2024 block diagram (high-level-circuit-diagram-2024.png); fuse, BMS side, brake cut-off and UART added from issues #18 to #22', size=6.6, color='#6f6a60', ha='right')
+mono(ax, 149, -2, 'redrawn from the 2024 block diagram (high-level-circuit-diagram-2024.png). Fuse, BMS side, brake cut-off and UART added from issues #18 to #22', size=6.6, color='#6f6a60', ha='right')
 save(fig, os.path.join(HERE, 'bakfiets-power-flow.png'))
