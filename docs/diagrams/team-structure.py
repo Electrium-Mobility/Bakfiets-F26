@@ -6,7 +6,7 @@ from matplotlib.patches import FancyBboxPatch
 
 fig, ax = page(150, 96, (15, 9.6))
 note(ax, 8, 92, 'How the Bakfiets team is run', size=24, weight='bold')
-note(ax, 8, 87.2, 'Roles, not names. Who holds each role is in ONBOARDING.md and docs/setup/1-everyone.md.', size=11.5, color=PENCIL)
+note(ax, 8, 87.2, 'Roles, not names. Who holds each role is in ONBOARDING.md.', size=11.5, color=PENCIL)
 
 def role(x, y, w, h, title, body, col, dashed=False):
     ax.add_patch(FancyBboxPatch((x - w / 2, y - h), w, h, boxstyle='round,pad=0,rounding_size=1.2', fc='#f3efe4',
@@ -40,7 +40,7 @@ note(ax, 100, 46.5, 'leads are chosen at the 30 Sept meeting.\nan open seat stay
 
 # rhythm
 note(ax, 100, 63, 'every week', size=12, weight='bold')
-note(ax, 100, 59.9, 'whole team: Wednesdays 6:30 to 7:30pm,\nworkbay 1002\nsubteam leads: a short check-in with\nthe project lead about blockers',
+note(ax, 100, 59.9, 'whole team: Wednesdays 6:30 to 7:30pm,\nthe Electrium bay\nsubteam leads: a short check-in with\nthe project lead about blockers',
      size=9.6, va='top', color=INK, linespacing=1.2)
 mono(ax, 149, -1.5, 'roles from ONBOARDING.md, "Who Leads What"', size=7, color='#6f6a60', ha='right')
 save(fig, os.path.join(HERE, 'team-structure.png'))

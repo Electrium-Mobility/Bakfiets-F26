@@ -12,6 +12,21 @@ This page takes you from zero to your first contribution. Work through it from t
 
 *The 2024 design, from the club website. The rider sits at the back and the cargo box rides between the rider and the front wheel.*
 
+## Your To-Do List
+
+Work down this list. Each item links to the section that explains it.
+
+- [ ] Make a GitHub account, join the Discord, and post your GitHub username in the **Github usernames** thread ([Accounts and Discord](#accounts-and-discord))
+- [ ] Clone the repo with GitHub Desktop ([Download the Files](#download-the-files))
+- [ ] Install your subteam's software ([Software](#software))
+- [ ] Do WHMIS on LEARN, about an hour ([Safety Training](#safety-training))
+- [ ] Accept the GitHub invite to the repo when the email arrives
+- [ ] Come to the Wednesday meeting, 6:30 to 7:30 pm in the Electrium bay
+- [ ] Do your subteam's Stage 1: [Mechanical](#stage-1-open-the-bike) · [Electrical](#stage-1-read-a-real-board) · [Firmware](#stage-1-run-the-desk-demo)
+- [ ] Finish one Stage 2 task, then move on to the [term projects](#after-onboarding-term-projects)
+
+The rules and safety sections come next because they apply from day one.
+
 ## Rules
 
 - Finish the safety training before you use any tool or touch a battery. No exceptions.
@@ -63,6 +78,8 @@ To get updates later, click **Fetch origin**, then **Pull origin**.
 | Electrical | [KiCad 9](https://www.kicad.org/download/) | Free. Install with the default libraries |
 | Firmware | [Arduino IDE 2](https://www.arduino.cc/en/software) with ESP32 support | Free. Follow [this written guide](https://randomnerdtutorials.com/installing-esp32-arduino-ide-2-0/) to add ESP32 boards |
 
+**On a Mac:** GitHub Desktop, KiCad and Arduino IDE all have Mac versions, so electrical and firmware setup work the same way. A few names differ: **Show in Finder** instead of Show in Explorer, the clone lands in `Documents/GitHub/Bakfiets-F26`, and the board's port looks like `/dev/cu.usbmodem…` instead of `COM3`. SolidWorks doesn't run on a Mac, so mechanical members use a campus lab PC (Fulcrum, Helix, Lever or WEEF), or pair up with someone at the meeting.
+
 **⚠️ Warning:** the team uses SolidWorks **2026**. A file saved in 2026 can't be opened in an older version, so don't install an older one.
 
 ### Safety Training
@@ -85,7 +102,11 @@ You can start setup, CAD and code right away. Finish this before you use tools o
 - The 2024 pack may be over-discharged after sitting since 2024. Don't charge it until the electrical lead has measured it.
 - Never use a swollen or damaged pack. If a pack gets hot, smells or smokes, get everyone away and pull the fire alarm if there's fire. Then tell the electrical lead and the project lead.
 
-**Where the bike is:** **workbay 1002** in the Sedra Student Design Centre (SDC), the Electrium Mobility bay. Entry is by WatCard. To get on the access list, post a screenshot of your WHMIS certificate in the **Github usernames** thread (crop out your student number), and the project lead passes your name on to be added.
+**Where the bike is:** the Electrium bay (listed as workbay 1002 on SDC sheets), in the Sedra Student Design Centre (SDC) in Engineering 5. The bike frame, the cargo box, the 2024 battery pack and a motor set aside for Bakfiets are all there.
+
+**Getting in:** the bay door has a code lock. Only leads have the code, because the bay holds tools and batteries that can hurt someone who doesn't know them. A lead lets you in for meetings; for bay work at other times, arrange it with your subteam lead in your subteam channel. If you ever learn the code, don't pass it on.
+
+**WHMIS:** when you finish it, post a screenshot of the certificate in the **Github usernames** thread (crop out your student number), so the leads know you're cleared for hands-on work.
 
 **In the SDC:** the four shared rooms use sign-up sheets, so book before you use one and leave it tidy. Put work tables away when it isn't busy. Electrium's safety captain, Ayaan Salim, inspects our bay in the first week of each month, so keep it clean.
 
@@ -98,7 +119,7 @@ You can start setup, CAD and code right away. Finish this before you use tools o
 | Area | What exists | Next milestone |
 | --- | --- | --- |
 | Mechanical | A SolidWorks model, a welding jig, notching guides, one FEA study and a partly built frame | Record what is welded; rerun FEA with written load cases |
-| Electrical | A power flow diagram. The 2024 schematics aren't in any Electrium repo | Confirm the motor; draft the power board schematic |
+| Electrical | A power flow diagram, the 2024 battery pack and a motor (both in the bay, untested). The 2024 schematics aren't in any Electrium repo | Confirm the motor; draft the power board schematic |
 | Firmware | A screen and LED demo with fixed numbers | Show a real battery voltage and one working button |
 
 ### Open Questions
@@ -109,7 +130,7 @@ The 2024 files disagree on a few basics. Below is the answer we're working from 
 
 - **Our answer:** a 500 W hub motor driven by an FSESC 6.7, a VESC-based motor controller made by Flipsky.
 - **Why:** the club website names that exact controller. The 2024 README and the crank-motor CAD model (`mechanical/cad-2024/MotorCrank/`) point to a Bafang BBS02 mid-drive instead, but they are from early 2024. The website's later W2024 and W2025 pages both name the hub motor and FSESC.
-- **How to check:** look at the bike ([issue #1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1)). A hub motor is a thick drum around a wheel's axle, with a cable coming out of the axle. A BBS02 is a box at the pedals that replaces the crank and chainring. Photograph any separate controller box and its label. Ling, one of Electrium's two team leads, is also tracking down the motor that was meant for the bike.
+- **How to check:** a motor set aside for Bakfiets is in the bay (confirmed by Samantha Chong, one of Electrium's team leads), so the question is which kind it is. Look at it and at the bike ([issue #1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1)). A hub motor is a thick drum around a wheel's axle, with a cable coming out of the axle. A BBS02 is a box at the pedals that replaces the crank and chainring. Photograph any separate controller box and its label. Ling, one of Electrium's two team leads, is also tracking down the motor that was meant for the bike.
 - **If we're wrong:** a BBS02 has its own built-in controller. The electrical plan would drop the separate ESC, and firmware would read the BBS02's display protocol instead of the VESC's.
 
 #### 2. Which microcontroller runs the screen?
@@ -139,7 +160,7 @@ The 2024 files disagree on a few basics. Below is the answer we're working from 
 
 | Role | Person | What they do |
 | --- | --- | --- |
-| Project lead | Justin Gu | Priorities, decisions that affect more than one subteam, purchases (through the SDC purchase request process) and room access |
+| Project lead | Justin Gu | Priorities, decisions that affect more than one subteam, purchases (through Electrium's ordering process) and letting members into the bay |
 | Mechanical lead | Chosen at the 2026-09-30 team meeting ([issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17)) | Runs #bakfiets-mech, keeps mechanical issues current, approves CAD pull requests |
 | Electrical lead | Chosen at the 2026-09-30 team meeting ([issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17)) | Same for electrical, and supervises all battery work |
 | Firmware lead | Chosen at the 2026-09-30 team meeting ([issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17)) | Same for firmware, and approves code pull requests |
@@ -337,7 +358,7 @@ Run [`firmware/desk-demo/desk-demo.ino`](firmware/desk-demo/desk-demo.ino) on an
 | Part | Notes |
 | --- | --- |
 | ESP32-S3 dev board, such as the ESP32-S3-DevKitC-1 | It must be an S3. A plain ESP32 wires GPIO 9 and 10 to its flash chip |
-| SSD1306 128x64 I2C OLED (the common 0.96-inch screen) | Don't buy one. We're checking which boards and screens are in the bay at the 30 September meeting, and if there aren't enough, the project lead orders more through the SDC. |
+| SSD1306 128x64 I2C OLED (the common 0.96-inch screen) | Don't buy one. Electrium has ESP32 boards and screens, kept in the bay, and they're handed out at meetings. Check the board says ESP32-S3 before using it with the desk demo. |
 | 4 female-to-female jumper wires, and a USB-C data cable | No LED strip is needed |
 | For Stage 2: a push button, a breadboard and a few resistors | Needed for #14 and #15. #15 also uses a bench power supply |
 
@@ -404,13 +425,7 @@ A pull request with your sketch, a photo or short video of it working, and `Clos
 
 ## Final Checklist
 
-- [ ] GitHub account made, Discord joined, and username posted in the **Github usernames** thread
-- [ ] GitHub invite to the Bakfiets-F26 repo accepted (it arrives by email after you post your username)
-- [ ] Bakfiets-F26 cloned with GitHub Desktop
-- [ ] Your subteam's software installed
-- [ ] WHMIS 2015 (SO2017) done on LEARN, and a screenshot of the certificate (student number cropped) posted in the **Github usernames** thread for WatCard access to the bay
-- [ ] Stage 1 deliverable posted
-- [ ] One Stage 2 issue finished (its pull request merged, or its photos and notes posted)
+You're done onboarding when every box in [Your To-Do List](#your-to-do-list) at the top is ticked: your Stage 1 deliverable is posted, and one Stage 2 issue is finished (its pull request merged, or its photos and notes posted).
 
 ## How to Submit
 

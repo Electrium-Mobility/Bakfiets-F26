@@ -1,6 +1,6 @@
 # Setup for electrical
 
-Finish [Setup for everyone](1-everyone.md) first. You need the safety training before battery work, but not for anything in this guide.
+Do [Getting Started](../../ONBOARDING.md#getting-started) in the onboarding guide first. You need the safety training before battery work, but not for anything in this guide.
 
 ## 1. Install KiCad 9
 

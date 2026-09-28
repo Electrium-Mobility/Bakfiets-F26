@@ -1,6 +1,6 @@
 # Setup for mechanical
 
-Finish [Setup for everyone](1-everyone.md) first. Your files are in the `mechanical/` folder of your clone.
+Do [Getting Started](../../ONBOARDING.md#getting-started) in the onboarding guide first. Your files are in the `mechanical/` folder of your clone.
 
 ## 1. Get SolidWorks 2026
 

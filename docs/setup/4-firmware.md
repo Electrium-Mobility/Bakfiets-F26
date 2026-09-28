@@ -1,6 +1,6 @@
 # Setup for firmware
 
-Finish [Setup for everyone](1-everyone.md) first.
+Do [Getting Started](../../ONBOARDING.md#getting-started) in the onboarding guide first.
 
 ## 1. What you need
 
@@ -9,7 +9,7 @@ Finish [Setup for everyone](1-everyone.md) first.
 - Four female-to-female jumper wires and a USB-C cable.
 - No LED strip is needed for the desk demo.
 
-Don't buy one. We're checking which boards and screens are in the bay at the 30 September meeting, and if there aren't enough, the project lead orders more through the SDC. Do section 2 and steps 1 to 3 of section 3 on your own laptop in the meantime, then click **Verify** (the checkmark button) to check it builds without a board.
+Don't buy one. Electrium has ESP32 boards and screens, kept in the bay, and they're handed out at meetings. Do section 2 and steps 1 to 3 of section 3 on your own laptop in the meantime, then click **Verify** (the checkmark button) to check it builds without a board.
 
 ## 2. Install Arduino IDE and ESP32 support
 
