@@ -40,8 +40,9 @@ Each stage links the videos it needs, and nothing else is assumed.
 1. Make a free GitHub account at [github.com/signup](https://github.com/signup).
 2. Join the Electrium Discord with the [club invite](https://discord.gg/jggFVza4XR).
 3. Open the **Bakfiets F26** category. It has **#bakfiets-general** for the whole team (with a **Github usernames** thread inside it), one channel per subteam where subteam questions go (**#bakfiets-mech**, **#bakfiets-elec** and **#bakfiets-firm**), and a voice channel, **bakfiets**.
-4. Post your GitHub username in the **Github usernames** thread in #bakfiets-general. You'll be added to the Electrium-Mobility org, which lets you upload your work.
-5. A day or two later, GitHub emails you an invitation to Electrium-Mobility. Click **Join** to get write access. Until then, see the fork hint in How to Submit.
+4. Post your GitHub username in the **Github usernames** thread in #bakfiets-general, then carry straight on with the next section. You don't need to wait for anything: the repo is public, so you can download it and do all of setup and Stage 1 now.
+
+   The project lead then adds you to the repo, and GitHub emails you an invite to **Electrium-Mobility/Bakfiets-F26**. Click **View invitation**, then **Accept invitation**. That lets you upload your work later. If you haven't accepted it by the time you submit, see the fork hint in How to Submit.
 
 ### Download the Files
 
@@ -404,7 +405,7 @@ A pull request with your sketch, a photo or short video of it working, and `Clos
 ## Final Checklist
 
 - [ ] GitHub account made, Discord joined, and username posted in the **Github usernames** thread
-- [ ] GitHub invitation to Electrium-Mobility accepted (the email arrives a day or two later)
+- [ ] GitHub invite to the Bakfiets-F26 repo accepted (it arrives by email after you post your username)
 - [ ] Bakfiets-F26 cloned with GitHub Desktop
 - [ ] Your subteam's software installed
 - [ ] WHMIS 2015 (SO2017) done on LEARN, and a screenshot of the certificate (student number cropped) posted in the **Github usernames** thread for WatCard access to the bay
@@ -421,7 +422,7 @@ A pull request with your sketch, a photo or short video of it working, and `Clos
 4. In the pull request, say what you did, add screenshots, and write `Closes #<issue number>`.
 5. Post the link in your subteam channel. Your subteam lead reviews it, asks for changes if needed, and merges it.
 
-**💡 Hint:** if GitHub Desktop says you don't have permission to push and offers to **create a fork**, click **Fork this repository**, then choose **To contribute to the parent project**. A fork is your own copy of the repo on GitHub. Your pull request still goes to Bakfiets-F26 as normal. This only happens until you've been added to the Electrium-Mobility org, which gives write access automatically.
+**💡 Hint:** if GitHub Desktop says you don't have permission to push and offers to **create a fork**, click **Fork this repository**, then choose **To contribute to the parent project**. A fork is your own copy of the repo on GitHub. Your pull request still goes to Bakfiets-F26 as normal. This only happens until you've accepted your invite to the repo.
 
 GitHub's [Hello World guide](https://docs.github.com/en/get-started/start-your-journey/hello-world) walks through branches and pull requests.
 

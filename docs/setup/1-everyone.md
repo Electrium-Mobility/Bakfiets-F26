@@ -9,7 +9,7 @@ Do these steps once, in order. Most take 5 to 15 minutes; the safety courses tak
 3. Open the **Bakfiets F26** category:
    - **#bakfiets-general** is the main channel for the whole team.
    - **#bakfiets-mech**, **#bakfiets-elec** and **#bakfiets-firm**: one channel per subteam. Post subteam questions there.
-   - **Github usernames**, a thread inside #bakfiets-general: post your GitHub username here, so you'll be added to the Electrium-Mobility GitHub org and can upload your work. A day or two later, GitHub emails you an invitation to Electrium-Mobility. Click **Join** to get write access. Until then, see the fork hint in How to Submit.
+   - **Github usernames**, a thread inside #bakfiets-general: post your GitHub username here so the project lead can add you to the repo. You don't need to wait for that: keep going with the next steps. When GitHub emails you an invite to **Electrium-Mobility/Bakfiets-F26**, click **View invitation**, then **Accept invitation**.
 
 The repo is public, so you can download everything before you're added.
 
@@ -84,6 +84,6 @@ Habits for everyone:
 5. Type a one-line summary in the **Summary** box at the bottom left, click **Commit to your-branch**, then **Publish branch**, then **Create Pull Request**. Say what you did and add `Closes #<issue number>`.
 6. Post the pull request link in your subteam channel.
 
-If GitHub Desktop says you don't have permission to push and offers to **create a fork**, click **Fork this repository**, then choose **To contribute to the parent project**. A fork is your own copy of the repo on GitHub; your pull request still goes to Bakfiets-F26 as normal. This only happens until you've been added to the Electrium-Mobility org, which gives write access automatically.
+If GitHub Desktop says you don't have permission to push and offers to **create a fork**, click **Fork this repository**, then choose **To contribute to the parent project**. A fork is your own copy of the repo on GitHub; your pull request still goes to Bakfiets-F26 as normal. This only happens until you've accepted your invite to the repo.
 
 GitHub's [Hello World guide](https://docs.github.com/en/get-started/start-your-journey/hello-world) walks through branches and pull requests.
