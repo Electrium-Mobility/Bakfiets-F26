@@ -1,6 +1,6 @@
 # Bakfiets F26
 
-Electrium Mobility's electric cargo bike ("Bak Choy"), Fall 2026. This repo holds everything from the 2024 build and the 2025 co-op CAD, organized so a new member can find their part in a minute.
+Electrium Mobility's electric cargo bike ("Bak Choy"), Fall 2026. This repo holds everything from the 2024 build and the 2025 co-op CAD.
 
 ![2024 render of the bakfiets](docs/images/render-2024.png)
 
