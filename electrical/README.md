@@ -2,7 +2,7 @@
 
 Setup steps are in [docs/setup/3-electrical.md](../docs/setup/3-electrical.md).
 
-Only one electrical file survived from 2024: a block diagram, redrawn below. The 2024 schematics and pack notes aren't in any Electrium repo. This term starts the electrical design fresh.
+Only one electrical file survived from 2024: a block diagram, redrawn below. The 2024 battery pack and a motor set aside for Bakfiets are in the Electrium bay, both untested ([#21](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21), [#1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1)). The 2024 schematics and pack notes aren't in any Electrium repo. This term starts the electrical design fresh.
 
 ## The pack is "48 V"
 
@@ -21,7 +21,7 @@ Follow the numbers:
 1. **Charger.** Plugs into a charging port on the frame and fills the pack to 50.4 V.
 2. **Battery pack.** 12S3P of 18650 cells. Its positive side goes through a fuse, DC-rated for 60 V or more.
 3. **BMS.** Sits on the pack's negative side (B- in, P- out), so charging and riding current both pass through it. Cuts the pack off on overcharge, over-discharge, overheating or a short.
-4. **Antispark.** The power button turns it on, so the controller's capacitors charge gently instead of sparking. The Electrium anti-spark board uses N-channel MOSFETs, which usually means it switches the negative wire; check its schematic.
+4. **Antispark.** The power button turns it on, so the controller's capacitors charge gently instead of sparking. The Electrium anti-spark board uses N-channel MOSFETs, which usually means it switches the negative wire; check its schematic. If it does switch the negative wire, the power board and the ESP32 must take their negative from the switched side too. Otherwise the ESP32's ground wire to the controller becomes a path around the antispark, which can damage the controller's COMM port or the ESP32.
 5. **Motor controller.** The ESC turns battery power into the three motor wires. The throttle sends it a speed request, and the brake levers tell it to cut power.
 6. **Power board.** The PDB steps 48 V down to 5 V for the electronics and lights.
 7. **ESP32-S3.** It drives the display over I2C and the LED strip, reads the buttons, and gets speed and battery data from the controller over UART. The brake levers also switch the brake lights.

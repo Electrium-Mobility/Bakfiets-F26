@@ -22,7 +22,7 @@ role(52, 82, 40, 14, 'Electrium team leads', 'two of them. they set our\nterm go
 role(108, 82, 36, 14, 'Electrium safety captain', 'inspects our bay in the first\nweek of each month', RED, dashed=True)
 
 # project lead
-role(52, 61, 44, 17, 'Bakfiets project lead', 'turns term goals into issues, runs the\nWednesday meeting, makes calls that affect\nmore than one subteam, orders parts', INK)
+role(52, 61, 44, 17, 'Bakfiets project lead', 'turns term goals into issues, runs the\nWednesday meeting, makes calls that affect\nmore than one subteam, orders parts,\nlets members into the bay', INK)
 link(52, 68, 52, 61)
 
 # subteam leads

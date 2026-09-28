@@ -1,6 +1,6 @@
 # Other Electrium projects worth copying from
 
-Other Electrium teams have solved many of our problems already. This list comes from checking all 82 repos in the org in September 2026. Private repos need org access; post your GitHub username in the **Github usernames** thread in #bakfiets-general on Discord.
+Other Electrium teams have solved many of our problems already. This list comes from checking all 82 repos in the org in September 2026. Repos marked Private are only visible to Electrium org members, and being added to Bakfiets-F26 doesn't include them. Your subteam lead can pass on anything you need from one.
 
 ## Mechanical
 

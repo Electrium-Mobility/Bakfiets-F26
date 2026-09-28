@@ -1,114 +1,141 @@
 # Bakfiets F26 Onboarding
 
-Last updated 2026-09-27 · Justin Gu, project lead
+Last updated 2026-09-28 · Justin Gu, project lead
 
-You will help finish an electric cargo bike. A bakfiets is a Dutch bike with a big box in front of the rider - ours adds a motor, a 48 V battery, lights and a small screen. Electrium Mobility started it in Winter 2024 and partly built it. The last recorded work, a CAD update, was in May 2025.
-
-This page takes you from zero to your first contribution. Work through it from top to bottom. Setup takes about 2 to 3 hours spread over a few days, most of it installing software and doing WHMIS; start the SolidWorks download early, since it's large. Try to finish setup before the next Wednesday meeting. Every file lives in this repo; the [README](README.md) maps the folders.
-
-![Onboarding path: accounts, files, software and WHMIS, then each subteam's Stage 1 and Stage 2, ending at the term projects](docs/diagrams/onboarding-path.png)
-
-![SolidWorks render of the bakfiets with its wooden cargo box](docs/images/render-2024.png)
-
-*The 2024 design, from the club website. The rider sits at the back and the cargo box rides between the rider and the front wheel.*
+You're joining the team finishing an electric cargo bike. A bakfiets is a Dutch bike with a big box in front of the rider; ours adds a motor, a 48 V battery, lights and a small screen. Tick the list below from top to bottom and you'll go from zero to your first contribution. Every file lives in this repo; the [README](README.md) maps the folders.
 
 ## Your To-Do List
 
-Work down this list. Each item links to the section that explains it.
+Setup takes about 2 to 3 hours in total, spread over a few days. Aim to finish it before the next Wednesday meeting.
 
-- [ ] Make a GitHub account, join the Discord, and post your GitHub username in the **Github usernames** thread ([Accounts and Discord](#accounts-and-discord))
-- [ ] Clone the repo with GitHub Desktop ([Download the Files](#download-the-files))
-- [ ] Install your subteam's software ([Software](#software))
-- [ ] Do WHMIS on LEARN, about an hour ([Safety Training](#safety-training))
-- [ ] Accept the GitHub invite to the repo when the email arrives
-- [ ] Come to the Wednesday meeting, 6:30 to 7:30 pm in the Electrium bay
+- [ ] **Mechanical, on Windows:** start the SolidWorks download first. It's large, so let it run while you do the rest. On a Mac, skip this: you'll use a campus lab PC ([Software](#software))
+- [ ] Make a GitHub account and join the Discord ([Accounts and Discord](#accounts-and-discord))
+- [ ] Post your GitHub username in the **Github usernames** thread, then keep going. Don't wait for a reply ([Accounts and Discord](#accounts-and-discord))
+- [ ] Clone the repo with GitHub Desktop. About 60 MB, plus a 22 min video if Git is new to you ([Download the Files](#download-the-files))
+- [ ] Install your subteam's software. This is most of your setup time ([Software](#software))
+- [ ] Do WHMIS on LEARN (about 30 minutes) and post a screenshot of the certificate in the **Github usernames** thread ([Safety Training](#safety-training))
+- [ ] Accept the GitHub invite to the repo when the email arrives ([Accounts and Discord](#accounts-and-discord))
+- [ ] Come to the Wednesday meeting, 6:30 to 7:30 pm in the Electrium bay. The door has a code lock, and a lead lets you in ([Where the bike is](#step-4-know-where-the-bike-is-and-how-to-get-in))
 - [ ] Do your subteam's Stage 1: [Mechanical](#stage-1-open-the-bike) · [Electrical](#stage-1-read-a-real-board) · [Firmware](#stage-1-run-the-desk-demo)
 - [ ] Finish one Stage 2 task, then move on to the [term projects](#after-onboarding-term-projects)
 
-The rules and safety sections come next because they apply from day one.
+![Onboarding path: accounts, files, software and WHMIS, then each subteam's Stage 1 and Stage 2, ending at the term projects](docs/diagrams/onboarding-path.png)
 
 ## Rules
 
-- Finish the safety training before you use any tool or touch a battery. No exceptions.
-- Never work on a battery pack alone.
-- Work on a branch and open a pull request. Never push straight to `main`.
-- One person edits a CAD file at a time: say which files you're changing on your issue. Git can't merge two edits to the same SolidWorks file.
-- Never move or rename files in `mechanical/cad-2024/` or `mechanical/cad-2025-coop/`. Assemblies find their parts by folder path, and moving a file breaks them.
-- Post questions in your subteam's Discord channel, not in DMs. That way one answer helps everyone.
+These apply from day one.
+
+1. Finish the safety training before you use any tool or touch a battery. No exceptions.
+2. Never work on a battery pack alone.
+3. Work on a branch and open a pull request. Never push straight to `main`.
+4. One person edits a CAD file at a time: say which files you're changing on your issue. Git can't merge two edits to the same SolidWorks file.
+5. Never move or rename files in `mechanical/cad-2024/` or `mechanical/cad-2025-coop/`. Assemblies find their parts by folder path, and moving a file breaks them.
+6. Post questions in your subteam's Discord channel, not in DMs. That way one answer helps everyone.
 
 ## Getting Started
-
-### Prerequisites
-
-You don't need any experience. If you haven't used these yet, the short videos in each Stage 1 cover them:
-
-| Subteam | What to refresh |
-| --- | --- |
-| Mechanical | Making a part and an assembly in SolidWorks |
-| Electrical | Ohm's law, and what series and parallel mean |
-| Firmware | Basic C or C++: variables, loops, functions |
-
-Each stage links the videos it needs, and nothing else is assumed.
 
 ### Accounts and Discord
 
 1. Make a free GitHub account at [github.com/signup](https://github.com/signup).
 2. Join the Electrium Discord with the [club invite](https://discord.gg/jggFVza4XR).
-3. Open the **Bakfiets F26** category. It has **#bakfiets-general** for the whole team (with a **Github usernames** thread inside it), one channel per subteam where subteam questions go (**#bakfiets-mech**, **#bakfiets-elec** and **#bakfiets-firm**), and a voice channel, **bakfiets**.
-4. Post your GitHub username in the **Github usernames** thread in #bakfiets-general, then carry straight on with the next section. You don't need to wait for anything: the repo is public, so you can download it and do all of setup and Stage 1 now.
+3. Open the **Bakfiets F26** category. You'll use:
+   - **#bakfiets-general** for the whole team, with the **Github usernames** thread inside it
+   - **#bakfiets-mech**, **#bakfiets-elec** or **#bakfiets-firm** for your subteam's questions
+   - **bakfiets**, the voice channel
+4. Post your GitHub username in the **Github usernames** thread.
+5. Go straight on to [Download the Files](#download-the-files). The repo is public, so you can download it and do all of setup and Stage 1 before anyone replies.
+6. Later, GitHub emails you an invite to **Electrium-Mobility/Bakfiets-F26** once the project lead adds you. Click **View invitation**, then **Accept invitation**. This lets you upload your work.
 
-   The project lead then adds you to the repo, and GitHub emails you an invite to **Electrium-Mobility/Bakfiets-F26**. Click **View invitation**, then **Accept invitation**. That lets you upload your work later. If you haven't accepted it by the time you submit, see the fork hint in How to Submit.
+**💡 Hint:** no invite accepted yet when you submit? Use the fork hint in [How to Submit](#how-to-submit).
 
 ### Download the Files
 
-**New to Git?** Watch [Git, GitHub and GitHub Desktop for beginners](https://www.youtube.com/watch?v=8Dd7KRpKeaE) (22 min) before you start. The rest of this guide uses the words clone, branch and commit; the video and the Glossary explain them.
+**New to Git?** Watch [Git, GitHub and GitHub Desktop for beginners](https://www.youtube.com/watch?v=8Dd7KRpKeaE) (22 min) first. The rest of this guide uses the words clone, branch and commit; the video and the Glossary explain them.
 
 1. Install [GitHub Desktop](https://desktop.github.com/) and sign in.
-2. Choose **File > Clone repository > URL**, paste `Electrium-Mobility/Bakfiets-F26`, and leave the local path as it is (`Documents\GitHub\Bakfiets-F26`).
-3. Click **Clone** (about 60 MB).
-4. Choose **Repository > Show in Explorer**. This folder is **your clone**. Every later step opens files from here, not from the GitHub website.
+2. Choose **File > Clone repository > URL** and paste `Electrium-Mobility/Bakfiets-F26`.
+3. Leave the local path as it is: `Documents\GitHub\Bakfiets-F26` on Windows, `Documents/GitHub/Bakfiets-F26` on a Mac.
+4. Click **Clone** (about 60 MB).
+5. Choose **Repository > Show in Explorer** (**Show in Finder** on a Mac). This folder is **your clone**. Every later step opens files from here, not from the GitHub website.
 
-To get updates later, click **Fetch origin**, then **Pull origin**.
+To get updates later: click **Fetch origin**, then **Pull origin**.
 
 ### Software
 
 | Subteam | Install | Notes |
 | --- | --- | --- |
-| Mechanical | SolidWorks 2026 | The campus labs Fulcrum, Helix, Lever and WEEF run 2026. SolidWorks also sells a [student licence](https://www.solidworks.com/product/students) (Windows only). On a Mac, use a lab PC |
+| Mechanical | SolidWorks 2026 | You don't need to buy it: the campus labs Fulcrum, Helix, Lever and WEEF run 2026, and the SDC has a CAD studio for teams. SolidWorks also sells a [student licence](https://www.solidworks.com/product/students) for Windows laptops |
 | Electrical | [KiCad 9](https://www.kicad.org/download/) | Free. Install with the default libraries |
 | Firmware | [Arduino IDE 2](https://www.arduino.cc/en/software) with ESP32 support | Free. Follow [this written guide](https://randomnerdtutorials.com/installing-esp32-arduino-ide-2-0/) to add ESP32 boards |
 
-**On a Mac:** GitHub Desktop, KiCad and Arduino IDE all have Mac versions, so electrical and firmware setup work the same way. A few names differ: **Show in Finder** instead of Show in Explorer, the clone lands in `Documents/GitHub/Bakfiets-F26`, and the board's port looks like `/dev/cu.usbmodem…` instead of `COM3`. SolidWorks doesn't run on a Mac, so mechanical members use a campus lab PC (Fulcrum, Helix, Lever or WEEF), or pair up with someone at the meeting.
+**On a Mac:** GitHub Desktop, KiCad and Arduino IDE all have Mac versions, so electrical and firmware setup work the same way. Under **Tools > Port**, the board shows up as `/dev/cu.usbmodem…` instead of a COM port. SolidWorks doesn't run on a Mac, so mechanical members use a lab PC or pair up with someone at the meeting.
 
 **⚠️ Warning:** the team uses SolidWorks **2026**. A file saved in 2026 can't be opened in an older version, so don't install an older one.
 
+### Prerequisites
+
+You don't need any experience. Each Stage 1 teaches its own tools. If a basic idea below is new, the video next to it covers it.
+
+| Subteam | What to know | Video |
+| --- | --- | --- |
+| Mechanical | Making a part and an assembly in SolidWorks | [Your First Part](https://www.youtube.com/watch?v=qjtYqxNpj50) (8 min) |
+| Electrical | Ohm's law, and what series and parallel mean | [Batteries in series vs parallel](https://www.youtube.com/watch?v=5lBDdcF6eAk) (3 min) |
+| Firmware | Basic C or C++: variables, loops, functions | [Arduino Tutorial 1 for absolute beginners](https://www.youtube.com/watch?v=fJWR7dBuc18) (24 min) |
+
+### What You're Building
+
+Electrium Mobility started the bakfiets in Winter 2024 and partly built it. The last recorded work, a CAD update, was in May 2025.
+
+![SolidWorks render of the bakfiets with its wooden cargo box](docs/images/render-2024.png)
+
+*The 2024 design, from the club website. The rider sits at the back and the cargo box rides between the rider and the front wheel.*
+
 ### Safety Training
 
-You can start setup, CAD and code right away. Finish this before you use tools or touch a battery.
+You can start setup, CAD and code right away. Finish the training below before you use tools or touch a battery.
+
+#### Step 1: Do WHMIS (about 30 minutes)
+
+1. Go to [LEARN](https://learn.uwaterloo.ca/) > Self Registration and take **WHMIS 2015** (course code **SO2017**). Details are on the [Safety Office page](https://uwaterloo.ca/safety-office/training/student-safety-orientation-whmis).
+2. Post a screenshot of the certificate in the **Github usernames** thread, with your student number cropped out. That tells the leads you've done it.
+
+You need WHMIS for any hands-on work in the shop or our bay: tools, batteries, the bike. You can attend meetings without it. WHMIS isn't battery training: any battery work also needs the electrical lead there. Renew it every 5 years.
+
+#### Step 2: Check the other trainings
+
+Do these only when you need the place or machine they cover. No onboarding task needs welding or the laser cutter.
 
 | Training | Needed for | Where |
 | --- | --- | --- |
-| WHMIS 2015 (course code SO2017), about 1 hour | Any hands-on work in the shop or our bay: tools, batteries, the bike. You can attend meetings without it. Renew every 5 years | [LEARN](https://learn.uwaterloo.ca/) > Self Registration ([Safety Office page](https://uwaterloo.ca/safety-office/training/student-safety-orientation-whmis)) |
 | Engineering Student Machine Shop Orientation | The Engineering Student Shops. You get an access card afterwards | LEARN. Score 100% on each module quiz ([Student Shops page](https://uwaterloo.ca/engineering-student-shops/getting-started)). Shop hours this term: 8:30 am to 4:30 pm, Monday to Friday, plus every second Saturday |
-| Welding | The SDC welding room | Welding training is now run by the MME department's new welding lab. Everyone, including previously approved welders, must pass the weld test before using the room. No onboarding task needs it |
-| Laser cutter | Only that machine | Hands-on, from the shop that runs it. No onboarding task needs it |
+| Welding | The SDC welding room | Run by the MME department's new welding lab. Everyone, including previously approved welders, must pass the weld test before using the room |
+| Laser cutter | Only that machine | Hands-on, from the shop that runs it |
 
-**Battery rules** (from the UW [Lithium Cell and Battery Standard](https://uwaterloo.ca/safety-office/laboratory-safety/batteries), plus common practice):
+#### Step 3: ⚠️ Learn the battery rules
 
-- Wear safety glasses, take off rings and watches, use insulated tools, and tape over bare terminals.
-- Store packs in a metal box or battery cabinet, and charge them on a non-combustible surface (concrete or a metal tray) away from anything that burns. A LiPo bag is too small for a 36-cell e-bike pack. Never leave a pack charging unattended or sitting on the charger.
-- Every pack goes on the SDC's shared battery and chemical inventory sheet, which the SDC is setting up this term.
-- Our pack reaches 50.4 V when full. UW's standard calls for electrical-safety procedures at 50 V and above. Use only the matching 12S charger.
-- The 2024 pack may be over-discharged after sitting since 2024. Don't charge it until the electrical lead has measured it.
-- Never use a swollen or damaged pack. If a pack gets hot, smells or smokes, get everyone away and pull the fire alarm if there's fire. Then tell the electrical lead and the project lead.
+From the UW [Lithium Cell and Battery Standard](https://uwaterloo.ca/safety-office/laboratory-safety/batteries), plus common practice:
 
-**Where the bike is:** the Electrium bay (listed as workbay 1002 on SDC sheets), in the Sedra Student Design Centre (SDC) in Engineering 5. The bike frame, the cargo box, the 2024 battery pack and a motor set aside for Bakfiets are all there.
+1. Wear safety glasses, take off rings and watches, use insulated tools, and tape over bare terminals.
+2. Store packs in a metal box or battery cabinet. A LiPo bag is too small for a 36-cell e-bike pack.
+3. Charge on a non-combustible surface (concrete or a metal tray) away from anything that burns. Never leave a pack charging unattended or sitting on the charger.
+4. Use only the matching 12S charger. Our pack reaches 50.4 V when full, and UW's standard calls for extra electrical-safety procedures at 50 V and above.
+5. The 2024 pack in the bay is untested. Don't lift, open, plug in or charge it until it has been measured and cleared under [issue #21](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21).
+6. Never use a swollen or damaged pack.
+7. If a pack gets hot, smells or smokes, get everyone away and pull the fire alarm if there's fire. Then tell the electrical lead and the project lead.
+8. Every pack goes on the SDC's shared battery and chemical inventory sheet, which the SDC is setting up this term.
 
-**Getting in:** the bay door has a code lock. Only leads have the code, because the bay holds tools and batteries that can hurt someone who doesn't know them. A lead lets you in for meetings; for bay work at other times, arrange it with your subteam lead in your subteam channel. If you ever learn the code, don't pass it on.
+#### Step 4: Know where the bike is and how to get in
 
-**WHMIS:** when you finish it, post a screenshot of the certificate in the **Github usernames** thread (crop out your student number), so the leads know you're cleared for hands-on work.
+1. **Where:** the Electrium bay (workbay 1002 on SDC sheets), in the Sedra Student Design Centre (SDC) in Engineering 5. The bike frame, the cargo box, the 2024 battery pack and a motor set aside for Bakfiets are all there.
+2. **Meetings:** the bay door has a code lock, and only leads have the code. A lead lets you in. Post in #bakfiets-general when you get to the door.
+3. **Other times:** arrange bay work with your subteam lead in your subteam channel.
+4. **If you ever learn the code:** don't pass it on. The bay holds items that can hurt someone who doesn't know them.
 
-**In the SDC:** the four shared rooms use sign-up sheets, so book before you use one and leave it tidy. Put work tables away when it isn't busy. Electrium's safety captain, Ayaan Salim, inspects our bay in the first week of each month, so keep it clean.
+#### Step 5: Follow the SDC house rules
+
+1. The four shared SDC rooms use sign-up sheets. Book before you use one and leave it tidy.
+2. Put work tables away when it isn't busy.
+3. Keep our bay clean. Electrium's safety captain, Ayaan Salim, inspects it in the first week of each month.
 
 ## The Project
 
@@ -130,7 +157,7 @@ The 2024 files disagree on a few basics. Below is the answer we're working from 
 
 - **Our answer:** a 500 W hub motor driven by an FSESC 6.7, a VESC-based motor controller made by Flipsky.
 - **Why:** the club website names that exact controller. The 2024 README and the crank-motor CAD model (`mechanical/cad-2024/MotorCrank/`) point to a Bafang BBS02 mid-drive instead, but they are from early 2024. The website's later W2024 and W2025 pages both name the hub motor and FSESC.
-- **How to check:** a motor set aside for Bakfiets is in the bay (confirmed by Samantha Chong, one of Electrium's team leads), so the question is which kind it is. Look at it and at the bike ([issue #1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1)). A hub motor is a thick drum around a wheel's axle, with a cable coming out of the axle. A BBS02 is a box at the pedals that replaces the crank and chainring. Photograph any separate controller box and its label. Ling, one of Electrium's two team leads, is also tracking down the motor that was meant for the bike.
+- **How to check:** a motor set aside for Bakfiets is in the bay (confirmed by Samantha Chong, one of Electrium's team leads), so the question is which kind it is. Look at it and at the bike ([issue #1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1)). A hub motor is a thick drum around a wheel's axle, with a cable coming out of the axle. A BBS02 is a box at the pedals that replaces the crank and chainring. Photograph any separate controller box and its label. Ling, one of Electrium's two team leads, is checking whether it's the motor the 2024 team meant to use.
 - **If we're wrong:** a BBS02 has its own built-in controller. The electrical plan would drop the separate ESC, and firmware would read the BBS02's display protocol instead of the VESC's.
 
 #### 2. Which microcontroller runs the screen?
@@ -165,7 +192,7 @@ The 2024 files disagree on a few basics. Below is the answer we're working from 
 | Electrical lead | Chosen at the 2026-09-30 team meeting ([issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17)) | Same for electrical, and supervises all battery work |
 | Firmware lead | Chosen at the 2026-09-30 team meeting ([issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17)) | Same for firmware, and approves code pull requests |
 
-Until the subteam leads are chosen, Justin Gu covers all three roles. If nobody takes a lead role, Justin Gu keeps covering it and it stays open on issue #17. The whole team meets **Wednesdays, 6:30 to 7:30 pm, in workbay 1002**. Design reviews and team decisions happen there. Subteam leads also meet the project lead briefly each week to raise blockers. The first team meeting was on 2026-09-23. Agendas and notes from 2026-09-30 on are in [docs/meetings/](docs/meetings/).
+Until the subteam leads are chosen, Justin Gu covers all three roles. If nobody takes a lead role, Justin Gu keeps covering it and it stays open on issue #17. The whole team meets **Wednesdays, 6:30 to 7:30 pm, in the Electrium bay (workbay 1002)**. Design reviews and team decisions happen there. Subteam leads also meet the project lead briefly each week to raise blockers. The first team meeting was on 2026-09-23. Agendas and notes from 2026-09-30 on are in [docs/meetings/](docs/meetings/).
 
 **How work flows:** you claim a task by commenting "I'll take this" on its GitHub issue; nobody needs to assign you. You post a short update on your issue each week: what you did, what's next, and anything blocking you. Anyone can review a pull request, and your subteam lead gives the final approval.
 
@@ -258,9 +285,9 @@ You will learn to read a real Electrium board, then help design the bike's elect
 *Thick red lines carry full battery voltage (about 36 to 50 V). Orange lines carry 5 V. Dashed blue lines are signals only.*
 
 1. **Charger** plugs into a charging port on the frame and fills the pack to 50.4 V.
-2. **Battery pack**: 12S3P. That's 12 groups wired in series, with 3 cells in parallel in each group: 36 cells, about 44 V in normal use. "48 V" is the class name. The drawing under this list shows how the cells connect. The positive side goes through a fuse (DC-rated for 60 V or more).
+2. **Battery pack**: 12S3P. That's 12 groups wired in series, with 3 cells in parallel in each group: 36 cells, about 44 V in normal use. "48 V" is the class name. 12S3P is what the club website says; [#21](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21) confirms it by counting the balance wires. The drawing under this list shows how the cells connect. The positive side goes through a fuse (DC-rated for 60 V or more).
 3. **BMS** (battery management system) sits on the pack's negative side, so both charging and riding current pass through it. It cuts the pack off on overcharge, over-discharge, overheating or a short.
-4. **Antispark**: the power button switches it on, so the controller's capacitors charge gently instead of sparking. The Electrium anti-spark board you read in Stage 1 uses N-channel MOSFETs, which usually means it switches the negative wire; check that in its schematic.
+4. **Antispark**: the power button switches it on, so the controller's capacitors charge gently instead of sparking. The Electrium anti-spark board you read in Stage 1 uses N-channel MOSFETs, which usually means it switches the negative wire; check that in its schematic. If it does switch the negative wire, the power board and the ESP32 must take their negative from the switched side too. Otherwise the ESP32's ground wire to the controller becomes a path around the antispark, which can damage the controller's COMM port or the ESP32.
 5. **Motor controller (ESC)** turns battery power into the three motor wires. The throttle sends it a speed request, and the brake levers tell it to cut power.
 6. **Power board (PDB)** steps 48 V down to 5 V for the small electronics and lights.
 7. **ESP32-S3** runs the display and LED strip, reads the buttons, and gets speed and battery data from the controller over UART.
@@ -358,7 +385,7 @@ Run [`firmware/desk-demo/desk-demo.ino`](firmware/desk-demo/desk-demo.ino) on an
 | Part | Notes |
 | --- | --- |
 | ESP32-S3 dev board, such as the ESP32-S3-DevKitC-1 | It must be an S3. A plain ESP32 wires GPIO 9 and 10 to its flash chip |
-| SSD1306 128x64 I2C OLED (the common 0.96-inch screen) | Don't buy one. Electrium has ESP32 boards and screens, kept in the bay, and they're handed out at meetings. Check the board says ESP32-S3 before using it with the desk demo. |
+| SSD1306 128x64 I2C OLED (the common 0.96-inch screen) | Don't buy one. Electrium has ESP32 boards and screens in the bay that you can borrow. Check the board says ESP32-S3 before using it with the desk demo. |
 | 4 female-to-female jumper wires, and a USB-C data cable | No LED strip is needed |
 | For Stage 2: a push button, a breadboard and a few resistors | Needed for #14 and #15. #15 also uses a bench power supply |
 
@@ -367,7 +394,7 @@ Run [`firmware/desk-demo/desk-demo.ino`](firmware/desk-demo/desk-demo.ino) on an
 1. With Arduino IDE and ESP32 support installed (see Software), choose **Tools > Manage Libraries** and install **Adafruit SSD1306** and **FastLED**. Click **Install all** when asked; that adds Adafruit GFX and BusIO too.
 2. Choose **File > Open** and pick `firmware\desk-demo\desk-demo.ino` in your clone.
 3. Choose **Tools > Board > esp32 > ESP32S3 Dev Module**, and set **Tools > USB CDC On Boot** to **Enabled**. Click **Verify** now.
-4. Wire the screen: VCC to 3.3 V, GND to GND, SDA to GPIO 10, SCL to GPIO 9, as in the drawing below.
+4. Wire the screen: VCC to 3.3 V, GND to GND, SDA to GPIO 10, SCL to GPIO 9, as in the drawing below. The drawing shows an ESP32-S3-DevKitC-1; on any other S3 board, go by the GPIO labels printed on the board, and if it has only one USB port, use that one.
 
    ![Desk demo wiring: four wires from the OLED screen to the ESP32-S3-DevKitC-1](firmware/diagrams/desk-demo-wiring.png)
 
@@ -510,7 +537,7 @@ Ling is tracking down the motor that was meant to go on the bike. Updates go in 
 | Term | Meaning | Learn more |
 | --- | --- | --- |
 | Bakfiets | A Dutch "box bike" with the cargo box in front of the rider | [Wikipedia](https://en.wikipedia.org/wiki/Bakfiets) |
-| 4130 chromoly | The steel alloy our frame uses. It's strong for its weight and weldable | [41xx steel](https://en.wikipedia.org/wiki/41xx_steel) |
+| 4130 chromoly | The steel the 2024 design specifies for the main tubes. It's strong for its weight and weldable. Some tubes may be donor-bike steel instead; [#4](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/4) records which | [41xx steel](https://en.wikipedia.org/wiki/41xx_steel) |
 | Weldment | A SolidWorks feature that builds a frame from a 3D sketch plus tube sizes | [Javelin walkthrough](https://www.javelin-tech.com/blog/2024/05/solidworks-weldments/) |
 | Weldment profile | The cross-section shape of a tube, stored as a file SolidWorks can reuse |  |
 | Master sketch | One sketch of key points and lines that every part follows |  |
@@ -571,7 +598,7 @@ Ling is tracking down the motor that was meant to go on the bike. Updates go in 
 - [Bakfiets-F26](https://github.com/Electrium-Mobility/Bakfiets-F26): this term's repo. [`docs/history/SOURCES.md`](docs/history/SOURCES.md) records where the 2024 and 2025 files came from, and the 2024 team roster
 - [bakfiets](https://github.com/Electrium-Mobility/bakfiets): the original 2024 repo, kept unchanged as the archive
 - Club website pages for [W2024](https://github.com/Electrium-Mobility/electrium-w24website/blob/main/docs/W2024-projects/project1_2023.md) and [W2025](https://github.com/Electrium-Mobility/electrium-w24website/blob/main/docs/W2025-projects/bakfiets_2024.md)
-- UW: [SDC Forms and Team Information](https://uwaterloo.ca/sedra-student-design-centre/forms-and-team-information) (SDC forms for purchases, expenses and room booking; UW login needed), [WHMIS](https://uwaterloo.ca/safety-office/training/student-safety-orientation-whmis), [student shops](https://uwaterloo.ca/engineering-student-shops/getting-started), [lithium battery standard](https://uwaterloo.ca/safety-office/laboratory-safety/batteries), [lab software](https://uwaterloo.ca/engineering-computing/computer-labs/lab-software)
+- UW: [SDC Forms and Team Information](https://uwaterloo.ca/sedra-student-design-centre/forms-and-team-information) (SDC room booking and team forms; UW login needed. Parts are ordered through Electrium, not these forms), [WHMIS](https://uwaterloo.ca/safety-office/training/student-safety-orientation-whmis), [student shops](https://uwaterloo.ca/engineering-student-shops/getting-started), [lithium battery standard](https://uwaterloo.ca/safety-office/laboratory-safety/batteries), [lab software](https://uwaterloo.ca/engineering-computing/computer-labs/lab-software)
 
 This guide draws on all 82 repos in the Electrium-Mobility org, searched on 2026-09-25. Every video link was checked against YouTube.
 

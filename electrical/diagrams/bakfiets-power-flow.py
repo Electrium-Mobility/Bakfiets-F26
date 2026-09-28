@@ -34,7 +34,7 @@ note(ax, 141, 65.5, '500W', size=9.2, color=PENCIL, ha='center', zorder=3)
 line([24, 34], [Y, Y]); line([52, 58], [Y, Y]); line([65, 72], [Y, Y]); line([87, 108], [Y, Y])
 for dy in (-2, 0, 2): line([128, 134], [Y + dy, Y + dy], INK, lw=2.6)
 note(ax, 131, 80.5, '3 phase\nwires', size=8.5, color=INK, ha='center', linespacing=1)
-note(ax, 26, 74.2, 'charging\nport', size=8.5, color=RED, linespacing=1)
+note(ax, 25.4, 75, 'charging port,\nfused (DC 60V+)', size=8.2, color=RED, linespacing=1)
 note(ax, 61.5, 82, 'fuse on the + side,\nDC-rated 60V or more', size=9.5, color=RED, ha='center', linespacing=1.1)
 
 # negative side through the BMS

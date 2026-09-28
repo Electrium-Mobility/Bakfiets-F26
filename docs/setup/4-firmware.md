@@ -6,10 +6,10 @@ Do [Getting Started](../../ONBOARDING.md#getting-started) in the onboarding guid
 
 - An **ESP32-S3 dev board**, such as the ESP32-S3-DevKitC-1. A plain ESP32 won't work: the code uses GPIO 9 and 10, which a plain ESP32 wires to its flash chip.
 - An **SSD1306 128x64 I2C OLED** screen (the common 0.96-inch kind).
-- Four female-to-female jumper wires and a USB-C cable.
+- Four female-to-female jumper wires and a USB-C data cable (charge-only cables don't work).
 - No LED strip is needed for the desk demo.
 
-Don't buy one. Electrium has ESP32 boards and screens, kept in the bay, and they're handed out at meetings. Do section 2 and steps 1 to 3 of section 3 on your own laptop in the meantime, then click **Verify** (the checkmark button) to check it builds without a board.
+Don't buy one. Electrium has ESP32 boards and screens in the bay that you can borrow. Do section 2 and steps 1 to 3 of section 3 on your own laptop in the meantime, then click **Verify** (the checkmark button) to check it builds without a board.
 
 ## 2. Install Arduino IDE and ESP32 support
 

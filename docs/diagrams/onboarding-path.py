@@ -25,9 +25,9 @@ ax.plot([12, 66], [MID, MID], color=INK, lw=3, zorder=1)
 stop(12, MID, '1', 'accounts', 'GitHub account,\njoin Discord,\npost username.\n~10 min', bsize=8)
 stop(28, MID, '2', 'get the files', 'clone with\nGitHub Desktop.\nGit video first.\n~30 min', bsize=8)
 stop(44, MID, '3', 'install', 'SolidWorks,\nKiCad or\nArduino IDE.\n~20 min, or a few\nhours for SolidWorks', bsize=8)
-stop(60, MID, '4', 'WHMIS', 'an hour on LEARN.\nneeded for bay\nwork, not Stage 1', RED, bsize=8)
+stop(60, MID, '4', 'WHMIS', '30 min on LEARN.\nneeded for bay\nwork, not Stage 1', RED, bsize=8)
 
-lanes = [(GREEN, 64, 'mechanical', 'open the bike in\nSolidWorks, post\na screenshot', 'e.g. #2, #3, #5, #6'),
+lanes = [(GREEN, 64, 'mechanical', 'open the bike in\nSolidWorks, post\na screenshot', 'e.g. #2, #3, #4, #5'),
          (GOLD, MID, 'electrical', 'read the anti-spark\nschematic, notes\non #8', 'e.g. #7, #9, #10, #11'),
          (BLUE, 20, 'firmware', 'run the desk demo,\nphoto on #12', 'e.g. #13, #14, #15')]
 for col, y, name, s1, s2 in lanes:

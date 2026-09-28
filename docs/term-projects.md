@@ -12,7 +12,7 @@ Every project is a GitHub issue with the `term project` label. Each one lists wh
 | --- | --- | --- |
 | 1 | [#21 Battery pack: find out what exists, then decide build or buy](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21) | #7 |
 | 2 | [#19 Choose a BMS and charging port](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/19) | #7 |
-| 3 | [#18 Bench test: battery, motor controller, motor and thumb throttle](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/18) | #1, #7 |
+| 3 | [#18 Bench test: battery, motor controller, motor and thumb throttle](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/18) | #1 and #7 for the bench-supply steps; the pack steps also need #21 and #19 |
 | 4 | [#20 Plan and build the wiring harness](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/20) | #10, then #18 and #19 before building |
 
 ## Firmware
