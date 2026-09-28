@@ -74,7 +74,7 @@ To get the team's latest changes later: click **Fetch origin**, then **Pull orig
 | Subteam | Install | Notes |
 | --- | --- | --- |
 | Mechanical | SolidWorks 2026 | You don't need to buy it: the campus labs Fulcrum, Helix, Lever and WEEF run 2026, and the SDC has a CAD studio for teams. If you'd rather have it on your own Windows laptop, SolidWorks sells a [student licence](https://www.solidworks.com/product/students) |
-| Electrical | KiCad 9 ([Windows](https://downloads.kicad.org/kicad/windows/explore/stable), [Mac](https://downloads.kicad.org/kicad/macos/explore/stable)) | Free. Pick the newest 9.0 file (`kicad-9.0.9-x86_64.exe` on Windows, `kicad-unified-universal-9.0.9.dmg` on a Mac), not KiCad 10, because all the tutorial videos use 9. Install with the default libraries |
+| Electrical | KiCad 9.0.9 (direct download for [Windows](https://downloads.kicad.org/kicad/windows/explore/stable/download/kicad-9.0.9-x86_64.exe) or [Mac](https://downloads.kicad.org/kicad/macos/explore/stable/download/kicad-unified-universal-9.0.9.dmg)) | Free. Use 9, not KiCad 10, because all the tutorial videos use 9. Install with the default libraries |
 | Firmware | [Arduino IDE 2](https://www.arduino.cc/en/software) with ESP32 support | Free. Follow [this written guide](https://randomnerdtutorials.com/installing-esp32-arduino-ide-2-0/) to add ESP32 boards |
 
 **On a Mac:** GitHub Desktop, KiCad and Arduino IDE all have Mac versions, so electrical and firmware setup work the same way. Under **Tools > Port**, the board shows up as `/dev/cu.usbmodem…` instead of a COM port. SolidWorks doesn't run on a Mac, so mechanical members use a lab PC or pair up with someone at the meeting.

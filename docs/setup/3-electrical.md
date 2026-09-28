@@ -6,7 +6,7 @@ The steps you have to do are in [Electrical Stage 1](../../ONBOARDING.md#stage-1
 
 ## 1. Install KiCad 9
 
-1. Download KiCad 9 for [Windows](https://downloads.kicad.org/kicad/windows/explore/stable) or [Mac](https://downloads.kicad.org/kicad/macos/explore/stable). It's free. Pick the newest 9.0 file (9.0.9), not KiCad 10: all the tutorial videos use 9, and a file saved in 10 can't be opened in 9.
+1. Download KiCad 9.0.9 for [Windows](https://downloads.kicad.org/kicad/windows/explore/stable/download/kicad-9.0.9-x86_64.exe) or [Mac](https://downloads.kicad.org/kicad/macos/explore/stable/download/kicad-unified-universal-9.0.9.dmg). Both links start the download straight away. It's free. Use 9, not KiCad 10: all the tutorial videos use 9, and a file saved in 10 can't be opened in 9.
 2. Install with the default options, including the libraries.
 3. Watch [KiCad 9.0 Getting Started, part 1](https://www.youtube.com/watch?v=0WCi1rhueH4) (DigiKey, 4 min) and continue through that series. For one video from schematic to finished board, try [Build your first PCB in KiCad 9](https://www.youtube.com/watch?v=moP6JxN7FWk) (16 min).
 
