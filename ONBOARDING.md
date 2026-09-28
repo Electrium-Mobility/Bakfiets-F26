@@ -6,7 +6,7 @@ You're joining the team finishing an electric cargo bike. A bakfiets is a Dutch 
 
 ## Your To-Do List
 
-Setup takes about 2 to 3 hours in total, spread over a few days. Aim to finish it before the next Wednesday meeting.
+Setup takes about 2 to 3 hours in total, spread over a few days.
 
 - [ ] **Mechanical, on Windows:** start the SolidWorks download first. It's large, so let it run while you do the rest. On a Mac, skip this: you'll use a campus lab PC ([Software](#software))
 - [ ] Make a GitHub account and join the Discord ([Accounts and Discord](#accounts-and-discord))
