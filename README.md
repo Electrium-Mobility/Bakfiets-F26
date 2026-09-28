@@ -6,7 +6,7 @@ Electrium Mobility's electric cargo bike ("Bak Choy"), Fall 2026. This repo hold
 
 ## New here?
 
-**Open [ONBOARDING.md](ONBOARDING.md).** Everything you need is there, starting with a short to-do list at the top. Setup takes about 2 to 3 hours. Try to finish it before the next Wednesday meeting (6:30 to 7:30 pm, in the Electrium bay). Questions go in your subteam's channel.
+**Open [ONBOARDING.md](ONBOARDING.md).** Everything you need is there, starting with a short to-do list at the top. Setup takes about 2 to 3 hours. Questions go in your subteam's channel.
 
 ## What's in this repo
 
