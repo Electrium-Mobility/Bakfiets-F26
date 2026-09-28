@@ -2,6 +2,8 @@
 
 Do [Getting Started](../../ONBOARDING.md#getting-started) in the onboarding guide first. You need the safety training before battery work, but not for anything in this guide.
 
+The steps you have to do are in [Electrical Stage 1](../../ONBOARDING.md#stage-1-read-a-real-board). This page repeats them with extra help, so you don't need to do anything twice.
+
 ## 1. Install KiCad 9
 
 1. Download KiCad 9 from [kicad.org/download](https://www.kicad.org/download/). It's free.
@@ -12,13 +14,16 @@ Do [Getting Started](../../ONBOARDING.md#getting-started) in the onboarding guid
 
 1. In GitHub Desktop, choose **File > Clone repository > URL** and paste `Electrium-Mobility/anti-spark`.
 2. In KiCad, choose **File > Open Project** and pick `Anti-Spark Switch.kicad_pro` in your `anti-spark` folder.
-3. KiCad will say the project comes from an older version and offer to upgrade it. Click OK: that's expected. Don't commit the upgraded files.
+3. KiCad will say the project comes from an older version and offer to upgrade it. Click OK: that's expected. GitHub Desktop will then show those files as changed. Leave them, and don't commit them.
 4. In the left panel, double-click `Anti-Spark Switch.kicad_sch` to open the schematic.
-5. Find the three MOSFETs (rated 100 V) and trace where the battery connects.
+5. Find the three MOSFETs (Q1, Q2 and Q3, rated 100 V) and trace where the battery connects.
 
 If you open the PCB, KiCad also warns that the `XT60PW-F` footprint library is missing. The 2023 designer kept it on their own computer, but it doesn't matter for reading the schematic.
 
 ## 3. Learn the basics
+
+Before Stage 1 you only need the MOSFET video. Watch the rest when a task needs them.
+
 
 | Topic | Video |
 | --- | --- |

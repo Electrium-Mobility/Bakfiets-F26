@@ -2,6 +2,8 @@
 
 Do [Getting Started](../../ONBOARDING.md#getting-started) in the onboarding guide first. Your files are in the `mechanical/` folder of your clone.
 
+The steps you have to do are in [Mechanical Stage 1](../../ONBOARDING.md#stage-1-open-the-bike). This page repeats them with extra help, so you don't need to do anything twice.
+
 ## 1. Get SolidWorks 2026
 
 The team uses **SolidWorks 2026**, the version on the campus lab PCs. Files saved in 2026 can't be opened in older versions.
@@ -25,12 +27,16 @@ The frame is built from custom tube shapes ("weldment profiles") stored in your 
 1. In SolidWorks, choose **File > Open**.
 2. Go to your clone's `mechanical\cad-2025-coop` folder and open `bakfiets_main_asm.SLDASM`.
 3. If SolidWorks asks where a part is, point it at the same `cad-2025-coop` folder.
+4. You're done when the whole bike is on screen and the FeatureManager tree on the left has no red or yellow warning icons. When you close it, click **Don't Save** if SolidWorks asks.
 
 The parts are built around one master sketch, `bakfiets_master_sketch.SLDPRT`. To change the geometry, make a copy in `mechanical/cad-2026/` with **File > Pack and Go** (add a prefix so names don't clash) and work on the copy. Don't save files while they're open from `cad-2025-coop`: SolidWorks 2026 converts them on save. One person edits a CAD file at a time: say on your issue which files you're changing, because Git can't merge two edits to the same SolidWorks file.
 
 If the frame still shows rebuild errors, copy the `bakfiets_weldment_profiles` folder into the default Weldment Profiles folder listed in the same File Locations dialog (this one needs admin rights).
 
 ## 4. Learn the frame tools
+
+Optional. Watch these when a Stage 2 task needs them: weldments help with any CAD task, and FEA is only for #6.
+
 
 - Weldments (how the frame is built): [Introduction to Weldments](https://www.youtube.com/watch?v=nbMxA178ADM) (CAD Decoded, 15 min)
 - FEA (checking the frame is strong enough): [Static analysis for beginners](https://www.youtube.com/watch?v=Ys0eT57DzT4) (CAD Hub, 28 min)
