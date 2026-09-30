@@ -25,6 +25,9 @@ Setup takes about 2 to 3 hours in total, spread over a few days.
 - [ ] Read the battery rules, about 5 minutes ([Safety Training](#safety-training), Step 3)
 - [ ] Accept the GitHub invite to the repo when the email arrives ([Accounts and Discord](#accounts-and-discord))
 - [ ] Come to the Wednesday meeting, 6:30 to 7:30 pm in the Electrium bay. The door has a code lock, and a lead lets you in ([Where the bike is](#step-4-know-where-the-bike-is-and-how-to-get-in))
+
+After the meeting:
+
 - [ ] Do your subteam's Stage 1: [Mechanical](#stage-1-open-the-bike) · [Electrical](#stage-1-read-a-real-board) · [Firmware](#stage-1-run-the-desk-demo)
 - [ ] Finish one Stage 2 task, then move on to the [term projects](#after-onboarding-term-projects)
 
