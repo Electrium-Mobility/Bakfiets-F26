@@ -38,7 +38,7 @@ After the meeting:
 These apply from day one.
 
 1. Finish WHMIS and read the battery rules ([Safety Training](#safety-training)) before you use any tool or touch a battery.
-2. Never work on a battery pack alone. Battery work always needs the electrical lead (Jack) there.
+2. Never work on a battery pack alone. Battery work always needs the electrical lead (Jack Huang) there.
 3. Work on a branch and open a pull request. Never push straight to `main`.
 4. One person edits a CAD file at a time: say which files you're changing on your issue. Git can't merge two edits to the same SolidWorks file.
 5. Never move or rename files in `mechanical/cad-2024/` or `mechanical/cad-2025-coop/`. Assemblies find their parts by folder path, and moving a file breaks them.
@@ -194,8 +194,8 @@ The 2024 files disagree on a few basics. Below is the answer we're working from 
 | Role | Person | What they do |
 | --- | --- | --- |
 | Project lead | Justin Gu | Priorities, decisions that affect more than one subteam, purchases (through Electrium's ordering process) and letting members into the bay |
-| Mechanical leads | Annie Luangphinith and Aarush (co-leads) | Run #bakfiets-mech and keep mechanical issues current |
-| Electrical lead | Jack | Runs #bakfiets-elec, keeps electrical issues current, and supervises all battery work |
+| Mechanical leads | Annie Luangphinith and Aarush Lingamchetti (co-leads) | Run #bakfiets-mech and keep mechanical issues current |
+| Electrical lead | Jack Huang | Runs #bakfiets-elec, keeps electrical issues current, and supervises all battery work |
 | Firmware lead | David Ertel | Runs #bakfiets-firm and keeps firmware issues current |
 
 The subteam leads are also called squad leads, and they were chosen at the 2026-09-30 meeting. Any squad lead, or the project lead, can approve a pull request in any part of the repo. The whole team meets **Wednesdays, 6:30 to 7:30 pm, in the Electrium bay (workbay 1002)**. Design reviews and team decisions happen there. Subteam leads also meet the project lead briefly each week to raise blockers. The first team meeting was on 2026-09-23. Agendas and notes from 2026-09-30 on are in [docs/meetings/](docs/meetings/).
