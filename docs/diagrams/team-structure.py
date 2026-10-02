@@ -26,9 +26,9 @@ role(52, 61, 44, 17, 'Bakfiets project lead', 'turns term goals into issues, run
 link(52, 68, 52, 61)
 
 # subteam leads
-subs = [(25, 'mechanical lead', 'approves CAD pull requests', GREEN),
+subs = [(25, 'mechanical lead', 'can approve any pull request', GREEN),
         (75, 'electrical lead', 'must be there for any\nbattery work', GOLD),
-        (125, 'firmware lead', 'approves code pull requests', BLUE)]
+        (125, 'firmware lead', 'can approve any pull request', BLUE)]
 for x, t, b, c in subs:
     link(52, 44, x, 38, c)
     role(x, 38, 40, 16, t, 'runs the subteam channel and\nkeeps its issues up to date.\n' + b, c)
@@ -36,7 +36,7 @@ for x, t, b, c in subs:
     ax.add_patch(FancyBboxPatch((x - 18, 5), 36, 12, boxstyle='round,pad=0,rounding_size=1.2', fc=PAPER, ec=c, lw=1.4, zorder=3))
     note(ax, x, 14.4, 'members', size=12, weight='bold', ha='center', color=c, zorder=4)
     note(ax, x, 11.4, 'claim issues ("I\'ll take this"),\npost a weekly update on it,\nask in the channel', size=9.2, ha='center', va='top', color=PENCIL, linespacing=1.15, zorder=4)
-note(ax, 100, 46.5, 'leads are chosen at the 30 Sept meeting.\nan open seat stays on issue #17', size=10, color=RED, linespacing=1.15)
+note(ax, 100, 46.5, 'also called squad leads. any squad lead,\nor the project lead, approves pull requests', size=10, color=RED, linespacing=1.15)
 
 # rhythm
 note(ax, 100, 63, 'every week', size=12, weight='bold')

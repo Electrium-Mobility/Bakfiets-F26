@@ -38,7 +38,7 @@ After the meeting:
 These apply from day one.
 
 1. Finish WHMIS and read the battery rules ([Safety Training](#safety-training)) before you use any tool or touch a battery.
-2. Never work on a battery pack alone. Battery work always needs the electrical lead there (Justin Gu until one is chosen).
+2. Never work on a battery pack alone. Battery work always needs the electrical lead (Jack) there.
 3. Work on a branch and open a pull request. Never push straight to `main`.
 4. One person edits a CAD file at a time: say which files you're changing on your issue. Git can't merge two edits to the same SolidWorks file.
 5. Never move or rename files in `mechanical/cad-2024/` or `mechanical/cad-2025-coop/`. Assemblies find their parts by folder path, and moving a file breaks them.
@@ -194,13 +194,13 @@ The 2024 files disagree on a few basics. Below is the answer we're working from 
 | Role | Person | What they do |
 | --- | --- | --- |
 | Project lead | Justin Gu | Priorities, decisions that affect more than one subteam, purchases (through Electrium's ordering process) and letting members into the bay |
-| Mechanical lead | Chosen at the 2026-09-30 team meeting ([issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17)) | Runs #bakfiets-mech, keeps mechanical issues current, approves CAD pull requests |
-| Electrical lead | Chosen at the 2026-09-30 team meeting ([issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17)) | Same for electrical, and supervises all battery work |
-| Firmware lead | Chosen at the 2026-09-30 team meeting ([issue #17](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/17)) | Same for firmware, and approves code pull requests |
+| Mechanical leads | Annie Luangphinith and Aarush (co-leads) | Run #bakfiets-mech and keep mechanical issues current |
+| Electrical lead | Jack | Runs #bakfiets-elec, keeps electrical issues current, and supervises all battery work |
+| Firmware lead | David Ertel | Runs #bakfiets-firm and keeps firmware issues current |
 
-Until the subteam leads are chosen, Justin Gu covers all three roles. If nobody takes a lead role, Justin Gu keeps covering it and it stays open on issue #17. The whole team meets **Wednesdays, 6:30 to 7:30 pm, in the Electrium bay (workbay 1002)**. Design reviews and team decisions happen there. Subteam leads also meet the project lead briefly each week to raise blockers. The first team meeting was on 2026-09-23. Agendas and notes from 2026-09-30 on are in [docs/meetings/](docs/meetings/).
+The subteam leads are also called squad leads, and they were chosen at the 2026-09-30 meeting. Any squad lead, or the project lead, can approve a pull request in any part of the repo. The whole team meets **Wednesdays, 6:30 to 7:30 pm, in the Electrium bay (workbay 1002)**. Design reviews and team decisions happen there. Subteam leads also meet the project lead briefly each week to raise blockers. The first team meeting was on 2026-09-23. Agendas and notes from 2026-09-30 on are in [docs/meetings/](docs/meetings/).
 
-**How work flows:** you claim a task by commenting "I'll take this" on its GitHub issue. Nobody needs to assign you. Read the issue's comments first. If someone has already claimed it, pick another one or ask in your subteam channel to pair up. The Stage 1 issues (#8 and #12) are for everyone, so post there without claiming. You post a short update on your issue each week: what you did, what's next, and anything blocking you. Anyone can review a pull request, and your subteam lead gives the final approval.
+**How work flows:** you claim a task by commenting "I'll take this" on its GitHub issue. Nobody needs to assign you. Read the issue's comments first. If someone has already claimed it, pick another one or ask in your subteam channel to pair up. The Stage 1 issues (#8 and #12) are for everyone, so post there without claiming. You post a short update on your issue each week: what you did, what's next, and anything blocking you. Anyone can comment on a pull request, and a squad lead or the project lead approves it.
 
 ## Mechanical Onboarding
 
@@ -470,7 +470,7 @@ You're done onboarding when every box in [Your To-Do List](#your-to-do-list) at 
 2. Add your files in the right folder (see your Stage 2 constraints).
 3. Type a one-line summary in the **Summary** box at the bottom left (GitHub Desktop won't commit without one), click **Commit to your-branch**, then **Publish branch**, then **Create Pull Request**.
 4. In the pull request, say what you did, add screenshots, and write `Closes #<issue number>`.
-5. Post the link in your subteam channel. Your subteam lead reviews it, asks for changes if needed, and merges it.
+5. Post the link in your subteam channel. A squad lead (usually your own) reviews it, asks for changes if needed, and merges it. GitHub won't merge a pull request until a squad lead or the project lead approves it.
 
 **💡 Hint:** if GitHub Desktop says you don't have permission to push and offers to **create a fork**, click **Fork this repository**, then choose **To contribute to the parent project**. A fork is your own copy of the repo on GitHub. Your pull request still goes to Bakfiets-F26 as normal. This only happens until you've accepted your invite to the repo.
 
