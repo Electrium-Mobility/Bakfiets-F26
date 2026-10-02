@@ -1,0 +1,6 @@
+# Who can approve pull requests into main.
+# Every pull request needs one approval from the project lead or a squad lead.
+# Squad leads can approve changes anywhere in the repo, not just their own subteam.
+# To change the list, edit the line below (GitHub usernames, each with @).
+
+* @Quaot @BLUEARROW7000 @HXJ08 @aluangph
