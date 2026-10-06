@@ -237,14 +237,18 @@ A screenshot of the full assembly open in SolidWorks, posted in the **#bakfiets-
 
 #### Task
 
-Pick one of these issues and claim it with a comment saying you're working on it. These are the starter tasks. You can also take one of the bigger ones, like steering ([#25](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/25)), brakes ([#32](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/32)) or the hub motor fit ([#31](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/31)). Every open mechanical task is [listed here](https://github.com/Electrium-Mobility/Bakfiets-F26/issues?q=is%3Aissue+is%3Aopen+label%3Amechanical).
+Pick one of these and claim it with a comment on the issue saying you're working on it. Steering, brakes and the motor fit come first. Two or more people on one issue is fine.
 
 | Issue | What you'll do |
 | --- | --- |
+| [#25](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/25) | Compare rod, cable and hydraulic steering, then design the one we pick. Top priority |
+| [#32](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/32) | Pick brakes that fit the frame, with levers that cut the motor. The bike has none |
+| [#31](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/31) | Check the hub motor wheel fits the frame and pick torque arms (safety training first) |
 | [#2](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/2) | Photograph the real frame and record which joints are welded (safety training first, look only) |
+| [#4](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/4) | Measure the real frame against the CAD, with a mechanical lead (after #2, safety training first) |
+| [#5](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/5) | Sketch two battery mount options for Pack 4 |
 | [#3](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/3) | List every part in the co-op model, with its material and whether we own it |
-| [#4](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/4) | Measure the real frame against the CAD, with your mechanical lead (after #2, safety training first) |
-| [#5](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/5) | Sketch two battery mount options for a 12S pack (provisional until #21 settles the pack size) |
+| [#27](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/27) | Inspect the cargo box and plan what needs fixing |
 
 #### Constraints
 
@@ -334,14 +338,14 @@ A comment on [issue #8](https://github.com/Electrium-Mobility/Bakfiets-F26/issue
 
 #### Task
 
-Pick one of these issues and claim it. These are the starter tasks. You can also take one of the bigger ones, like the bench test ([#18](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/18)) or checking the BMS and charger ([#19](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/19)). Every open electrical task is [listed here](https://github.com/Electrium-Mobility/Bakfiets-F26/issues?q=is%3Aissue+is%3Aopen+label%3Aelectrical).
+Pick one of these and claim it with a comment on the issue saying you're working on it. Two or more people on one issue is fine. Checking Pack 4 ([#21](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21)) is run by the electrical lead.
 
 | Issue | What you'll do |
 | --- | --- |
-| [#1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1) | Photograph the hub motor's full label and the motor controller's label (safety training first, look only) |
-| [#7](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/7) | Photograph the labels on the pack, BMS and charger (safety training first, with a lead there, look only) |
+| [#18](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/18) | Bench test the motor controller and hub motor on a bench power supply (safety training first) |
+| [#19](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/19) | Check the BMS and charger we have suit Pack 4 |
 | [#10](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/10) | Redraw the block diagram with real connectors and wire sizes |
-| [#11](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/11) | Start the parts list (BOM), from what #1, #7 and #2 report (wait until they have photos) |
+| [#11](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/11) | Start the parts list (BOM) |
 | [#9](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/9) | List what the 2026 power board needs changed for our pack. Do Stage 1 first |
 
 #### Constraints
@@ -424,14 +428,16 @@ For now, a screenshot of the Serial Monitor from step 4, showing the chip name, 
 
 #### Task
 
-Pick one of these issues and claim it. These are the starter tasks. You can also take one of the bigger ones, like reading data from the motor controller ([#22](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/22)) or picking a screen ([#23](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/23)). Every open firmware task is [listed here](https://github.com/Electrium-Mobility/Bakfiets-F26/issues?q=is%3Aissue+is%3Aopen+label%3Afirmware).
+Pick one of these and claim it with a comment on the issue saying you're working on it. Two or more people on one issue is fine.
 
 | Issue | What you'll do |
 | --- | --- |
+| [#22](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/22) | Read speed and battery data from the motor controller (VESC) over UART |
+| [#23](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/23) | Decide whether the bike needs a screen, and which one |
 | [#13](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/13) | Stop the LED animation from freezing the code, using `millis()` ([video](https://www.youtube.com/watch?v=BYKQ9rk0FEQ), 14 min) |
 | [#14](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/14) | Add a button that changes the PA level |
-| [#15](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/15) | Show a real battery voltage, read through a voltage divider |
-| [#16](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/16) | Research task: compare one ESP32 with two boards linked by CAN bus, and post a pros and cons list |
+| [#16](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/16) | Compare one ESP32 with two boards linked by CAN bus, and post a pros and cons list |
+| [#15](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/15) | Show a real battery voltage, read through a voltage divider (needs a bench supply and the electrical lead) |
 
 #### Constraints
 
