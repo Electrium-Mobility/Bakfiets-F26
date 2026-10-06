@@ -200,7 +200,7 @@ The 2024 files disagree on a few basics. Below is the answer we're working from 
 
 The subteam leads are also called squad leads, and they were chosen at the 2026-09-30 meeting. Any squad lead, or the project lead, can approve a pull request in any part of the repo. The whole team meets **Wednesdays, 6:30 to 7:30 pm, in the Electrium bay (workbay 1002)**. Design reviews and team decisions happen there. Subteam leads also meet the project lead briefly each week to raise blockers. The first team meeting was on 2026-09-23. Agendas and notes from 2026-09-30 on are in [docs/meetings/](docs/meetings/).
 
-**How work flows:** you claim a task by commenting "I'll take this" on its GitHub issue. Nobody needs to assign you. Read the issue's comments first. If someone has already claimed it, pick another one or ask in your subteam channel to pair up. The Stage 1 issues (#8 and #12) are for everyone, so post there without claiming. You post a short update on your issue each week: what you did, what's next, and anything blocking you. Anyone can comment on a pull request, and a squad lead or the project lead approves it.
+**How work flows:** you claim a task by leaving a comment on its GitHub issue saying you're working on it. Nobody needs to assign you. Read the issue's comments first. If someone has already claimed it, pick another one or ask in your subteam channel to pair up. The Stage 1 issues (#8 and #12) are for everyone, so post there without claiming. You post a short update on your issue each week: what you did, what's next, and anything blocking you. Anyone can comment on a pull request, and a squad lead or the project lead approves it.
 
 ## Mechanical Onboarding
 
@@ -235,7 +235,7 @@ A screenshot of the full assembly open in SolidWorks, posted in the **#bakfiets-
 
 #### Task
 
-Pick one of these issues and claim it by commenting "I'll take this".
+Pick one of these issues and claim it with a comment saying you're working on it.
 
 | Issue | What you'll do |
 | --- | --- |
@@ -483,7 +483,7 @@ Once you've finished your subteam's Stage 1 and one Stage 2 starter task, you're
 
 ![Term projects by subteam, with what each one needs finished first](docs/diagrams/term-project-map.png)
 
-Each project is a GitHub issue labelled `term project`. Each issue lists what to finish first and gives step-by-step instructions with safety notes, videos and example code. It ends with a clear "done when". Claim one the same way: comment "I'll take this". Work through them roughly in the order below.
+Each project is a GitHub issue labelled `term project`. Each issue lists what to finish first and gives step-by-step instructions with safety notes, videos and example code. It ends with a clear "done when". Claim one the same way, with a comment on the issue. Work through them roughly in the order below.
 
 ### Electrical
 

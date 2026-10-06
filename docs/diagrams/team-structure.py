@@ -35,7 +35,7 @@ for x, t, b, c in subs:
     link(x, 22, x, 17, c)
     ax.add_patch(FancyBboxPatch((x - 18, 5), 36, 12, boxstyle='round,pad=0,rounding_size=1.2', fc=PAPER, ec=c, lw=1.4, zorder=3))
     note(ax, x, 14.4, 'members', size=12, weight='bold', ha='center', color=c, zorder=4)
-    note(ax, x, 11.4, 'claim issues ("I\'ll take this"),\npost a weekly update on it,\nask in the channel', size=9.2, ha='center', va='top', color=PENCIL, linespacing=1.15, zorder=4)
+    note(ax, x, 11.4, 'claim an issue with a comment,\npost a weekly update on it,\nask in the channel', size=9.2, ha='center', va='top', color=PENCIL, linespacing=1.15, zorder=4)
 note(ax, 100, 46.5, 'also called squad leads. any squad lead,\nor the project lead, approves pull requests', size=10, color=RED, linespacing=1.15)
 
 # rhythm

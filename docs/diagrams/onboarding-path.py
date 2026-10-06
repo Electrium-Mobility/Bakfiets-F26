@@ -43,5 +43,5 @@ note(ax, 137.5, 50.5, 'term\nprojects', size=13.5, weight='bold', ha='center', v
 note(ax, 137.5, 42, "issues labelled\n'term project'.\nonboarding is\ndone here", size=9.2, ha='center', va='top', color=PENCIL, linespacing=1.15, zorder=4)
 point(ax, (58, 60), (67.5, MID + 1.6), 'pick your\nsubteam here', rad=-0.3)
 
-note(ax, 8, 4, 'Claim any task by commenting "I\'ll take this" on its issue. Stuck? Ask in your subteam channel.', size=10.5, color=PENCIL)
+note(ax, 8, 4, 'Claim a task with a comment on its issue. Stuck? Ask in your subteam channel.', size=10.5, color=PENCIL)
 save(fig, os.path.join(HERE, 'onboarding-path.png'))
