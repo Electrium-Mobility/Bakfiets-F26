@@ -38,11 +38,11 @@ rows = [
     ]),
 ]
 n_rows = sum(len(r[2]) + 1 for r in rows)
-H = int(round(34 + n_rows * 4.6))
+H = int(round(28 + n_rows * 4.6))
 fig, ax = page(150, H, (15, H / 10))
 note(ax, 8, H - 5, 'Bakfiets F26: the plan for the term', size=24, weight='bold')
 
-top = H - 22
+top = H - 16
 bottom = 10
 # reading week
 ax.add_patch(Rectangle((x(D(10, 10)), bottom), x(D(10, 19)) - x(D(10, 10)), top - bottom + 4, fc='#ece6d6', ec='none', zorder=0))
