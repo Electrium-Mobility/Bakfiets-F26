@@ -11,7 +11,7 @@ The steps you have to do are in [Firmware Stage 1](../../ONBOARDING.md#stage-1-r
 - Four female-to-female jumper wires and a USB-C data cable (charge-only cables don't work).
 - No LED strip is needed for the desk demo.
 
-Don't buy one. Electrium's ESP32 boards are on the black parts organizer in the bay. There are no screens yet, and the project lead is ordering some. Until then, run the board test in [Firmware Stage 1](../../ONBOARDING.md#stage-1-run-the-desk-demo), step 4. Do section 2 and steps 1 to 3 of section 3 on your own laptop in the meantime, then click **Verify** (the checkmark button) to check it builds without a board.
+Don't buy one. Electrium's ESP32 boards are on the black parts organizer in the bay. Electrium should have screens too, but they haven't been found yet. Until you have one, do the board test: step 4 of [Firmware Stage 1](../../ONBOARDING.md#stage-1-run-the-desk-demo) in the onboarding guide (not step 4 below). Before that, do section 2 and steps 1 to 3 of section 3 on your own laptop, then click **Verify** (the checkmark button) to check it builds without a board.
 
 ## 2. Install Arduino IDE and ESP32 support
 
@@ -56,4 +56,4 @@ More help: [ESP32 OLED tutorial for beginners](https://www.youtube.com/watch?v=u
 
 ## 6. Pick a first task
 
-The desk demo (section 3) is your Stage 1. Post a photo on [#12](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/12). Then pick a Stage 2 task in [ONBOARDING.md](../../ONBOARDING.md#firmware-onboarding).
+Until you have a screen, your Stage 1 is Verify (section 3, steps 1 to 3) plus the board test (step 4 of Firmware Stage 1 in ONBOARDING.md). Post the Serial Monitor screenshot on [#12](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/12), and add a screen photo once you have one. Then pick a Stage 2 task in [ONBOARDING.md](../../ONBOARDING.md#firmware-onboarding).

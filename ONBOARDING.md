@@ -153,7 +153,7 @@ From the UW [Lithium Cell and Battery Standard](https://uwaterloo.ca/safety-offi
 | --- | --- | --- |
 | Mechanical | A SolidWorks model, a welding jig, notching guides, one FEA study and a partly built frame | Record what is welded, then rerun FEA with written load cases |
 | Electrical | A power flow diagram, a 48 V battery pack (Pack 4) and a 2000 W hub motor, both in the bay and untested. The 2024 schematics aren't in any Electrium repo | Check Pack 4 (#21), bench test the motor (#18), then draft the power board schematic |
-| Firmware | A screen and LED demo with fixed numbers, and ESP32 boards in the bay (no screens yet) | Show a real battery voltage and one working button |
+| Firmware | A screen and LED demo with fixed numbers, and ESP32 boards in the bay (the screens haven't been found yet) | Show a real battery voltage and one working button |
 
 ### Open Questions
 
@@ -162,15 +162,15 @@ The 2024 files disagree on a few basics. Below is the answer we're working from 
 #### 1. Which motor does the bike have?
 
 - **Decided (6 Oct):** a 48 V, 2000 W direct-drive hub motor, already built into a 24" wheel, driven by a VESC-based motor controller (the club website names the Flipsky FSESC 6.7).
-- **Why:** it was found in the bay ([#1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1)) and it drives the wheel directly. The other motor in the bay, a Flipsky 6374 skateboard motor, would need about a 30:1 gear reduction. The 2024 README and crank-motor CAD (`mechanical/cad-2024/MotorCrank/`) mention a Bafang BBS02 mid-drive, but that plan was dropped.
-- **The power limit:** Ontario limits e-bikes to 500 W and 32 km/h, so the motor controller is set to 500 W in VESC Tool, even though the motor can do 2000 W. That's part of [#18](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/18).
+- **Why:** it was found in the bay ([#1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1)) and it drives the wheel directly. The other motor in the bay, a Flipsky 6374 skateboard motor, would need about a 30:1 gear reduction. The 2024 README and crank-motor CAD (`mechanical/cad-2024/MotorCrank/`) mention a Bafang BBS02 mid-drive, but no mid-drive was found in the bay.
+- **The power limit:** we'll set the motor controller to 500 W and 32 km/h in VESC Tool ([#18](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/18)). Ontario's e-bike rule goes by the motor's rated power (500 W or less), not a software limit, so a motor labelled 2000 W may not count as an e-bike motor. Until that's settled, the bike is only ridden off public roads.
 - **Still to check:** that the 24" wheel fits the frame's dropouts ([#26](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/26)), and the motor controller's label against the FSESC 6.7 ([#18](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/18)).
 
 #### 2. Which microcontroller runs the screen?
 
 - **Our answer:** an ESP32-S3.
 - **Why:** the 2024 website says "ESP32 S3 Pico", and the display code uses GPIO 9 and 10, which a plain ESP32 can't use because they connect to its flash chip. The November 2024 CAN test code targets a plain ESP32 dev board.
-- **How to check:** if the 2024 board is in the room, its chip or silkscreen label will say ESP32-S3 (possibly ESP32-S3-Pico).
+- **How to check:** the board test (Firmware Stage 1, step 4) uploads to the board, which only works if it's an ESP32-S3.
 - **If we're wrong:** the screen and LED pins in the desk demo would need to move to other GPIOs.
 
 #### 3. What happened to the 2024 electrical design?
@@ -336,7 +336,7 @@ Pick one of these issues and claim it.
 
 | Issue | What you'll do |
 | --- | --- |
-| [#1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1) | Photograph the motor and controller on the bike to settle which motor we have (safety training first, look only) |
+| [#1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1) | Photograph the hub motor's full label and the motor controller's label (safety training first, look only) |
 | [#7](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/7) | Photograph the labels on the pack, BMS and charger (safety training first, with a lead there, look only) |
 | [#10](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/10) | Redraw the block diagram with real connectors and wire sizes |
 | [#11](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/11) | Start the parts list (BOM), from what #1, #7 and #2 report (wait until they have photos) |
@@ -382,7 +382,7 @@ You will get the 2024 display code running on your desk, then start connecting i
 
 ### Stage 1: Run the Desk Demo
 
-**This stage is split in three.** Steps 1 to 3 need no hardware: do them on your own laptop, then click **Verify** (the checkmark button, top left) to check the code builds. Step 4 needs only a board, which you borrow in the bay. Steps 5 to 7 need a screen too, and Electrium doesn't have screens yet, so do those once they arrive.
+**This stage is split in three.** Steps 1 to 3 need no hardware: do them on your own laptop, then click **Verify** (the checkmark button, top left) to check the code builds. Step 4 needs only a board, which you borrow in the bay. Steps 5 to 7 need a screen too. Electrium should have some, but they haven't been found yet, so do those once one turns up.
 
 #### Task
 
@@ -393,7 +393,7 @@ Run [`firmware/desk-demo/desk-demo.ino`](firmware/desk-demo/desk-demo.ino) on an
 | Part | Notes |
 | --- | --- |
 | ESP32-S3 dev board, such as the ESP32-S3-DevKitC-1 | Borrow one from the black parts organizer in the bay. It must be an S3, because a plain ESP32 can't use the pins the screen needs. Step 4 tells you which one you have |
-| SSD1306 128x64 I2C OLED (the common 0.96-inch screen) | Not in the bay yet. The project lead is ordering some, so don't buy your own |
+| SSD1306 128x64 I2C OLED (the common 0.96-inch screen) | Electrium should have some in the bay, but they haven't been found yet. Don't buy your own |
 | 4 female-to-female jumper wires, and a USB-C data cable | Ask for the wires with the board. Charge-only cables don't work. No LED strip is needed |
 | For Stage 2: a push button, a breadboard and a few resistors | Needed for #14 and #15. #15 also uses a bench power supply |
 
@@ -402,7 +402,7 @@ Run [`firmware/desk-demo/desk-demo.ino`](firmware/desk-demo/desk-demo.ino) on an
 1. With Arduino IDE and ESP32 support installed (see Software), choose **Tools > Manage Libraries** and install **Adafruit SSD1306** and **FastLED**. Click **Install all** when asked, which adds Adafruit GFX and BusIO too. The code needs FastLED to build even without an LED strip.
 2. Choose **File > Open** and pick `firmware\desk-demo\desk-demo.ino` in your clone.
 3. Choose **Tools > Board > esp32 > ESP32S3 Dev Module**, and set **Tools > USB CDC On Boot** to **Enabled**. Click **Verify** now. The first build can take a few minutes, and it worked when the bottom panel says **Done compiling**. If it says a `.h` file is missing, redo step 1.
-4. **Board test, no screen needed.** Open [`firmware/board-test/board-test.ino`](firmware/board-test/board-test.ino). Plug the board in with the USB-C port labelled **USB** (not UART), and pick its COM port under **Tools > Port**. Not sure which one? Unplug the board and look again: the one that disappears is yours. Click **Upload**, then open **Tools > Serial Monitor** and set the speed at the bottom right to **115200**. Every second it prints a line such as `Hello from Bakfiets! Chip: ESP32-S3`. If it says `ESP32` without the S3, that board can't run the desk demo, so swap it.
+4. **Board test, no screen needed.** Open [`firmware/board-test/board-test.ino`](firmware/board-test/board-test.ino). Plug the board in with the USB-C port labelled **USB** (not UART), and pick its COM port under **Tools > Port**. Not sure which one? Unplug the board and look again: the one that disappears is yours. Click **Upload**, then open **Tools > Serial Monitor** and set the speed at the bottom right to **115200**. Every second it prints a line such as `Hello from Bakfiets! Chip: ESP32-S3`. If the upload fails with "This chip is ESP32, not ESP32-S3" (or another chip name), that board isn't an S3, so swap it.
 5. Once you have a screen, wire it: VCC to 3.3 V, GND to GND, SDA to GPIO 10, SCL to GPIO 9, as in the drawing below. The drawing shows an ESP32-S3-DevKitC-1. On any other S3 board, go by the GPIO labels printed on the board, and if it has only one USB port, use that one.
 
    ![Desk demo wiring: four wires from the OLED screen to the ESP32-S3-DevKitC-1](firmware/diagrams/desk-demo-wiring.png)
@@ -416,7 +416,7 @@ Video: [ESP32 OLED tutorial for beginners](https://www.youtube.com/watch?v=u8g34
 
 #### Deliverable
 
-For now, a screenshot of the Serial Monitor from step 4, showing the chip name, posted on [issue #12](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/12). Once screens arrive, add a photo of the screen showing 50%, 36 km/h and PA 5.
+For now, a screenshot of the Serial Monitor from step 4, showing the chip name, posted on [issue #12](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/12). Once you have a screen, add a photo of it showing 50%, 36 km/h and PA 5.
 
 ### Stage 2: First Contribution
 
@@ -479,7 +479,7 @@ GitHub's [Hello World guide](https://docs.github.com/en/get-started/start-your-j
 
 ## After Onboarding: Term Projects
 
-Once you've finished your subteam's Stage 1 and one Stage 2 starter task, you're done onboarding. Move on to the main goals for the term, set by Ling, one of Electrium's two team leads (the other is Samantha Chong).
+Once you've finished your subteam's Stage 1 and one Stage 2 starter task, you're done onboarding. Your squad lead may also give you one of these term projects as your Stage 2 task. Move on to the main goals for the term, set by Ling, one of Electrium's two team leads (the other is Samantha Chong).
 
 ![Term projects by subteam, with what each one needs finished first](docs/diagrams/term-project-map.png)
 
@@ -489,7 +489,7 @@ Each project is a GitHub issue labelled `term project`. Each issue lists what to
 
 | Order | Project | Start after |
 | --- | --- | --- |
-| 1 | [#21 Battery pack: find out what exists, then decide build or buy](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21) | #7 |
+| 1 | [#21 Battery pack: check and clear Pack 4](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21) | #7 |
 | 2 | [#19 Choose a BMS and charging port](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/19) | #7 |
 | 3 | [#18 Bench test: battery, motor controller, motor and thumb throttle](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/18) | #1 and #7 for the bench-supply steps. The pack steps also need #21 and #19 |
 | 4 | [#20 Plan and build the wiring harness](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/20) | #10 to plan, then #18 and #19 before building |
@@ -512,7 +512,9 @@ Each project is a GitHub issue labelled `term project`. Each issue lists what to
 | 4 | [#27 Inspect and fix the cargo box](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/27) | Onboarding |
 | 5 | [#28 Find and buy missing bike parts](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/28) | #2 and #3 |
 | 6 | [#30 Plan and finish the frame welds (work in progress)](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/30) | #2, #4 and #6. Needs a welder who passed the SDC weld test |
-| 7 | [#29 Repaint the frame](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/29) | Last: after #30, once all welding is done and #6 is approved |
+| 7 | [#31 Fit the hub motor wheel to the frame, with torque arms](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/31) | Onboarding. Nothing gets powered on the bike before this |
+| 8 | [#32 Choose and fit brakes, with levers that cut the motor](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/32) | Onboarding. Nobody rides the bike without brakes |
+| 9 | [#29 Repaint the frame](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/29) | Last: after #30, once all welding is done and #6 is approved |
 
 The same list is in the repo at [docs/term-projects.md](docs/term-projects.md).
 
@@ -546,7 +548,7 @@ The same list is in the repo at [docs/term-projects.md](docs/term-projects.md).
 | Term | Meaning | Learn more |
 | --- | --- | --- |
 | Bakfiets | A Dutch "box bike" with the cargo box in front of the rider | [Wikipedia](https://en.wikipedia.org/wiki/Bakfiets) |
-| 4130 chromoly | The steel the 2024 design specifies for the main tubes. It's strong for its weight and weldable. Some tubes may be donor-bike steel instead, and [#4](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/4) records which | [41xx steel](https://en.wikipedia.org/wiki/41xx_steel) |
+| 10 | The steel the 2024 design specifies for the main tubes. It's strong for its weight and weldable. Some tubes may be donor-bike steel instead, and [#4](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/4) records which | [41xx steel](https://en.wikipedia.org/wiki/41xx_steel) |
 | Weldment | A SolidWorks feature that builds a frame from a 3D sketch plus tube sizes | [Javelin walkthrough](https://www.javelin-tech.com/blog/2024/05/solidworks-weldments/) |
 | Weldment profile | The cross-section shape of a tube, stored as a file SolidWorks can reuse |  |
 | Master sketch | One sketch of key points and lines that every part follows |  |
