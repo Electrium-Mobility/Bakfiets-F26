@@ -80,4 +80,11 @@ for team, col, items in rows:
         y -= 4.6
     y -= 0.4
 
+# legend
+lx, ly = 112, H - 6
+for i, (firm, label) in enumerate([(1, 'planned'), (0, 'rough guess')]):
+    xx = lx + i * 18
+    ax.add_patch(FancyBboxPatch((xx, ly - 1.1), 5, 2.2, boxstyle='round,pad=0,rounding_size=0.5',
+                                fc=PENCIL if firm else 'none', ec=PENCIL, lw=1.3, hatch=None if firm else '////', zorder=3))
+    note(ax, xx + 6.2, ly - 0.6, label, size=10, color=PENCIL)
 save(fig, os.path.join(HERE, 'gantt-f26.png'))
