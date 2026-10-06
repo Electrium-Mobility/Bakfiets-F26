@@ -237,7 +237,7 @@ A screenshot of the full assembly open in SolidWorks, posted in the **#bakfiets-
 
 #### Task
 
-Pick one of these issues and claim it with a comment saying you're working on it.
+Pick one of these issues and claim it with a comment saying you're working on it. These are the starter tasks. You can also take one of the bigger ones, like steering ([#25](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/25)), brakes ([#32](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/32)) or the hub motor fit ([#31](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/31)). Every open mechanical task is [listed here](https://github.com/Electrium-Mobility/Bakfiets-F26/issues?q=is%3Aissue+is%3Aopen+label%3Amechanical).
 
 | Issue | What you'll do |
 | --- | --- |
@@ -334,7 +334,7 @@ A comment on [issue #8](https://github.com/Electrium-Mobility/Bakfiets-F26/issue
 
 #### Task
 
-Pick one of these issues and claim it.
+Pick one of these issues and claim it. These are the starter tasks. You can also take one of the bigger ones, like the bench test ([#18](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/18)) or checking the BMS and charger ([#19](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/19)). Every open electrical task is [listed here](https://github.com/Electrium-Mobility/Bakfiets-F26/issues?q=is%3Aissue+is%3Aopen+label%3Aelectrical).
 
 | Issue | What you'll do |
 | --- | --- |
@@ -424,7 +424,7 @@ For now, a screenshot of the Serial Monitor from step 4, showing the chip name, 
 
 #### Task
 
-Pick one of these issues and claim it.
+Pick one of these issues and claim it. These are the starter tasks. You can also take one of the bigger ones, like reading data from the motor controller ([#22](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/22)) or picking a screen ([#23](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/23)). Every open firmware task is [listed here](https://github.com/Electrium-Mobility/Bakfiets-F26/issues?q=is%3Aissue+is%3Aopen+label%3Afirmware).
 
 | Issue | What you'll do |
 | --- | --- |
