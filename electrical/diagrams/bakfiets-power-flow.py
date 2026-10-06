@@ -24,17 +24,17 @@ def arrow(p, q, c, ls='-', lw=2, rad=0):
 # positive side, top row
 Y = 72
 block(9, 66, 15, 12, 'charger', '12S, 50.4V', RED, 1)
-block(34, 62, 18, 16, 'battery pack', '12S3P\n18650 cells', RED, 2)
+block(34, 62, 18, 16, 'battery pack', 'Pack 4: 12S2P\nlithium-ion cells', RED, 2)
 block(58, 68, 7, 8, 'fuse', '', RED)
 block(72, 66, 15, 12, 'antispark', 'soft power-on', RED, 4)
 block(108, 60, 20, 20, 'motor\ncontroller', '', RED, 5)
 note(ax, 118, 62.5, 'FSESC 6.7 (VESC)', size=9.2, color=PENCIL, ha='center', zorder=3)
 block(134, 63, 14, 14, 'hub\nmotor', '', INK)
-note(ax, 141, 65.5, '500W', size=9.2, color=PENCIL, ha='center', zorder=3)
+note(ax, 141, 65.5, '2000W, set\nto 500W', size=9.2, color=PENCIL, ha='center', zorder=3)
 line([24, 34], [Y, Y]); line([52, 58], [Y, Y]); line([65, 72], [Y, Y]); line([87, 108], [Y, Y])
 for dy in (-2, 0, 2): line([128, 134], [Y + dy, Y + dy], INK, lw=2.6)
 note(ax, 131, 80.5, '3 phase\nwires', size=8.5, color=INK, ha='center', linespacing=1)
-note(ax, 25.4, 75, 'charging port,\nfused (DC 60V+)', size=8.2, color=RED, linespacing=1)
+note(ax, 29, 81.5, 'charging port,\nfused (DC 60V+)', size=8.2, color=RED, ha='center', linespacing=1)
 note(ax, 61.5, 82, 'fuse on the + side,\nDC-rated 60V or more', size=9.5, color=RED, ha='center', linespacing=1.1)
 
 # negative side through the BMS

@@ -1,6 +1,6 @@
 # Bakfiets F26 Onboarding
 
-Last updated 2026-09-28 · Justin Gu, project lead
+Last updated 2026-10-06 · Justin Gu, project lead
 
 You're joining the team finishing an electric cargo bike. A bakfiets is a Dutch bike with a big box in front of the rider, and ours adds a motor, a 48 V battery, lights and a small screen. Electrium Mobility started it in Winter 2024 and partly built it, and the last recorded work was a CAD update in May 2025.
 
@@ -122,17 +122,17 @@ Do these only when you need the place or machine they cover. No onboarding task 
 From the UW [Lithium Cell and Battery Standard](https://uwaterloo.ca/safety-office/laboratory-safety/batteries), plus common practice:
 
 1. Wear safety glasses, take off rings and watches, use insulated tools, and tape over bare terminals.
-2. Store packs in a metal box or battery cabinet. A LiPo bag is too small for a 36-cell e-bike pack.
+2. Store packs in a metal box or battery cabinet. A LiPo bag is too small for a 24-cell e-bike pack.
 3. Charge on a non-combustible surface (concrete or a metal tray) away from anything that burns. Stay with a pack the whole time it charges, and unplug it once it's full.
 4. Use only a charger marked 12S with a 50.4 V output (12S means 12 cell groups in series). Our pack reaches 50.4 V when full, and UW's standard calls for extra safety steps at 50 V and above. That's why battery work always needs the electrical lead there.
-5. The 2024 pack in the bay is untested. Don't lift, open, plug in or charge it until it has been measured and cleared under [issue #21](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21).
+5. The packs in the bay haven't been checked by this team yet, including Pack 4, the one we'll use. Don't lift, open, plug in or charge any of them until it has been measured and cleared under [issue #21](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21).
 6. Never use a swollen or damaged pack.
 7. If a pack gets hot, smells or smokes, get everyone away and pull the fire alarm if there's fire. Then tell the electrical lead and the project lead.
 8. Every pack goes on the SDC's shared battery and chemical inventory sheet, which the SDC is setting up this term.
 
 #### Step 4: Know where the bike is and how to get in
 
-1. **Where:** the Electrium bay (workbay 1002 on SDC sheets), in the Sedra Student Design Centre (SDC) in Engineering 5. The bike frame, the cargo box, the 2024 battery pack and a motor set aside for Bakfiets are all there.
+1. **Where:** the Electrium bay (workbay 1002 on SDC sheets), in the Sedra Student Design Centre (SDC) in Engineering 5. The bike frame, the cargo box, the battery packs, the hub motor and the ESP32 boards (on the black parts organizer) are all there.
 2. **Meetings:** the bay door has a code lock, and only leads have the code. A lead lets you in. Post in #bakfiets-general when you get to the door.
 3. **Other times:** arrange bay work with your subteam lead in your subteam channel.
 4. **If you ever learn the code:** don't pass it on. The bay holds items that can hurt someone who doesn't know them.
@@ -152,19 +152,19 @@ From the UW [Lithium Cell and Battery Standard](https://uwaterloo.ca/safety-offi
 | Area | What exists | Next milestone |
 | --- | --- | --- |
 | Mechanical | A SolidWorks model, a welding jig, notching guides, one FEA study and a partly built frame | Record what is welded, then rerun FEA with written load cases |
-| Electrical | A power flow diagram, the 2024 battery pack and a motor (both in the bay, untested). The 2024 schematics aren't in any Electrium repo | Confirm the motor, then draft the power board schematic |
-| Firmware | A screen and LED demo with fixed numbers | Show a real battery voltage and one working button |
+| Electrical | A power flow diagram, a 48 V battery pack (Pack 4) and a 2000 W hub motor, both in the bay and untested. The 2024 schematics aren't in any Electrium repo | Check Pack 4 (#21), bench test the motor (#18), then draft the power board schematic |
+| Firmware | A screen and LED demo with fixed numbers, and ESP32 boards in the bay (no screens yet) | Show a real battery voltage and one working button |
 
 ### Open Questions
 
-The 2024 files disagree on a few basics. Below is the answer we're working from for each, and how to check it on the real bike. Until a check says otherwise, plan around these answers. This section is background: you don't need to follow every detail yet, and the [Glossary](#glossary) explains the terms.
+The 2024 files disagree on a few basics. Below is the answer we're working from for each, and how we know. Until a check says otherwise, plan around these answers. This section is background: you don't need to follow every detail yet, and the [Glossary](#glossary) explains the terms.
 
 #### 1. Which motor does the bike have?
 
-- **Our answer:** a 500 W hub motor driven by an FSESC 6.7, a VESC-based motor controller made by Flipsky.
-- **Why:** the club website names that exact controller. The 2024 README and the crank-motor CAD model (`mechanical/cad-2024/MotorCrank/`) point to a Bafang BBS02 mid-drive instead, but they are from early 2024. The website's later W2024 and W2025 pages both name the hub motor and FSESC.
-- **How to check:** a motor set aside for Bakfiets is in the bay (confirmed by Samantha Chong, one of Electrium's team leads), so the question is which kind it is. Look at it and at the bike ([issue #1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1)). A hub motor is a thick drum around a wheel's axle, with a cable coming out of the axle. A BBS02 is a box at the pedals that replaces the crank and chainring. Photograph any separate controller box and its label. Ling, one of Electrium's two team leads, is checking whether it's the motor the 2024 team meant to use.
-- **If we're wrong:** a BBS02 has its own built-in controller. The electrical plan would drop the separate ESC, and firmware would read the BBS02's display protocol instead of the VESC's.
+- **Decided (6 Oct):** a 48 V, 2000 W direct-drive hub motor, already built into a 24" wheel, driven by a VESC-based motor controller (the club website names the Flipsky FSESC 6.7).
+- **Why:** it was found in the bay ([#1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1)) and it drives the wheel directly. The other motor in the bay, a Flipsky 6374 skateboard motor, would need about a 30:1 gear reduction. The 2024 README and crank-motor CAD (`mechanical/cad-2024/MotorCrank/`) mention a Bafang BBS02 mid-drive, but that plan was dropped.
+- **The power limit:** Ontario limits e-bikes to 500 W and 32 km/h, so the motor controller is set to 500 W in VESC Tool, even though the motor can do 2000 W. That's part of [#18](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/18).
+- **Still to check:** that the 24" wheel fits the frame's dropouts ([#26](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/26)), and the motor controller's label against the FSESC 6.7 ([#18](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/18)).
 
 #### 2. Which microcontroller runs the screen?
 
@@ -193,7 +193,7 @@ The 2024 files disagree on a few basics. Below is the answer we're working from 
 
 | Role | Person | What they do |
 | --- | --- | --- |
-| Project lead | Justin Gu | Priorities, decisions that affect more than one subteam, purchases (through Electrium's ordering process) and letting members into the bay |
+| Project lead | Justin Gu | Priorities, decisions that affect more than one subteam, purchases (through Electrium's ordering process, about $300 for this term, mostly for steering) and letting members into the bay |
 | Mechanical leads | Annie Luangphinith and Aarush Lingamchetti (co-leads) | Run #bakfiets-mech and keep mechanical issues current |
 | Electrical lead | Jack Huang | Runs #bakfiets-elec, keeps electrical issues current, and supervises all battery work |
 | Firmware lead | David Ertel | Runs #bakfiets-firm and keeps firmware issues current |
@@ -293,14 +293,14 @@ You will learn to read a real Electrium board, then help design the bike's elect
 *Thick red lines carry full battery voltage (about 36 to 50 V). Orange lines carry 5 V. Dashed blue lines are signals only.*
 
 1. **Charger** plugs into a charging port on the frame and fills the pack to 50.4 V.
-2. **Battery pack**: 12S3P. That's 12 groups wired in series, with 3 cells in parallel in each group: 36 cells, about 44 V in normal use. "48 V" is just the name shops use for packs this size. 12S3P is what the club website says, and [#21](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21) confirms it by counting the balance wires. The drawing under this list shows how the cells connect. The positive side goes through a fuse (DC-rated for 60 V or more).
+2. **Battery pack**: Pack 4, a 48 V pack labelled 12S2P. That's 12 groups wired in series, with 2 cells in parallel in each group: 24 cells, about 44 V in normal use. "48 V" is just the name shops use for packs this size. [#21](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21) confirms the 12S by counting the balance wires before anyone uses it. The drawing under this list shows how the cells connect. The positive side goes through a fuse (DC-rated for 60 V or more).
 3. **BMS** (battery management system) sits on the pack's negative side, so both charging and riding current pass through it. It cuts the pack off on overcharge, over-discharge, overheating or a short.
 4. **Antispark**: the power button switches it on, and it lets power in slowly so the controller's capacitors charge without a spark. *Design note for later, not needed for Stage 1:* the Electrium anti-spark board you read in Stage 1 uses N-channel MOSFETs, which usually means it switches the negative wire. Check that in its schematic. If it does switch the negative wire, the power board and the ESP32 must take their negative from the switched side too. Otherwise the ESP32's ground wire to the controller becomes a path around the antispark, which can damage the controller's COMM port or the ESP32.
 5. **Motor controller (ESC)** turns battery power into the three motor wires. The throttle sends it a speed request, and the brake levers tell it to cut power.
 6. **Power board (PDB)** steps 48 V down to 5 V for the small electronics and lights.
 7. **ESP32-S3** runs the display and LED strip, reads the buttons, and gets speed and battery data from the controller over UART.
 
-![A 12S3P pack seen from above: 12 groups of 3 cells, voltages adding up to about 44 V, and 13 balance wires to the BMS](electrical/diagrams/pack-12s3p.png)
+![A 12S2P pack seen from above: 12 groups of 2 cells, voltages adding up to about 44 V, and 13 balance wires to the BMS](electrical/diagrams/pack-12s2p.png)
 
 **⚠️ Warning:** you'll need this when you choose parts (issue #9 onward), not for Stage 1. Parts that carry the battery voltage need margin above 50.4 V: use MOSFETs and capacitors rated 100 V. Surge (TVS) diodes are the exception: pick one whose standoff voltage sits just above 50.4 V, about 54 to 58 V. Then check its clamp voltage: a 54 to 58 V part clamps at roughly 87 to 94 V, which is why the MOSFETs need 100 V and not 80 V. Fuses on the battery side must be DC-rated for at least 60 V, because ordinary car blade fuses are rated only 32 V.
 
@@ -382,7 +382,7 @@ You will get the 2024 display code running on your desk, then start connecting i
 
 ### Stage 1: Run the Desk Demo
 
-**This stage is split in two.** Steps 1 to 3 need no hardware: do them on your own laptop **before Wednesday's meeting**, then click **Verify** (the checkmark button, top left) to check the code builds without a board plugged in. Do steps 4 to 6 once you have a board and screen (see Materials).
+**This stage is split in three.** Steps 1 to 3 need no hardware: do them on your own laptop, then click **Verify** (the checkmark button, top left) to check the code builds. Step 4 needs only a board, which you borrow in the bay. Steps 5 to 7 need a screen too, and Electrium doesn't have screens yet, so do those once they arrive.
 
 #### Task
 
@@ -392,8 +392,8 @@ Run [`firmware/desk-demo/desk-demo.ino`](firmware/desk-demo/desk-demo.ino) on an
 
 | Part | Notes |
 | --- | --- |
-| ESP32-S3 dev board, such as the ESP32-S3-DevKitC-1 | It must be an S3. A plain ESP32 can't use the pins the screen needs |
-| SSD1306 128x64 I2C OLED (the common 0.96-inch screen) | Don't buy one. Electrium has ESP32 boards and screens in the bay that you can borrow: ask at the Wednesday meeting or in #bakfiets-firm. Check that the metal cover on the board says ESP32-S3 (for example ESP32-S3-WROOM-1). If it says only ESP32, it won't run the desk demo |
+| ESP32-S3 dev board, such as the ESP32-S3-DevKitC-1 | Borrow one from the black parts organizer in the bay. It must be an S3, because a plain ESP32 can't use the pins the screen needs. Step 4 tells you which one you have |
+| SSD1306 128x64 I2C OLED (the common 0.96-inch screen) | Not in the bay yet. The project lead is ordering some, so don't buy your own |
 | 4 female-to-female jumper wires, and a USB-C data cable | Ask for the wires with the board. Charge-only cables don't work. No LED strip is needed |
 | For Stage 2: a push button, a breadboard and a few resistors | Needed for #14 and #15. #15 also uses a bench power supply |
 
@@ -402,12 +402,13 @@ Run [`firmware/desk-demo/desk-demo.ino`](firmware/desk-demo/desk-demo.ino) on an
 1. With Arduino IDE and ESP32 support installed (see Software), choose **Tools > Manage Libraries** and install **Adafruit SSD1306** and **FastLED**. Click **Install all** when asked, which adds Adafruit GFX and BusIO too. The code needs FastLED to build even without an LED strip.
 2. Choose **File > Open** and pick `firmware\desk-demo\desk-demo.ino` in your clone.
 3. Choose **Tools > Board > esp32 > ESP32S3 Dev Module**, and set **Tools > USB CDC On Boot** to **Enabled**. Click **Verify** now. The first build can take a few minutes, and it worked when the bottom panel says **Done compiling**. If it says a `.h` file is missing, redo step 1.
-4. Wire the screen: VCC to 3.3 V, GND to GND, SDA to GPIO 10, SCL to GPIO 9, as in the drawing below. The drawing shows an ESP32-S3-DevKitC-1. On any other S3 board, go by the GPIO labels printed on the board, and if it has only one USB port, use that one.
+4. **Board test, no screen needed.** Open [`firmware/board-test/board-test.ino`](firmware/board-test/board-test.ino). Plug the board in with the USB-C port labelled **USB** (not UART), and pick its COM port under **Tools > Port**. Not sure which one? Unplug the board and look again: the one that disappears is yours. Click **Upload**, then open **Tools > Serial Monitor** and set the speed at the bottom right to **115200**. Every second it prints a line such as `Hello from Bakfiets! Chip: ESP32-S3`. If it says `ESP32` without the S3, that board can't run the desk demo, so swap it.
+5. Once you have a screen, wire it: VCC to 3.3 V, GND to GND, SDA to GPIO 10, SCL to GPIO 9, as in the drawing below. The drawing shows an ESP32-S3-DevKitC-1. On any other S3 board, go by the GPIO labels printed on the board, and if it has only one USB port, use that one.
 
    ![Desk demo wiring: four wires from the OLED screen to the ESP32-S3-DevKitC-1](firmware/diagrams/desk-demo-wiring.png)
 
-5. Plug in using the board's USB-C port labelled **USB** (not UART). Pick its COM port under **Tools > Port**. Not sure which one? Unplug the board and look again: the one that disappears is yours.
-6. Click **Upload**. After about 10 seconds the screen shows 50%, 36 km/h and PA 5. It stays blank at first because the code plays the LED animation before it draws.
+6. Open `firmware\desk-demo\desk-demo.ino` again and plug the board in the same way as step 4.
+7. Click **Upload**. After about 10 seconds the screen shows 50%, 36 km/h and PA 5. It stays blank at first because the code plays the LED animation before it draws.
 
 **💡 Hint:** upload says "Failed to connect"? Hold **BOOT**, tap **RST**, release BOOT, and upload again. No COM port? Try another cable, since some only charge. If you're on the port labelled UART instead, install the CP210x or CH340 USB driver and set USB CDC On Boot to **Disabled**. Blank screen? Check SDA and SCL. Then, near the top of `desk-demo.ino`, change `#define SCREEN_ADDRESS 0x3C` to `0x3D` and upload again.
 
@@ -415,7 +416,7 @@ Video: [ESP32 OLED tutorial for beginners](https://www.youtube.com/watch?v=u8g34
 
 #### Deliverable
 
-A photo of the screen showing 50%, 36 km/h and PA 5, posted on [issue #12](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/12).
+For now, a screenshot of the Serial Monitor from step 4, showing the chip name, posted on [issue #12](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/12). Once screens arrive, add a photo of the screen showing 50%, 36 km/h and PA 5.
 
 ### Stage 2: First Contribution
 
@@ -505,15 +506,15 @@ Each project is a GitHub issue labelled `term project`. Each issue lists what to
 
 | Order | Project | Start after |
 | --- | --- | --- |
-| 1 | [#6 Rerun the frame FEA with written load cases](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/6) | #4, done with the mechanical lead. All cutting and welding waits for it |
-| 2 | [#25 Design a new steering mechanism (rod, cable or hydraulic)](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/25) | Onboarding |
+| 1 | [#25 Design a new steering mechanism (rod, cable or hydraulic)](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/25) | Onboarding. This is the top mechanical priority, and most of the parts budget goes to it |
+| 2 | [#6 Rerun the frame FEA with written load cases](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/6) | #4, done with a mechanical lead. All cutting and welding waits for it |
 | 3 | [#26 Mount everything on the frame](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/26) | #3. Part sizes come from #19 and #21. Only mounts near the steering wait for #25 |
 | 4 | [#27 Inspect and fix the cargo box](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/27) | Onboarding |
 | 5 | [#28 Find and buy missing bike parts](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/28) | #2 and #3 |
 | 6 | [#30 Plan and finish the frame welds (work in progress)](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/30) | #2, #4 and #6. Needs a welder who passed the SDC weld test |
 | 7 | [#29 Repaint the frame](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/29) | Last: after #30, once all welding is done and #6 is approved |
 
-Ling is tracking down the motor that was meant to go on the bike. Updates go in [issue #1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1). The same list is in the repo at [docs/term-projects.md](docs/term-projects.md).
+The same list is in the repo at [docs/term-projects.md](docs/term-projects.md).
 
 ## Glossary
 
@@ -561,14 +562,14 @@ Ling is tracking down the motor that was meant to go on the bike. Updates go in 
 | DXF / STL | A 2D drawing for laser cutting / a 3D shape for printing |  |
 | FEA | A simulation of how much a part bends and how stressed it gets under load | [Finite element method](https://en.wikipedia.org/wiki/Finite_element_method) |
 | Load case / safety factor | A set of forces to test against / how many times stronger a part is than it needs to be |  |
-| Hub motor / mid-drive | A motor inside a wheel / a motor that turns the pedal cranks | [Electric bicycle](https://en.wikipedia.org/wiki/Electric_bicycle) |
+| Hub motor / mid-drive | A motor inside a wheel (ours is direct-drive: no gears inside) / a motor that turns the pedal cranks | [Electric bicycle](https://en.wikipedia.org/wiki/Electric_bicycle) |
 
 ### Electrical
 
 | Term | Meaning | Learn more |
 | --- | --- | --- |
 | 18650 cell | The standard cylindrical lithium-ion cell in our pack | [18650 battery](https://en.wikipedia.org/wiki/18650_battery) |
-| 12S3P | 12 groups in series, each group being 3 cells in parallel. About 44 V nominal (its usual voltage in use), 50.4 V full, 36 V empty | [Battery University](https://batteryuniversity.com/article/bu-302-series-and-parallel-battery-configurations) |
+| 12S2P | 12 groups in series, each group being 2 cells in parallel (Pack 4). About 44 V nominal (its usual voltage in use), 50.4 V full, 36 V empty | [Battery University](https://batteryuniversity.com/article/bu-302-series-and-parallel-battery-configurations) |
 | BMS | Battery management system. It balances cells and cuts power on overcharge, over-drain, overheating or a short | [Wikipedia](https://en.wikipedia.org/wiki/Battery_management_system) |
 | Antispark / precharge | A circuit that stops the spark when a battery first connects to a motor controller | [Pre-charge](https://en.wikipedia.org/wiki/Pre-charge) |
 | ESC / VESC / FSESC 6.7 | The motor controller. VESC is an open-source design; the FSESC 6.7 is the VESC-based model the club website says the 2024 team used | [VESC project](https://vesc-project.com/) |
@@ -581,7 +582,7 @@ Ling is tracking down the motor that was meant to go on the bike. Updates go in 
 | TVS diode | A surge protector. Its standoff voltage (the highest voltage it ignores) must sit just above 50.4 V; its clamp voltage (the most it lets through) must stay below what the other parts survive |  |
 | Bench power supply | A lab box that gives an adjustable voltage with a current limit, used for safe testing instead of a battery |  |
 | XT60 / JST | A common battery plug / a family of small signal connectors | [XT60](https://components101.com/connectors/xt60-connector) |
-| LiPo bag | A fire-resistant bag for charging small batteries. Too small for our 36-cell pack, which goes in a metal box |  |
+| LiPo bag | A fire-resistant bag for charging small batteries. Too small for our 24-cell pack, which goes in a metal box |  |
 | Schematic / PCB | A drawing of a circuit / the printed circuit board it's built on | [KiCad getting started](https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html) |
 | Gerbers | The files a factory uses to make a PCB |  |
 | Voltage divider | Two resistors that scale 50 V down to a level the ESP32 can measure | [SparkFun](https://learn.sparkfun.com/tutorials/voltage-dividers/all) |

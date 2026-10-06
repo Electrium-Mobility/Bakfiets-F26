@@ -27,8 +27,8 @@ Every project is a GitHub issue with the `term project` label. Each one lists wh
 
 | Order | Project | Start after |
 | --- | --- | --- |
-| 1 | [#6 Rerun the frame FEA with written load cases](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/6) | #4, done with the mechanical lead. All cutting and welding waits for it |
-| 2 | [#25 Design a new steering mechanism (rod, cable or hydraulic)](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/25) | Onboarding |
+| 1 | [#25 Design a new steering mechanism (rod, cable or hydraulic)](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/25) | Onboarding. This is the top mechanical priority, and most of the parts budget goes to it |
+| 2 | [#6 Rerun the frame FEA with written load cases](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/6) | #4, done with a mechanical lead. All cutting and welding waits for it |
 | 3 | [#26 Mount everything on the frame](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/26) | #3. Part sizes come from #19 and #21. Only mounts near the steering wait for #25 |
 | 4 | [#27 Inspect and fix the cargo box](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/27) | Onboarding |
 | 5 | [#28 Find and buy missing bike parts](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/28) | #2, #3 |

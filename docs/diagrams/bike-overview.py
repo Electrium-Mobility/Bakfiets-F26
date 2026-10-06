@@ -34,8 +34,8 @@ for txt, tgt, s, rad in labels:
 cx = 108
 note(ax, cx, 84, 'not in the model yet', size=14, weight='bold', color=RED)
 items = [
-    ('motor', '500W hub motor in one wheel.\nwhich wheel: check the bike, #1'),
-    ('battery', '12S3P pack. where it mounts\nis #5, then #26'),
+    ('motor', '2000W direct-drive hub motor in a\n24" wheel, set to 500W. check the fit, #26'),
+    ('battery', '48V 12S2P pack (Pack 4). where\nit mounts is #5, then #26'),
     ('motor controller', 'FSESC 6.7 (VESC). #18'),
     ('BMS + charge port', 'picked in #19'),
     ('screen + ESP32-S3', 'where it mounts is #26. code: #22, #24'),

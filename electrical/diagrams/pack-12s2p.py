@@ -4,19 +4,19 @@ from notebook import *
 from matplotlib.patches import Circle, Rectangle, FancyBboxPatch
 
 fig, ax = page(150, 94, (15, 9.4))
-note(ax, 8, 90, 'What "12S3P" means', size=24, weight='bold')
-note(ax, 8, 85.2, 'Looking down on the pack from above. 36 cells, wired as 12 groups of 3.', size=12, color=PENCIL)
+note(ax, 8, 90, 'What "12S2P" means', size=24, weight='bold')
+note(ax, 8, 85.2, 'Looking down on the pack from above. 24 cells, wired as 12 groups of 2.', size=12, color=PENCIL)
 
 r = 2.6
 gx0, pitch = 16, 10.4
-ys = [66, 59.6, 53.2]
+ys = [66, 59.6]
 NICKEL = '#b8b2a4'
 xs = [gx0 + g * pitch for g in range(12)]
 
 # nickel strips on top: join each group's cells, and link pairs 1-2, 3-4 ...
 for g in range(0, 12, 2):
-    ax.add_patch(Rectangle((xs[g] - 1.2, ys[2] - 1), xs[g + 1] - xs[g] + 2.4, ys[0] - ys[2] + 2, fc=NICKEL, ec=PENCIL, lw=1, alpha=0.55, zorder=1))
-ax.add_patch(Rectangle((xs[0] - 1.2, ys[2] - 1), 2.4, ys[0] - ys[2] + 2, fc=NICKEL, ec=PENCIL, lw=1, alpha=0.0))
+    ax.add_patch(Rectangle((xs[g] - 1.2, ys[-1] - 1), xs[g + 1] - xs[g] + 2.4, ys[0] - ys[-1] + 2, fc=NICKEL, ec=PENCIL, lw=1, alpha=0.55, zorder=1))
+ax.add_patch(Rectangle((xs[0] - 1.2, ys[-1] - 1), 2.4, ys[0] - ys[-1] + 2, fc=NICKEL, ec=PENCIL, lw=1, alpha=0.0))
 for g in range(12):
     up = (g % 2 == 0)
     for y in ys:
@@ -31,8 +31,8 @@ for g in range(12):
 
 # underside strips (dashed): link 2-3, 4-5 ...
 for g in range(1, 11, 2):
-    ax.add_patch(Rectangle((xs[g] - 1.2, ys[2] - 4.6), xs[g + 1] - xs[g] + 2.4, 1.6, fc='none', ec=PENCIL, lw=1.1, ls=(0, (3, 2))))
-note(ax, xs[-1] + 2, ys[2] - 14, 'dashed boxes:\nstrips on the\nunderside', size=9, color=PENCIL, ha='left', linespacing=1.1)
+    ax.add_patch(Rectangle((xs[g] - 1.2, ys[-1] - 4.6), xs[g + 1] - xs[g] + 2.4, 1.6, fc='none', ec=PENCIL, lw=1.1, ls=(0, (3, 2))))
+note(ax, 8, 34.5, 'dashed boxes = nickel strips on the underside of the pack', size=9.5, color=PENCIL, ha='left')
 # ends
 note(ax, xs[0] - 4.2, ys[1], 'B-', size=15, color=INK, ha='right', weight='bold')
 note(ax, xs[0] - 4.2, ys[1] - 4, 'underside of\ngroup 1', size=8.5, color=PENCIL, ha='right', linespacing=1)
@@ -40,8 +40,8 @@ note(ax, xs[-1] + 4.2, ys[1], 'B+', size=15, color=RED, ha='left', weight='bold'
 note(ax, xs[-1] + 4.2, ys[1] - 4, 'underside of\ngroup 12.\n50.4V when full', size=9.5, color=RED, ha='left', linespacing=1.1)
 
 # bracket around group 1
-ax.add_patch(FancyBboxPatch((xs[0] - 3.8, ys[2] - 3.6), 7.6, ys[0] - ys[2] + 7.2, boxstyle='round,pad=0,rounding_size=1.6', fc='none', ec=GOLD, lw=2))
-point(ax, (8, 77.5), (xs[0] - 2, ys[0] + 3.5), 'one group = 3 cells side by side (the "3P").\nsame voltage as a single cell, 3x the capacity',
+ax.add_patch(FancyBboxPatch((xs[0] - 3.8, ys[-1] - 3.6), 7.6, ys[0] - ys[-1] + 7.2, boxstyle='round,pad=0,rounding_size=1.6', fc='none', ec=GOLD, lw=2))
+point(ax, (8, 77.5), (xs[0] - 2, ys[0] + 3.5), 'one group = 2 cells side by side (the "2P").\nsame voltage as a single cell, 2x the capacity',
       color=GOLD, rad=0.2)
 
 # running total arrow
@@ -65,11 +65,11 @@ note(ax, 8, 30, 'the numbers', size=13, weight='bold')
 mono(ax, 8, 25.6, 'full    12 x 4.2V = 50.4V', size=10)
 mono(ax, 8, 22.4, 'normal  12 x 3.7V = ~44V   ("48V" is just the class name)', size=10)
 mono(ax, 8, 19.2, 'empty   12 x 3.0V = ~36V', size=10)
-note(ax, 8, 14.2, 'If the cells are about 3Ah each, 3 in parallel gives about 9Ah.', size=10.5, color=PENCIL)
+note(ax, 8, 14.2, 'If the cells are about 3Ah each, 2 in parallel gives about 6Ah.', size=10.5, color=PENCIL)
 
 note(ax, 88, 30, 'checking a group', size=13, weight='bold')
 note(ax, 88, 23.4, 'Meter between B3 and B4 = group 4 on its own.\nA healthy group reads 3.0 to 4.2V.\nPlug the balance wires in the order the\nBMS manual shows, or you can kill the BMS.', size=10.5, linespacing=1.35)
 note(ax, 88, 12.6, 'Never work on a pack alone.', size=11, color=RED)
 
-mono(ax, 149, 2, "sketch only. we haven't opened the 2024 pack, so its real layout may differ.", size=7.2, color='#6f6a60', ha='right')
-save(fig, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'pack-12s3p.png'))
+mono(ax, 149, 2, "sketch only. Pack 4's label says 12S2P, but nobody has opened it, so its real layout may differ.", size=7.2, color='#6f6a60', ha='right')
+save(fig, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'pack-12s2p.png'))

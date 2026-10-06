@@ -11,7 +11,7 @@ The steps you have to do are in [Firmware Stage 1](../../ONBOARDING.md#stage-1-r
 - Four female-to-female jumper wires and a USB-C data cable (charge-only cables don't work).
 - No LED strip is needed for the desk demo.
 
-Don't buy one. Electrium has ESP32 boards and screens in the bay that you can borrow: ask at the Wednesday meeting or in #bakfiets-firm. Do section 2 and steps 1 to 3 of section 3 on your own laptop in the meantime, then click **Verify** (the checkmark button) to check it builds without a board.
+Don't buy one. Electrium's ESP32 boards are on the black parts organizer in the bay. There are no screens yet, and the project lead is ordering some. Until then, run the board test in [Firmware Stage 1](../../ONBOARDING.md#stage-1-run-the-desk-demo), step 4. Do section 2 and steps 1 to 3 of section 3 on your own laptop in the meantime, then click **Verify** (the checkmark button) to check it builds without a board.
 
 ## 2. Install Arduino IDE and ESP32 support
 

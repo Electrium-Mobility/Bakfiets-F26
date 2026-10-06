@@ -17,7 +17,7 @@ def thick(xs, ys, c=RED, lw=5): ax.plot(xs, ys, color=c, lw=lw, solid_capstyle='
 def thin(xs, ys, c, ls='-'): ax.plot(xs, ys, color=c, lw=2, ls=ls, solid_capstyle='round', zorder=1)
 
 Y = 64
-block(8, 56, 20, 16, 'battery', '12S3P\n36 to 50.4V', RED)
+block(8, 56, 20, 16, 'battery', 'Pack 4, 12S2P\n36 to 50.4V', RED)
 block(8, 39, 20, 11, 'BMS', 'pack B- in,\nP- out', RED)
 thick([18, 18], [56, 50], INK, lw=4)
 thick([28, 42, 42, 92], [44.5, 44.5, 54, 54], INK, lw=4)
@@ -25,7 +25,7 @@ note(ax, 44, 55.8, 'negative (P-) to the controller', size=9, color=INK)
 block(40, 60, 9, 8, 'fuse', '', RED)
 block(60, 58, 15, 12, 'antispark', 'soft on\nswitch', RED)
 block(92, 44, 28, 30, 'FSESC 6.7', 'motor controller\n(VESC)', INK)
-block(130, 56, 16, 16, 'hub motor', '500W', INK)
+block(130, 56, 16, 16, 'hub motor', '2000W, set\nto 500W', INK)
 thick([28, 40], [Y, Y]); thick([49, 60], [Y, Y]); thick([75, 92], [Y, Y])
 note(ax, 30, Y + 1.8, 'B+', size=10, color=RED, weight='bold')
 for dy in (-2.2, 0, 2.2):

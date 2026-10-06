@@ -38,7 +38,7 @@ node('#22', 100, 44, 'ESP32 to VESC', 'after #12', BLUE)
 node('#24', 64, 42, '2026 display', 'after #12', BLUE)
 
 
-node('#25', 30, 19, 'new steering', 'after onboarding', GREEN)
+node('#25', 30, 19, 'new steering', 'top priority', GREEN)
 node('#27', 30, 7, 'fix cargo box', 'after onboarding', GREEN)
 node('#26', 70, 19, 'mount everything', 'after #3', GREEN, w=27)
 node('#28', 70, 7, 'missing parts', 'after #2 and #3', GREEN)

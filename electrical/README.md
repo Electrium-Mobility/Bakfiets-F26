@@ -2,13 +2,13 @@
 
 Setup steps are in [docs/setup/3-electrical.md](../docs/setup/3-electrical.md).
 
-Only one electrical file survived from 2024: a block diagram, redrawn below. The 2024 battery pack and a motor set aside for Bakfiets are in the Electrium bay, both untested ([#21](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21), [#1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1)). The 2024 schematics and pack notes aren't in any Electrium repo. This term starts the electrical design fresh.
+Only one electrical file survived from 2024: a block diagram, redrawn below. We'll use Pack 4, a 48 V pack labelled 12S2P, and a 48 V, 2000 W direct-drive hub motor in a 24" wheel. Both are in the Electrium bay and untested ([#21](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21), [#1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1)). The motor controller is set to 500 W, Ontario's e-bike limit. The 2024 schematics and pack notes aren't in any Electrium repo. This term starts the electrical design fresh.
 
 ## The pack is "48 V"
 
-The website says the 2024 pack was 12S3P of 18650 cells: 12 groups in series, each group being 3 cells in parallel, 36 cells in total. That's about 44 V nominal, 50.4 V full and about 36 V empty. "48 V" is the class name. **Every part that touches the battery must be rated well above 50.4 V: 100 V MOSFETs and capacitors, and fuses DC-rated for at least 60 V. The one exception is a surge (TVS) diode, whose standoff should sit just above 50.4 V (about 54 to 58 V), with its clamp voltage below 100 V.**
+Pack 4 is labelled 12S2P: 12 groups in series, each group being 2 cells in parallel, 24 cells in total. That's about 44 V nominal, 50.4 V full and about 36 V empty. "48 V" is the class name. (The website says the 2024 pack was 12S3P, but that pack hasn't been found.) **Every part that touches the battery must be rated well above 50.4 V: 100 V MOSFETs and capacitors, and fuses DC-rated for at least 60 V. The one exception is a surge (TVS) diode, whose standoff should sit just above 50.4 V (about 54 to 58 V), with its clamp voltage below 100 V.**
 
-![Inside a 12S3P pack](diagrams/pack-12s3p.png)
+![Inside a 12S2P pack](diagrams/pack-12s2p.png)
 
 ## How power flows through the bike
 
@@ -19,7 +19,7 @@ A redrawn, color-coded version of the 2024 block diagram. Red lines carry full b
 Follow the numbers:
 
 1. **Charger.** Plugs into a charging port on the frame and fills the pack to 50.4 V.
-2. **Battery pack.** 12S3P of 18650 cells. Its positive side goes through a fuse, DC-rated for 60 V or more.
+2. **Battery pack.** Pack 4, 12S2P. Its positive side goes through a fuse, DC-rated for 60 V or more.
 3. **BMS.** Sits on the pack's negative side (B- in, P- out), so charging and riding current both pass through it. Cuts the pack off on overcharge, over-discharge, overheating or a short.
 4. **Antispark.** The power button turns it on, so the controller's capacitors charge gently instead of sparking. The Electrium anti-spark board uses N-channel MOSFETs, which usually means it switches the negative wire. Check its schematic. If it does switch the negative wire, the power board and the ESP32 must take their negative from the switched side too. Otherwise the ESP32's ground wire to the controller becomes a path around the antispark, which can damage the controller's COMM port or the ESP32.
 5. **Motor controller.** The ESC turns battery power into the three motor wires. The throttle sends it a speed request, and the brake levers tell it to cut power.
