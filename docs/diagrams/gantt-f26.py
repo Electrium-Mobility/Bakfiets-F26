@@ -41,7 +41,6 @@ n_rows = sum(len(r[2]) + 1 for r in rows)
 H = int(round(34 + n_rows * 4.6))
 fig, ax = page(150, H, (15, H / 10))
 note(ax, 8, H - 5, 'Bakfiets F26: the plan for the term', size=24, weight='bold')
-note(ax, 8, H - 10, 'Solid bars are planned. Hatched bars are a rough guess the squad leads will firm up.', size=11.5, color=PENCIL)
 
 top = H - 22
 bottom = 10
@@ -81,5 +80,4 @@ for team, col, items in rows:
         y -= 4.6
     y -= 0.4
 
-mono(ax, 149, 2, 'dates are a starting point. squad leads can change them in #squad-leads', size=7.2, color='#6f6a60', ha='right')
 save(fig, os.path.join(HERE, 'gantt-f26.png'))
