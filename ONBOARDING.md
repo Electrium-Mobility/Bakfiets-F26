@@ -155,6 +155,8 @@ From the UW [Lithium Cell and Battery Standard](https://uwaterloo.ca/safety-offi
 | Electrical | A power flow diagram, a 48 V battery pack (Pack 4) and a 2000 W hub motor, both in the bay and untested. The 2024 schematics aren't in any Electrium repo | Check Pack 4 (#21), bench test the motor (#18), then draft the power board schematic |
 | Firmware | A screen and LED demo with fixed numbers, and ESP32 boards in the bay (the screens haven't been found yet) | Show a real battery voltage and one working button |
 
+Photos of everything in the bay (motor, controller, packs, ESP32 boards) are in [docs/photos/bay-2026-10](docs/photos/bay-2026-10/README.md).
+
 ### Open Questions
 
 The 2024 files disagree on a few basics. Below is the answer we're working from for each, and how we know. Until a check says otherwise, plan around these answers. This section is background: you don't need to follow every detail yet, and the [Glossary](#glossary) explains the terms.
@@ -392,7 +394,7 @@ Run [`firmware/desk-demo/desk-demo.ino`](firmware/desk-demo/desk-demo.ino) on an
 
 | Part | Notes |
 | --- | --- |
-| ESP32-S3 dev board, such as the ESP32-S3-DevKitC-1 | Borrow one from the black parts organizer in the bay. It must be an S3, because a plain ESP32 can't use the pins the screen needs. Step 4 tells you which one you have |
+| ESP32-S3 dev board, such as the ESP32-S3-DevKitC-1 | Borrow one from the black parts organizer in the bay. Electrium's boards are ESP32-S3-DevKitC-1 ([photo](docs/photos/bay-2026-10/esp32-s3-devkitc-1-box.jpg)), the board this guide is written for |
 | SSD1306 128x64 I2C OLED (the common 0.96-inch screen) | Electrium should have some in the bay, but they haven't been found yet. Don't buy your own |
 | 4 female-to-female jumper wires, and a USB-C data cable | Ask for the wires with the board. Charge-only cables don't work. No LED strip is needed |
 | For Stage 2: a push button, a breadboard and a few resistors | Needed for #14 and #15. #15 also uses a bench power supply |

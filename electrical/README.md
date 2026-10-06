@@ -2,7 +2,7 @@
 
 Setup steps are in [docs/setup/3-electrical.md](../docs/setup/3-electrical.md).
 
-Only one electrical file survived from 2024: a block diagram, redrawn below. We'll use Pack 4, a 48 V pack labelled 12S2P, and a 48 V, 2000 W direct-drive hub motor in a 24" wheel. Both are in the Electrium bay and untested ([#21](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21), [#1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1)). We'll set the motor controller to 500 W in VESC Tool ([#18](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/18)). The 2024 schematics and pack notes aren't in any Electrium repo. This term starts the electrical design fresh.
+Only one electrical file survived from 2024: a block diagram, redrawn below. We'll use Pack 4, a 48 V pack labelled 12S2P, and a 48 V, 2000 W direct-drive hub motor in a 24" wheel. Both are in the Electrium bay and untested ([#21](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21), [#1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1)). The team already has a BMS and a charger, so neither needs buying. Photos of the motor, controller and packs are in [docs/photos/bay-2026-10](../docs/photos/bay-2026-10/README.md). We'll set the motor controller to 500 W in VESC Tool ([#18](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/18)). The 2024 schematics and pack notes aren't in any Electrium repo. This term starts the electrical design fresh.
 
 ## The pack is "48 V"
 
