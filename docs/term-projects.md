@@ -6,6 +6,10 @@ Every project is a GitHub issue with the `term project` label. Each one lists wh
 
 ![Term project map](diagrams/term-project-map.png)
 
+![Rough plan for the term: tasks by subteam from 7 Oct to 2 Dec, with reading week and the two parts orders](diagrams/gantt-f26.png)
+
+*A rough timeline. Solid bars are planned, hatched bars are a guess the squad leads will firm up.*
+
 ## Electrical
 
 | Order | Project | Start after |

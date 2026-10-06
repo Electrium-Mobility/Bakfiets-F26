@@ -485,6 +485,10 @@ Once you've finished your subteam's Stage 1 and one Stage 2 starter task, you're
 
 ![Term projects by subteam, with what each one needs finished first](docs/diagrams/term-project-map.png)
 
+![Rough plan for the term: tasks by subteam from 7 Oct to 2 Dec, with reading week and the two parts orders](docs/diagrams/gantt-f26.png)
+
+*A rough timeline. Solid bars are planned, hatched bars are a guess the squad leads will firm up.*
+
 Each project is a GitHub issue labelled `term project`. Each issue lists what to finish first and gives step-by-step instructions with safety notes, videos and example code. It ends with a clear "done when". Claim one the same way, with a comment on the issue. Work through them roughly in the order below.
 
 ### Electrical
