@@ -131,21 +131,21 @@ void drawLevel(uint8_t level) {
 // LED animation for left turn
 void leftTurn() {
   for (int i = NUM_LEDS/2; i < NUM_LEDS; i++) {
-    leds[i] = CRGB::Red; FastLED.show(); delay(10);
+    leds[i] = CRGB::Red; FastLED.show(); delay(10); //TODO: switch to millis()
   }
 
   for (int i = NUM_LEDS/2; i < NUM_LEDS; i++) {
-    leds[i] = CRGB::Black; FastLED.show(); delay(10);
+    leds[i] = CRGB::Black; FastLED.show(); delay(10); //TODO: switch to millis()
   }
 }
 
 // LED animation for right turn
 void rightTurn() {
   for (int i = NUM_LEDS/2; i >= 0; i--) {
-    leds[i] = CRGB::Red; FastLED.show(); delay(10);
+    leds[i] = CRGB::Red; FastLED.show(); delay(10); //TODO: switch to millis()
   }
   for (int i = NUM_LEDS/2; i >= 0; i--) {
-    leds[i] = CRGB::Black; FastLED.show(); delay(10);
+    leds[i] = CRGB::Black; FastLED.show(); delay(10); //TODO: switch to millis()
   }
 }
 
@@ -155,14 +155,14 @@ void idle() {
 
 void loop() {
   
-  // test left turn signal
-  rightTurn();
-  rightTurn();
-  rightTurn();
-  rightTurn();
-  rightTurn();
-  
-
+  //should alternate between left and right signals
+  //with a 1 sec delay between them 
+  if (millis() % 4000 < 200) {
+    leftTurn();
+  }
+  else if (millis() % 2000 < 200){
+    rightTurn();
+  }
 
   display.clearDisplay(); 
 
