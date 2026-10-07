@@ -125,7 +125,7 @@ From the UW [Lithium Cell and Battery Standard](https://uwaterloo.ca/safety-offi
 2. Store packs in a metal box or battery cabinet. A LiPo bag is too small for a 24-cell e-bike pack.
 3. Charge on a non-combustible surface (concrete or a metal tray) away from anything that burns. Stay with a pack the whole time it charges, and unplug it once it's full.
 4. Use only a charger marked 12S with a 50.4 V output (12S means 12 cell groups in series). Our pack reaches 50.4 V when full, and UW's standard calls for extra safety steps at 50 V and above. That's why battery work always needs the electrical lead there.
-5. Ling says Pack 4 should be working, but nobody on this team has charged it yet. Don't plug in or charge any pack until it's been checked in [#21](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21), with Ayaan, Ling, Samantha or one of the co-op students there the first time.
+5. Ling says Pack 4 should be working, but nobody on this team has charged it yet. Don't plug in or charge any pack before its first charge in [#21](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21), with Ayaan, Ling, Samantha or one of the co-op students there the first time.
 6. Never use a swollen or damaged pack.
 7. If a pack gets hot, smells or smokes, get everyone away and pull the fire alarm if there's fire. Then tell the electrical lead and the project lead.
 8. Every pack goes on the SDC's shared battery and chemical inventory sheet, which the SDC is setting up this term.
@@ -501,7 +501,7 @@ Each project is a GitHub issue labelled `term project`. Each issue lists what to
 
 | Order | Project | Start after |
 | --- | --- | --- |
-| 1 | [#21 Battery pack: check and charge Pack 4](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21) | #7 |
+| 1 | [#21 Battery pack: charge Pack 4 for the first time](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21) | #7 |
 | 2 | [#19 Choose a BMS and charging port](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/19) | #7 |
 | 3 | [#18 Bench test: battery, motor controller, motor and thumb throttle](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/18) | #1 and #7 for the bench-supply steps. The pack steps also need #21 and #19 |
 | 4 | [#20 Plan and build the wiring harness](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/20) | #10 to plan, then #18 and #19 before building |
