@@ -125,7 +125,7 @@ From the UW [Lithium Cell and Battery Standard](https://uwaterloo.ca/safety-offi
 2. Store packs in a metal box or battery cabinet. A LiPo bag is too small for a 24-cell e-bike pack.
 3. Charge on a non-combustible surface (concrete or a metal tray) away from anything that burns. Stay with a pack the whole time it charges, and unplug it once it's full.
 4. Use only a charger marked 12S with a 50.4 V output (12S means 12 cell groups in series). Our pack reaches 50.4 V when full, and UW's standard calls for extra safety steps at 50 V and above. That's why battery work always needs the electrical lead there.
-5. The packs in the bay haven't been checked by this team yet, including Pack 4, the one we'll use. Don't lift, open, plug in or charge any of them until it has been measured and cleared under [issue #21](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21).
+5. Ling says Pack 4 should be working, but nobody on this team has charged it yet. Don't plug in or charge any pack until it's been checked in [#21](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21), with Ayaan, Ling, Samantha or one of the co-op students there the first time.
 6. Never use a swollen or damaged pack.
 7. If a pack gets hot, smells or smokes, get everyone away and pull the fire alarm if there's fire. Then tell the electrical lead and the project lead.
 8. Every pack goes on the SDC's shared battery and chemical inventory sheet, which the SDC is setting up this term.
@@ -153,7 +153,7 @@ From the UW [Lithium Cell and Battery Standard](https://uwaterloo.ca/safety-offi
 | --- | --- | --- |
 | Mechanical | A SolidWorks model, a welding jig, notching guides, one FEA study and a partly built frame | Record what is welded, then rerun FEA with written load cases |
 | Electrical | A power flow diagram, a 48 V battery pack (Pack 4) and a 2000 W hub motor, both in the bay and untested. The 2024 schematics aren't in any Electrium repo | Check Pack 4 (#21), bench test the motor (#18), then draft the power board schematic |
-| Firmware | A screen and LED demo with fixed numbers, and ESP32 boards in the bay (the screens haven't been found yet) | Show a real battery voltage and one working button |
+| Firmware | A screen and LED demo with fixed numbers, and ESP32 boards in the bay (no screens yet, we'll probably buy some) | Show a real battery voltage and one working button |
 
 Photos of everything in the bay (motor, controller, packs, ESP32 boards) are in [docs/photos/bay-2026-10](docs/photos/bay-2026-10/README.md).
 
@@ -165,7 +165,7 @@ The 2024 files disagree on a few basics. Below is the answer we're working from 
 
 - **Decided (6 Oct):** a 48 V, 2000 W direct-drive hub motor, already built into a 24" wheel, driven by a VESC-based motor controller (the club website names the Flipsky FSESC 6.7).
 - **Why:** it was found in the bay ([#1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1)) and it drives the wheel directly. The other motor in the bay, a Flipsky 6374 skateboard motor, would need about a 30:1 gear reduction. The 2024 README and crank-motor CAD (`mechanical/cad-2024/MotorCrank/`) mention a Bafang BBS02 mid-drive, but no mid-drive was found in the bay.
-- **The power limit:** we'll set the motor controller to 500 W and 32 km/h in VESC Tool ([#18](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/18)). Ontario's e-bike rule goes by the motor's rated power (500 W or less), not a software limit, so a motor labelled 2000 W may not count as an e-bike motor. Until that's settled, the bike is only ridden off public roads.
+- **The power limit:** we'll set the motor controller to 500 W and 32 km/h in VESC Tool ([#18](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/18)). Ling (Electrium team lead) has okayed using this motor. Running it below its 2000 W rating also saves battery.
 - **Still to check:** that the 24" wheel fits the frame's dropouts ([#26](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/26)), and the motor controller's label against the FSESC 6.7 ([#18](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/18)).
 
 #### 2. Which microcontroller runs the screen?
@@ -388,7 +388,7 @@ You will get the 2024 display code running on your desk, then start connecting i
 
 ### Stage 1: Run the Desk Demo
 
-**This stage is split in three.** Steps 1 to 3 need no hardware: do them on your own laptop, then click **Verify** (the checkmark button, top left) to check the code builds. Step 4 needs only a board, which you borrow in the bay. Steps 5 to 7 need a screen too. Electrium should have some, but they haven't been found yet, so do those once one turns up.
+**This stage is split in three.** Steps 1 to 3 need no hardware: do them on your own laptop, then click **Verify** (the checkmark button, top left) to check the code builds. Step 4 needs only a board, which you borrow in the bay. Steps 5 to 7 need a screen too. Electrium may not have spares, so we'll probably buy a few. Do those steps once they arrive.
 
 #### Task
 
@@ -399,7 +399,7 @@ Run [`firmware/desk-demo/desk-demo.ino`](firmware/desk-demo/desk-demo.ino) on an
 | Part | Notes |
 | --- | --- |
 | ESP32-S3 dev board, such as the ESP32-S3-DevKitC-1 | Borrow one from the black parts organizer in the bay. Electrium's boards are ESP32-S3-DevKitC-1 ([photo](docs/photos/bay-2026-10/esp32-s3-devkitc-1-box.jpg)), the board this guide is written for |
-| SSD1306 128x64 I2C OLED (the common 0.96-inch screen) | Electrium should have some in the bay, but they haven't been found yet. Don't buy your own |
+| SSD1306 128x64 I2C OLED (the common 0.96-inch screen) | We'll probably buy a few, since Electrium may not have spares. Don't buy your own |
 | 4 female-to-female jumper wires, and a USB-C data cable | Ask for the wires with the board. Charge-only cables don't work. No LED strip is needed |
 | For Stage 2: a push button, a breadboard and a few resistors | Needed for #14 and #15. #15 also uses a bench power supply |
 
@@ -501,7 +501,7 @@ Each project is a GitHub issue labelled `term project`. Each issue lists what to
 
 | Order | Project | Start after |
 | --- | --- | --- |
-| 1 | [#21 Battery pack: check and clear Pack 4](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21) | #7 |
+| 1 | [#21 Battery pack: check and charge Pack 4](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21) | #7 |
 | 2 | [#19 Choose a BMS and charging port](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/19) | #7 |
 | 3 | [#18 Bench test: battery, motor controller, motor and thumb throttle](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/18) | #1 and #7 for the bench-supply steps. The pack steps also need #21 and #19 |
 | 4 | [#20 Plan and build the wiring harness](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/20) | #10 to plan, then #18 and #19 before building |
