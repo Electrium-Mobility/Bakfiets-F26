@@ -54,7 +54,7 @@ The threads next to the axle are for a freewheel (the rear gears), so the motor 
 
 <img src="images/bare-bosses.jpg" alt="Bare bosses on another bike's seat stays, labelled" width="420">
 
-V-brakes and cantilever brakes mount on bosses: two short posts on the seat stays, just below the rim (the second photo, from another bike). Our seat stays look like smooth tube. An old style caliper rim brake bolts through a bridge between the stays instead, and our stays look like they lack one too. The photo is low resolution, so it's worth checking by hand.
+V-brakes and cantilever brakes mount on bosses: two short posts on the seat stays, just below the rim (the second photo, from another bike). Our seat stays are smooth tube with no bosses. An old style caliper rim brake bolts through a bridge between the stays instead, and ours have no bridge either.
 
 The rim has a silver band along its edge, which is usually a surface for rim brakes. It still needs a close look.
 
@@ -69,9 +69,8 @@ For a rear hub motor with no disc mount: bosses brazed or welded onto the seat s
 Check in the bay first:
 1. The front brake's brand, model, fluid type and hose fittings. A longer hose, a new lever or a bleed kit all have to match these, and mixing mineral oil with DOT fluid ruins the seals.
 2. Close-ups of both sides of the motor. The current photos are taken from too far away to be sure, and a rotor mount would make a disc brake the easiest option for the back.
-3. The seat stays, by hand. The photo is low resolution and the stays have tape on them. Bosses or a bridge would let a rim brake bolt straight on without changing the frame.
-4. The silver band on the rim, up close. A rim brake needs a flat metal surface to grip, so this decides whether rim brakes are an option for the back at all.
-5. The spacing of the raised dropout holes. 51 mm or 74 mm apart means a disc tab, which opens up a disc brake on the back with a rotor adapter on the motor.
+3. The silver band on the rim, up close. A rim brake needs a flat metal surface to grip, so this decides whether rim brakes are an option for the back at all.
+4. The spacing of the raised dropout holes. 51 mm or 74 mm apart means a disc tab, which opens up a disc brake on the back with a rotor adapter on the motor.
 
 Then work out:
 1. Reuse the front brake with a longer hose, or replace it? Reusing is cheaper but ties every part to that brand. Replacing costs more but lets you pick parts that suit the long line.
