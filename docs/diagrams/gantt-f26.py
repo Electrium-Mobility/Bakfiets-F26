@@ -28,8 +28,8 @@ rows = [
     ]),
     ('Electrical', GOLD, [
         ('#19 check BMS and charger',      [(D(10, 7), D(10, 9), 1)]),
-        ('#21 get Pack 4 ready', [(D(10, 9), D(10, 14), 1)]),
-        ('#18 bench test: supply, then pack', [(D(10, 7), D(10, 21), 1), (D(10, 21), D(11, 11), 0)]),
+        ('#21 get Pack 4 ready', [(D(10, 19), D(10, 23), 1)]),
+        ('#18 bench test: supply, then pack', [(D(10, 21), D(11, 11), 0)]),
         ('#20 wiring harness',             [(D(11, 11), D(12, 2), 0)]),
     ]),
     ('Firmware', BLUE, [
