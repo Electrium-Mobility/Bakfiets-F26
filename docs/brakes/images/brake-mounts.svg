@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" viewBox="0 0 680 490" role="img"><title>Where brake mounts sit on a bike frame</title>
+<text font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#808080" x="180" y="50" text-anchor="middle">From behind: rim brake mounts</text>
+<text font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#808080" x="540" y="50" text-anchor="middle">From the side: disc mount</text>
+<rect x="170" y="125" width="20" height="275" rx="10" fill="none" stroke="#808080" stroke-width="1.5" opacity="0.6"/>
+<rect x="150" y="335" width="60" height="50" rx="8" fill="#808080" opacity="0.35"/>
+<line x1="125" y1="360" x2="235" y2="360" stroke="#808080" stroke-width="3"/>
+<line x1="130" y1="360" x2="165" y2="80" stroke="#808080" stroke-width="4" stroke-linecap="round"/>
+<line x1="230" y1="360" x2="195" y2="80" stroke="#808080" stroke-width="4" stroke-linecap="round"/>
+<line x1="162" y1="105" x2="198" y2="105" stroke="#808080" stroke-width="4"/>
+<circle cx="180" cy="105" r="3" fill="none" stroke="#EF9F27" stroke-width="2"/>
+<line x1="154" y1="170" x2="134" y2="170" stroke="#EF9F27" stroke-width="6" stroke-linecap="round"/>
+<line x1="206" y1="170" x2="226" y2="170" stroke="#EF9F27" stroke-width="6" stroke-linecap="round"/>
+<line stroke="#999999" stroke-width="0.8" stroke-dasharray="3 3" x1="230" y1="170" x2="262" y2="170"/><text font-family="Arial, sans-serif" font-size="12" fill="#808080" x="268" y="174">Boss, one per side</text>
+<line stroke="#999999" stroke-width="0.8" stroke-dasharray="3 3" x1="184" y1="105" x2="262" y2="105"/><text font-family="Arial, sans-serif" font-size="12" fill="#808080" x="268" y="109">Bridge hole</text>
+<line stroke="#999999" stroke-width="0.8" stroke-dasharray="3 3" x1="220" y1="260" x2="262" y2="260"/><text font-family="Arial, sans-serif" font-size="12" fill="#808080" x="268" y="264">Seat stay</text>
+<line stroke="#999999" stroke-width="0.8" stroke-dasharray="3 3" x1="236" y1="360" x2="262" y2="360"/><text font-family="Arial, sans-serif" font-size="12" fill="#808080" x="268" y="364">Dropout and axle</text>
+<circle cx="540" cy="300" r="100" fill="none" stroke="#808080" stroke-width="1.5" opacity="0.6"/>
+<circle cx="540" cy="300" r="90" fill="none" stroke="#808080" stroke-width="1" opacity="0.4"/>
+<circle cx="540" cy="300" r="40" fill="none" stroke="#808080" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="540" y1="300" x2="440" y2="120" stroke="#808080" stroke-width="4" stroke-linecap="round"/>
+<line x1="540" y1="300" x2="425" y2="312" stroke="#808080" stroke-width="4" stroke-linecap="round"/>
+<polygon points="505,270 524,262 530,284 510,292" fill="#FAC775" stroke="#BA7517" stroke-width="1"/>
+<circle cx="540" cy="300" r="6" fill="#808080"/>
+<line stroke="#999999" stroke-width="0.8" stroke-dasharray="3 3" x1="510" y1="292" x2="470" y2="426"/>
+<text font-family="Arial, sans-serif" font-size="12" fill="#808080" x="440" y="442">Disc tab: caliper bolts here</text>
+<text font-family="Arial, sans-serif" font-size="12" fill="#808080" x="440" y="464">Dashed circle: where a rotor would go</text>
+</svg>
