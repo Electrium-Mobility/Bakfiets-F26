@@ -30,7 +30,7 @@
 <line x1="492" y1="162" x2="648" y2="162" stroke="#378ADD" stroke-width="2"/>
 <line x1="474" y1="140" x2="496" y2="140" stroke="#378ADD" stroke-width="1.5" marker-end="url(#arrow)"/>
 <line x1="666" y1="140" x2="644" y2="140" stroke="#378ADD" stroke-width="1.5" marker-end="url(#arrow)"/>
-<text font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#808080" x="130" y="372" text-anchor="middle">1. Bare bosses</text><text font-family="Arial, sans-serif" font-size="12" fill="#808080" x="130" y="392" text-anchor="middle">our frame needs these first</text>
+<text font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#808080" x="130" y="372" text-anchor="middle">1. Bare bosses</text><text font-family="Arial, sans-serif" font-size="12" fill="#808080" x="130" y="392" text-anchor="middle">posts on the seat stays</text>
 <text font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#808080" x="350" y="372" text-anchor="middle">2. Arms slide on</text><text font-family="Arial, sans-serif" font-size="12" fill="#808080" x="350" y="392" text-anchor="middle">a bolt holds each one</text>
 <text font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#808080" x="570" y="372" text-anchor="middle">3. Cable pulls arms in</text><text font-family="Arial, sans-serif" font-size="12" fill="#808080" x="570" y="392" text-anchor="middle">pads squeeze the rim</text>
 </svg>
