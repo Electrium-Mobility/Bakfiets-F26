@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" viewBox="0 0 680 450" role="img"><title>Where the brake lines run on the Bakfiets</title><desc>Side view of the bike. The rear brake line runs from the handlebars toward the rear wheel, where the brake type is still undecided. Two example routes run from the handlebars to the front brake caliper at the front axle: one over the cargo box, one along the frame under it.</desc>
+<g fill="none" stroke="#808080" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="120" cy="280" r="75" stroke-width="3"/>
+<circle cx="120" cy="280" r="67" stroke-width="1" opacity="0.6"/>
+<circle cx="578" cy="283" r="72" stroke-width="3"/>
+<circle cx="578" cy="283" r="64" stroke-width="1" opacity="0.6"/>
+<circle cx="578" cy="283" r="22" stroke-width="1.5"/>
+<path d="M210 300 L120 280 M210 300 L180 150 M183 165 L120 280 M183 175 L278 188 M285 300 L270 112 M210 300 L470 300 L516 190 L531 170" stroke-width="5"/>
+<path d="M520 122 L532 170" stroke-width="8"/>
+<path d="M532 170 L578 283" stroke-width="5"/>
+<path d="M245 112 L300 112" stroke-width="5"/>
+<rect x="300" y="190" width="155" height="100" rx="4" stroke-width="1.5" stroke-dasharray="6 5"/>
+</g>
+<circle cx="120" cy="280" r="26" fill="#808080" opacity="0.5"/>
+<rect x="158" y="138" width="46" height="9" rx="4" fill="#808080"/>
+<circle cx="578" cy="283" r="4" fill="#808080"/>
+<rect x="549" y="259" width="13" height="20" rx="2" fill="#444441"/>
+<text x="377" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#808080">Cargo box</text>
+<path d="M252 114 L264 178 L190 168 L170 200" fill="none" stroke="#7F77DD" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="170" cy="210" r="11" fill="none" stroke="#7F77DD" stroke-width="2"/>
+<text x="170" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#7F77DD">?</text>
+<path d="M296 114 L310 128 L505 128 L514 124 L526 168 L556 258" fill="none" stroke="#EF9F27" stroke-width="3" stroke-dasharray="9 6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M291 118 L298 312 L478 312 L522 200 L538 176 L560 258" fill="none" stroke="#378ADD" stroke-width="3" stroke-dasharray="1 6" stroke-linecap="round" stroke-linejoin="round"/>
+<g font-family="Arial, sans-serif" font-size="12" fill="#808080">
+<g stroke="#999999" stroke-width="0.8"><line x1="272" y1="108" x2="272" y2="72"/><line x1="160" y1="203" x2="90" y2="140"/><line x1="522" y1="118" x2="540" y2="88"/><line x1="555" y1="280" x2="530" y2="388"/><line x1="120" y1="306" x2="120" y2="380"/><line x1="287" y1="292" x2="262" y2="338"/></g>
+<text x="190" y="64">Brake levers on the handlebars</text>
+<text x="20" y="132">Rear brake: type and spot undecided</text>
+<text x="490" y="80">Head tube: the fork turns here</text>
+<text x="420" y="402">Front caliper, at the front axle</text>
+<text x="30" y="396">Rear wheel: hub motor, no disc mount</text>
+<text x="215" y="352">Handlebar post: it turns with the steering</text>
+</g>
+<g font-family="Arial, sans-serif" font-size="12" fill="#808080">
+<line x1="30" y1="428" x2="70" y2="428" stroke="#7F77DD" stroke-width="3"/><text x="78" y="432">Rear brake line</text>
+<line x1="190" y1="428" x2="230" y2="428" stroke="#EF9F27" stroke-width="3" stroke-dasharray="9 6"/><text x="238" y="432">Front, e.g. over the box</text>
+<line x1="420" y1="428" x2="460" y2="428" stroke="#378ADD" stroke-width="3" stroke-dasharray="1 6" stroke-linecap="round"/><text x="468" y="432">Front, e.g. under the box</text>
+</g>
+</svg>
