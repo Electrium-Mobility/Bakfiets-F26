@@ -1,6 +1,6 @@
 # Brakes on the Bakfiets
 
-The bike needs a working brake on each wheel before anyone rides it. This page collects what we've found so far, with photos of our bike, as a starting point for the brakes task ([#32](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/32)).
+The bike needs a working brake on each wheel before anyone rides it. This page collects what's known so far, with photos of the bike, as a starting point for the brakes task ([#32](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/32)).
 
 ## The short version
 
@@ -32,7 +32,7 @@ The front brake is a hydraulic disc brake. The lever pushes fluid down a hose to
 
 What a disc brake looks like, on another bike. Ours is the same kind of brake.
 
-Its hose is far too short for our layout, which we saw in the bay. A close photo of it would give its brand, model and fluid type, and those decide which parts are compatible.
+Its hose is far too short for this layout (seen in the bay). A close photo of it would give its brand, model and fluid type, and those decide which parts are compatible.
 
 The line has to reach the caliper at the front axle. Both the fork and the handlebar post turn when steering, so it has to bend at both ends. It could cross over the cargo box or follow the frame tubes under it (the two examples in the side view), and the steering design ([#25](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/25)) changes what works.
 
