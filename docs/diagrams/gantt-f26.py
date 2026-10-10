@@ -15,7 +15,8 @@ D = lambda m, d: date(2026, m, d)
 rows = [
     ('Mechanical', GREEN, [
         ('#31 hub motor fit, torque arms', [(D(10, 7), D(10, 9), 1)]),
-        ('#32 brakes: pick, then fit',     [(D(10, 7), D(10, 9), 1), (D(10, 21), D(11, 4), 0)]),
+        ('#32 front brake: specs, then fit', [(D(10, 7), D(10, 21), 1), (D(10, 28), D(11, 11), 0)]),
+        ('#32 back brake: options, then fit', [(D(10, 7), D(10, 28), 1), (D(11, 4), D(11, 18), 0)]),
         ('#2 record what is welded',       [(D(10, 7), D(10, 21), 1)]),
         ('#3 parts list from the CAD',     [(D(10, 7), D(10, 21), 1)]),
         ('#4 measure the frame',           [(D(10, 9), D(10, 21), 1)]),
@@ -59,7 +60,7 @@ mono(ax, X0 - 1, top + 2.4, 'Wed:', size=8.5, color=PENCIL, ha='right')
 # milestones
 y = top - 2
 for d, label, dy in [(D(10, 7), 'Stage 1 due', 0), (D(10, 9), 'buy list due', 2.4), (D(10, 10), 'order 1 in', -2.4),
-                     (D(10, 21), 'Stage 2 due', 0), (D(10, 28), 'order 2: steering', 0)]:
+                     (D(10, 21), 'Stage 2 due', 0), (D(10, 28), 'order 2: steering, front brake', 0)]:
     xx = x(d)
     ax.plot([xx], [y], marker='D', ms=7, color=RED, zorder=4)
     if label == 'Stage 1 due':
