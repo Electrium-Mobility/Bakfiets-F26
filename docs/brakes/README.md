@@ -6,23 +6,22 @@ The bike needs a working brake on each wheel before anyone rides it. This page c
 
 ![Side view of the bike with the rear brake line and two example front brake line routes](images/bike-layout.svg)
 
-- The front wheel already has a hydraulic disc brake, but its hose can't reach the handlebars. The handlebars sit in the middle of the bike and the front wheel is past the cargo box.
+- The front wheel has a hydraulic disc brake with a hose too short to reach the handlebars. The handlebars sit in the middle of the bike and the front wheel is past the cargo box.
 - The back wheel is the hub motor. It has no brake yet, and the motor and frame have no obvious place to mount one.
-- Pulling either brake lever has to cut the motor.
-
-Any setup has to stop the bike from 30 km/h within 9 m with a brake on each wheel, fit in roughly $220 to $260 shared with steering, and get approval if it changes the frame. The full list is under "Limits" below.
+- Ontario law says pulling either brake lever has to stop the motor.
 
 ![Our frame, labelled](images/evidence-frame.jpg)
 
 Our frame, with the parts this page talks about. Both wheels are still off the frame.
 
-## What the brakes task should produce
+## Limits
 
-Due Wed 21 Oct:
-- a chosen front setup and a chosen rear setup, each with the reasons
-- the parts and the specs they have to match (hose length and fittings, fluid type, levers with a cut-off switch)
-- any frame change, flagged for approval
-- how the brakes will be tested before anyone rides
+- Each wheel needs its own brake, and together they have to stop the bike from 30 km/h within 9 m on level pavement ([ontario.ca](https://www.ontario.ca/page/riding-e-bike), [O. Reg. 369/09](https://www.ontario.ca/laws/regulation/090369) s. 5). The same regulation caps the bike's unladen weight at 120 kg.
+- The motor has to stop pushing when a brake is applied (O. Reg. 369/09 s. 3(2)). A switch on each lever, wired to the controller's ADC2 input, is the usual way ([#18](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/18), step 7).
+- Steering and brakes share roughly $220 to $260 of the term's budget, so money spent on one comes out of the other.
+- Changing the frame (welding, drilling, filing) needs approval from a mechanical lead and the project lead, because a bad weld or hole weakens a frame that carries cargo.
+- Parts go through the project lead once the specs they need to match are posted, so orders stay inside the shared budget.
+- Regen (the motor slowing the wheel) can't count as one of the two brakes. It stops working if the controller or battery cuts out, and fades away at low speed.
 
 ## Front wheel
 
@@ -32,9 +31,11 @@ The front brake is a hydraulic disc brake. The lever pushes fluid down a hose to
 
 What a disc brake looks like, on another bike. Ours is the same kind of brake.
 
-Its hose is far too short for this layout (seen in the bay). A close photo of it would give its brand, model and fluid type, and those decide which parts are compatible.
+Its hose is too short for this layout (seen in the bay). Its brand, model and fluid type decide which parts are compatible, so a close photo of the lever and caliper is the first thing to get.
 
-The line has to reach the caliper at the front axle. Both the fork and the handlebar post turn when steering, so it has to bend at both ends. It could cross over the cargo box or follow the frame tubes under it (the two examples in the side view), and the steering design ([#25](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/25)) changes what works.
+The handlebars are far from the fork, so whatever steering design gets picked ([#25](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/25)) links the two, and both ends turn. The brake line has to bend at both ends and still reach the caliper at the front axle. It could cross over the cargo box or follow the frame tubes under it (the two examples in the side view).
+
+A long line also changes which kind of brake makes sense. A long cable gets more friction and feels mushier at the lever. A long hydraulic hose stays firm, but every part has to match the brake's fluid and it needs bleeding.
 
 ## Back wheel
 
@@ -42,11 +43,11 @@ The line has to reach the caliper at the front axle. Both the fork and the handl
 
 ![The motor's cable side, labelled](images/evidence-motor-wheel.jpg)
 
-A disc rotor bolts to a ring of six holes around the axle (or a splined Center Lock fitting), like in the disc brake photo above. Both sides of our motor look like plain covers. A close-up would confirm it.
+A disc rotor bolts to a ring of six holes around the axle, like in the disc brake photo above. Both sides of our motor are plain covers held on by small screws.
 
 ![The motor's freewheel side, labelled](images/evidence-motor-side.jpg)
 
-The threads next to the axle are for a freewheel (the rear gears), so the motor has to stay on the back wheel. The side covers are held on by the small screws around the edge.
+The motor is built for the back: its axle is wider than a front fork, and the threads next to it are for rear gears. So the back wheel has to be braked around the motor.
 
 ### The frame has no rim brake mounts
 
@@ -54,39 +55,44 @@ The threads next to the axle are for a freewheel (the rear gears), so the motor 
 
 <img src="images/bare-bosses.jpg" alt="Bare bosses on another bike's seat stays, labelled" width="420">
 
-V-brakes and cantilever brakes mount on bosses: two short posts on the seat stays, just below the rim (the second photo, from another bike). Our seat stays are smooth tube with no bosses. An old style caliper rim brake bolts through a bridge between the stays instead, and ours have no bridge either.
+V-brakes and cantilever brakes mount on bosses: two short posts on the seat stays, just below the rim (the second photo, from another bike). Our seat stays are smooth tube with no bosses. An old style caliper rim brake needs a bridge between the stays to bolt through, so ours would need one added.
 
-The rim has a silver band along its edge, which is usually a surface for rim brakes. It still needs a close look.
+The rim has a silver band along its edge, which is usually a surface for rim brakes, if it's flat enough for the pads to grip.
 
-The dropout plates have several holes. Some may be for a rack, and the raised ones might be a disc tab. The spacing would tell: 51 mm apart for an IS disc mount, 74 mm for a post mount.
+One dropout plate has two raised tabs with holes in them. A disc caliper bolts to a pair of tabs like that, so they might be a disc brake mount (check 3 below covers how to tell).
 
 ### Approaches people use
 
-For a rear hub motor with no disc mount: bosses brazed or welded onto the seat stays, clamp-on boss plates ([some riders don't trust them](https://cyclechat.net/threads/v-brakes-fitting-to-a-frame-without-bosses.26234)), an adapter that bolts a rotor to the motor's cover screws, a disc tab if the frame turns out to have one, or a different motor with a disc mount. Drum and coaster brakes need a hub built for them, which rules them out here. Braking on the motor shell itself would put heat right next to the magnets, which weaken when hot.
+For a rear hub motor with no disc mount:
+- Bosses brazed or welded onto the seat stays, then a V-brake. Changes the frame.
+- Clamp-on boss plates. Leaves the frame alone, but riders worry the clamps can slip under braking ([forum thread](https://cyclechat.net/threads/v-brakes-fitting-to-a-frame-without-bosses.26234)).
+- An adapter that bolts a rotor to the motor's cover screws. Those screws are small and weren't made for braking loads, and it still needs a caliper mount on the frame.
+- A disc tab, if the dropouts turn out to have one.
+- A different motor with a disc mount.
+
+Drum and coaster brakes need a hub built for them, which rules them out here. Braking on the motor shell itself would put heat right next to the magnets, which weaken when hot.
 
 ## Open questions
 
 Check in the bay first:
 1. The front brake's brand, model, fluid type and hose fittings. A longer hose, a new lever or a bleed kit all have to match these, and mixing mineral oil with DOT fluid ruins the seals.
-2. Close-ups of both sides of the motor. The current photos are taken from too far away to be sure, and a rotor mount would make a disc brake the easiest option for the back.
-3. The silver band on the rim, up close. A rim brake needs a flat metal surface to grip, so this decides whether rim brakes are an option for the back at all.
-4. The spacing of the raised dropout holes. 51 mm or 74 mm apart means a disc tab, which opens up a disc brake on the back with a rotor adapter on the motor.
+2. The silver band on the rim, up close. A rim brake needs a flat metal surface to grip, so this decides whether rim brakes are an option for the back at all.
+3. The two raised tabs on the dropout: the spacing between their holes and which side of the bike they're on. 51 mm apart is an IS disc mount and 74 mm is a post mount, and a rear disc tab only works on the left side. If it's a disc tab, a disc brake on the back becomes possible.
 
 Then work out:
-1. Reuse the front brake with a longer hose, or replace it? Reusing is cheaper but ties every part to that brand. Replacing costs more but lets you pick parts that suit the long line.
-2. Over the box or along the frame, and how long is the line then? The length decides which hose or cable to buy, and the route has to survive the fork and handlebar post turning, which depends on the steering design ([#25](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/25)).
-3. How will the back wheel be braked, what does it cost, and does it change the frame? This is the hardest part and will take most of the budget. A frame change also needs approval, which takes time.
-4. Which cut-off switch fits the levers you pick? The law requires one, and it has to plug into the controller's ADC2 input. Some levers have a switch built in, others need a separate sensor.
-5. What load should the brakes be sized for (rider, cargo, battery and bike)? A loaded cargo bike is much heavier than a regular bike, and the brakes still have to stop it within 9 m from 30 km/h.
+1. Reuse the front brake with a longer hose, or replace it? What would make each one the better choice?
+2. Over the box or along the frame, and how long is the line then? The length decides what to buy, and the route has to survive the steering turning at both ends.
+3. How will the back wheel be braked, what does it cost, and does it change the frame? Every rear option needs new mounts, an adapter or a different motor, so it could take a big share of the budget.
+4. Which cut-off switch fits the levers you pick? It has to plug into the controller's ADC2 input. Some levers have one built in, others need a separate sensor.
+5. What load should the brakes be sized for? A loaded cargo bike (rider, cargo, battery and a bike of up to 120 kg) is much heavier than a regular bike, and it still has to stop within 9 m from 30 km/h.
 
-## Limits
+## What the brakes task should produce
 
-- Ontario's rules ask for two independent brakes that apply force to each wheel, able to stop from 30 km/h within 9 m on level asphalt ([ontario.ca](https://www.ontario.ca/page/riding-e-bike)).
-- Pulling a brake lever has to cut the motor (O. Reg. 369/09 s. 3(2)). On our bike that's a switch wired to the controller's ADC2 input ([#18](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/18), step 7).
-- Steering and brakes share roughly $220 to $260 of the term's budget.
-- Changing the frame (welding, drilling, filing) needs approval from a mechanical lead and the project lead.
-- Parts go through the project lead once the specs they need to match are posted.
-- Regen (the motor slowing the wheel) can't count as one of the two brakes. It stops working if the controller or battery cuts out, and fades away at low speed.
+Due Wed 21 Oct:
+- a chosen front setup and a chosen rear setup, each with the reasons
+- the parts and the specs they have to match (hose length and fittings, fluid type, levers with a cut-off switch)
+- any frame change, flagged for approval
+- how the brakes will be tested before anyone rides, for example a marked 9 m stopping distance with speed read off a phone's GPS
 
 ## Background
 
@@ -108,22 +114,22 @@ A real V-brake. The boss is hidden under the pivot bolt.
 
 ![Inside a direct-drive hub motor](images/hub-motor-inside.svg)
 
-The axle and the stator (copper coils) are fixed to the frame and never turn. The shell, with magnets on its inside, spins around them and turns the wheel through the spokes. The controller sends current through the three phase wires in a rotating pattern, so the coils' magnetic field turns and drags the magnets along. Hall sensors on the stator tell the controller where the magnets are.
-
-The stator pushes back on the axle as hard as it pushes the wheel, which is why the axle needs torque arms ([#31](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/31)).
+The axle and the stator (copper coils) are fixed to the frame and never turn. The shell, with magnets on its inside, spins around them and turns the wheel through the spokes. The controller sends current through the three phase wires in a rotating pattern, so the coils' magnetic field turns and drags the magnets along. This is also why braking on the shell is a bad idea: the magnets sit right under it and weaken when hot.
 
 </details>
 
 <details>
 <summary>Words used here</summary>
 
-- **Caliper:** the part that squeezes. On a disc brake it grips the rotor.
-- **Rotor:** the metal disc on the hub that a disc caliper grips.
-- **Hydraulic:** the lever pushes fluid through a hose. Mineral oil and DOT fluid can't be mixed, because the wrong one ruins the seals.
-- **Seat stays and chain stays:** the pairs of tubes that run to the rear axle, from under the seat and from the pedals.
-- **Dropouts:** the plates at the back where the rear axle sits.
-- **Freewheel:** the rear gears, which screw onto the hub.
-- **Torque arm:** a bracket that stops a hub motor's axle from spinning in the dropouts.
+- ADC2: the controller input the brake cut-off switch plugs into.
+- Boss: a short post on the frame that a V-brake or cantilever arm pivots on.
+- Bleed kit: tools and fluid for filling a hydraulic brake and pushing out air.
+- Caliper: the part that squeezes. On a disc brake it grips the rotor.
+- Dropouts: the plates at the back where the rear axle sits.
+- Freewheel: the rear gears, which screw onto the hub.
+- IS and post mount: the two common ways a disc caliper bolts to a frame or fork.
+- Rotor: the metal disc on the hub that a disc caliper grips.
+- Seat stays and chain stays: the pairs of tubes that run to the rear axle, from under the seat and from the pedals.
 
 </details>
 
