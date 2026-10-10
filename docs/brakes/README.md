@@ -67,18 +67,18 @@ For a rear hub motor with no disc mount: bosses brazed or welded onto the seat s
 ## Open questions
 
 Check in the bay first:
-1. The front brake's brand, model and fluid type, and its hose fittings.
-2. Close-ups of both sides of the motor, to confirm there's no rotor mount.
-3. The seat stays by hand, for bosses or a bridge.
-4. The silver band on the rim, up close.
-5. The spacing of the raised dropout holes.
+1. The front brake's brand, model, fluid type and hose fittings. A longer hose, a new lever or a bleed kit all have to match these, and mixing mineral oil with DOT fluid ruins the seals.
+2. Close-ups of both sides of the motor. The current photos are taken from too far away to be sure, and a rotor mount would make a disc brake the easiest option for the back.
+3. The seat stays, by hand. The photo is low resolution and the stays have tape on them. Bosses or a bridge would let a rim brake bolt straight on without changing the frame.
+4. The silver band on the rim, up close. A rim brake needs a flat metal surface to grip, so this decides whether rim brakes are an option for the back at all.
+5. The spacing of the raised dropout holes. 51 mm or 74 mm apart means a disc tab, which opens up a disc brake on the back with a rotor adapter on the motor.
 
 Then work out:
-1. Reuse the front brake with a longer hose, or replace it? Which parts have to match?
-2. Over the box or along the frame, and how long is the line then?
-3. How will the back wheel be braked, what does it cost, and does it change the frame?
-4. Which cut-off switch fits the levers you pick?
-5. What load should the brakes be sized for (rider, cargo, battery and bike)?
+1. Reuse the front brake with a longer hose, or replace it? Reusing is cheaper but ties every part to that brand. Replacing costs more but lets you pick parts that suit the long line.
+2. Over the box or along the frame, and how long is the line then? The length decides which hose or cable to buy, and the route has to survive the fork and handlebar post turning, which depends on the steering design ([#25](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/25)).
+3. How will the back wheel be braked, what does it cost, and does it change the frame? This is the hardest part and will take most of the budget. A frame change also needs approval, which takes time.
+4. Which cut-off switch fits the levers you pick? The law requires one, and it has to plug into the controller's ADC2 input. Some levers have a switch built in, others need a separate sensor.
+5. What load should the brakes be sized for (rider, cargo, battery and bike)? A loaded cargo bike is much heavier than a regular bike, and the brakes still have to stop it within 9 m from 30 km/h.
 
 ## Limits
 
