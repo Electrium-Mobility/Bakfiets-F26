@@ -84,15 +84,16 @@ Then work out:
 2. Over the box or along the frame, and how long is the line then? The length decides what to buy, and the route has to survive the steering turning at both ends.
 3. How will the back wheel be braked, what does it cost, and does it change the frame? Every rear option needs new mounts, an adapter or a different motor, so it could take a big share of the budget.
 4. Which cut-off switch fits the levers you pick? It has to plug into the controller's ADC2 input. Some levers have one built in, others need a separate sensor.
-5. What load should the brakes be sized for? A loaded cargo bike (rider, cargo, battery and a bike of up to 120 kg) is much heavier than a regular bike, and it still has to stop within 9 m from 30 km/h.
 
 ## What the brakes task should produce
 
-Due Wed 21 Oct:
-- a chosen front setup and a chosen rear setup, each with the reasons
+Front brake, due Wed 21 Oct:
+- a chosen setup, with the reasons
 - the parts and the specs they have to match (hose length and fittings, fluid type, levers with a cut-off switch)
-- any frame change, flagged for approval
-- how the brakes will be tested before anyone rides, for example a marked 9 m stopping distance with speed read off a phone's GPS
+
+Back brake, due Wed 28 Oct:
+- the options compared, with costs
+- any frame change or motor swap, flagged for approval
 
 ## Background
 
