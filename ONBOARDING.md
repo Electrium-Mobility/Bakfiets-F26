@@ -248,7 +248,6 @@ Pick one of these and claim it with a comment on the issue saying you're working
 | [#4](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/4) | Measure the real frame against the CAD, with a mechanical lead (after #2, safety training first) |
 | [#5](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/5) | Sketch two battery mount options for Pack 4 |
 | [#3](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/3) | List every part in the co-op model, with its material and whether we own it |
-| [#27](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/27) | Inspect the cargo box and plan what needs fixing |
 
 #### Constraints
 

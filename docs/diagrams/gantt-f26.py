@@ -16,11 +16,13 @@ rows = [
     ('Mechanical', GREEN, [
         ('#31 hub motor fit, torque arms', [(D(10, 7), D(10, 9), 1)]),
         ('#32 brakes: pick, then fit',     [(D(10, 7), D(10, 9), 1), (D(10, 21), D(11, 4), 0)]),
-        ('#2 record what is welded',       [(D(10, 7), D(10, 14), 1)]),
+        ('#2 record what is welded',       [(D(10, 7), D(10, 21), 1)]),
+        ('#3 parts list from the CAD',     [(D(10, 7), D(10, 21), 1)]),
         ('#4 measure the frame',           [(D(10, 9), D(10, 21), 1)]),
         ('#5 battery mount',               [(D(10, 7), D(10, 21), 1)]),
         ('#25 steering: study, CAD, build', [(D(10, 7), D(10, 21), 1), (D(10, 21), D(11, 11), 0), (D(11, 11), D(12, 2), 0)]),
         ('#6 frame FEA',                   [(D(10, 21), D(11, 18), 0)]),
+        ('#27 fix the cargo box',          [(D(10, 21), D(11, 18), 0)]),
         ('#26 mount everything',           [(D(11, 4), D(12, 2), 0)]),
     ]),
     ('Electrical', GOLD, [
