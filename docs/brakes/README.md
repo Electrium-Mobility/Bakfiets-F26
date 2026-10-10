@@ -1,22 +1,22 @@
 # Brakes on the Bakfiets
 
-Nobody can ride the bike until both wheels have a working brake, and right now neither does. This page puts what we've found in one place, with photos of our bike, so the brakes work in [#32](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/32) can start from the facts. It doesn't pick a solution. That's the job of #32.
+The bike needs a working brake on each wheel before anyone rides it. This page collects what we've found so far, with photos of our bike, as a starting point for the brakes task ([#32](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/32)).
 
 ## The short version
 
 ![Side view of the bike with the rear brake line and two example front brake line routes](images/bike-layout.svg)
 
 - The front wheel already has a hydraulic disc brake, but its hose can't reach the handlebars. The handlebars sit in the middle of the bike and the front wheel is past the cargo box.
-- The back wheel is the hub motor. It has no brake, and neither the motor nor the frame has an obvious place to mount one.
+- The back wheel is the hub motor. It has no brake yet, and the motor and frame have no obvious place to mount one.
 - Pulling either brake lever has to cut the motor.
 
 Any setup has to stop the bike from 30 km/h within 9 m with a brake on each wheel, fit in roughly $220 to $260 shared with steering, and get approval if it changes the frame. The full list is under "Limits" below.
 
 ![Our frame, labelled](images/evidence-frame.jpg)
 
-Our frame, with the parts this page talks about. Neither wheel is fitted yet.
+Our frame, with the parts this page talks about. Both wheels are still off the frame.
 
-## What #32 needs to end with
+## What the brakes task should produce
 
 Due Wed 21 Oct:
 - a chosen front setup and a chosen rear setup, each with the reasons
@@ -32,7 +32,7 @@ The front brake is a hydraulic disc brake. The lever pushes fluid down a hose to
 
 What a disc brake looks like, on another bike. Ours is the same kind of brake.
 
-Its hose is far too short for our layout. That's from looking at it in the bay. There's no close photo of it yet, so its brand, model and fluid type are unknown, and those decide which parts are compatible with it.
+Its hose is far too short for our layout, which we saw in the bay. A close photo of it would give its brand, model and fluid type, and those decide which parts are compatible.
 
 The line has to reach the caliper at the front axle. Both the fork and the handlebar post turn when steering, so it has to bend at both ends. It could cross over the cargo box or follow the frame tubes under it (the two examples in the side view), and the steering design ([#25](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/25)) changes what works.
 
@@ -42,11 +42,11 @@ The line has to reach the caliper at the front axle. Both the fork and the handl
 
 ![The motor's cable side, labelled](images/evidence-motor-wheel.jpg)
 
-A disc rotor bolts to a ring of six holes around the axle (or a splined Center Lock fitting), like in the disc brake photo above. Neither side of our motor has one. A close-up would confirm it.
+A disc rotor bolts to a ring of six holes around the axle (or a splined Center Lock fitting), like in the disc brake photo above. Both sides of our motor look like plain covers. A close-up would confirm it.
 
 ![The motor's freewheel side, labelled](images/evidence-motor-side.jpg)
 
-The threads next to the axle are for a freewheel (the rear gears), so the motor is built for the back wheel and can't move to the front. The side covers are held on by the small screws around the edge.
+The threads next to the axle are for a freewheel (the rear gears), so the motor has to stay on the back wheel. The side covers are held on by the small screws around the edge.
 
 ### The frame has no rim brake mounts
 
@@ -54,15 +54,15 @@ The threads next to the axle are for a freewheel (the rear gears), so the motor 
 
 <img src="images/bare-bosses.jpg" alt="Bare bosses on another bike's seat stays, labelled" width="420">
 
-V-brakes and cantilever brakes mount on bosses: two short posts on the seat stays, just below the rim (the second photo, from another bike). Our seat stays look like smooth tube. An old style caliper rim brake bolts through a bridge between the stays instead, and ours don't seem to have one either. The photo is low resolution, so it's worth checking by hand.
+V-brakes and cantilever brakes mount on bosses: two short posts on the seat stays, just below the rim (the second photo, from another bike). Our seat stays look like smooth tube. An old style caliper rim brake bolts through a bridge between the stays instead, and our stays look like they lack one too. The photo is low resolution, so it's worth checking by hand.
 
-The rim does have a silver band along its edge, which is usually a surface for rim brakes. Nobody has checked it up close.
+The rim has a silver band along its edge, which is usually a surface for rim brakes. It still needs a close look.
 
 The dropout plates have several holes. Some may be for a rack, and the raised ones might be a disc tab. The spacing would tell: 51 mm apart for an IS disc mount, 74 mm for a post mount.
 
 ### Approaches people use
 
-For a rear hub motor with no disc mount: bosses brazed or welded onto the seat stays, clamp-on boss plates ([some riders don't trust them](https://cyclechat.net/threads/v-brakes-fitting-to-a-frame-without-bosses.26234)), an adapter that bolts a rotor to the motor's cover screws, a disc tab if the frame turns out to have one, or a different motor with a disc mount. Drum and coaster brakes need a hub built for them, and this motor isn't. Braking on the motor shell itself would put heat right next to the magnets, which weaken when hot.
+For a rear hub motor with no disc mount: bosses brazed or welded onto the seat stays, clamp-on boss plates ([some riders don't trust them](https://cyclechat.net/threads/v-brakes-fitting-to-a-frame-without-bosses.26234)), an adapter that bolts a rotor to the motor's cover screws, a disc tab if the frame turns out to have one, or a different motor with a disc mount. Drum and coaster brakes need a hub built for them, which rules them out here. Braking on the motor shell itself would put heat right next to the magnets, which weaken when hot.
 
 ## Open questions
 
@@ -86,7 +86,7 @@ Then work out:
 - Pulling a brake lever has to cut the motor (O. Reg. 369/09 s. 3(2)). On our bike that's a switch wired to the controller's ADC2 input ([#18](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/18), step 7).
 - Steering and brakes share roughly $220 to $260 of the term's budget.
 - Changing the frame (welding, drilling, filing) needs approval from a mechanical lead and the project lead.
-- Parts go through the project lead once #32 has the specs they need to match.
+- Parts go through the project lead once the specs they need to match are posted.
 - Regen (the motor slowing the wheel) can't count as one of the two brakes. It stops working if the controller or battery cuts out, and fades away at low speed.
 
 ## Background
