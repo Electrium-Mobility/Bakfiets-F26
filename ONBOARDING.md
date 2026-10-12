@@ -166,7 +166,7 @@ The 2024 files disagree on a few basics. Below is the answer we're working from 
 - **Decided (6 Oct):** a 48 V, 2000 W direct-drive hub motor, already built into a 24" wheel, driven by a VESC-based motor controller (the club website names the Flipsky FSESC 6.7).
 - **Why:** it was found in the bay ([#1](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/1)) and it drives the wheel directly. The other motor in the bay, a Flipsky 6374 skateboard motor, would need about a 30:1 gear reduction. The 2024 README and crank-motor CAD (`mechanical/cad-2024/MotorCrank/`) mention a Bafang BBS02 mid-drive, but no mid-drive was found in the bay.
 - **The power limit:** we'll set the motor controller to 500 W and 32 km/h in VESC Tool ([#18](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/18)). Ling (Electrium team lead) has okayed using this motor. Running it below its 2000 W rating also saves battery.
-- **Still to check:** that the 24" wheel fits the frame's dropouts ([#26](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/26)), and the motor controller's label against the FSESC 6.7 ([#18](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/18)).
+- **Still to check:** that the 24" wheel fits the frame's dropouts ([#31](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/31)), and the motor controller's model, which isn't confirmed yet ([#18](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/18)).
 
 #### 2. Which microcontroller runs the screen?
 
@@ -242,10 +242,10 @@ Pick one of these and claim it with a comment on the issue saying you're working
 | Issue | What you'll do |
 | --- | --- |
 | [#25](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/25) | Compare rod, cable and hydraulic steering, then design the one we pick. Top priority |
-| [#32](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/32) | Pick brakes that fit the frame, with levers that cut the motor. The bike has none |
+| [#32](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/32) | Pick brakes that fit the frame, with levers that cut the motor. The front brake's hose is too short |
+| [#34](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/34) | Find a way to brake the back wheel. The motor and frame have no brake mounts |
 | [#31](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/31) | Check the hub motor wheel fits the frame and pick torque arms (safety training first) |
 | [#2](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/2) | Photograph the real frame and record which joints are welded (safety training first, look only) |
-| [#4](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/4) | Measure the real frame against the CAD, with a mechanical lead (after #2, safety training first) |
 | [#5](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/5) | Sketch two battery mount options for Pack 4 |
 | [#3](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/3) | List every part in the co-op model, with its material and whether we own it |
 

@@ -17,7 +17,7 @@ Our frame, with the parts this page talks about. Both wheels are still off the f
 ## Limits
 
 - Each wheel needs its own brake, and together they have to stop the bike from 30 km/h within 9 m on level pavement ([ontario.ca](https://www.ontario.ca/page/riding-e-bike), [O. Reg. 369/09](https://www.ontario.ca/laws/regulation/090369) s. 5). The same regulation caps the bike's unladen weight at 120 kg.
-- The motor has to stop pushing when a brake is applied (O. Reg. 369/09 s. 3(2)). A switch on each lever, wired to the controller's ADC2 input, is the usual way ([#18](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/18), step 7).
+- The motor has to stop pushing when a brake is applied (O. Reg. 369/09 s. 3(2)). A switch on each lever, wired to the controller's ADC2 input, is the usual way. The wiring harness ([#20](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/20)) covers it.
 - Steering and brakes share roughly $220 to $260 of the term's budget, so money spent on one comes out of the other.
 - Changing the frame (welding, drilling, filing) needs approval from a mechanical lead and the project lead, because a bad weld or hole weakens a frame that carries cargo.
 - Parts go through the project lead once the specs they need to match are posted, so orders stay inside the shared budget.
