@@ -28,7 +28,7 @@ block(34, 62, 18, 16, 'battery pack', 'Pack 4: 12S2P\nlithium-ion cells', RED, 2
 block(58, 68, 7, 8, 'fuse', '', RED)
 block(72, 66, 15, 12, 'antispark', 'soft power-on', RED, 4)
 block(108, 60, 20, 20, 'motor\ncontroller', '', RED, 5)
-note(ax, 118, 62.5, 'FSESC 6.7 (VESC)', size=9.2, color=PENCIL, ha='center', zorder=3)
+note(ax, 118, 62.5, 'VESC-style (model ?)', size=9.2, color=PENCIL, ha='center', zorder=3)
 block(134, 63, 14, 14, 'hub\nmotor', '', INK)
 note(ax, 141, 65.5, '2000W, set\nto 500W', size=9.2, color=PENCIL, ha='center', zorder=3)
 line([24, 34], [Y, Y]); line([52, 58], [Y, Y]); line([65, 72], [Y, Y]); line([87, 108], [Y, Y])
@@ -45,7 +45,6 @@ line([52, 112, 112], [49.5, 49.5, 60], INK, lw=4)
 note(ax, 58, 51.4, 'P-: charging and riding current both pass through the BMS', size=9.2, color=INK)
 line([20, 20, 34], [66, 47, 47], INK, lw=2.6)
 note(ax, 7.5, 57, 'charger\nnegative', size=8.5, color=INK, linespacing=1)
-note(ax, 79.5, 64.2, 'the Electrium board likely\nswitches the - wire instead.\ncheck it in Stage 1', size=8.8, color=PENCIL, ha='center', va='top', linespacing=1.05)
 
 # power board
 block(88, 26, 22, 14, 'power board', 'steps battery power\ndown to 5V', GOLD, 6)

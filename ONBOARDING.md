@@ -353,7 +353,7 @@ Pick one of these and claim it with a comment on the issue saying you're working
 | --- | --- |
 | Software | KiCad 9, or [draw.io](https://app.diagrams.net/) for diagrams |
 | Voltage rating | MOSFETs and capacitors on the battery side rated 100 V. TVS diode standoff about 54 to 58 V, with its clamp voltage below 100 V. Fuses DC-rated for at least 60 V |
-| Where new files go | `electrical/` in the Bakfiets-F26 repo (the BOM goes in `docs/BOM.md`) |
+| Where new files go | `electrical/` in the Bakfiets-F26 repo (the BOM is a Google Sheet linked from [#11](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/11)) |
 | Battery work | Only with the electrical lead present, after WHMIS (SO2017) |
 
 #### Deliverables
