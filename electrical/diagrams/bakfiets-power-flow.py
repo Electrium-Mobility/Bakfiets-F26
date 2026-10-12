@@ -6,7 +6,7 @@ from matplotlib.patches import Rectangle, Circle, FancyArrowPatch
 
 fig, ax = page(150, 98, (15, 9.8))
 note(ax, 8, 94, 'How power flows through the bakfiets', size=24, weight='bold')
-note(ax, 8, 89.2, 'Follow the numbers, which match the list under this drawing. Red is the positive side, black the negative side, both at battery voltage.',
+note(ax, 8, 89.2, 'Follow the numbers, which match the list under this drawing. Each label says what a wire carries and why. Red is the positive side, black the negative side.',
      size=11.5, color=PENCIL)
 
 def block(x, y, w, h, title, sub, col, n=None):
@@ -32,29 +32,31 @@ note(ax, 118, 62.5, 'VESC-style (model ?)', size=9.2, color=PENCIL, ha='center',
 block(134, 63, 14, 14, 'hub\nmotor', '', INK)
 note(ax, 141, 65.5, '2000W, set\nto 500W', size=9.2, color=PENCIL, ha='center', zorder=3)
 line([24, 34], [Y, Y]); line([52, 58], [Y, Y]); line([65, 72], [Y, Y]); line([87, 108], [Y, Y])
+note(ax, 97.5, 76.5, 'battery power\nfor the motor', size=8.5, color=RED, ha='center', linespacing=1)
 for dy in (-2, 0, 2): line([128, 134], [Y + dy, Y + dy], INK, lw=2.6)
-note(ax, 131, 80.5, '3 phase\nwires', size=8.5, color=INK, ha='center', linespacing=1)
-note(ax, 29, 81.5, 'charging port,\nfused (DC 60V+)', size=8.2, color=RED, ha='center', linespacing=1)
-note(ax, 61.5, 82, 'fuse on the + side,\nDC-rated 60V or more', size=9.5, color=RED, ha='center', linespacing=1.1)
+note(ax, 141, 82, '3 phase wires:\npower that\nspins the motor', size=8.2, color=INK, ha='center', linespacing=1)
+note(ax, 29, 82, 'charging port:\nrefills the pack\n(fused, DC 60V+)', size=8.2, color=RED, ha='center', linespacing=1)
+note(ax, 61.5, 82, 'fuse: blows if a short pulls\ntoo much current (DC 60V+)', size=9.2, color=RED, ha='center', linespacing=1.1)
 
 # negative side through the BMS
 block(34, 44, 18, 11, 'BMS', 'B- in, P- out', INK, 3)
 line([43, 43], [62, 55], INK, lw=4)
-note(ax, 44, 58.5, 'B-', size=10, color=INK, weight='bold')
+note(ax, 44, 58.5, "B-: the pack's minus side", size=9, color=INK)
 line([52, 112, 112], [49.5, 49.5, 60], INK, lw=4)
-note(ax, 58, 51.4, 'P-: charging and riding current both pass through the BMS', size=9.2, color=INK)
+note(ax, 58, 53.4, 'P-: everything returns through the BMS,\nso it can cut power on a fault', size=9.2, color=INK, linespacing=1.05)
 line([20, 20, 34], [66, 47, 47], INK, lw=2.6)
-note(ax, 7.5, 57, 'charger\nnegative', size=8.5, color=INK, linespacing=1)
+note(ax, 7.5, 56, 'charger -\ngoes back\nthrough\nthe BMS', size=8.5, color=INK, linespacing=1)
 
 # power board
 block(88, 26, 22, 14, 'power board', 'steps battery power\ndown to 5V', GOLD, 6)
 line([99, 99], [Y, 40], RED, lw=3.5)
 line([104, 104], [49.5, 40], INK, lw=3.5)
+note(ax, 98, 59, 'battery in,\nto make 5V', size=8.2, color=INK, ha='right', linespacing=1)
 
 # throttle and brakes into the controller
 block(128, 40, 18, 11, 'throttle', 'thumb lever', BLUE)
 arrow((134, 51), (124, 59.8), BLUE, ls=(0, (4, 3)))
-note(ax, 136, 54.5, 'speed request\n(ADC, 3.3V)', size=8.8, color=BLUE, linespacing=1.05)
+note(ax, 133.5, 54.5, 'how fast the rider\nwants to go (ADC, 3.3V)', size=8.5, color=BLUE, linespacing=1.05)
 
 # electronics
 block(34, 8, 24, 13, 'ESP32-S3', "the bike's small\ncomputer", BLUE, 7)
@@ -64,18 +66,19 @@ block(34, 0.5, 24, 5.5, 'buttons', '', BLUE)
 block(116, 9, 22, 10, 'brake levers', '', BLUE)
 arrow((92, 26), (52, 21.2), GOLD, lw=2.4, rad=-0.1)
 arrow((97, 26), (97, 19.2), GOLD, lw=2.4)
-note(ax, 70, 25.6, '5V', size=10.5, color=GOLD, weight='bold')
-note(ax, 98.5, 23, '5V', size=10.5, color=GOLD, weight='bold')
+note(ax, 66, 26.2, '5V: powers the ESP32', size=9.2, color=GOLD, weight='bold')
+note(ax, 98.5, 22.6, '5V: powers the lights', size=9.2, color=GOLD, weight='bold')
 arrow((34, 14), (26.2, 14), BLUE, ls=(0, (4, 3)))
-note(ax, 28.3, 16.4, 'I2C', size=9.5, color=BLUE)
+note(ax, 26.8, 9.8, 'I2C:\nwhat to\nshow', size=8.2, color=BLUE, linespacing=1)
 arrow((58, 14), (83.8, 14), BLUE, ls=(0, (4, 3)))
-note(ax, 63, 16.4, 'LED data', size=9.5, color=BLUE)
+note(ax, 60, 17, 'LED data: which LEDs\nto turn on, and what colour', size=8.5, color=BLUE, linespacing=1)
 arrow((46, 6), (46, 7.8), BLUE, ls=(0, (4, 3)))
+note(ax, 59.5, 3.2, 'the rider presses them\n(lights, assist level)', size=8.5, color=BLUE, linespacing=1)
 arrow((116, 14), (106.2, 14), BLUE, ls=(0, (4, 3)))
 arrow((127, 19), (121, 59.8), BLUE, ls=(0, (4, 3)), rad=0.1)
 note(ax, 131, 30, 'brake levers cut\nmotor power (#18)\nand light the\nbrake lights', size=8.8, color=BLUE, linespacing=1.05)
 ax.plot([40, 40, 117, 117], [21, 43.5, 43.5, 60], color=BLUE, lw=1.8, ls=(0, (2, 3)), zorder=1)
-note(ax, 56, 45.3, 'UART (#22): speed and battery data', size=9.3, color=BLUE)
+note(ax, 56, 46.4, 'UART (#22): the controller sends speed\nand battery level, for the screen', size=9.3, color=BLUE, linespacing=1.05)
 
 # key
 lx, ly = 9, 34
