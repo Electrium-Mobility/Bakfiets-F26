@@ -6,7 +6,7 @@ from matplotlib.patches import Rectangle, Circle, FancyArrowPatch
 
 fig, ax = page(150, 98, (15, 9.8))
 note(ax, 8, 94, 'How power flows through the bakfiets', size=24, weight='bold')
-note(ax, 8, 89.2, 'Follow the numbers, which match the list under this drawing. Each label says what a wire carries and why. Red is the positive side, black the negative side.',
+note(ax, 8, 89.2, 'Block diagram, 12S pack (50.4 V full). Red: battery + through fuse and antispark. Black: battery - through the BMS.\nOrange: 5 V rail. Dashed blue: low-voltage signals. Numbers match the list in electrical/README.md.',
      size=11.5, color=PENCIL)
 
 def block(x, y, w, h, title, sub, col, n=None):
