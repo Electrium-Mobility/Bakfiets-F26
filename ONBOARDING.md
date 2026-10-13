@@ -343,7 +343,7 @@ Pick one of these and claim it with a comment on the issue saying you're working
 | --- | --- |
 | [#18](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/18) | Bench test the motor controller and hub motor on a bench power supply (safety training first) |
 | [#19](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/19) | Check the BMS and charger we have suit Pack 4 |
-| [#10](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/10) | Redraw the block diagram with real connectors and wire sizes |
+| [#10](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/10) | Redraw the power diagram in draw.io, with plugs and wire sizes |
 | [#11](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/11) | Start the parts list (BOM) |
 | [#9](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/9) | List what the 2026 power board needs changed for our pack. Do Stage 1 first |
 
