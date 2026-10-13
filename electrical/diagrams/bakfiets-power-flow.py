@@ -6,7 +6,7 @@ from matplotlib.patches import Rectangle, Circle, FancyArrowPatch
 
 fig, ax = page(150, 98, (15, 9.8))
 note(ax, 8, 94, 'How power flows through the bakfiets', size=24, weight='bold')
-note(ax, 8, 89.2, 'Block diagram, 12S pack (50.4 V full). Red: battery + through fuse and antispark. Black: battery - through the BMS.\nOrange: 5 V rail. Dashed blue: low-voltage signals. Numbers match the list in electrical/README.md.',
+note(ax, 8, 89.2, 'Block diagram, 12S pack (50.4 V full). Red: battery + through fuse and antispark. Black: battery - through the BMS and antispark.\nOrange: 5 V rail. Dashed blue: low-voltage signals. Numbers match the list in electrical/README.md.',
      size=11.5, color=PENCIL)
 
 def block(x, y, w, h, title, sub, col, n=None):
@@ -34,6 +34,8 @@ note(ax, 141, 65.5, '2000W, set\nto 500W', size=9.2, color=PENCIL, ha='center', 
 line([24, 34], [Y, Y]); line([52, 58], [Y, Y]); line([65, 72], [Y, Y]); line([87, 108], [Y, Y])
 note(ax, 97.5, 76.5, 'battery power\nfor the motor', size=8.5, color=RED, ha='center', linespacing=1)
 for dy in (-2, 0, 2): line([128, 134], [Y + dy, Y + dy], INK, lw=2.6)
+arrow((134, 65), (128.2, 65), BLUE, ls=(0, (4, 3)))
+note(ax, 141, 60.6, 'hall sensors:\nwhere the rotor is', size=8.2, color=BLUE, ha='center', linespacing=1)
 note(ax, 141, 82, '3 phase wires:\npower that\nspins the motor', size=8.2, color=INK, ha='center', linespacing=1)
 note(ax, 29, 82, 'charging port:\nrefills the pack\n(fused, DC 60V+)', size=8.2, color=RED, ha='center', linespacing=1)
 note(ax, 61.5, 82, 'fuse: blows if a short pulls\ntoo much current (DC 60V+)', size=9.2, color=RED, ha='center', linespacing=1.1)
@@ -42,15 +44,16 @@ note(ax, 61.5, 82, 'fuse: blows if a short pulls\ntoo much current (DC 60V+)', s
 block(34, 44, 18, 11, 'BMS', 'B- in, P- out', INK, 3)
 line([43, 43], [62, 55], INK, lw=4)
 note(ax, 44, 58.5, "B-: the pack's minus side", size=9, color=INK)
-line([52, 112, 112], [49.5, 49.5, 60], INK, lw=4)
-note(ax, 58, 53.4, 'P-: everything returns through the BMS,\nso it can cut power on a fault', size=9.2, color=INK, linespacing=1.05)
+line([52, 84, 84], [49.5, 49.5, 66], INK, lw=4)
+line([87, 108], [67.5, 67.5], INK, lw=4)
+note(ax, 58, 53.4, 'P-: all current returns through\nthe BMS, so it can cut it off', size=9.2, color=INK, linespacing=1.05)
 line([20, 20, 34], [66, 47, 47], INK, lw=2.6)
 note(ax, 7.5, 56, 'charger -\ngoes back\nthrough\nthe BMS', size=8.5, color=INK, linespacing=1)
 
 # power board
 block(88, 26, 22, 14, 'power board', 'steps battery power\ndown to 5V', GOLD, 6)
 line([99, 99], [Y, 40], RED, lw=3.5)
-line([104, 104], [49.5, 40], INK, lw=3.5)
+line([104, 104], [67.5, 40], INK, lw=3.5)
 note(ax, 98, 59, 'battery in,\nto make 5V', size=8.2, color=INK, ha='right', linespacing=1)
 
 # throttle and brakes into the controller
