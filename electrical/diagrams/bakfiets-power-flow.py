@@ -56,6 +56,10 @@ line([99, 99], [Y, 40], RED, lw=3.5)
 line([104, 104], [67.5, 40], INK, lw=3.5)
 note(ax, 98, 59, 'battery in,\nto make 5V', size=8.2, color=INK, ha='right', linespacing=1)
 
+# power button for the antispark
+block(66, 56.5, 13, 5.5, 'power button', '', BLUE)
+arrow((72.5, 62), (72.5, 65.8), BLUE, ls=(0, (4, 3)))
+
 # throttle and brakes into the controller
 block(128, 40, 18, 11, 'throttle', 'thumb lever', BLUE)
 arrow((134, 51), (124, 59.8), BLUE, ls=(0, (4, 3)))

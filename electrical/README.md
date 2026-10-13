@@ -14,7 +14,7 @@ Pack 4 is labelled 12S2P: 12 groups in series, each group being 2 cells in paral
 
 ![How power flows through the bakfiets](diagrams/bakfiets-power-flow.png)
 
-A redrawn, color-coded version of the 2024 block diagram. Red lines carry full battery voltage and orange lines carry 5 V. Dashed blue lines are signals only. The original is [`diagrams/high-level-circuit-diagram-2024.png`](diagrams/high-level-circuit-diagram-2024.png), and the script that draws this one is next to it.
+A redrawn, color-coded version of the 2024 block diagram. Red lines are the battery's positive side and black lines its negative side, both at full battery voltage. Orange lines carry 5 V. Dashed blue lines are signals only. The original is [`diagrams/high-level-circuit-diagram-2024.png`](diagrams/high-level-circuit-diagram-2024.png), and the script that draws this one is next to it.
 
 Follow the numbers:
 
