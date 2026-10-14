@@ -387,7 +387,7 @@ You will get the 2024 display code running on your desk, then start connecting i
 
 ### Stage 1: Run the Desk Demo
 
-**This stage is split in three.** Steps 1 to 3 need no hardware: do them on your own laptop, then click **Verify** (the checkmark button, top left) to check the code builds. Step 4 needs only a board, which you borrow in the bay. Steps 5 to 7 need a screen too. Electrium may not have spares, so we'll probably buy a few. Do those steps once they arrive.
+**This stage is split in three.** Steps 1 to 3 need no hardware: do them on your own laptop, then click **Verify** (the checkmark button, top left) to check the code builds. Step 4 needs a board, and steps 5 to 7 need a screen too. You can use a real board, which you borrow in the bay (most people do step 4 at a team meeting), or the free Wokwi simulator at home (see **No board? Use Wokwi** below). Electrium may not have spare screens, so we'll probably buy a few.
 
 #### Task
 
@@ -417,11 +417,16 @@ Run [`firmware/desk-demo/desk-demo.ino`](firmware/desk-demo/desk-demo.ino) on an
 
 **💡 Hint:** upload says "Failed to connect"? Hold **BOOT**, tap **RST**, release BOOT, and upload again. No COM port? Try another cable, since some only charge. If you're on the port labelled UART instead, install the CP210x or CH340 USB driver and set USB CDC On Boot to **Disabled**. Blank screen? Check SDA and SCL. Then, near the top of `desk-demo.ino`, change `#define SCREEN_ADDRESS 0x3C` to `0x3D` and upload again.
 
+**No board? Use Wokwi.** [Wokwi](https://wokwi.com/projects/new/esp32-s3) runs an ESP32-S3 in your browser for free.
+- Step 4: replace the code in `sketch.ino` with `board-test.ino` and click the green play button. The output shows in the panel under the board.
+- Steps 5 to 7: use `desk-demo.ino` instead. In the **Library Manager** tab, add **Adafruit SSD1306** and **FastLED**. Click the blue **+** above the board, add an **SSD1306 OLED**, and wire it like the drawing: VCC to 3V3, GND to GND, SDA to pin 10, SCL to pin 9.
+- The free build servers can be slow at busy times, so the first run can take a few minutes.
+
 Video: [ESP32 OLED tutorial for beginners](https://www.youtube.com/watch?v=u8g34BS8Ouw) (17 min).
 
 #### Deliverable
 
-For now, a screenshot of the Serial Monitor from step 4, showing the chip name, posted on [issue #12](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/12). Once you have a screen, add a photo of it showing 50%, 36 km/h and PA 5.
+For now, a screenshot of the Serial Monitor from step 4 (on a real board or in Wokwi), showing the chip name, posted on [issue #12](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/12). Once you have a screen, real or in Wokwi, add a photo or screenshot of it showing 50%, 36 km/h and PA 5.
 
 ### Stage 2: First Contribution
 
