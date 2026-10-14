@@ -417,10 +417,9 @@ Run [`firmware/desk-demo/desk-demo.ino`](firmware/desk-demo/desk-demo.ino) on an
 
 **💡 Hint:** upload says "Failed to connect"? Hold **BOOT**, tap **RST**, release BOOT, and upload again. No COM port? Try another cable, since some only charge. If you're on the port labelled UART instead, install the CP210x or CH340 USB driver and set USB CDC On Boot to **Disabled**. Blank screen? Check SDA and SCL. Then, near the top of `desk-demo.ino`, change `#define SCREEN_ADDRESS 0x3C` to `0x3D` and upload again.
 
-**No board? Use Wokwi.** [Wokwi](https://wokwi.com/projects/new/esp32-s3) runs an ESP32-S3 in your browser for free.
-- Step 4: replace the code in `sketch.ino` with `board-test.ino` and click the green play button. The output shows in the panel under the board.
-- Steps 5 to 7: use `desk-demo.ino` instead. In the **Library Manager** tab, add **Adafruit SSD1306** and **FastLED**. Click the blue **+** above the board, add an **SSD1306 OLED**, and wire it like the drawing: VCC to 3V3, GND to GND, SDA to pin 10, SCL to pin 9.
-- The free build servers can be slow at busy times, so the first run can take a few minutes.
+**No board? Use Wokwi.** [Wokwi](https://wokwi.com/projects/new/esp32-s3) runs an ESP32-S3 in your browser for free. You don't need an account, but sign in (also free) if you want to save your project.
+- Step 4: delete the code in `sketch.ino`, paste in all of `board-test.ino`, and click the green play button. The first build can take a few minutes on the free servers. The output appears in the panel under the board, for example `Hello from Bakfiets! Chip: ESP32-S3`. Screenshot that panel for the deliverable.
+- Steps 5 to 7 aren't needed until we have screens, but you can try them in Wokwi. Paste in `desk-demo.ino` instead. In the **Library Manager** tab, click **+** and add **Adafruit SSD1306** and **FastLED**. Click the blue **+** next to the play button and add an **SSD1306 OLED display**. To wire it, click a pin on the screen, then the pin on the board: VCC to 3V3, GND to G, SDA to 10, SCL to 9. The LED animation runs slowly in the simulator, so the screen can take a few minutes to appear. If it never does, do steps 5 to 7 on a real board at a meeting instead.
 
 Video: [ESP32 OLED tutorial for beginners](https://www.youtube.com/watch?v=u8g34BS8Ouw) (17 min).
 
