@@ -387,7 +387,7 @@ You will get the 2024 display code running on your desk, then start connecting i
 
 ### Stage 1: Run the Desk Demo
 
-**This stage is split in three.** Steps 1 to 3 need no hardware: do them on your own laptop, then click **Verify** (the checkmark button, top left) to check the code builds. Step 4 needs a board, and steps 5 to 7 need a screen too. You can use a real board, which you borrow in the bay (most people do step 4 at a team meeting), or the free Wokwi simulator at home (see **No board? Use Wokwi** below). Electrium may not have spare screens, so we'll probably buy a few.
+**This stage is split in three.** Steps 1 to 3 need no hardware: do them on your own laptop, then click **Verify** (the checkmark button, top left) to check the code builds. Step 4 needs a board, and steps 5 to 7 need a screen too. You can use a real board, which you borrow in the bay (most people do step 4 at a team meeting), or the free Wokwi simulator at home (see **No board? Use Wokwi** below). Do steps 1 to 3 either way, since you'll need Arduino IDE for the real board later. Electrium may not have spare screens, so we'll probably buy a few.
 
 #### Task
 
@@ -418,14 +418,14 @@ Run [`firmware/desk-demo/desk-demo.ino`](firmware/desk-demo/desk-demo.ino) on an
 **💡 Hint:** upload says "Failed to connect"? Hold **BOOT**, tap **RST**, release BOOT, and upload again. No COM port? Try another cable, since some only charge. If you're on the port labelled UART instead, install the CP210x or CH340 USB driver and set USB CDC On Boot to **Disabled**. Blank screen? Check SDA and SCL. Then, near the top of `desk-demo.ino`, change `#define SCREEN_ADDRESS 0x3C` to `0x3D` and upload again.
 
 **No board? Use Wokwi.** [Wokwi](https://wokwi.com/projects/new/esp32-s3) runs an ESP32-S3 in your browser for free. You don't need an account, but sign in (also free) if you want to save your project.
-- Step 4: delete the code in `sketch.ino`, paste in all of `board-test.ino`, and click the green play button. The first build can take a few minutes on the free servers. The output appears in the panel under the board, for example `Hello from Bakfiets! Chip: ESP32-S3`. Screenshot that panel for the deliverable.
-- Steps 5 to 7 aren't needed until we have screens, but you can try them in Wokwi. Paste in `desk-demo.ino` instead. In the **Library Manager** tab, click **+** and add **Adafruit SSD1306** and **FastLED**. Click the blue **+** next to the play button and add an **SSD1306 OLED display**. To wire it, click a pin on the screen, then the pin on the board: VCC to 3V3, GND to G, SDA to 10, SCL to 9. The LED animation runs slowly in the simulator, so the screen can take a few minutes to appear. If it never does, do steps 5 to 7 on a real board at a meeting instead.
+- Step 4: open [`board-test.ino`](firmware/board-test/board-test.ino) on GitHub and click the **Copy raw file** button (two squares, top right of the code). In Wokwi, delete the code in `sketch.ino`, paste yours in, and click the green play button. The first build can take a few minutes on the free servers. The output appears in the panel under the board, for example `Hello from Bakfiets! Chip: ESP32-S3`. Screenshot that panel for the deliverable.
+- Steps 5 to 7 aren't needed until we have screens, but you can try them in Wokwi. Copy [`desk-demo.ino`](firmware/desk-demo/desk-demo.ino) the same way and paste it in instead. In the **Library Manager** tab, click **+** and add **Adafruit SSD1306** and **FastLED**. Click the blue **+** next to the play button and add an **SSD1306 OLED display**. To wire it, click a pin on the screen, then the pin on the board: VCC to 3V3, GND to G, SDA to 10, SCL to 9. The LED animation runs slowly in the simulator, so the screen can take a few minutes to appear. If it never does, do steps 5 to 7 on a real board at a meeting instead.
 
 Video: [ESP32 OLED tutorial for beginners](https://www.youtube.com/watch?v=u8g34BS8Ouw) (17 min).
 
 #### Deliverable
 
-For now, a screenshot of the Serial Monitor from step 4 (on a real board or in Wokwi), showing the chip name, posted on [issue #12](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/12). Once you have a screen, real or in Wokwi, add a photo or screenshot of it showing 50%, 36 km/h and PA 5.
+For now, a screenshot of the Serial Monitor from step 4 (on a real board or in Wokwi), showing the chip name, posted on [issue #12](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/12) (drag the image into the comment box, then click **Comment**). Once we have real screens, add a photo of yours showing 50%, 36 km/h and PA 5. A Wokwi screenshot of the screen is a nice extra but not needed.
 
 ### Stage 2: First Contribution
 
