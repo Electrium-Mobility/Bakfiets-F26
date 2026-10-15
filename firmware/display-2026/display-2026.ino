@@ -175,11 +175,6 @@ void loop() {
   
   // test right turn signal
   rightTurn();
-  rightTurn();
-  rightTurn();
-  rightTurn();
-  rightTurn();
-  
 
 
   display.clearDisplay(); 
