@@ -22,8 +22,6 @@
 //****************************************************************************************************************
 
 // #define is a preprocessor directive that basically acts like a const with no type checking (and no memory allocated)
-#define SCREEN_WIDTH 240
-#define SCREEN_HEIGHT 320
 
 // FSPICS0
 // chip select: for selecting which device to communicate with. low = chip is selected, high = chip unselected
