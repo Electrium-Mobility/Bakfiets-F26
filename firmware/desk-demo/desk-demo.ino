@@ -45,6 +45,9 @@
 // reset
 #define RST 8
 
+#define SCREEN_WIDTH 240
+#define SCREEN_HEIGHT 320
+
 // Instantiate new driver object (controls the screen)
 Adafruit_ILI9341 screen = Adafruit_ILI9341(CS, DC, MOSI, CLK, RST, MISO);
 
@@ -66,7 +69,10 @@ void setup() {
 void loop() {
 
   // print text to screen
-  Serial.println(testText());
+  //Serial.println(testText());
+  drawBattery(67);
+  drawSpeed(52);
+  drawLevel(4);
 
   // wait 10s until redrawing
   delay(10000);
@@ -107,5 +113,55 @@ unsigned long testText() {
 
   // return the duration of the command
   return micros() - start;
+}
+
+void drawBattery(uint8_t percentage) {
+  int16_t batteryWidth = 40; 
+  int16_t batteryHeight = 16;
+  int16_t batteryX = 10; // Position to the left
+  int16_t batteryY = 8; // Position at the top
+
+  // Calculate the width of the battery's fill
+  int16_t fillWidth = (batteryWidth - 4) * percentage / 100; 
+
+  // battery outline
+  screen.drawRect(batteryX, batteryY, batteryWidth, batteryHeight, ILI9341_WHITE);
+  screen.fillRect(batteryX + batteryWidth, batteryY + 3, 2, batteryHeight - 6, ILI9341_WHITE);
+
+  // battery fill
+  screen.fillRect(batteryX + 2, batteryY + 2, fillWidth, batteryHeight - 4, ILI9341_WHITE);
+
+  // battery percent
+  screen.setTextSize(2);
+  screen.setTextColor(ILI9341_WHITE);
+  screen.setCursor(batteryX + batteryWidth + 6, batteryY + 1);
+  screen.print(percentage);
+  screen.print('%');
+}
+
+// Draw speed in KM/H
+void drawSpeed(uint8_t speed) {
+  screen.setTextSize(2);
+  screen.setTextColor(ILI9341_WHITE);
+  screen.setCursor(10, 40);
+  screen.println(speed);
+
+  screen.setTextSize(2);
+  screen.setTextColor(ILI9341_WHITE);
+  screen.setCursor(40, 40);
+  screen.println(F("KM/H"));
+}
+
+// Draw Power Assist (PA) level, e.g. 'PA 5'
+void drawLevel(uint8_t level) {
+  screen.setTextSize(2);
+  screen.setTextColor(ILI9341_WHITE);
+  screen.setCursor(100, 10);
+  screen.println(F("PA"));
+
+  screen.setTextSize(2);
+  screen.setTextColor(ILI9341_WHITE);
+  screen.setCursor(105, 40);
+  screen.println(level);
 }
 
