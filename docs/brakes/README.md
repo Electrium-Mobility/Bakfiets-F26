@@ -6,7 +6,7 @@ The bike needs a working brake on each wheel before anyone rides it. This page c
 
 ![Side view of the bike with the rear brake line and two example front brake line routes](images/bike-layout.svg)
 
-- The front wheel already has a cable disc brake, but its cable is too short to reach the handlebars. The plan (28 Oct) is to keep the brake and replace only the cable.
+- The front wheel already has a cable disc brake, but its cable is too short to reach the handlebars. Oscar's plan (28 Oct) is to keep the brake and replace only the cable.
 - The back wheel is the hub motor. It has no brake yet, and the motor and frame have no obvious place to mount one.
 - Ontario law says pulling either brake lever has to stop the motor.
 
@@ -31,7 +31,7 @@ The front brake is a cable disc brake: the lever pulls a steel cable, which clos
 
 A hydraulic disc brake on another bike. Ours works the same way, with a cable instead of a hose.
 
-Its cable is too short for this layout (seen in the bay). The plan is to keep the brake and buy a longer cable. Stock brake cables are about 2 m long, so the first step is measuring the route from the handlebars to the front brake. Under 2 m means a normal cable works.
+Its cable is too short for this layout (seen in the bay). Oscar's plan is to keep the brake and buy a longer cable. Stock brake cables are about 2 m long, so the first step is measuring the route from the handlebars to the front brake. Under 2 m means a normal cable works.
 
 The handlebars are far from the fork, so whatever steering design gets picked ([#25](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/25)) links the two, and both ends turn. The brake line has to bend at both ends and still reach the caliper at the front axle. It could cross over the cargo box or follow the frame tubes under it (the two examples in the side view).
 
