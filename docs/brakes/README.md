@@ -6,7 +6,7 @@ The bike needs a working brake on each wheel before anyone rides it. This page c
 
 ![Side view of the bike with the rear brake line and two example front brake line routes](images/bike-layout.svg)
 
-- The front wheel already has a brake, but the line from the lever (a hose or a cable) is too short to reach the handlebars. Its type isn't confirmed yet. The handlebars sit in the middle of the bike and the front wheel is past the cargo box.
+- The front wheel already has a cable disc brake, but its cable is too short to reach the handlebars. The plan (28 Oct) is to keep the brake and replace only the cable.
 - The back wheel is the hub motor. It has no brake yet, and the motor and frame have no obvious place to mount one.
 - Ontario law says pulling either brake lever has to stop the motor.
 
@@ -25,13 +25,13 @@ Our frame, with the parts this page talks about. Both wheels are still off the f
 
 ## Front wheel
 
-The front wheel already has a brake, but its type hasn't been confirmed. It could be a disc brake (it grips a metal disc next to the hub) or a rim brake (it grips the wheel's rim), worked by a hydraulic hose (the lever pushes fluid) or a cable (the lever pulls a wire).
+The front brake is a cable disc brake: the lever pulls a steel cable, which closes a caliper on a metal disc (the rotor) bolted to the hub.
 
 ![A disc brake on another bike, labelled](images/disc-brake-reference.jpg)
 
-A hydraulic disc brake on another bike, to compare ours with.
+A hydraulic disc brake on another bike. Ours works the same way, with a cable instead of a hose.
 
-Its line is too short for this layout (seen in the bay). Its type, brand and model decide which parts are compatible, so close photos of the lever and the brake at the wheel are the first thing to get.
+Its cable is too short for this layout (seen in the bay). The plan is to keep the brake and buy a longer cable. Stock brake cables are about 2 m long, so the first step is measuring the route from the handlebars to the front brake. Under 2 m means a normal cable works.
 
 The handlebars are far from the fork, so whatever steering design gets picked ([#25](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/25)) links the two, and both ends turn. The brake line has to bend at both ends and still reach the caliper at the front axle. It could cross over the cargo box or follow the frame tubes under it (the two examples in the side view).
 
@@ -75,12 +75,12 @@ Drum and coaster brakes need a hub built for them, which rules them out here. Br
 ## Open questions
 
 Check in the bay first:
-1. The front brake's type (disc or rim, hydraulic or cable), brand and model. A longer line or a new lever has to match it. For a hydraulic brake that also means the same fluid and fittings, since mixing mineral oil with DOT fluid ruins the seals.
+1. The cable route length from the handlebars to the front brake, with the steering turned fully both ways.
 2. The silver band on the rim, up close. A rim brake needs a flat metal surface to grip, so this decides whether rim brakes are an option for the back at all.
 3. The two raised tabs on the dropout: the spacing between their holes and which side of the bike they're on. 51 mm apart is an IS disc mount and 74 mm is a post mount, and a rear disc tab only works on the left side. If it's a disc tab, a disc brake on the back becomes possible.
 
 Then work out:
-1. Reuse the front brake with a longer line, or replace it? What would make each one the better choice?
+1. If the route is longer than a stock cable (about 2 m), what's the alternative?
 2. Over the box or along the frame, and how long is the line then? The length decides what to buy, and the route has to survive the steering turning at both ends.
 3. How will the back wheel be braked, what does it cost, and does it change the frame? Every rear option needs new mounts, an adapter or a different motor, so it could take a big share of the budget.
 4. Which cut-off switch fits the levers you pick? It has to plug into the controller's ADC2 input. Some levers have one built in, others need a separate sensor.
@@ -89,7 +89,7 @@ Then work out:
 
 Front brake ([#32](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/32)), due Thu 29 Oct:
 - a chosen setup, with the reasons
-- the parts and the specs they have to match (line length, and the fluid or cable type, levers with a cut-off switch)
+- the cable length, and levers with a cut-off switch
 
 Back brake ([#34](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/34)), due Wed 28 Oct. Ling suggested putting a disc rotor on the hub motor (16 Oct), and the mech co-op has been asked to help design it:
 - the options compared, with costs
