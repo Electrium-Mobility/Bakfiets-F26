@@ -5,8 +5,7 @@ Pack 4's BMS and charger are settled. What is left from [#19](https://github.com
 ## Where Pack 4 stands
 
 - Ayaan checked the pack on 30 Oct: it works, it has a BMS built in, and the charger works with it ([#21](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21), closed).
-- The main leads were resoldered to an XT60H-F on 29 Oct.
-- The charge lead is probably the small yellow XT30-style plug, but nobody has confirmed which lead it is yet.
+- Main leads are an XT60H-F, resoldered 29 Oct. The charge lead is a separate XT30.
 - Ling said the pack does not need a fuse, so the charge line has none.
 - Left to do: mount the XLR socket, and run two wires from it to the charge lead.
 
@@ -50,7 +49,8 @@ The socket sits at pack voltage whenever the charger is unplugged, so the bike-s
 | 3 pin XLR male inline plug, for the charger lead | 16 A per contact | pins, charger side only | cable end | CA$6.95 | [Sayal](https://shop.sayal.com/products/gbsa-5212h) |
 | 5.5 x 2.1 mm DC panel jack | about 5 A | recessed, thin centre pin, wears | 8 mm hole | CA$6.95 for 2 | [Sayal](https://shop.sayal.com/products/gak-2156-2) |
 
-- Two parts to buy: the socket at CA$5.95 and the male plug at CA$6.95. The project lead orders.
+- Three parts to buy: socket CA$5.95, male XLR plug CA$6.95, XT30 pair CA$3.95. The project lead orders.
+- The pigtail ends in an XT30 male to match the pack's charge lead. Amass rates XT30 at 30 A peak, far above the 3 A charge current ([Sayal](https://shop.sayal.com/products/gqml-2011)).
 - The XLR is the standard e-bike charge plug. Three times the charge current even at 10 A, recessed by construction, latches, metal shell screws to the frame.
 - The charge cable photographed with Pack 3 ends in a 3 pin XLR plug through a barrel adapter, so keep the adapter on the charger side.
 - Polarity, written on both ends: pin 1 positive, pin 2 negative, pin 3 unused. The shell is isolated from the pins.
@@ -61,12 +61,14 @@ charger (50.4 V) -> XLR male on the charger lead
                         |
               XLR female socket in the frame
                         |
-              pack charge lead (XT30 or whatever it turns out to be)
+              pack charge lead, XT30 female
+                        |
+              XT30 male on the pigtail
 ```
 
 Negative runs socket to charge lead negative. Nothing grounds to the frame.
 
 ## Still open
 
-- Which of Pack 4's leads is the charge lead, and what plug it uses.
+- Confirm by eye that the charge lead is the XT30 before crimping anything.
 - Socket position on the frame, with #26.
