@@ -7,7 +7,7 @@ Pack 4's BMS and charger are settled. What is left from [#19](https://github.com
 - Ayaan checked the pack on 30 Oct: it works, it has a BMS built in, and the charger works with it ([#21](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21), closed).
 - The main leads were resoldered to an XT60H-F on 29 Oct.
 - The charge lead is probably the small yellow XT30-style plug, but nobody has confirmed which lead it is yet.
-- Ling said the pack does not need a fuse.
+- Ling said the pack does not need a fuse, so the charge line has none.
 - Left to do: mount the XLR socket, and run two wires from it to the charge lead.
 
 ## BMS
@@ -54,7 +54,6 @@ The socket sits at pack voltage whenever the charger is unplugged, so the bike-s
 - The XLR is the standard e-bike charge plug. Three times the charge current even at 10 A, recessed by construction, latches, metal shell screws to the frame.
 - The charge cable photographed with Pack 3 ends in a 3 pin XLR plug through a barrel adapter, so keep the adapter on the charger side.
 - Polarity, written on both ends: pin 1 positive, pin 2 negative, pin 3 unused. The shell is isolated from the pins.
-- No fuse on this line, Ling's call via #21. #19 step 5 asked for one, so this is a deliberate exception, not an oversight.
 - Socket position waits on the mounting work in [#26](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/26). It needs to clear the cargo box and the steering.
 
 ```
