@@ -5,8 +5,8 @@ Pack 4's BMS and charger are settled. What is left from [#19](https://github.com
 ## Where Pack 4 stands
 
 - Ayaan checked the pack on 30 Oct: it works, it has a BMS built in, and the charger works with it ([#21](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21), closed).
-- Main leads are an XT60H-F, resoldered 29 Oct. The charge lead is a separate XT30.
-- Ling said the pack does not need a fuse, so the charge line has none.
+- Main leads are an XT60H-F, resoldered 29 Oct. The charge lead looks like a separate XT30.
+- Ling said the pack's main line needs no fuse. The charge line depends on how the XT30 connects to the BMS (see Still open).
 - Left to do: mount the XLR socket, and run two wires from it to the charge lead.
 
 ## BMS
@@ -71,4 +71,5 @@ Negative runs socket to charge lead negative. Nothing grounds to the frame.
 ## Still open
 
 - Confirm by eye that the charge lead is the XT30 before crimping anything.
+- Ask Ayaan whether the XT30 is common port (it shares the BMS output with the main leads) or a separate charge port. Common port: the BMS's short circuit cut-off covers the socket, so no fuse. Separate port: many boards only limit current flowing into the pack on that path, so add a small inline fuse (about 5 A, DC rated 60 V or more) on the positive wire at the pack end.
 - Socket position on the frame, with #26.
