@@ -48,6 +48,14 @@
 #define SCREEN_WIDTH 240
 #define SCREEN_HEIGHT 320
 
+#define PA_PIN      16
+
+// paLevel will  go from 1, 2, 3, 4, 5 -> 1...
+u_int8_t paLevel{1};
+
+// debounce for paLevel changer
+u_int8_t canChangePA{1};
+
 // Instantiate new driver object (controls the screen)
 Adafruit_ILI9341 screen = Adafruit_ILI9341(CS, DC, MOSI, CLK, RST, MISO);
 
@@ -57,25 +65,32 @@ void setup() {
   Serial.begin(9600);
 
   // initialize chip select pin(s) to high so no devices are competiting with each other
+  pinMode(PA_PIN, INPUT_PULLUP);
   pinMode(CS, OUTPUT);
   digitalWrite(CS, HIGH);
 
   // this starts the SPI communication
   screen.begin();
+
+  screen.fillScreen(ILI9341_BLACK);
 }
 
 //****************************************************************************************************************
 
 void loop() {
+  
 
-  // print text to screen
+
+  incrementPA(paLevel, canChangePA, digitalRead(PA_PIN));
+  drawLevel(paLevel);
+
+    // print text to screen
   //Serial.println(testText());
   drawBattery(67);
   drawSpeed(52);
-  drawLevel(4);
 
   // wait 10s until redrawing
-  delay(10000);
+  delay(10);
 
 }
 
@@ -164,4 +179,28 @@ void drawLevel(uint8_t level) {
   screen.setCursor(105, 40);
   screen.println(level);
 }
+
+void incrementPA(u_int8_t &paLevel, u_int8_t &canChangePA, u_int8_t pressed) {
+  if (canChangePA && pressed) {
+    // debounce to 0 until the button isn't pressed
+    canChangePA = 0;
+    // increment PA level if less than 5
+    if (paLevel < 5) {
+      ++paLevel;
+
+    // if palevel is 5, reset to 1
+    } else {
+      paLevel = 1;
+    }
+
+    // fill the screen with a colour
+    screen.fillRect(105, 40, 20, 20, ILI9341_BLACK);
+  } else if ( (!canChangePA) && (!pressed) ) {
+    // reset debounce
+    canChangePA = 1;
+  }
+
+  
+}
+
 
