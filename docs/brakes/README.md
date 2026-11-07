@@ -18,7 +18,7 @@ Our frame, with the parts this page talks about. Both wheels are still off the f
 
 Electrium has spare brake levers, inner wire and 5 mm housing from old bikes, photographed 6 Nov 2026. We're checking if they suit the Bakfiets. The current plan and wiring are in [Brake motor cut-off](../../electrical/brake-cutoff.md).
 
-This lever has a cut-off built in. Its thin wire ends in a yellow plug and sends a signal to the motor controller when the lever is pulled. The photos show one, labelled A01-R, and we need one per brake.
+This lever has a cut-off built in. Its thin wire ends in a yellow plug with three pins and sends a signal to the motor controller when the lever is pulled. The photos show one, labelled A01-R, and we need one per brake.
 
 ![Lever with a cut-off wire and yellow plug](../../electrical/photos/brake-parts-2026-11/1-lever-with-cutoff.jpg)
 
@@ -33,6 +33,14 @@ These two levers, marked POWER, have no cut-off, so they're a backup. A plain le
 ![The back of the two plain levers](../../electrical/photos/brake-parts-2026-11/4b-plain-levers-back.jpg)
 
 Check that a lever clamps the Shimano mechanical caliper firmly before it reaches the grip, and that it fits our handlebars. Neither has been tested yet.
+
+The bay also has the rest of the brake line parts: black 5 mm housing and inner wire, both 2 m, plus ferrules, end caps and red cable protectors.
+
+![Black brake housing, 2 m](../../electrical/photos/brake-parts-2026-11/5-housing.jpg)
+
+![Inner brake wire, 2 m](../../electrical/photos/brake-parts-2026-11/6-inner-wire.jpg)
+
+![Bag of ferrules, end caps and red cable protectors](../../electrical/photos/brake-parts-2026-11/7-small-parts.jpg)
 
 ## Limits
 

@@ -34,31 +34,31 @@ There are two separate lines at each brake. The inner wire and housing stop the 
 
 The cut-off wire is short, so it needs a pigtail, which is a short cable with the other half of the yellow plug, plus extra wire to reach the controller. Include this in the wiring harness ([#20](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/20)).
 
-The first job is finding out what kind of signal the lever sends. Look inside the yellow plug and count the pins, then test it with a multimeter.
+The yellow plug has three pins, so the lever is most likely a powered sensor with three wires: power, ground and signal. The first job is finding out what the signal does when the lever is pulled. Test one lever on the bench with a 3-pin pigtail. Confirm which wire is power before connecting it, because wiring it backwards can kill the sensor. Pigtail colours vary, so don't go by colour alone.
 
-![A multimeter on continuity mode connected to the pins of the yellow plug](diagrams/brake-plug-test.png)
+![Test setup: the lever powered from an ESP32 board's 3.3 V, a 10k resistor from 3.3 V to the signal wire, and a multimeter measuring signal to ground](diagrams/brake-plug-test.png)
 
-| Result | What it means | What to do |
+| Lever released | Lever pulled | What to do |
 | --- | --- | --- |
-| Two pins, and the meter beeps only when the lever is pulled | Plain switch that closes when you brake | Use the wiring below |
-| Two pins, and the meter stops beeping when the lever is pulled | Plain switch that opens when you brake | Use the wiring below with Kill Switch Mode set to ADC2 Low. A broken wire then stops the motor too |
-| Three pins, and the meter never beeps | Powered sensor | Find the power, ground and signal wires, give it 3.3 V and measure the signal. Set ADC2 High if the signal goes up when you brake, or ADC2 Low if it goes down. The signal must stay at or below 3.3 V |
+| About 3.3 V | About 0 V | Use the wiring below with Kill Switch Mode set to ADC2 Low |
+| About 0 V | About 3.3 V | Move the 10k resistor so it goes from signal to ground, and set ADC2 High |
+| Stays the same | Stays the same | Stop here. It may need 5 V, and on 5 V the signal could be too high for ADC2 and the ESP32. Ask Ayaan before going further |
 
-Here's how the plain switch case works. Pulling a brake connects 3.3 V to a signal wire, which goes to ADC2, an input pin on the controller's COMM port. The VESC firmware has a kill switch setting called ADC2 High, which stops the motor whenever ADC2 is above 1.65 V ([firmware source](https://github.com/vedderb/bldc/blob/master/timeout.c)). When the lever is released, a 10k resistor pulls the signal back to 0 V.
+Here's how the first case works, which is the most common on 3-wire levers. The resistor holds the signal at 3.3 V. Pulling a brake connects the signal to ground, so it drops to about 0 V. The signal goes to ADC2, an input pin on the controller's COMM port. The VESC firmware has a kill switch setting called ADC2 Low, which stops the motor whenever ADC2 is below 1.65 V ([firmware source](https://github.com/vedderb/bldc/blob/master/timeout.c)).
 
-![Wiring: controller 3.3 V through two levers to a signal wire, which goes to ADC2 and later the ESP32, with a 10k resistor to ground](diagrams/brake-cutoff-wiring.png)
+![Wiring: controller 3.3 V and ground to both levers, both signal wires to ADC2 and later the ESP32, with a 10k resistor from 3.3 V to the signal](diagrams/brake-cutoff-wiring.png)
 
-The 10k resistor is required. An unconnected ADC2 can float to a random voltage, and [one builder measured 1.2 V](https://foil.zone/t/magnet-operated-kill-switch/15715/25), which is close to the 1.65 V trigger.
+The 10k resistor is required. An unconnected ADC2 can float to a random voltage, and [one builder measured 1.2 V](https://foil.zone/t/magnet-operated-kill-switch/15715/25), which is below the 1.65 V trigger.
 
 Before building, read the controller's model and firmware version in VESC Tool and post them on [#38](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/38). The model tells us where 3.3 V, ADC2 and GND are on the COMM port. The kill switch was [added to the firmware in June 2021](https://github.com/vedderb/bldc/commits/master/timeout.c), so older firmware needs updating first.
 
 Build it on a breadboard first, with the battery unplugged whenever you change a wire.
 
-1. Test the main idea with a 10k resistor and a jumper wire in place of the lever. Connect the resistor from ADC2 to GND, then set Kill Switch Mode to ADC2 High in App Settings. With the back wheel lifted and the current limits low, spin the motor and connect 3.3 V to ADC2. The motor should stop, and restart only once the wire is removed.
-2. Test the yellow plug using the picture above.
-3. Connect one lever using the table below.
-4. Check with a multimeter that the signal row reads 0 V, then 3.3 V when the lever is pulled. Watch the same change on the ADC2 voltage in VESC Tool.
-5. Repeat the motor test from step 1 using the lever.
+1. Test the lever using the picture above and pick the setting from the table.
+2. Connect one lever using the table below.
+3. Watch the ADC2 voltage in VESC Tool's live data while pulling the lever. It should match what you measured.
+4. Set Kill Switch Mode in App Settings and write the configuration. Menu names can vary a little between versions.
+5. With the back wheel lifted and the current limits low, spin the motor and pull the lever. The motor should stop, and restart only once the lever is released.
 6. Add the second lever and test each brake.
 7. Add the ESP32 for the brake light.
 
@@ -66,11 +66,13 @@ Build it on a breadboard first, with the battery unplugged whenever you change a
 | --- | --- |
 | Controller 3.3 V | Red breadboard rail |
 | Controller GND | Blue breadboard rail |
-| Front lever, pin 1 | Red rail |
-| Front lever, pin 2 | Signal row |
-| Rear lever, pin 1 | Red rail |
-| Rear lever, pin 2 | Signal row |
-| 10k resistor | Signal row to blue rail |
+| Front lever power | Red rail |
+| Front lever ground | Blue rail |
+| Front lever signal | Signal row |
+| Rear lever power | Red rail |
+| Rear lever ground | Blue rail |
+| Rear lever signal | Signal row |
+| 10k resistor | Signal row to red rail |
 | Signal row | Controller ADC2 |
 | ESP32 GND (step 7) | Blue rail |
 | Signal row (step 7) | ESP32 input pin, through a 1k resistor |
@@ -83,15 +85,15 @@ Fit the levers on the bike and check these before the first ride:
 
 - The lever pulls enough cable to clamp the Shimano mechanical caliper firmly before the lever reaches the grip. Linear pull and short pull levers move different amounts of cable, and these levers haven't been tested with our calipers yet.
 - The levers clamp onto our handlebars.
-- With the back wheel lifted, pulling each brake stops the motor. Repeat this check before every ride. If the circuit uses a switch that closes when you brake, a broken wire leaves the motor running, although the brakes still work.
+- With the back wheel lifted, pulling each brake stops the motor. Repeat this check before every ride. A broken signal wire or an unplugged lever leaves the motor running, although the brakes still work.
 
-If we can't find a second lever with a cut-off, the second brake can use a plain lever with a [Grin inline sensor](https://ebikes.ca/inline-cable-cutoff-sensor.html), CA$21, wired the same way once we confirm its signal.
+If we can't find a second lever with a cut-off, the second brake can use a plain lever with a [Grin inline sensor](https://ebikes.ca/inline-cable-cutoff-sensor.html), CA$21, once we confirm its signal. Its wiring would differ from a 3-wire lever, so two matching levers are simpler.
 
 Still open:
 
 - How many levers with a cut-off the bay has. The photos show one, labelled A01-R, and we need two.
-- The number of pins on the yellow plug and what type of signal it sends.
-- Which pigtail fits the yellow plug.
+- What the yellow plug's signal does when the lever is pulled, and which wire is which.
+- Which 3-pin pigtail fits the yellow plug.
 - The controller's model and COMM pinout ([#38](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/38)).
 - The string measurements for both routes.
 - Which ESP32 input pin to use (firmware).
