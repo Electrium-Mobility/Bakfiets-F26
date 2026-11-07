@@ -14,6 +14,14 @@ The bike needs a working brake on each wheel before anyone rides it. This page c
 
 Our frame, with the parts this page talks about. Both wheels are still off the frame.
 
+## Brakes we have now
+
+The front wheel has this Shimano mechanical disc caliper and rotor, and we're keeping them.
+
+![Front brake: Shimano mechanical disc caliper and rotor](../../electrical/photos/brake-parts-2026-11/0-front-brake.jpg)
+
+The rear brake will be the mechanical disc brake from Electrium's green mountain bike, on the table by the whiteboard. It's still on that bike, and we need a photo of it once it's off.
+
 ## Levers in the bay
 
 Electrium has spare brake levers, inner wire and 5 mm housing from old bikes, photographed 6 Nov 2026. We're checking if they suit the Bakfiets. The current plan and wiring are in [Brake motor cut-off](../../electrical/brake-cutoff.md).

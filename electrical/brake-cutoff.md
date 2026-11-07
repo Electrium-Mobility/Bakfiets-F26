@@ -16,9 +16,15 @@ The cut-off wire ends in a yellow waterproof plug, known as a Higo or Julet plug
 
 ![Close-up of the yellow plug](photos/brake-parts-2026-11/3-yellow-plug.jpg)
 
+The levers pull the brakes we already have. The front is this Shimano mechanical disc caliper, and the rear will be the mechanical disc brake from Electrium's green mountain bike.
+
+![Front brake: Shimano mechanical disc caliper and rotor](photos/brake-parts-2026-11/0-front-brake.jpg)
+
 The rest of the parts from the bay are below. The plain levers have no cut-off, so they're only a backup.
 
 ![Two plain levers marked POWER, with no cut-off wire](photos/brake-parts-2026-11/4-plain-levers.jpg)
+
+![The back of the two plain levers](photos/brake-parts-2026-11/4b-plain-levers-back.jpg)
 
 ![Black brake housing, 2 m](photos/brake-parts-2026-11/5-housing.jpg)
 
