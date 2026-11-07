@@ -15,6 +15,7 @@ Updated 1 Nov 2026.
 - [Onboarding guide](../ONBOARDING.md)
 - [Electrical overview](../electrical/README.md)
 - [BMS, charger and charging port](../electrical/bms-charging.md)
+- [Brake motor cut-off](../electrical/brake-cutoff.md)
 - [Brakes overview](brakes/README.md)
 - [Bay photos](photos/bay-2026-10/README.md)
 - [Meeting notes](meetings/)
