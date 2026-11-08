@@ -35,6 +35,8 @@ Issue #38 requires a maximum input voltage of 60V or more and a motor current ar
 ## Port Map
 The diagram is from Flipsky's website for the part ([here](https://flipsky.net/collections/v6-series/products/mini-fsesc6-7-pro-70a)).
 
+![Port map](diagrams/port-map.png)
+
 | Connection | Location | Type of connection |
 |---|---|---|
 | **Battery leads** | Top of controller, beside capacitors | Two 12 AWG power leads soldered to the PCB|
