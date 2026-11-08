@@ -1,89 +1,103 @@
 # Brake motor cut-off
 
-This page explains how the motor stops when someone pulls a brake lever, what to buy, how to wire it and how to test it. It goes with [#40](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/40). Prices were read in November 2026.
+This page explains how the motor stops when someone pulls a brake lever, which parts we're using, how to wire it and how to test it. It goes with [#40](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/40). Updated 7 Nov 2026 after checking Electrium's spare parts in the bay.
 
-This is a plan, and the circuit hasn't been built yet. The sensor's wiring still has to be confirmed, so do step 1 of the build before connecting anything.
+This is a plan, and the circuit hasn't been built yet. The motor test on 4 Nov worked, so the controller, VESC Tool and motor are ready for this.
 
-Why we need it: Ontario requires the motor to stop when the brakes are applied ([O. Reg. 369/09](https://www.ontario.ca/laws/regulation/090369), section 3(2)). It has to work before the first ride. The bench test doesn't need it.
+Why we need it: Ontario requires the motor to stop when the brakes are applied ([O. Reg. 369/09](https://www.ontario.ca/laws/regulation/090369), section 3(2)). It has to work before the first ride.
 
-Why it needs extra parts: the levers we're ordering, a Tektro RS360A pair, are plain mechanical levers with no switch inside. Store-bought e-bikes usually have a switch built into the lever and a brake plug on the controller. Our VESC motor controller has no brake plug, so we add a sensor to each brake and wire it to one of the controller's input pins.
+The bay has a lever with a cut-off built in. A switch or sensor inside the lever sends a signal down the thin wire whenever the lever is pulled, the same way store-bought e-bikes do it. We use that signal to stop the motor.
 
-How it works: pulling a brake closes a switch, which connects 3.3 V to a signal wire. That wire goes to ADC2, an input pin on the controller's COMM port. The VESC firmware has a kill switch setting called ADC2 High, which stops the motor whenever ADC2 is above 1.65 V ([firmware source](https://github.com/vedderb/bldc/blob/master/timeout.c)). When the brake is released, a 10k resistor pulls the signal back to 0 V and the motor can run again.
+![Black lever with a thin cut-off wire ending in a yellow plug](photos/brake-parts-2026-11/1-lever-with-cutoff.jpg)
 
-![Brake cut-off wiring: controller 3.3 V through two sensors to a signal wire, which goes to ADC2 and later the ESP32, with a 10k resistor to ground](diagrams/brake-cutoff-wiring.png)
+![The back of the same style of lever](photos/brake-parts-2026-11/2-lever-with-cutoff-back.jpg)
 
-| Brake | Signal wire | Motor |
+The cut-off wire ends in a yellow waterproof plug, known as a Higo or Julet plug.
+
+![Close-up of the yellow plug](photos/brake-parts-2026-11/3-yellow-plug.jpg)
+
+The levers pull the brakes we already have. The front is this Shimano mechanical disc caliper, and the rear will be the mechanical disc brake from Electrium's green mountain bike.
+
+![Front brake: Shimano mechanical disc caliper and rotor](photos/brake-parts-2026-11/0-front-brake.jpg)
+
+The rest of the parts from the bay are below. The plain levers have no cut-off, so they're only a backup.
+
+![Two plain levers marked POWER, with no cut-off wire](photos/brake-parts-2026-11/4-plain-levers.jpg)
+
+![The back of the two plain levers](photos/brake-parts-2026-11/4b-plain-levers-back.jpg)
+
+![Black brake housing, 2 m](photos/brake-parts-2026-11/5-housing.jpg)
+
+![Inner brake wire, 2 m](photos/brake-parts-2026-11/6-inner-wire.jpg)
+
+![Bag of ferrules, end caps and red cable protectors](photos/brake-parts-2026-11/7-small-parts.jpg)
+
+We're starting with the cut-off on the rear brake only, using the one lever we have. The front brake uses a plain lever for now, and the cut-off gets added to it later. Each brake uses one lever, one 2 m inner wire and one 2 m length of housing. The front line now runs along the box instead of along the frame, which is shorter than the 228 cm route we measured before. Measure both routes with a string, with the handlebars turned fully each way. The housing has to fit the route with some slack, and the inner wire has to be longer than the housing so it can reach the caliper.
+
+There are two separate lines at each brake. The inner wire and housing stop the wheel. The cut-off wire stops the motor.
+
+![Route of the inner wire and housing from the lever to the caliper, and the cut-off wire through the yellow plug and a pigtail to the motor controller](diagrams/brake-sensor-route.png)
+
+The cut-off wire is short, so it needs a pigtail, which is a short cable with the other half of the yellow plug, plus extra wire to reach the controller. Include this in the wiring harness ([#20](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/20)).
+
+The yellow plug has three pins, so the lever is most likely a powered sensor with three wires: power, ground and signal. The first job is finding out what the signal does when the lever is pulled. Test one lever on the bench with a 3-pin pigtail. Confirm which wire is power before connecting it, because wiring it backwards can kill the sensor. Pigtail colours vary, so don't go by colour alone.
+
+![Test setup: the lever powered from an ESP32 board's 3.3 V, a 10k resistor from 3.3 V to the signal wire, and a multimeter measuring signal to ground](diagrams/brake-plug-test.png)
+
+| Lever released | Lever pulled | What to do |
 | --- | --- | --- |
-| Both released | 0 V | Can run |
-| Either pulled | 3.3 V | Stops |
+| About 3.3 V | About 0 V | Use the wiring below with Kill Switch Mode set to ADC2 Low |
+| About 0 V | About 3.3 V | Move the 10k resistor so it goes from signal to ground, and set ADC2 High |
+| Stays the same | Stays the same | Stop here. It may need 5 V, and on 5 V the signal could be too high for ADC2 and the ESP32. Ask Ayaan before going further |
 
-The two sensors are wired side by side, so either brake sets it off. The 10k resistor is required. An unconnected ADC2 can float to a random voltage, and [one builder measured 1.2 V](https://foil.zone/t/magnet-operated-kill-switch/15715/25), which is close to the 1.65 V trigger.
+Here's how the first case works, which is the most common on 3-wire levers. The resistor holds the signal at 3.3 V. Pulling a brake connects the signal to ground, so it drops to about 0 V. The signal goes to ADC2, an input pin on the controller's COMM port. The VESC firmware has a kill switch setting called ADC2 Low, which stops the motor whenever ADC2 is below 1.65 V ([firmware source](https://github.com/vedderb/bldc/blob/master/timeout.c)).
 
-There are two separate cables at each brake. The brake cable runs from the lever, through the sensor and inside its housing to the caliper, and it stops the wheel the same way it would without the sensor. The sensor's own wire carries the signal to the controller, and it stops the motor.
+![Wiring: controller 3.3 V and ground to the rear lever, its signal wire to ADC2 and later the ESP32, with a 10k resistor from 3.3 V to the signal](diagrams/brake-cutoff-wiring.png)
 
-![Route of the brake cable from the lever through the sensor to the caliper, and the sensor wire through a Higo plug and pigtail to the motor controller](diagrams/brake-sensor-route.png)
+The 10k resistor is required. An unconnected ADC2 can float to a random voltage, and [one builder measured 1.2 V](https://foil.zone/t/magnet-operated-kill-switch/15715/25), which is below the 1.65 V trigger.
 
-What to buy:
-
-| Part | Qty | Cost | Notes |
-| --- | --- | --- | --- |
-| [Grin Inline Cable Cutoff Sensor, 4-pin Higo](https://ebikes.ca/inline-cable-cutoff-sensor.html) | 2 | CA$21 each + shipping | Made for standard mechanical levers. The cable passes through it, so the housing may need to be cut shorter |
-| 4-pin female Higo pigtail, the short cable that mates with the sensor's plug | 2 | Not picked yet | Check the plug genders match before buying |
-| 10k resistor | 1 | Check the bay | |
-| Thin wire and a plug for the COMM port | 1 set | Check the bay | The plug type depends on the controller model |
-
-The sensor's wire is 50 cm and ends in a blue Higo plug. A Higo plug is a small waterproof round connector common on e-bikes. The controller will be further than 50 cm from the handlebars, so the pigtail side needs extra wire. Measure this once the controller's position on the frame is known, and include it in the wiring harness ([#20](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/20)).
-
-Before building, we need two things from VESC Tool:
-
-- The controller's model, which tells us where 3.3 V, ADC2 and GND are on the COMM port ([#38](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/38)).
-- The firmware version. The kill switch was [added in June 2021](https://github.com/vedderb/bldc/commits/master/timeout.c), so older firmware needs updating first.
+Before building, read the controller's model and firmware version in VESC Tool and post them on [#38](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/38). The model tells us where 3.3 V, ADC2 and GND are on the COMM port. The kill switch was [added to the firmware in June 2021](https://github.com/vedderb/bldc/commits/master/timeout.c), so older firmware needs updating first.
 
 Build it on a breadboard first, with the battery unplugged whenever you change a wire.
 
-1. Confirm the sensor is a plain switch. Grin doesn't publish the pinout. Email info@ebikes.ca, or set a multimeter to continuity and find the two pins on the plug that connect only when the sensor is triggered. If no pair of pins does this, the sensor needs power and has its own output, so stop here and measure that output before connecting it. It must stay at or below 3.3 V.
-2. Connect one sensor using the table below, and leave the ESP32 and second sensor off for now.
-3. Check with a multimeter that the signal row reads 0 V, then 3.3 V when the sensor is triggered.
-4. Power up, connect VESC Tool and watch the ADC2 voltage in its live data while triggering the sensor.
-5. In App Settings, set Kill Switch Mode to ADC2 High and write the configuration. Menu names can vary a little between versions.
-6. With the back wheel lifted and the current limits low, spin the motor and trigger the sensor. The motor should stop, and it should only restart once the sensor is released.
-7. Add the second sensor and repeat step 6 with each brake.
-8. Add the ESP32 and read the signal for the brake light (see below).
+1. Test the lever using the picture above and pick the setting from the table.
+2. Connect one lever using the table below.
+3. Watch the ADC2 voltage in VESC Tool's live data while pulling the lever. It should match what you measured.
+4. Set Kill Switch Mode in App Settings and write the configuration. Menu names can vary a little between versions.
+5. With the back wheel lifted and the current limits low, spin the motor and pull the lever. The motor should stop, and restart only once the lever is released.
+6. Add the ESP32 for the brake light.
+7. Later, connect a front cut-off lever the same way and test each brake.
 
 | From | To |
 | --- | --- |
 | Controller 3.3 V | Red breadboard rail |
 | Controller GND | Blue breadboard rail |
-| Front sensor, switch pin 1 | Red rail |
-| Front sensor, switch pin 2 | Signal row |
-| Rear sensor, switch pin 1 | Red rail |
-| Rear sensor, switch pin 2 | Signal row |
-| 10k resistor | Signal row to blue rail |
+| Rear lever power | Red rail |
+| Rear lever ground | Blue rail |
+| Rear lever signal | Signal row |
+| 10k resistor | Signal row to red rail |
 | Signal row | Controller ADC2 |
-| ESP32 GND (step 8) | Blue rail |
-| Signal row (step 8) | ESP32 input pin, through a 1k resistor |
+| ESP32 GND (step 6) | Blue rail |
+| Signal row (step 6) | ESP32 input pin, through a 1k resistor |
 
 Breadboards are for the bench only, because jumper wires can shake loose on a bike. Once it works, move the circuit to perfboard with screw terminals.
 
-The ESP32 only reads the signal for the brake light. The signal is 0 V or 3.3 V, so it's safe for the ESP32-S3, whose pins aren't rated for 5 V. The 1k resistor protects the pin if the ESP32 is off while the controller is on. The cut-off doesn't depend on the ESP32. The firmware also [ignores commands while the kill switch is active](https://github.com/vedderb/bldc/commits/master/timeout.c), so the ESP32 shouldn't be able to restart the motor during braking. Confirm this during testing once the CAN link works.
+The ESP32 only reads the signal for the brake light. The signal is 0 V or 3.3 V, so it's safe for the ESP32-S3, whose pins aren't rated for 5 V. The 1k resistor protects the pin if the ESP32 is off while the controller is on. The cut-off doesn't depend on the ESP32, and the firmware [ignores commands while the kill switch is active](https://github.com/vedderb/bldc/commits/master/timeout.c). Confirm that during testing once the CAN link works.
 
-Before every ride, lift the back wheel, spin the motor, and pull each brake to confirm the motor stops. This matters because of how the circuit fails: if a wire breaks or a plug comes loose, the signal stays at 0 V and the motor keeps running when you brake. The brakes themselves still work, but the cut-off doesn't.
+Fit the levers on the bike and check these before the first ride:
 
-A later version can fix this with switches that stay closed until you brake, wired one after the other, with Kill Switch Mode set to ADC2 Low. Then a broken wire stops the motor too. The Grin sensor's switch type decides whether that's possible with these parts.
+- The lever pulls enough cable to clamp the Shimano mechanical caliper firmly before the lever reaches the grip. Linear pull and short pull levers move different amounts of cable, and these levers haven't been tested with our calipers yet.
+- The levers clamp onto our handlebars.
+- With the back wheel lifted, pulling the rear brake stops the motor. Repeat this check before every ride. A broken signal wire or an unplugged lever leaves the motor running, although the brakes still work.
+- The front brake doesn't cut the motor yet, so let go of the throttle when braking. Add the front cut-off before riding on the road.
 
-Other options we looked at:
-
-| Option | Why it isn't the first choice |
-| --- | --- |
-| [Grin magnetic sensor](https://ebikes.ca/magnetic-cutoff-hg4.html), CA$21 | Leaves the cable alone, but needs room on the lever, which hasn't been checked on the RS360A |
-| Levers with a built-in switch | Closest to a store-bought e-bike and simple to wire. They have to suit our long-pull Shimano caliper, and we haven't confirmed one that does |
-| Reed switch or microswitch on the lever | Cheapest, but we'd have to design the mount ourselves and make it trigger every time |
-| [Spintend ADC adapter](https://spintend.com/products/ewheel-adc-adapter-v3-for-diy-ebike-escooter-with-vesc), US$36 | Sold out in November 2026. It also overlaps with what the ESP32 is planned to do |
-| ADC2 brake modes in VESC Tool | These are for variable braking, and [forum reports](https://forum.esk8.news/t/analog-throttle-brake-adc2-does-not-cut-power-to-the-throttle-what-is-wrong/8405) say they subtract from the throttle without fully cutting it |
+When we add the front cut-off, it can be a second matching lever, or a plain lever with a [Grin inline sensor](https://ebikes.ca/inline-cable-cutoff-sensor.html), CA$21, once we confirm its signal. Its wiring would differ from a 3-wire lever, so two matching levers are simpler.
 
 Still open:
 
+- A cut-off for the front brake, when we add it. The bay's lever is labelled A01-R, and the photos show only one.
+- What the yellow plug's signal does when the lever is pulled, and which wire is which.
+- Which 3-pin pigtail fits the yellow plug.
 - The controller's model and COMM pinout ([#38](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/38)).
-- The sensor's pinout and whether it's a plain switch.
-- Which Higo pigtail to buy, and how much extra wire the harness needs.
+- The string measurements for both routes.
 - Which ESP32 input pin to use (firmware).

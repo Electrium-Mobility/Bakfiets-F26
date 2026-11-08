@@ -14,6 +14,42 @@ The bike needs a working brake on each wheel before anyone rides it. This page c
 
 Our frame, with the parts this page talks about. Both wheels are still off the frame.
 
+## Brakes we have now
+
+The front wheel has this Shimano mechanical disc caliper and rotor, and we're keeping them.
+
+![Front brake: Shimano mechanical disc caliper and rotor](../../electrical/photos/brake-parts-2026-11/0-front-brake.jpg)
+
+The rear brake will be the mechanical disc brake from Electrium's green mountain bike, on the table by the whiteboard. It's still on that bike, and we need a photo of it once it's off.
+
+## Levers in the bay
+
+Electrium has spare brake levers, inner wire and 5 mm housing from old bikes, photographed 6 Nov 2026. We're checking if they suit the Bakfiets. The current plan and wiring are in [Brake motor cut-off](../../electrical/brake-cutoff.md).
+
+This lever has a cut-off built in. Its thin wire ends in a yellow plug with three pins and sends a signal to the motor controller when the lever is pulled. The photos show one, labelled A01-R, and we need one per brake.
+
+![Lever with a cut-off wire and yellow plug](../../electrical/photos/brake-parts-2026-11/1-lever-with-cutoff.jpg)
+
+![The back of the lever with a cut-off wire](../../electrical/photos/brake-parts-2026-11/2-lever-with-cutoff-back.jpg)
+
+![Close-up of the yellow plug](../../electrical/photos/brake-parts-2026-11/3-yellow-plug.jpg)
+
+These two levers, marked POWER, have no cut-off, so they're a backup. A plain lever would need an add-on sensor to stop the motor.
+
+![Two plain levers marked POWER](../../electrical/photos/brake-parts-2026-11/4-plain-levers.jpg)
+
+![The back of the two plain levers](../../electrical/photos/brake-parts-2026-11/4b-plain-levers-back.jpg)
+
+Check that a lever clamps the Shimano mechanical caliper firmly before it reaches the grip, and that it fits our handlebars. Neither has been tested yet.
+
+The bay also has the rest of the brake line parts: black 5 mm housing and inner wire, both 2 m, plus ferrules, end caps and red cable protectors.
+
+![Black brake housing, 2 m](../../electrical/photos/brake-parts-2026-11/5-housing.jpg)
+
+![Inner brake wire, 2 m](../../electrical/photos/brake-parts-2026-11/6-inner-wire.jpg)
+
+![Bag of ferrules, end caps and red cable protectors](../../electrical/photos/brake-parts-2026-11/7-small-parts.jpg)
+
 ## Limits
 
 - Each wheel needs its own brake, and together they have to stop the bike from 30 km/h within 9 m on level pavement ([ontario.ca](https://www.ontario.ca/page/riding-e-bike), [O. Reg. 369/09](https://www.ontario.ca/laws/regulation/090369) s. 5). The same regulation caps the bike's unladen weight at 120 kg.
