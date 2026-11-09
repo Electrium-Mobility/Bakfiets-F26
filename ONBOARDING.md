@@ -125,7 +125,7 @@ From the UW [Lithium Cell and Battery Standard](https://uwaterloo.ca/safety-offi
 2. Store packs in a metal box or battery cabinet. A LiPo bag is too small for a 24-cell e-bike pack.
 3. Charge on a non-combustible surface (concrete or a metal tray) away from anything that burns. Stay with a pack the whole time it charges, and unplug it once it's full.
 4. Use only a charger marked 12S with a 50.4 V output (12S means 12 cell groups in series). Our pack reaches 50.4 V when full, and UW's standard calls for extra safety steps at 50 V and above. That's why battery work always needs the electrical lead there.
-5. Pack 4 is the pack we use. Ling says it's working and still has charge. Look it over before using it, and only use it wired through the BMS, a fuse and the antispark ([#21](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21)).
+5. Pack 4 is the pack we use. Ling says it's working and still has charge. Look it over before using it. The BMS is built in, and the pack connects through the antispark ([#21](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21)).
 6. Never use a swollen or damaged pack.
 7. If a pack gets hot, smells or smokes, get everyone away and pull the fire alarm if there's fire. Then tell the electrical lead and the project lead.
 8. Every pack goes on the SDC's shared battery and chemical inventory sheet, which the SDC is setting up this term.
@@ -298,12 +298,12 @@ You will learn to read a real Electrium board, then help design the bike's elect
 *Thick red lines carry full battery voltage (about 36 to 50 V). Orange lines carry 5 V. Dashed blue lines are signals only.*
 
 1. **Charger** plugs into a charging port on the frame and fills the pack to 50.4 V.
-2. **Battery pack**: Pack 4, a 48 V pack labelled 12S2P. That's 12 groups wired in series, with 2 cells in parallel in each group: 24 cells, about 44 V in normal use. "48 V" is just the name shops use for packs this size. [#21](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21) confirms the 12S by counting the balance wires before anyone uses it. The drawing under this list shows how the cells connect. The positive side goes through a fuse (DC-rated for 60 V or more).
+2. **Battery pack**: Pack 4, a 48 V pack labelled 12S2P. That's 12 groups wired in series, with 2 cells in parallel in each group: 24 cells, about 44 V in normal use. "48 V" is just the name shops use for packs this size. [#21](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/21) confirms the 12S by counting the balance wires before anyone uses it. The drawing under this list shows how the cells connect. The pack runs without a main fuse.
 3. **BMS** (battery management system) sits on the pack's negative side, so both charging and riding current pass through it. It cuts the pack off on overcharge, over-discharge, overheating or a short.
 4. **Antispark**: the power button switches it on, and it lets power in slowly so the controller's capacitors charge without a spark. *Design note for later, not needed for Stage 1:* the Electrium anti-spark board you read in Stage 1 uses N-channel MOSFETs, which usually means it switches the negative wire. Check that in its schematic. If it does switch the negative wire, the power board and the ESP32 must take their negative from the switched side too. Otherwise the ESP32's ground wire to the controller becomes a path around the antispark, which can damage the controller's COMM port or the ESP32.
 5. **Motor controller (ESC)** turns battery power into the three motor wires. The throttle sends it a speed request, and the brake levers tell it to cut power.
 6. **Power board (PDB)** steps 48 V down to 5 V for the small electronics and lights.
-7. **ESP32-S3** runs the display and LED strip, reads the buttons, and gets speed and battery data from the controller over UART.
+7. **ESP32-S3** runs the display and LED strip, reads the buttons, and gets speed and battery data from the controller over CAN, through a small add-on board called a CAN transceiver.
 
 ![A 12S2P pack seen from above: 12 groups of 2 cells, voltages adding up to about 44 V, and 13 balance wires to the BMS](electrical/diagrams/pack-12s2p.png)
 
@@ -435,7 +435,7 @@ Pick one of these and claim it with a comment on the issue saying you're working
 
 | Issue | What you'll do |
 | --- | --- |
-| [#22](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/22) | Read speed and battery data from the motor controller (VESC) over UART |
+| [#22](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/22) | Read speed and battery data from the motor controller (VESC) over CAN |
 | [#23](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/23) | Decide whether the bike needs a screen, and which one |
 | [#13](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/13) | Stop the LED animation from freezing the code, using `millis()` ([video](https://www.youtube.com/watch?v=BYKQ9rk0FEQ), 14 min) |
 | [#14](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/14) | Add a button that changes the PA level |
@@ -447,7 +447,7 @@ Pick one of these and claim it with a comment on the issue saying you're working
 | Requirement | Value |
 | --- | --- |
 | Board | ESP32-S3 |
-| Pins | Screen SDA GPIO 10, SCL GPIO 9. LED strip GPIO 5. Motor controller UART (suggested) TX GPIO 17, RX GPIO 18 |
+| Pins | Screen SDA GPIO 10, SCL GPIO 9. LED strip GPIO 5. Motor controller CAN (suggested) TX GPIO 17, RX GPIO 18 |
 | Loop timing | No `delay()` longer than 20 ms in `loop()` |
 | Where new code goes | A new folder, such as `firmware/display-2026/`. To make it, open the desk demo, choose **File > Save As**, and save it as `display-2026` inside `firmware/`. Arduino needs the folder and the `.ino` file to share a name. Leave `display-2024/` unchanged |
 | Battery input | Test with a bench power supply, not the pack, until the electrical lead checks your divider |
