@@ -24,7 +24,7 @@ Follow the numbers:
 4. **Antispark.** The power button turns it on, so the controller's capacitors charge gently instead of sparking. The Electrium anti-spark board uses N-channel MOSFETs, which usually means it switches the negative wire. Check its schematic. If it does switch the negative wire, the power board and the ESP32 must take their negative from the switched side too. Otherwise the ESP32's ground wire to the controller becomes a path around the antispark, which can damage the controller's COMM port or the ESP32.
 5. **Motor controller.** The ESC turns battery power into the three motor wires. The throttle sends it a speed request, and the rear brake lever tells it to cut power.
 6. **Power board.** The PDB steps 48 V down to 5 V for the electronics and lights.
-7. **ESP32-S3.** It drives the display over I2C and the LED strip, reads the buttons, and gets speed and battery data from the controller over CAN, through a small add-on board called a CAN transceiver. It also reads the rear brake lever to turn on the brake light.
+7. **ESP32-S3.** It drives the display over SPI and the LED strip, reads the buttons, and gets speed and battery data from the controller over CAN, through a small add-on board called a CAN transceiver. It also reads the rear brake lever to turn on the brake light.
 
 ## What plugs into the motor controller
 
