@@ -8,6 +8,8 @@ Electrium Mobility's electric cargo bike ("Bak Choy"), Fall 2026. This repo hold
 
 **Open [ONBOARDING.md](ONBOARDING.md).** Everything you need is there, starting with a short to-do list at the top. Setup takes about 2 to 3 hours. Questions go in your subteam's channel.
 
+See who's on what on the [team board](https://quaot.github.io/bakfiets/), and find every other link (budget, BOM, issues) in [docs/links.md](docs/links.md).
+
 ## What's in this repo
 
 | Folder | What's inside | Start with |
@@ -18,6 +20,7 @@ Electrium Mobility's electric cargo bike ("Bak Choy"), Fall 2026. This repo hold
 | [`electrical/`](electrical/) | The 2024 block diagram and notes on reusable boards | [`electrical/README.md`](electrical/README.md) |
 | [`firmware/`](firmware/) | Display code, a ready-to-run desk demo, the CAN bus example | [`firmware/desk-demo/desk-demo.ino`](firmware/desk-demo/desk-demo.ino) |
 | [`docs/setup/`](docs/setup/) | Extra setup detail and videos for each subteam | [`2-mechanical.md`](docs/setup/2-mechanical.md) |
+| [`docs/links.md`](docs/links.md) | The team board, budget, BOM and every issue in one list | |
 | [`docs/term-projects.md`](docs/term-projects.md) | The main goals for the term, for after onboarding | |
 | [`docs/reference-projects.md`](docs/reference-projects.md) | Other Electrium repos worth copying from | |
 | [`docs/meetings/`](docs/meetings/) | Agenda and notes for each team meeting | [`2026-09-30.md`](docs/meetings/2026-09-30.md) |
