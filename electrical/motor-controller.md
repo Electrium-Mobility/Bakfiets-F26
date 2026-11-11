@@ -39,6 +39,8 @@ The diagram is from Flipsky's website for the part ([here](https://flipsky.net/c
 
 ![Port map](diagrams/port-map.png)
 
+The white plugs on the controller are JST-PH 2.0mm. The distance between the center of the first and last pin of the 8-position header is 14mm, so the pitch is 2.0mm.
+
 | Connection | Location | Type of connection |
 |---|---|---|
 | **Battery leads** | Top of controller, beside capacitors | Two 12 AWG power leads soldered to the PCB|
