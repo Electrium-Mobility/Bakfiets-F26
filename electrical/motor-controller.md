@@ -19,6 +19,8 @@ Related task: [Issue #38](https://github.com/Electrium-Mobility/Bakfiets-F26/iss
 
 - **Battery Voltage Cutoff End:** 36.0V
 
+These values are what the controller are set to currently. At 48V the battery current would be 4752 W which far exceeds the 500 W limit.
+
 ## Hardware Information
 - **Manufacturer:** Flipsky
 
