@@ -1,73 +1,118 @@
 # New steering for the Bakfiets
 
-This is a proposed fix for the steering problems on [#25](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/25). Treat it as a draft for the people on that issue and the mechanical leads to check.
+This page proposes a fix for the steering problems on [#25](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/25). The people on #25 and the mechanical leads still need to check it.
 
-![The bike from the right side with the new steering parts in colour](images/side.png)
+Every part is bought except two flat plates, which only need cutting and drilling. Nothing gets welded, and the frame stays as it is.
 
-Red parts are rods, blue is the turning shaft, orange parts are arms and yellow balls are ball joints. The box and wheel are see-through so you can see what's behind them.
+![The new steering from the front right, with the new parts in colour](images/close-up.png)
+
+In the pictures, red is the rods and rod ends, blue is the turning shaft, green is the bearings, purple is the plates holding them, orange is the arms and black is the stops. The box and wheel are see-through so you see the parts behind them.
 
 ## The problem
 
-The handlebars are at the back of the cargo box and the fork is at the front. A straight rod between them would go through the box, so the rod we have is bent to go under the box and then up.
+The handlebars sit behind the cargo box and the fork sits in front of it. A straight rod between them would pass through the box, so the rod on the bike now bends to go under the box and then up.
 
 ![The current bent rod in red](images/current-rod.png)
 
-Each end of the rod sits in a ball joint, so the rod can spin around the yellow line between the two balls. A straight rod spinning on that line wouldn't matter. Ours has its bend 220 mm away from the line, so the middle of the rod swings around and the rod flexes every time you turn the handlebars. That's the play you feel.
+Both ends of the rod sit in ball joints, so the rod spins freely around the yellow line between the two balls. A straight rod spinning on this line does no harm. Ours has its bend 220 mm off the line, so the middle of the rod swings around and the rod flexes every time you turn the handlebars. You feel this as play.
 
-Nothing stops the handlebars from turning too far either. In the CAD the steering jams after 50° to the left, and to the right it keeps turning until the wheel goes sideways. That matches the problems listed on #25.
+Nothing stops the handlebars from turning too far either. In the CAD the steering jams after 50° to the left, and to the right it keeps turning until the wheel faces sideways. These match the problems listed on #25.
 
 ## The fix
 
-Split the bent rod into two straight rods, with a short turning shaft at the corner where the bend was.
+The bent rod becomes two straight rods, with a short turning shaft where the bend was.
 
 ![The steering turning from full right to full left](images/steering.gif)
 
-Here's what happens when you turn the handlebars:
+When you turn the handlebars:
 
-![The new steering parts numbered in order](images/numbered.png)
-
-1. The handlebar arm swings. It's the arm we already have.
+1. The handlebar arm swings. The bike already has this arm.
 2. It pushes the lower rod, which runs flat under the box.
-3. The lower rod turns the shaft. The shaft sits beside the front frame tube, held by two clamps.
-4. An arm at the top of the shaft pushes the short upper rod.
-5. The upper rod pushes the fork arm, which we also already have, and the wheel turns.
+3. The lower rod turns the shaft, which runs alongside the front frame tube in two bearings.
+4. An arm near the top of the shaft pushes the short upper rod.
+5. The upper rod pushes the arm on the fork, which the bike also already has, and the wheel turns.
 
-Both rods are straight, so they can't flex or swing around. Stops hold the handlebars to 35° each way, well before anything can jam.
+Both rods are straight, so they push and pull without flexing. A stop on the shaft holds the handlebars to about 36° each way, well short of where the steering would jam.
+
+## The joints
+
+| Handlebar end | Bottom arm |
+| --- | --- |
+| ![The rod end on top of the existing handlebar arm](images/handlebar-joint.png) | ![The bottom arm with the lower rod's rod end bolted on](images/bottom-joint.png) |
+
+| Top arm and upper rod | Fork end |
+| --- | --- |
+| ![The top arm, upper rod and upper bearing](images/top-joint.png) | ![The rod end on top of the existing fork arm](images/fork-joint.png) |
+
+Both rods are M10 threaded rod with a rod end screwed onto each end. A rod end is a ring with a swivel ball inside, and a bolt goes through the ball into the end of an arm. Turning a rod end on its thread changes the rod's length, and you set the wheel straight this way.
+
+The two rod ends on the existing arms bolt through the holes the old ball joints used. Both stand on a spacer on top of their arm. The handlebar spacer is 14 mm, which puts the ball where the old one was. The fork spacer is 21 mm, which lifts the ball 50 mm above the old one so the upper rod clears the top of the fork.
+
+## The bearings and the stop
+
+| Lower bearing and stop | Upper bearing |
+| --- | --- |
+| ![The lower bearing plate with the stop](images/stop.png) | ![The upper bearing plate under the top arm](images/upper-bearing.png) |
+
+The shaft turns in two pillow block bearings. Both bolt onto a flat plate, and two U-bolts hold the plate against the side of the frame tube. In the middle of its height the front of the cargo box comes within about 35 mm of the frame tube. So one bearing sits low, just above the bend in the frame, and the other sits above the box, just under the top arm.
+
+The stop is a shaft collar with a bolt sticking out of it. On full lock this bolt hits one of two bolts screwed into the lower plate. Both of those wear a rubber sleeve.
+
+| Full left | Full right |
+| --- | --- |
+| ![The stop on full left](images/full-left.png) | ![The stop on full right](images/full-right.png) |
 
 ## More views
 
-| From the front and right | From behind and above |
+| From the right side | From the front and right |
 | --- | --- |
-| ![From the front and right](images/front-right.png) | ![From behind and above](images/rear-right-high.png) |
+| ![From the right side](images/side.png) | ![From the front and right](images/front-right.png) |
 
-| From the front | From underneath |
+| From behind and above | From underneath |
 | --- | --- |
-| ![From the front](images/front.png) | ![From underneath](images/underneath.png) |
+| ![From behind and above](images/rear-right-high.png) | ![From underneath](images/underneath.png) |
 
-| Top joint | Bottom joint |
-| --- | --- |
-| ![Close-up of the top arm, upper rod and fork arm](images/top-joint.png) | ![Close-up of the lower rod and bottom arm](images/bottom-joint.png) |
+![Close-up of the lower bearing](images/lower-bearing.png)
 
-![Top view of the bike](images/top.png)
+## Parts list
 
-## The new parts
+| Part | How many | Notes |
+| --- | --- | --- |
+| 12 mm steel shaft | 1 | Cut to about 500 mm |
+| KP001 pillow block bearing, 12 mm bore | 2 | |
+| 12 mm clamping hub with a flange | 2 | Holds the arms on the shaft. A small flange gives more room near the frame tube |
+| Steel flat bar, 25 × 6 mm | About 250 mm | Two arms, about 120 and 115 mm long, drilled through both ends |
+| M10 rod end, female thread | 4 | Replaces the two old ball joints, plus two for the new arms |
+| M10 threaded rod | About 450 mm | About 400 mm for the lower rod and a short piece for the upper rod |
+| M10 nuts | 4 | Lock the rod ends once the length is set |
+| M8 U-bolts for a 44.5 mm (1¾") tube | 4 | Two for each plate |
+| Steel or aluminium plate, 6 mm | 2 | 76 mm wide, about 107 and 61 mm long. The only made parts. Cut and drill |
+| 12 mm shaft collar with an M6 set screw hole | 1 | Swap the set screw for an M6 × 45 bolt. It becomes the stop pin |
+| M8 × 50 bolts with rubber sleeves | 2 | Screw into the lower plate as the stops |
+| Steel tube spacers, 14 mm and 21 mm long | 2 | With longer bolts, under the rod ends on the existing arms |
 
-![The new parts on their own](images/new-parts.png)
+The CAD also has a stopper bracket on the head tube with two rubber bumpers. This version leaves it out, because the stop sits on the shaft. The bracket would need welding to the frame.
+
+[`jackshaft_parts.step`](../../mechanical/steering-sim/jackshaft_parts.step) has all the new parts in place on the bike, to open in SolidWorks.
+
+## Sizes
+
+Heights are measured up from the centre of the frame's main tube.
 
 | Part | Size |
 | --- | --- |
-| Turning shaft | About 520 mm long. It runs alongside the front frame tube at the same angle, 45 mm to the right of the tube's centre |
-| Bottom arm | Flat bar at the bottom of the shaft, pointing right. 89 mm from the shaft to the ball joint |
-| Top arm | Flat bar near the top of the shaft, pointing right. 74.5 mm from the shaft to the ball joint |
-| Lower rod | 480 mm between ball joint centres |
-| Upper rod | 103 mm between ball joint centres |
-| Ball joints | Two new ones, the same size as the two we have |
-| Spacers | A 25 mm spacer moves the handlebar ball joint down, so the lower rod passes under a bracket on the box. A 40 mm spacer moves the fork ball joint up, so the upper rod misses the top of the fork |
-| Stops | Handlebars stop at 35° each way |
+| Turning shaft | Runs alongside the front frame tube, leaning the same way, 45 mm to the right of the tube's centre |
+| Bottom arm | 90 mm from the shaft to the rod end's ball, pointing right |
+| Top arm | 85 mm from the shaft to the rod end's ball, pointing right |
+| Lower rod | About 480 mm between ball centres. Set the exact length by turning the rod ends |
+| Upper rod | About 100 mm between ball centres |
+| Lower bearing plate | From 20 to 120 mm up, with the bearing 52 mm up |
+| Upper bearing plate | From 305 to 362 mm up, with the bearing 333 mm up |
+| Spacers | 14 mm on the handlebar arm, 21 mm on the fork arm |
 
 ## How well it steers
 
-The wheel turns almost as far as the handlebars. The gap grows a little near the stops, but stays under 5°.
+The wheel turns almost as far as the handlebars. Near the stops the two drift apart, by less than 5°.
 
 | Handlebars | Wheel |
 | --- | --- |
@@ -75,44 +120,42 @@ The wheel turns almost as far as the handlebars. The gap grows a little near the
 | 20° left | 18° left |
 | Straight | Straight |
 | 20° right | 20° right |
-| 35° right | 39° right |
+| 35° right | 38.5° right |
 
 ## Does anything hit?
 
-I turned the real wheel and fork from the CAD through the whole range and measured the gap between every new part and the bike. The closest are below. Everything else has at least 30 mm.
+A program turned the real wheel and fork from the CAD through the whole range and measured the gap between every new part and the bike. These are the closest.
 
 | What | Closest gap | When |
 | --- | --- | --- |
-| Upper rod and top of the fork | 7 mm | Full left |
-| Lower rod and kickstand | 9 mm | Slightly right |
-| Top arm and frame | 9 mm | Full right |
-| Shaft and frame tube | 13 mm | Full left |
-| Shaft and cargo box | 14 mm | Full left |
+| Top arm's hub and frame tube | 3 mm | 25° left |
+| Lower bearing plate and cargo box | 6 mm | All the time |
+| Back stop bolt and cargo box | 7 mm | All the time |
+| Lower bearing and cargo box | 7.5 mm | All the time |
+| Lower rod and frame | 9 mm | Full right |
+| Upper rod and top of the fork | 10 mm | 20° right |
 
-| Full left | Full right |
-| --- | --- |
-| ![Turned full left](images/full-left.png) | ![Turned full right](images/full-right.png) |
+Every other gap is 10 mm or more.
 
 ## Before building
 
-- All of this comes from the CAD. Check the real bike first, mainly the angle of the front frame tube and where the front of the box sits.
-- The shaft passes about 13 mm from the frame tube, so whatever holds it has to be small. A 12 mm shaft in bronze bushings fits.
-- The 40 mm spacer puts a lot of sideways load on its bolt. Use an M10 bolt, grade 8.8, with a steel tube as the spacer, or make a new fork arm with the ball joint higher up.
-- The shaft clamps and the stops still need designing. Nobody has checked yet whether the lower rod is near the rider's feet.
-- Any change to the frame needs a mechanical lead and the project lead to sign off, the same as on the [brakes page](../brakes/README.md#limits).
+- All of this comes from the CAD. Measure the real bike first, mainly the angle of the front frame tube and where the front of the box sits. The plates and the back stop bolt have only 6 mm to spare.
+- The top arm's hub passes 3 mm from the frame tube. A hub with a smaller flange gives more room.
+- Check the pillow block's centre height. The shaft sits about 46 mm from the frame tube's centre, so the plate plus the block's centre height has to come to about 24 mm.
+- Nobody has checked yet whether the lower rod comes near the rider's feet.
 
 ## Building it in SolidWorks
 
-The parts are simple shapes, so they can be drawn from the table above. The file [`jackshaft_parts.step`](../../mechanical/steering-sim/jackshaft_parts.step) has them already in place on the bike, which helps as a guide.
+The parts are simple, so you draw them from the tables above, with `jackshaft_parts.step` open beside them for reference.
 
 To make the assembly turn when you drag the handlebars:
 
-- Give the shaft, the handlebar post and the fork a concentric mate with the tube they sit in, so they can only turn.
-- At both ends of a rod, make the centre of its ball coincident with the centre of the ball on the arm.
-- Add an angle limit of 35° each way on the handlebars.
+- Give the shaft, the handlebar post and the fork a concentric mate with whatever they turn in, so they only turn.
+- On both ends of a rod, make the centre of the rod end's ball coincident with the centre of its bolt hole in the arm.
+- Add an angle limit of 36° each way on the handlebars, or model the stop pin and bolts.
 
 Then turn on *Collision Detection* while dragging to check the same gaps as the table above.
 
 ## How this was worked out
 
-I exported the 11 Nov assembly (`mechanical/cad-2026/f26bakfiets_main_asm.SLDASM`) from SolidWorks and loaded it in a Python CAD library called build123d. A program then tried thousands of shaft positions and arm lengths, and kept the one where the wheel follows the handlebars most closely. A second program turned the real bike parts through every angle to check the gaps. The code and instructions for running it again are in [`mechanical/steering-sim`](../../mechanical/steering-sim/README.md).
+The 11 Nov assembly (`mechanical/cad-2026/f26bakfiets_main_asm.SLDASM`) was exported from SolidWorks and loaded into a Python CAD library called build123d. One program tried thousands of shaft positions and arm lengths, and kept the layout where the wheel follows the handlebars most closely. A second one turned the real bike parts through every angle to check the gaps, and a third placed the bought parts and the stop. The code, with instructions for running it again, is in [`mechanical/steering-sim`](../../mechanical/steering-sim/README.md).

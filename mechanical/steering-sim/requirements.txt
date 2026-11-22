@@ -3,3 +3,4 @@ ImageIO==2.38.2
 numpy==2.5.5
 pyvista==0.49.2
 scipy==1.18.1
+imageio-ffmpeg==0.8.1
