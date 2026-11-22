@@ -1,5 +1,5 @@
 """Sweeps the steering as modelled in f26bakfiets_main_asm (11 Nov), from true straight ahead.
-Annie saved the model turned left: handlebars -34.2 deg, fork -40.9 deg."""
+The model was saved turned left: handlebars -34.2 deg, fork -40.9 deg."""
 from linkage import Linkage, rotate
 import numpy as np
 

@@ -6,7 +6,7 @@ rods are straight. The optimizer picks the shaft position and tilt, the arm
 heights, lengths and angles, and the fork arm, so the fork follows the handlebars
 closely and both rods push at a good angle.
 
-Coordinates are from Annie's model: x forward, y to the left, z up, in mm.
+Coordinates are from the CAD model: x forward, y to the left, z up, in mm.
 Angles are positive for a right turn.
 """
 import math

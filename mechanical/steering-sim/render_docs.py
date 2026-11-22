@@ -28,7 +28,7 @@ def plotter(size=(1600, 1000)):
     return p
 
 
-# 1. The current steering as Annie saved it, with the bent rod in red and the
+# 1. The current steering as saved in the CAD, with the bent rod in red and the
 #    straight line between its two balls in yellow.
 p = plotter()
 for name, m in R.base.items():

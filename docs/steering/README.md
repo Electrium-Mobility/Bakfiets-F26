@@ -1,6 +1,6 @@
 # New steering for the Bakfiets
 
-This is a proposed fix for the steering problems on [#25](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/25). Annie and Owen own that issue, so treat this as a draft for them and the mechanical leads to check.
+This is a proposed fix for the steering problems on [#25](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/25). Treat it as a draft for the people on that issue and the mechanical leads to check.
 
 ![The bike from the right side with the new steering parts in colour](images/side.png)
 
@@ -14,7 +14,7 @@ The handlebars are at the back of the cargo box and the fork is at the front. A 
 
 Each end of the rod sits in a ball joint, so the rod can spin around the yellow line between the two balls. A straight rod spinning on that line wouldn't matter. Ours has its bend 220 mm away from the line, so the middle of the rod swings around and the rod flexes every time you turn the handlebars. That's the play you feel.
 
-Nothing stops the handlebars from turning too far either. In the CAD the steering jams after 50° to the left, and to the right it keeps turning until the wheel goes sideways. That matches what Annie wrote on #25.
+Nothing stops the handlebars from turning too far either. In the CAD the steering jams after 50° to the left, and to the right it keeps turning until the wheel goes sideways. That matches the problems listed on #25.
 
 ## The fix
 
@@ -115,4 +115,4 @@ Then turn on *Collision Detection* while dragging to check the same gaps as the 
 
 ## How this was worked out
 
-I exported Annie's 11 Nov assembly from SolidWorks and loaded it in a Python CAD library called build123d. A program then tried thousands of shaft positions and arm lengths, and kept the one where the wheel follows the handlebars most closely. A second program turned the real bike parts through every angle to check the gaps. The code and instructions for running it again are in [`mechanical/steering-sim`](../../mechanical/steering-sim/README.md).
+I exported the 11 Nov assembly (`mechanical/cad-2026/f26bakfiets_main_asm.SLDASM`) from SolidWorks and loaded it in a Python CAD library called build123d. A program then tried thousands of shaft positions and arm lengths, and kept the one where the wheel follows the handlebars most closely. A second program turned the real bike parts through every angle to check the gaps. The code and instructions for running it again are in [`mechanical/steering-sim`](../../mechanical/steering-sim/README.md).
