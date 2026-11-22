@@ -1,0 +1,6 @@
+.venv/
+step/
+views/
+*.log
+*.exe
+design.npy
