@@ -43,7 +43,7 @@ The first upload had `NUM_LEDS` set to 60, so only the first 60 LEDs lit. The sk
 
 ## Cutting and soldering
 
-After the test we cut the strip into four pieces of 36 LEDs (25 cm), one bar for the front and one for the back, plus two side pieces. The front and back bars will show the turn signals as a sweep across the bar. Jack soldered wires and plugs onto two of the pieces the same night, and we made long red, black and green extension cables to run from the ESP32 to the lights. Finishing the other pieces is [#79](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/79), and the code for all four is [#80](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/80).
+After the test we cut the strip into four pieces of 36 LEDs (25 cm), numbered 1 to 4. Strip 1 is the front bar and strip 2 is the back bar, while strips 3 and 4 go on the left and right sides of the cargo box. The front and back bars will show the turn signals as a sweep across the bar. Jack soldered wires and plugs onto two of the pieces the same night, and we made long red, black and green extension cables to run from the ESP32 to the lights. Finishing the other pieces is [#79](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/79), and the code for all four is [#80](https://github.com/Electrium-Mobility/Bakfiets-F26/issues/80).
 
 <img src="photos/07-cut-36-led-piece.jpg" alt="A cut 36-LED piece of the strip on the bench" width="420"> <img src="photos/06-piece-in-helping-hands.jpg" alt="A cut piece held in the helping hands at the soldering station" width="420">
 
