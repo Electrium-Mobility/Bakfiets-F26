@@ -37,7 +37,7 @@ Since the strip runs from USB, the code limits it to 400 mA and brightness 30. A
 
 ## Result
 
-The first upload had `NUM_LEDS` set to 60, so only the first 60 LEDs lit. With 144 the rainbow runs the whole strip.
+The first upload had `NUM_LEDS` set to 60, so only the first 60 LEDs lit. The sketch in the repo is now set to 144.
 
 <img src="photos/01-first-60-leds-lit.jpg" alt="The first 60 LEDs of the strip showing a rainbow on the bench" width="420"> <img src="photos/02-whole-strip-lit.jpg" alt="The strip held up with the rainbow running along it, next to the breadboard" width="300">
 
