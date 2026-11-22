@@ -20,9 +20,9 @@ TUBE_X0 = 515.0                                       # tube centre x at z = 0
 # Spacers on the ball joint bolts move the two existing joints along their axes:
 # the handlebar joint down, so the lower rod passes under the box bracket at x 340,
 # and the fork joint up, so the upper rod clears the fork crown.
-BAR_SPACER = 25.0
+BAR_SPACER = 0.0        # new rod end sits on top of the handlebar arm, where the old ball joint was
 try:
-    FORK_SPACER = float(np.load("fork_spacer.npy")[0])   # chosen by refine.py
+    FORK_SPACER = float(np.load("fork_spacer.npy")[0])   # 50 mm: gives the upper rod room past the fork crown
 except OSError:
     FORK_SPACER = 20.0
 J.BAR_JOINT = CURRENT.bar_joint0 + BAR_SPACER * J.BAR_DIR      # BAR_DIR points down
