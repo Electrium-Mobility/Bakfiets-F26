@@ -5,3 +5,6 @@ views/
 *.exe
 design.npy
 videos/
+ujoint_space.npz
+ujoint_space_small.npz
+ujoint_box_inside.npz
