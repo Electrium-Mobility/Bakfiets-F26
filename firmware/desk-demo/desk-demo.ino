@@ -56,9 +56,9 @@ u_int8_t paLevel{1};
 // debounce for paLevel changer
 u_int8_t canChangePA{1};
 
-// Instantiate new driver object (controls the screen)
-Adafruit_ILI9341 screen = Adafruit_ILI9341(CS, DC, MOSI, CLK, RST, MISO);
-
+// Instantiate new HARDWARE SPI (much faster) driver object (controls the screen)
+// only need 3 arguments for hardware SPI 
+Adafruit_ILI9341 screen = Adafruit_ILI9341(CS, DC, RST);
 //****************************************************************************************************************
 
 void setup() {
@@ -88,6 +88,8 @@ void loop() {
   //Serial.println(testText());
   drawBattery(67);
   drawSpeed(52);
+
+  //screen.fillScreen(ILI9341_BLUE);
 
   // wait 10s until redrawing
   delay(10);
