@@ -95,16 +95,34 @@ if __name__ == "__main__":
                 p.write_frame()
             p.close()
             print("saved video", vname, flush=True)
-    if "gif" in which or not sys.argv[1:]:
-        # Smaller and coarser than the videos, for the docs page.
-        angles = list(np.arange(0, J.STOP_DEG + 0.01, 2.5)) + list(np.arange(J.STOP_DEG, -J.STOP_DEG - 0.01, -2.5)) + list(np.arange(-J.STOP_DEG, 0.01, 2.5))
-        p = pv.Plotter(off_screen=True, window_size=(1000, 640))
-        p.open_gif("views/os_steering.gif", fps=12)
+    # GIFs for the docs page: the whole steering, then one for every mechanism.
+    # Smaller and coarser than the videos so the page loads quickly.
+    GIFS = {
+        "steering": CAMS["close_up"],
+        "gif_handlebar_end": CAMS["handlebar_joint"],
+        "gif_bottom_arm": [(300, -520, 60), (470, -120, -35), (0, 0, 1)],
+        "gif_top_arm": [(560, -520, 520), (650, -120, 365), (0, 0, 1)],
+        "gif_fork_end": CAMS["fork_joint"],
+        "gif_stop": [(700, -380, 160), (545, -60, 75), (0, 0, 1)],
+        # whole-bike views
+        "gif_side": CAMS["side"],
+        "gif_top": [(430, -60, 2600), (430, -60, 150), (1, 0, 0)],
+        "gif_front_right": CAMS["front_right"],
+        "gif_rear_right_high": CAMS["rear_right_high"],
+        "gif_underneath": CAMS["underneath"],
+    }
+    wanted = [g for g in GIFS if g in which or (g == "steering" and "gif" in which) or "gifs" in which or not sys.argv[1:]]
+    if "whole_gifs" in which:
+        wanted = ["gif_side", "gif_top", "gif_front_right", "gif_rear_right_high", "gif_underneath"]
+    angles = list(np.arange(0, J.STOP_DEG + 0.01, 2.5)) + list(np.arange(J.STOP_DEG, -J.STOP_DEG - 0.01, -2.5)) + list(np.arange(-J.STOP_DEG, 0.01, 2.5))
+    for g in wanted:
+        p = pv.Plotter(off_screen=True, window_size=(900, 600))
+        p.open_gif(f"views/os_{g}.gif", fps=12)
         for a in angles:
             p.clear()
             p.set_background("white")
             scene(p, float(a))
-            p.camera_position = CAMS["close_up"]
+            p.camera_position = GIFS[g]
             p.write_frame()
         p.close()
-        print("saved gif", flush=True)
+        print("saved", g, flush=True)

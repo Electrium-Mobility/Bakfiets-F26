@@ -24,6 +24,8 @@ PLATE_T, PLATE_W = 6, 76
 KP_L, KP_W, KP_HOUSING_D = 76, 20, 32            # KP001 pillow block: length, width along shaft, housing
 HUB_D, HUB_H, HUB_FLANGE_D, HUB_FLANGE_T = 30, 20, 40, 5
 ARM_W, ARM_T = 25, 6
+TAB_REACH = 55                                   # bolt hole to bend line on a bent arm end
+WASHER_T = 8                                     # spacer between a rod end and its tab (two 4 mm washers)
 EYE_D, EYE_T, BALL_D, SHANK_D, SHANK_LEN = 28, 12, 16, 15, 30   # M10 rod end (e.g. SI10T/K), rounded
 ROD_D = 10
 UBOLT_D = 8
@@ -94,24 +96,94 @@ def plate_with_bearing(d, z_bottom, z_top, z_bearing):
     return out, f
 
 
-def arm_on_hub(d, z, joint0, shaft_deg, hub_above=False):
-    """Flat bar arm on a clamping hub. The rod end's eye sits against the arm with its
-    ball centre at the joint, so the arm is shifted by half the eye plus half the arm:
-    down for the bottom arm (rod end on top), up for the top arm (rod end underneath)."""
+_bolt_cache = {}
+
+
+def bolt_axes(d):
+    """The best fixed bolt direction for each rod end, in its part's straight-ahead
+    position. A rod end only swivels about 12 deg, so each bolt is set square to the
+    average direction of its rod. Found by trying 60 000 directions and keeping the
+    one with the least swivel over the whole turn. Each axis points from the tab the
+    rod end bolts to towards the rod end."""
+    if id(d) in _bolt_cache:
+        return _bolt_cache[id(d)]
+    t = d.shaft_dir
+    seen = {"bar": [], "lower": [], "upper": [], "fork": []}
+    for b, s, f, w in J.simulate(d, step=1.0, limit=J.STOP_DEG):
+        j1 = rotate(J.BAR_JOINT, C.BAR_POINT, C.BAR_DIR, b)
+        j2 = rotate(d.lower_joint(), d.shaft_point(0), t, s)
+        j3 = rotate(d.upper_joint(), d.shaft_point(0), t, s)
+        j4 = rotate(d.fork_joint(), C.FORK_POINT, C.FORK_DIR, f)
+        back = lambda v, axis, deg: rotate(unit(v), np.zeros(3), axis, -deg)
+        seen["bar"].append(back(j2 - j1, C.BAR_DIR, b))
+        seen["lower"].append(back(j1 - j2, t, s))
+        seen["upper"].append(back(j4 - j3, t, s))
+        seen["fork"].append(back(j3 - j4, C.FORK_DIR, f))
+    u = np.random.default_rng(1).normal(size=(60000, 3))
+    u /= np.linalg.norm(u, axis=1)[:, None]
+    # which way the rod end faces: on top of its tab, except the top arm where it hangs under the tab
+    up_sign = {"bar": 1, "lower": 1, "upper": -1, "fork": 1}
+    out = {}
+    for k, v in seen.items():
+        swivel = np.degrees(np.arcsin(np.abs(u @ np.array(v).T).max(axis=1)))
+        best = u[swivel.argmin()]
+        if np.sign(best[2]) != up_sign[k]:
+            best = -best
+        out[k] = (best, float(swivel.min()))
+    _bolt_cache[id(d)] = out
+    return out
+
+
+def tab_at(j, a, toward):
+    """Flat tab, square to the bolt, that a rod end bolts onto. It sits behind the
+    washer, on the far side from the rod end; 'toward' is where the rest of the arm is."""
+    c = j - a * (EYE_T / 2 + WASHER_T + ARM_T / 2)
+    x = np.asarray(toward) - c
+    x = unit(x - a * np.dot(x, a))
+    pl = Plane(origin=tuple(c), x_dir=tuple(x), z_dir=tuple(a))
+    # the tab runs from the bend line (on the arm side) past the bolt hole; the bend
+    # sits TAB_REACH from the bolt so the bar's tilted part stays clear of the rod end
+    tab = pl * Box(TAB_REACH + ARM_W / 2 + 5, ARM_W, ARM_T, align=None).moved(Location((-ARM_W / 2 - 5, -ARM_W / 2, -ARM_T / 2)))
+    bend = c + x * TAB_REACH
+    return tab, c, bend, unit(np.cross(a, x))
+
+
+def bent_bar(start, bend, width_dir, tab, normal_hint, thick=ARM_T):
+    """A flat bar from start to the bend line, bent there into the tab. The bend
+    is drawn as a rounded edge so the bar and tab read as one piece."""
+    bar = bar_between(start, bend, normal_hint, thick=thick)
+    edge = cyl_between(bend - width_dir * ARM_W / 2, bend + width_dir * ARM_W / 2, thick)
+    return bar.fuse(edge).fuse(tab)
+
+
+def bar_between(p, q, normal_hint, width=ARM_W, thick=ARM_T):
+    """Flat bar from p to q, lying as flat as it can in the plane square to normal_hint."""
+    v = np.asarray(q) - np.asarray(p)
+    length = np.linalg.norm(v)
+    x = v / length
+    z = unit(np.asarray(normal_hint) - x * np.dot(normal_hint, x))
+    pl = Plane(origin=tuple(p), x_dir=tuple(x), z_dir=tuple(z))
+    return pl * Box(length, width, thick, align=None).moved(Location((0, -width / 2, -thick / 2)))
+
+
+def arm_on_hub(d, z, joint0, shaft_deg, bolt_axis0, hub_above=False):
+    """Flat bar arm on a clamping hub, with its end bent into a tab square to the bolt.
+    Returns the hub, the arm (bar and tab), the joint and the bolt axis at this angle."""
     t = d.shaft_dir
     j = rotate(joint0, d.shaft_point(0), t, shaft_deg)
-    shift = (EYE_T / 2 + ARM_T / 2) * (1 if hub_above else -1)
-    centre = d.shaft_point(z) + t * shift
-    r = (j - centre) - t * np.dot(j - centre, t)
-    length = np.linalg.norm(r)
-    pl = Plane(origin=tuple(centre), x_dir=tuple(r / length), z_dir=tuple(t))
-    arm = pl * Box(length + ARM_W / 2, ARM_W, ARM_T, align=None).moved(Location((0, -ARM_W / 2, -ARM_T / 2)))
+    a = rotate(bolt_axis0, np.zeros(3), t, shaft_deg)
+    side = 1 if hub_above else -1
+    root = d.shaft_point(z) + t * (EYE_T / 2 + WASHER_T + ARM_T / 2) * side
+    tab, c, bend, wdir = tab_at(j, a, root)
+    arm = bent_bar(root, bend, wdir, tab, t)
+    r = unit((c - root) - t * np.dot(c - root, t))
+    pl = Plane(origin=tuple(root), x_dir=tuple(r), z_dir=tuple(t))
     hub = (Cylinder(HUB_FLANGE_D / 2, HUB_FLANGE_T, align=None).moved(Location((0, 0, -ARM_T / 2 - HUB_FLANGE_T)))
            .fuse(Cylinder(HUB_D / 2, HUB_H, align=None).moved(Location((0, 0, -ARM_T / 2 - HUB_FLANGE_T - HUB_H)))))
     if hub_above:            # mirror the hub to the top side of the arm
         hub = Cylinder(HUB_FLANGE_D / 2, HUB_FLANGE_T, align=None).moved(Location((0, 0, ARM_T / 2))).fuse(
             Cylinder(HUB_D / 2, HUB_H, align=None).moved(Location((0, 0, ARM_T / 2 + HUB_FLANGE_T))))
-    return pl * hub, arm, j
+    return pl * hub, arm, j, a
 
 
 def rod_end(p, bolt_axis, toward):
@@ -124,17 +196,20 @@ def rod_end(p, bolt_axis, toward):
         cyl_between(p - e * EYE_T, p + e * EYE_T, BALL_D))
     ball = Sphere(BALL_D / 2).moved(Location(tuple(p))).cut(cyl_between(p - a * 20, p + a * 20, 10))
     shank = cyl_between(p + u * (EYE_D / 2 - 2), p + u * (EYE_D / 2 + SHANK_LEN), SHANK_D)
-    bolt = cyl_between(p - a * (EYE_T / 2 + ARM_T + 6), p + a * (EYE_T / 2 + 6), 10)
-    return [eye, ball, shank, bolt]
+    # bolt_axis points from the arm towards the eye, so the long end of the bolt goes
+    # through the washer and the arm
+    bolt = cyl_between(p - a * (EYE_T / 2 + WASHER_T + ARM_T + 6), p + a * (EYE_T / 2 + 6), 10)
+    return [eye, ball, shank], bolt
 
 
 def rod_with_ends(p1, a1, p2, a2):
-    """Threaded rod between two rod ends whose ball centres are p1 and p2."""
-    parts = rod_end(p1, a1, p2) + rod_end(p2, a2, p1)
+    """Threaded rod between two rod ends whose ball centres are p1 and p2. Returns the
+    rod as [eye, ball, shank, eye, ball, shank, threaded rod], and the two bolts."""
+    end1, bolt1 = rod_end(p1, a1, p2)
+    end2, bolt2 = rod_end(p2, a2, p1)
     u = unit(np.asarray(p2) - np.asarray(p1))
     gap = EYE_D / 2 + SHANK_LEN - 8                      # rod screwed into both shanks
-    parts.append(cyl_between(p1 + u * gap, p2 - u * gap, ROD_D))
-    return parts
+    return end1 + end2 + [cyl_between(p1 + u * gap, p2 - u * gap, ROD_D)], [bolt1, bolt2]
 
 
 def shaft_at_stops(d):
@@ -156,24 +231,36 @@ def build(d, bar, shaft, fork):
     for k, v in upper.items():
         out["upper " + k] = v
 
-    hub, arm, j2 = arm_on_hub(d, d.z_lo, d.lower_joint(), shaft)
+    axes = bolt_axes(d)
+    hub, arm, j2, a2 = arm_on_hub(d, d.z_lo, d.lower_joint(), shaft, axes["lower"][0])
     out["lower hub"], out["lower arm"] = hub, arm
-    hub, arm, j3 = arm_on_hub(d, d.z_hi, d.upper_joint(), shaft, hub_above=True)
+    hub, arm, j3, a3 = arm_on_hub(d, d.z_hi, d.upper_joint(), shaft, axes["upper"][0], hub_above=True)
     out["upper hub"], out["upper arm"] = hub, arm
 
     j1 = rotate(J.BAR_JOINT, C.BAR_POINT, C.BAR_DIR, bar)
+    a1 = rotate(axes["bar"][0], np.zeros(3), C.BAR_DIR, bar)
     j4 = rotate(d.fork_joint(), C.FORK_POINT, C.FORK_DIR, fork)
-    out["lower rod"] = Compound(children=rod_with_ends(j1, C.BAR_DIR, j2, t))
-    out["upper rod"] = Compound(children=rod_with_ends(j3, t, j4, C.FORK_DIR))
-    # The new rod ends bolt through the holes the old ball joints used, each standing
-    # on a spacer on top of its arm. At the handlebar the ball is where the old one was,
-    # 20 mm above the arm. At the fork the ball is lifted FORK_SPACER mm, and the arm's
-    # top is 23 mm above the old ball.
+    a4 = rotate(axes["fork"][0], np.zeros(3), C.FORK_DIR, fork)
+    rod, bolts = rod_with_ends(j1, a1, j2, a2)
+    out["lower rod"], out["lower bolts"] = Compound(children=rod), Compound(children=bolts)
+    rod, bolts = rod_with_ends(j3, a3, j4, a4)
+    out["upper rod"], out["upper bolts"] = Compound(children=rod), Compound(children=bolts)
+    # Spacer washers keep the rod ends' shanks off the tabs as the rods swing.
+    for name, j, a in (("lower washer", j2, a2), ("upper washer", j3, a3), ("bar washer", j1, a1), ("fork washer", j4, a4)):
+        out[name] = cyl_between(j - a * EYE_T / 2, j - a * (EYE_T / 2 + WASHER_T), 20)
+    # Handlebar end: the rod end bolts through the old ball joint's hole on a spacer;
+    # its best bolt angle is within a few degrees of the old bolt, so no tab is needed.
     bar_down = unit(C.BAR_DIR)
-    out["bar spacer"] = cyl_between(j1 + bar_down * BAR_ARM_FACE, j1 + bar_down * EYE_T / 2, 16)
+    out["bar spacer"] = cyl_between(j1 + bar_down * BAR_ARM_FACE, j1 - a1 * (EYE_T / 2 + WASHER_T), 16)
+    # Fork end: a bent bracket bolts through the old ball joint's hole on the fork arm
+    # and holds a tab square to the upper rod's bolt.
     old_fork = rotate(CURRENT.fork_joint0, C.FORK_POINT, C.FORK_DIR, fork)
     fork_up = -unit(C.FORK_DIR)
-    out["fork spacer"] = cyl_between(old_fork + fork_up * FORK_ARM_FACE, j4 - fork_up * EYE_T / 2, 16)
+    base_c = old_fork + fork_up * (FORK_ARM_FACE + 2.5)
+    tab, tab_c, bend, wdir = tab_at(j4, a4, base_c)
+    rise = unit(bend - base_c)
+    base = bar_between(base_c - rise * 15, base_c + rise * 15, fork_up, thick=5)
+    out["fork bracket"] = base.fuse(bent_bar(base_c, bend, wdir, tab, np.cross(rise, wdir)))
 
     # Stop: a shaft collar on the lower plate with a bolt sticking out. When riding
     # straight the bolt points 15 deg forward of straight out, so both stop bolts end
@@ -251,7 +338,7 @@ def stop_bolts(d):
 
 
 COLOURS = [("shaft", "#1f77b4"), ("bearing", "#2ca02c"), ("plate", "#9467bd"), ("u-bolt", "#bbbbbb"),
-           ("hub", "#17becf"), ("arm", "#ff9f1c"), ("rod", "#d62728"), ("spacer", "#8c8c8c"),
+           ("washer", "#bbbbbb"), ("bolts", "#777777"), ("hub", "#17becf"), ("bracket", "#ff9f1c"), ("arm", "#ff9f1c"), ("rod", "#d62728"), ("spacer", "#8c8c8c"),
            ("stop collar", "#17becf"), ("stop pin", "#555555"), ("stop", "#222222")]
 
 
