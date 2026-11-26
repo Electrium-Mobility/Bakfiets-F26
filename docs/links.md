@@ -17,6 +17,7 @@ Updated 1 Nov 2026.
 - [BMS, charger and charging port](../electrical/bms-charging.md)
 - [Brake motor cut-off](../electrical/brake-cutoff.md)
 - [Brakes overview](brakes/README.md)
+- [Rear light housing, 3D print](../mechanical/print-2026/rear-light/)
 - [Bay photos](photos/bay-2026-10/README.md)
 - [Meeting notes](meetings/)
 
