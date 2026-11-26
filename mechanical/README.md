@@ -41,7 +41,7 @@ All SolidWorks files for the bakfiets. Setup steps are in [docs/setup/2-mechanic
 | Kickstand | `KickstandAssembly.SLDASM`, `Kickstand.SLDPRT`, `KickstandBracketFeb15.SLDPRT` | |
 | Cargo box | `Cargo Box/Cargo Box.SLDASM`, `Box and Frame.SLDASM`, `Box with angles.SLDASM` | Several versions, none marked final |
 | Motor | `MotorCrank/CrankMotorAssembly.SLDASM` | A crank-mounted (mid-drive) motor model |
-| Printed parts | `scrap bike parts/stem parts/turnSignalCase*.STL`, `battery box/battery pack/Antispark cover.SLDPRT` | Turn signal housing and antispark cover |
+| Printed parts | `scrap bike parts/stem parts/turnSignalCase*.STL`, `battery box/battery pack/Antispark cover.SLDPRT` | Turn signal housing and antispark cover. New prints live in [`print-2026/`](print-2026/) |
 | Donor parts | `scrap bike parts/` | Fork, wheels, seat and stem modelled from scrap bikes |
 
 ![Steering and kickstand](../docs/images/doc_hw_steering.png)
@@ -53,6 +53,14 @@ All SolidWorks files for the bakfiets. Setup steps are in [docs/setup/2-mechanic
 ![Other parts](../docs/images/doc_hw_parts.png)
 
 More previews of individual parts are in [`docs/images/cad-previews/`](../docs/images/cad-previews/).
+
+## print-2026: printed parts
+
+Parts that get 3D printed, each with the script that makes it and STLs ready for the slicer. Use PETG unless a folder says otherwise.
+
+| Folder | What it is |
+| --- | --- |
+| [`rear-light/`](print-2026/rear-light/) | Housing, clear diffuser, end cap and seat-tube clamp for the 36-LED back bar. Four parts, four M3 screws |
 
 ## Gaps
 

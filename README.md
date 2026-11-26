@@ -17,6 +17,7 @@ See who's on what on the [team board](https://quaot.github.io/bakfiets/), and fi
 | [`mechanical/`](mechanical/) | All SolidWorks CAD | [`mechanical/README.md`](mechanical/README.md) |
 | [`mechanical/cad-2025-coop/`](mechanical/cad-2025-coop/) | Newest model (May 2025), matches the partly built bike | `bakfiets_main_asm.SLDASM` |
 | [`mechanical/cad-2024/`](mechanical/cad-2024/) | The 2024 design: frame, steering, kickstand, cargo box, welding jig, notching guides, FEA study | `Assem1.SLDASM` |
+| [`mechanical/print-2026/`](mechanical/print-2026/) | 3D-printed parts, each with the script that makes it | [`rear-light/`](mechanical/print-2026/rear-light/) |
 | [`electrical/`](electrical/) | The 2024 block diagram and notes on reusable boards | [`electrical/README.md`](electrical/README.md) |
 | [`firmware/`](firmware/) | Display code, a ready-to-run desk demo, the CAN bus example | [`firmware/desk-demo/desk-demo.ino`](firmware/desk-demo/desk-demo.ino) |
 | [`docs/setup/`](docs/setup/) | Extra setup detail and videos for each subteam | [`2-mechanical.md`](docs/setup/2-mechanical.md) |
